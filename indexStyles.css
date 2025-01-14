@@ -8,6 +8,11 @@
     src: url('Fonts/Sex_Pistols.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Punkaholic 3D';
+    src: url('Fonts/Punkaholic 3D D.otf') format('opentype');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +29,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 70px;
     background-color: rgba(0, 0, 0, 0.75);
     display: flex;
     justify-content: space-between;
@@ -46,17 +51,48 @@ nav ul li a {
     color: yellow;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 18px;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #8B008B; /* Dark purple */
+    color: #8B008B;
+}
+
+.facebook-button {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #3B5998;
+}
+
+.facebook-button img {
+    height: 24px;
+    margin-right: 5px;
 }
 
 .band-name {
+    text-decoration: none;
+    display: flex;
+}
+
+.sex-pistols {
     font-family: 'Sex Pistols', sans-serif;
     color: yellow;
-    font-size: 24px;
+    font-size: 28px;
+    background-color: #8B008B;
+    padding: 5px;
+}
+
+.expose {
+    font-family: 'Sex Pistols', sans-serif;
+    color: #800000;
+    font-size: 32px;
+    background-color: white;
+    padding: 5px;
 }
 
 .parallax-bg {
@@ -76,6 +112,15 @@ nav ul li a.active {
 main {
     position: relative;
     z-index: 1;
+    padding-top: 80px;
+}
+
+.main-title {
+    font-family: 'Punkaholic 3D', sans-serif;
+    color: yellow;
+    font-size: 48px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 section {
@@ -121,5 +166,14 @@ section:nth-child(even) {
         margin: 10px 0;
         align-self: flex-end;
     }
+
+    .facebook-button {
+        margin-bottom: 10px;
+    }
+
+    .main-title {
+        font-size: 32px;
+    }
 }
+
 
