@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Chinese Rocks';
-    src: url('Fonts/chinese rocks rg.otf') format('opentype');
+    font-family: 'Punkaholic';
+    src: url('Fonts/Punkaholic D.otf') format('opentype');
 }
 
 @font-face {
@@ -9,8 +9,8 @@
 }
 
 @font-face {
-    font-family: 'Punkaholic 3D';
-    src: url('Fonts/Punkaholic 3D D.otf') format('opentype');
+    font-family: 'Chinese Rocks';
+    src: url('Fonts/chinese rocks rg.otf') format('opentype');
 }
 
 * {
@@ -19,9 +19,10 @@
     box-sizing: border-box;
 }
 
-body, html {
+html, body {
     height: 100%;
     font-family: 'Chinese Rocks', sans-serif;
+overflow-x: hidden;
 }
 
 nav {
@@ -51,12 +52,12 @@ nav ul li a {
     color: yellow;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #8B008B;
+    color: #8B008B; /* Dark purple */
 }
 
 .facebook-button {
@@ -66,7 +67,7 @@ nav ul li a.active {
     padding: 5px 10px;
     border-radius: 5px;
     text-decoration: none;
-    color: #3B5998;
+    color: #3B5998; /* Facebook blue */
 }
 
 .facebook-button img {
@@ -83,15 +84,15 @@ nav ul li a.active {
     font-family: 'Sex Pistols', sans-serif;
     color: yellow;
     font-size: 28px;
-    background-color: #8B008B;
+    background-color: #8B008B; /* Dark purple */
     padding: 5px;
 }
 
 .expose {
     font-family: 'Sex Pistols', sans-serif;
-    color: #800000;
+    color: #800000; /* Burgundy red */
     font-size: 32px;
-    background-color: white;
+    background-color: white; /* White background */
     padding: 5px;
 }
 
@@ -102,78 +103,170 @@ nav ul li a.active {
     width: 100%;
     height: 100%;
     background-image: url('images/Mark 2.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    z-index: -1; 
 }
 
 main {
-    position: relative;
-    z-index: 1;
-    padding-top: 80px;
+    position: relative; 
+    z-index: 1; 
+    padding-top: 70px; 
 }
 
-.main-title {
-    font-family: 'Punkaholic 3D', sans-serif;
-    color: yellow;
-    font-size: 48px;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.hero-section {
+   min-height: calc(100vh - 70px); /* Adjusted for navbar height */
+   display: flex; 
+   flex-direction: column; 
+   align-items:center; 
+   justify-content:center; 
+   padding :50px 20px; 
 }
 
-section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: yellow;
-    font-size: 2em;
-    text-align: center;
+/* Button Slideshow Styles */
+.button-slideshow { 
+   margin :50px 0; 
+   text-align:center; 
 }
 
-section:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.6);
+.slide-button { 
+   font-family:'Sex Pistols', sans-serif; 
+   font-size :32px; /* Increased font size */ 
+   padding :20px; 
+   background-color :#8B008B; /* Dark purple */ 
+   color :yellow; 
+   border :3px solid yellow; 
+   border-radius :50%; /* Circular buttons */ 
+   cursor:pointer; 
+   display:none; /* Hidden by default */ 
+   width :180px; /* Smaller width */ 
+   height :180px; /* Smaller height */ 
+   transition :all .3s ease; /* Smooth transition */ 
 }
 
-section:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.4);
+/* Show active button */
+.slide-button.active { 
+   display:inline-block; 
 }
 
-@media (max-width: 768px) {
-    .parallax-bg {
-        background-image: url('images/Mobile/1.jpg');
-    }
+/* Hover effect for buttons */
+.slide-button:hover { 
+   background-color :#FF1493; /* Hot pink on hover */ 
+   color :#FFFFFF; /* White text on hover */ 
+}
 
-    nav {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
+/* Animation for button appearance */
+@keyframes slideIn { 
+   from { transform :translateX(-100%); opacity :0;} to { transform :translateX(0); opacity :1;} 
+}
 
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Hint for clicking buttons */
+.click-hint { 
+   font-size :18px; 
+   color:white;  
+   text-align:center;  
+   margin-top :20px ;  
+}
 
-    nav ul li {
-        margin: 5px 0;
-    }
+/* Main title and subtitles styles */
+.main-title, .sub-title-1, .sub-title-3 {  
+   font-family :'Punkaholic', sans-serif ;  
+   color:white ;  
+   text-align:center ;  
+}
+.main-title {  
+   font-size :72px ;  
+   margin-bottom :30px ;  
+}
+.sub-title-1, .sub-title-3 {  
+   font-size :60px ;  
+}
+.sub-title-2 {  
+   font-family :'Punkaholic', sans-serif ;  
+   color:white ;  
+   font-size :96px ;  
+   text-align:center ;  
+   margin :20px 0 ;  
+}
 
-    .band-name {
-        font-size: 20px;
-        margin: 10px 0;
-        align-self: flex-end;
-    }
+/* Logo container styles */
+.logo-container {  
+   text-align:center ;  
+   margin :50px 0 ;  
+}
+.logo-container img {  
+   max-width :80% ;  
+   height:auto ;  
+}
 
-    .facebook-button {
-        margin-bottom: 10px;
-    }
+/* Section styles */
+section {  
+   min-height :100vh ;  
+   display:flex ;  
+   justify-content:center ;  
+   align-items:center ;  
+   color:yelllow ;  
+   font-size :2em ;  
+   text-align:center ;  
+}
+section:nth-child(odd) {  
+background-color :rgba(0,0,0,.6) ;
+}
+section:nth-child(even) {   
+background-color :rgba(0,0,0,.4) ;
+}
 
-    .main-title {
-        font-size: 32px;
-    }
+/* Scroll progress bar styles */
+.scroll-progress {
+    position: fixed;
+    top: 70px; /* Adjust based on navbar height */
+    left: 0;
+    width: 0; /* Initial width */
+    height: 4px; /* Height of the progress bar */
+    background-color: yellow; /* Color of the progress bar */
+    z-index: 1001; /* Ensure it appears above other elements */
+}
+
+
+/* Responsive design adjustments */
+@media (max-width :768px) {
+.parallax-bg {    
+background-image:url('images/Mobile/1.jpg');    
+}
+nav {    
+flex-direction :column ;
+height:auto ;
+padding :10px ;
+}
+nav ul {    
+flex-direction :column ;
+align-items:flex-start ;
+}
+nav ul li {    
+margin :5px 0 ;
+}
+.band-name {    
+font-size :20px ;
+margin :10px 0 ;
+align-self:flex-end ;
+}
+.facebook-button {    
+margin-bottom :10px ;
+}
+.main-title {    
+font-size :40px ;
+}
+.sub-title-1, .sub-title-3 {    
+font-size :32px ;
+}
+.sub-title-2 {    
+font-size :48px ;
+}
+.hero-section {    
+min-height :calc(100vh -120 px);    
+}   
 }
 
 
