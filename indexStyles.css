@@ -13,6 +13,11 @@
     src: url('Fonts/chinese rocks rg.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'Mailart Rubberstamp';
+    src: url('Fonts/MailartRubberstamp-Regular.otf') format('opentype');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +27,7 @@
 html, body {
     height: 100%;
     font-family: 'Chinese Rocks', sans-serif;
-overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 nav {
@@ -57,7 +62,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #8B008B; /* Dark purple */
+    color: #8B008B;
 }
 
 .facebook-button {
@@ -67,7 +72,7 @@ nav ul li a.active {
     padding: 5px 10px;
     border-radius: 5px;
     text-decoration: none;
-    color: #3B5998; /* Facebook blue */
+    color: #3B5998;
 }
 
 .facebook-button img {
@@ -84,15 +89,15 @@ nav ul li a.active {
     font-family: 'Sex Pistols', sans-serif;
     color: yellow;
     font-size: 28px;
-    background-color: #8B008B; /* Dark purple */
+    background-color: #8B008B;
     padding: 5px;
 }
 
 .expose {
     font-family: 'Sex Pistols', sans-serif;
-    color: #800000; /* Burgundy red */
+    color: #800000;
     font-size: 32px;
-    background-color: white; /* White background */
+    background-color: white;
     padding: 5px;
 }
 
@@ -103,170 +108,239 @@ nav ul li a.active {
     width: 100%;
     height: 100%;
     background-image: url('images/Mark 2.jpg');
-    background-attachment: fixed; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    z-index: -1; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
 }
 
 main {
-    position: relative; 
-    z-index: 1; 
-    padding-top: 70px; 
+    position: relative;
+    z-index: 1;
+    padding-top: 0;
 }
 
 .hero-section {
-   min-height: calc(100vh - 70px); /* Adjusted for navbar height */
-   display: flex; 
-   flex-direction: column; 
-   align-items:center; 
-   justify-content:center; 
-   padding :50px 20px; 
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   padding: 70px 20px 0;
 }
 
-/* Button Slideshow Styles */
-.button-slideshow { 
-   margin :50px 0; 
-   text-align:center; 
+.button-slideshow {
+   position: relative;
+   overflow: visible;
+   width: 240px;
+   margin: 5vh auto;
+   text-align: center;
 }
 
-.slide-button { 
-   font-family:'Sex Pistols', sans-serif; 
-   font-size :32px; /* Increased font size */ 
-   padding :20px; 
-   background-color :#8B008B; /* Dark purple */ 
-   color :yellow; 
-   border :3px solid yellow; 
-   border-radius :50%; /* Circular buttons */ 
-   cursor:pointer; 
-   display:none; /* Hidden by default */ 
-   width :180px; /* Smaller width */ 
-   height :180px; /* Smaller height */ 
-   transition :all .3s ease; /* Smooth transition */ 
+.slide-button {
+   font-family: 'Sex Pistols', sans-serif;
+   font-size: 32px;
+   padding: 20px;
+   background-color: #8B008B;
+   color: yellow;
+   border: 3px solid yellow;
+   border-radius: 50%;
+   cursor: pointer;
+   display: none;
+   width: 180px;
+   height: 180px;
+   transition: all .3s ease;
+   position: relative;
 }
 
-/* Show active button */
-.slide-button.active { 
-   display:inline-block; 
+.slide-button.active {
+   display: inline-block;
 }
 
-/* Hover effect for buttons */
-.slide-button:hover { 
-   background-color :#FF1493; /* Hot pink on hover */ 
-   color :#FFFFFF; /* White text on hover */ 
+.slide-button:hover {
+   background-color: #FF1493;
+   color: #FFFFFF;
 }
 
-/* Animation for button appearance */
-@keyframes slideIn { 
-   from { transform :translateX(-100%); opacity :0;} to { transform :translateX(0); opacity :1;} 
+.slide-button.sliding {
+   transform: translateX(-100%);
 }
 
-/* Hint for clicking buttons */
-.click-hint { 
-   font-size :18px; 
-   color:white;  
-   text-align:center;  
-   margin-top :20px ;  
+.slide-button:nth-child(2) {
+    background-color: #8B008B; /* Purple */
+    color: yellow;
 }
 
-/* Main title and subtitles styles */
-.main-title, .sub-title-1, .sub-title-3 {  
-   font-family :'Punkaholic', sans-serif ;  
-   color:white ;  
-   text-align:center ;  
-}
-.main-title {  
-   font-size :72px ;  
-   margin-bottom :30px ;  
-}
-.sub-title-1, .sub-title-3 {  
-   font-size :60px ;  
-}
-.sub-title-2 {  
-   font-family :'Punkaholic', sans-serif ;  
-   color:white ;  
-   font-size :96px ;  
-   text-align:center ;  
-   margin :20px 0 ;  
+.slide-button:nth-child(3) {
+    background-color: #FF0000; /* Red */
+    color: white;
 }
 
-/* Logo container styles */
-.logo-container {  
-   text-align:center ;  
-   margin :50px 0 ;  
-}
-.logo-container img {  
-   max-width :80% ;  
-   height:auto ;  
+.slide-button:nth-child(4) {
+    background-color: #0000FF; /* Blue */
+    color: white;
 }
 
-/* Section styles */
-section {  
-   min-height :100vh ;  
-   display:flex ;  
-   justify-content:center ;  
-   align-items:center ;  
-   color:yelllow ;  
-   font-size :2em ;  
-   text-align:center ;  
-}
-section:nth-child(odd) {  
-background-color :rgba(0,0,0,.6) ;
-}
-section:nth-child(even) {   
-background-color :rgba(0,0,0,.4) ;
+.slide-button:hover {
+    background-color: #FFFFFF !important; /* White on hover */
+    color: #000000 !important; /* Black text on hover */
 }
 
-/* Scroll progress bar styles */
+
+.arrow {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 24px;
+   color: yellow;
+   cursor: pointer;
+   z-index: 10;
+   background-color: rgba(0, 0, 0, 0.7);
+   padding: 10px;
+   border-radius: 50%;
+}
+
+.arrow.left {
+   left: -40px;
+}
+
+.arrow.right {
+   right: -40px;
+}
+
+.safety-pin {
+   position: absolute;
+   top: -20px;
+   right: -20px;
+   width: 40px;
+   height: auto;
+   transform: rotate(45deg);
+}
+
+@keyframes slideIn {
+   from { transform: translateX(-100%); opacity: 0; }
+   to { transform: translateX(0); opacity: 1; }
+}
+
+.click-hint {
+   font-size: 18px;
+   color: white;
+   text-align: center;
+   margin-top: 20px;
+}
+
+.main-title, .sub-title-1, .sub-title-2, .sub-title-3 {
+   font-family: 'Punkaholic', sans-serif;
+   color: white;
+   text-align: center;
+}
+
+.main-title {
+   font-size: 72px;
+   margin-bottom: 30px;
+}
+
+.sub-title-1, .sub-title-2 {
+   font-size: 48px;
+}
+
+.sub-title-3 {
+   font-size: 36px;
+}
+
+.sub-title-2 {
+   font-family: 'Mailart Rubberstamp', sans-serif;
+   margin: 20px 0;
+}
+
+.logo-container {
+   text-align: center;
+   margin: -75px 0 5vh;
+}
+
+.logo-container img {
+   max-width: 160%;
+   height: auto;
+}
+
+.additional-title {
+    font-family: 'Punkaholic', sans-serif;
+    font-size: 56px;
+    color: white;
+    text-align: center;
+    margin: 5vh 0;
+    max-width: 80%;
+    line-height: 1.2;
+}
+
+section {
+   width: 100vw;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: yellow;
+   font-size: 2em;
+   text-align: center;
+   margin: 0;
+   padding: 70px 0 0;
+}
+
+section:nth-child(odd) {
+    background-color: rgba(0,0,0,.6);
+}
+
+section:nth-child(even) {
+    background-color: rgba(0,0,0,.4);
+}
+
 .scroll-progress {
     position: fixed;
-    top: 70px; /* Adjust based on navbar height */
+    top: 70px;
     left: 0;
-    width: 0; /* Initial width */
-    height: 4px; /* Height of the progress bar */
-    background-color: yellow; /* Color of the progress bar */
-    z-index: 1001; /* Ensure it appears above other elements */
+    width: 0;
+    height: 4px;
+    background-color: yellow;
+    z-index: 1001;
 }
 
-
-/* Responsive design adjustments */
-@media (max-width :768px) {
-.parallax-bg {    
-background-image:url('images/Mobile/1.jpg');    
-}
-nav {    
-flex-direction :column ;
-height:auto ;
-padding :10px ;
-}
-nav ul {    
-flex-direction :column ;
-align-items:flex-start ;
-}
-nav ul li {    
-margin :5px 0 ;
-}
-.band-name {    
-font-size :20px ;
-margin :10px 0 ;
-align-self:flex-end ;
-}
-.facebook-button {    
-margin-bottom :10px ;
-}
-.main-title {    
-font-size :40px ;
-}
-.sub-title-1, .sub-title-3 {    
-font-size :32px ;
-}
-.sub-title-2 {    
-font-size :48px ;
-}
-.hero-section {    
-min-height :calc(100vh -120 px);    
-}   
+@media (max-width: 768px) {
+    .parallax-bg {
+        background-image: url('images/Mobile/1.jpg');
+    }
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    .band-name {
+        font-size: 20px;
+        margin: 10px 0;
+        align-self: flex-end;
+    }
+    .facebook-button {
+        margin-bottom: 10px;
+    }
+    .main-title {
+        font-size: 40px;
+    }
+    .sub-title-1, .sub-title-2 {
+        font-size: 36px;
+    }
+    .sub-title-3 {
+        font-size: 28px;
+    }
+    .hero-section {
+        min-height: 100vh;
+    }
 }
 
 

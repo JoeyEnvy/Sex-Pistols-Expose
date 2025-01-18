@@ -1,29 +1,61 @@
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.slide-button');
+    const leftArrow = document.querySelector('.arrow.left');
+    const rightArrow = document.querySelector('.arrow.right');
     let currentIndex = 0;
 
-    function showNextButton() {
-        buttons[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % buttons.length;
-        buttons[currentIndex].classList.add('active');
+    function showButton(index) {
+        buttons.forEach(button => button.classList.remove('active', 'sliding'));
+        buttons[index].classList.add('active');
+        buttons[index].classList.add('sliding');
+        setTimeout(() => buttons[index].classList.remove('sliding'), 300);
     }
 
-    setInterval(showNextButton, 5000); // Change button every 5 seconds
+    function showNextButton() {
+        currentIndex = (currentIndex + 1) % buttons.length;
+        showButton(currentIndex);
+    }
+
+    function showPrevButton() {
+        currentIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+        showButton(currentIndex);
+    }
+
+    setInterval(showNextButton, 3000);
+
+    leftArrow.addEventListener('click', showPrevButton);
+    rightArrow.addEventListener('click', showNextButton);
 
     buttons.forEach(button => {
         button.addEventListener('click', function() {
-            alert('You clicked: ' + this.textContent);
+            const target = this.getAttribute('data-target');
+            document.querySelector(target).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
+    });
+
+    // Smooth scrolling for navbar links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Scroll Progress Bar
+    window.addEventListener('scroll', function() {
+        const scrollProgress = document.querySelector('.scroll-progress');
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        
+        if (scrollableHeight > 0) {
+            const progress = (scrolled / scrollableHeight) * 100;
+            scrollProgress.style.width = `${progress}%`;
+        }
     });
 });
 
-window.addEventListener('scroll', () => {
-    const scrollProgress = document.querySelector('.scroll-progress');
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const scrolled = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    
-    if (scrollable > 0) { // Prevent division by zero
-        const progress = (scrolled / scrollable) * 100;
-        scrollProgress.style.width = `${progress}%`;
-    }
-});
+
