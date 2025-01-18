@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling for navbar links
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    // Smooth scrolling for navbar links (excluding Home)
+    document.querySelectorAll('nav a[href^="#"]:not([href="#top"])').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -45,11 +45,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Home button functionality
+    const homeLink = document.querySelector('nav a[href="#top"]');
+    if (homeLink) {
+        homeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
     // Scroll Progress Bar
     window.addEventListener('scroll', function() {
         const scrollProgress = document.querySelector('.scroll-progress');
         const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        const scrolled = window.scrollY;
         
         if (scrollableHeight > 0) {
             const progress = (scrolled / scrollableHeight) * 100;
@@ -57,5 +70,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 

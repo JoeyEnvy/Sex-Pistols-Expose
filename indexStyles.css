@@ -167,25 +167,31 @@ main {
    transform: translateX(-100%);
 }
 
+/* button colours slideshow top page */
+
 .slide-button:nth-child(2) {
-    background-color: #8B008B; /* Purple */
+    background-color: #8B008B; /* Dark Purple */
     color: yellow;
 }
 
 .slide-button:nth-child(3) {
-    background-color: #FF0000; /* Red */
+    background-color: #00008B; /* Dark Blue */
     color: white;
 }
 
 .slide-button:nth-child(4) {
-    background-color: #0000FF; /* Blue */
+    background-color: #8B0000; /* Dark Red */
     color: white;
 }
 
 .slide-button:hover {
-    background-color: #FFFFFF !important; /* White on hover */
-    color: #000000 !important; /* Black text on hover */
+    background-color: #FFFFFF; /* White */
+    color: #000000; /* Black */
 }
+
+
+
+/* button colours slideshow top page */
 
 
 .arrow {
