@@ -396,6 +396,7 @@ section:nth-child(even) {
 /* Unique Section Styling */
 /* General Section Styling */
 /* Unique Section Styling */
+/* Unique Section Styling */
 #info-section {
     width: 100vw;
     min-height: 100vh;
@@ -422,7 +423,7 @@ section:nth-child(even) {
 
 .video-container {
     width: 100%;
-    height: 60vh; /* Adjusted to maintain a height of 60vh */
+    height: 80vh; /* Increased height by 20vh */
     overflow: hidden;
     margin-bottom: 20px;
 }
@@ -431,6 +432,25 @@ section:nth-child(even) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Video Controls */
+.video-controls {
+    display: flex;
+    justify-content: space-between; /* Space between controls */
+    align-items: center; /* Center controls vertically */
+}
+
+#changeVideoButton {
+    background-color: #ffef1d; /* Button color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#playbackSlider,
+#durationSlider {
+    width: 70%; /* Width of sliders */
 }
 
 /* Columns Section */
@@ -507,27 +527,32 @@ section:nth-child(even) {
        height:auto; 
        align-items:center; 
        justify-content:center; 
+       margin-left:-10%; /* Move columns slightly to the left */
    }
 
    .info-left-column,
-   .info-right-column {
+   .info-center-column {
        flex-basis :50% ; /* Each column takes up half of the screen width */
        display:flex ;
        justify-content:center ;
        align-items:center ;
+       padding-left: 5%; /* Add some padding to keep spacing nice on mobile */
+       padding-right: 5%; /* Add some padding to keep spacing nice on mobile */
    }
 
    .info-right-column {
        display:none; /* Hide right column on mobile */
    }
 
-   .info-left-image {
-       max-height :40vh ; /* Limit height for mobile view to ensure it fits well */
+   .info-left-image,
+   .info-right-image { /* Scale both left and right images equally larger on mobile */
+       max-height :50vh ; /* Limit height for mobile view to ensure it fits well */
        object-fit :contain ; 
+       width :90%; /* Scale larger in general position on mobile */
    }
 
    .center-images img{
-       max-width :80%; /* Scale down images for smaller screens */
+       max-width :90%; /* Scale down images for smaller screens */
        object-fit :contain;}
 
    .center-images img:nth-child(2) { /* Middle image (Am a Mess) should be largest */
@@ -548,6 +573,7 @@ section:nth-child(even) {
        flex-direction: row; /* Keep columns horizontal for very small screens as well */
        align-items:center ; 
        justify-content:center ;
+       margin-left:-5%; /* Adjust margin for very small screens as well for centering effect*/
    }
 
    .info-left-column,
@@ -568,4 +594,44 @@ section:nth-child(even) {
        margin-bottom :15px ; 
    }
 }
+/* Video Container */
+.video-container {
+    width: 100%;
+    height: 80vh; /* Increased height by 20vh */
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
 
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Video Controls */
+.video-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#playPauseButton,
+#changeVideoButton {
+    background-color: #ffef1d; /* Button color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding for button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#progressBar,
+#durationSlider {
+    width: 30%; /* Width of sliders */
+}
