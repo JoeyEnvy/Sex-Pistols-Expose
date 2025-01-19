@@ -394,6 +394,7 @@ section:nth-child(even) {
 /* info section */
 
 /* Unique Section Styling */
+/* General Section Styling */
 #info-section {
     width: 100vw;
     min-height: 100vh;
@@ -431,15 +432,14 @@ section:nth-child(even) {
     object-fit: cover;
 }
 
-/* Columns Section */
+/* Desktop Styles (Default) */
 .info-columns {
-    display: flex; /* Ensures horizontal layout */
-    flex-direction: row; /* Horizontal alignment */
+    display: flex; /* Horizontal layout for desktop */
+    flex-direction: row; 
     width: 100%;
     height: 70vh; /* Set height to 70vh */
 }
 
-/* Left Column Styling */
 .info-left-column,
 .info-right-column {
     flex: 1; /* Equal width for left and right columns */
@@ -453,7 +453,6 @@ section:nth-child(even) {
     max-height: 70vh; /* Ensure images fit within their columns */
 }
 
-/* Center Column Styling */
 .info-center-column {
     flex: 1; /* Equal width for the center column */
     display: flex;
@@ -469,11 +468,11 @@ section:nth-child(even) {
 
 .info-top-image,
 .info-bottom-image {
-    max-width: 40%; /* Smaller compared to middle image */
+    max-width: 50%; /* Make these images larger on desktop (2x larger than before) */
 }
 
 .middle-image-container {
-   position: relative; /* Positioning for overlaying elements on middle image */
+   position: relative; 
    display: inline-block; 
    max-width :80%; /* Make middle image larger on desktop */
    max-height :50%; 
@@ -497,20 +496,25 @@ section:nth-child(even) {
    max-width :40%; 
 }
 
-/* Responsive Design for Mobile Devices */
+/* Mobile Styles (Overriding Desktop) */
 @media (max-width: 768px) {
    .info-columns {
-       flex-direction: row; /* Keep columns horizontal on mobile */
+       flex-direction: row; /* Two columns visible on mobile (left and middle) */
        height:auto; 
        align-items:center; 
        justify-content:center; 
    }
 
-   .info-left-column {
-       flex-basis: 50%; /* Left column takes up half of the screen width on mobile */
+   .info-left-column,
+   .info-center-column {
+       flex-basis :50% ; /* Each column takes up half of the screen width */
        display:flex ;
        justify-content:center ;
        align-items:center ;
+   }
+
+   .info-right-column {
+       display:none; /* Hide right column on mobile */
    }
 
    .info-left-image {
@@ -518,28 +522,46 @@ section:nth-child(even) {
        object-fit :contain ; 
    }
 
-   .info-center-column {
-       flex-basis :50% ; /* Center column takes up half of screen width on mobile */
-       display:flex ;
-       justify-content:center ;
-       align-items:center ;
-   }
-
    .center-images img{
-       max-width :80%; /* Increase width slightly on mobile for better visibility */
-       object-fit :contain;
+       max-width :90%; /* Scale down images for smaller screens */
+       object-fit :contain;}
 
-       /* Adjust sizes for mobile view, making middle image largest */
-       &:nth-child(2) { /* Middle image (Am a Mess) should be largest */
-           max-width :90%; /* Make it larger than others on mobile */
-           max-height :60vh; /* Ensure it fits well within viewport height */
-       }
-       
-       &:nth-child(1), &:nth-child(3) { /* Top and bottom images (God Save The Queen and Never Mind Badge) should be smaller */
-           max-width :70%;
-           max-height :40vh; /* Ensure they fit nicely in mobile view as well */
-       }
+   .center-images img:nth-child(2) { /* Middle image (Am a Mess) should be largest */
+       max-width :90%; 
+       max-height :60vh; /* Ensure it fits well within viewport height */
+   }
+   
+   .center-images img:nth-child(1),
+   .center-images img:nth-child(3) { /* Top and bottom images should be smaller */
+       max-width :70%;
+       max-height :40vh; 
    }
 }
 
+/* Extra Small Screens (Below ~480px wide) */
+@media (max-width: 480px) {
+   .info-columns {
+       flex-direction: column; /* Stack columns vertically for very small screens */
+       align-items:center ; 
+       justify-content:center ;
+   }
+
+   .info-left-column,
+   .info-center-column {
+       width :100% ; /* Each column takes full width of viewport on extra small screens */
+       text-align:center ;
+   }
+
+   .info-left-image,
+   .center-images img {
+       max-width :80%; /* Scale down all images further for small screens */
+       max-height:auto ;
+       margin-bottom :10px ; 
+   }
+
+   .center-images img:nth-child(2) { /* Middle image remains larger than others */
+       max-width :90%;
+       margin-bottom :15px ; 
+   }
+}
 
