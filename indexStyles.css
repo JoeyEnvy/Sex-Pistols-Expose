@@ -648,18 +648,11 @@ label {
 /* Members Section */
 #members-section {
     width: 100vw;
-    position: relative;
-    margin: 0; /* Remove any margin between sections */
-    background-image: url('images/Backgrounds/members back ground info light.jpg');
+    height: 100vh;
+    background: url('images/Info.jpg') no-repeat center center;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
 }
+
 
 .members-background {
     width: 100%;
