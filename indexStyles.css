@@ -650,14 +650,19 @@ label {
     src: url('Fonts/Sex_Pistols.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Punkaholic';
+    src: url('Fonts/Punkaholic\ D.otf') format('truetype');
+}
+
 #members-section {
     width: 100vw;
     position: relative;
-    margin-top: calc(20vh - 175px); /* Moved up by 25px */
+    margin-top: calc(20vh - 195px); /* Moved up additional 5px */
     background-image: url('images/Info.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.85; /* Reduced to 85% opacity */
+    opacity: 0.85;
     min-height: 100vh;
 }
 
@@ -699,22 +704,22 @@ label {
 
 .members-grid {
     width: 100%;
-    height: 100vh;
+    height: 90vh; /* Reduced height to move grids closer */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     background-color: transparent;
     position: relative;
-    z-index: 10;
+    z-index: 30; /* Increased z-index for top grid items */
 }
 
 .members-grid::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -90vh;
+    bottom: -100vh; /* Increased bottom black extender by 10vh */
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
@@ -725,7 +730,7 @@ label {
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 20;
+    z-index: 40;
 }
 
 .grid-title {
@@ -734,34 +739,92 @@ label {
     top: 20px;
     font-size: 1.5em;
     text-align: center;
+    width: 50vw; /* Equalized to 50vw */
+    left: 0; /* Centered */
+    z-index: 50;
+}
+
+.grid-subtitle {
+    font-family: 'Punkaholic', sans-serif;
+    position: absolute;
+    top: 70px;
+    font-size: 1.33em;
+    text-align: center;
     width: 100%;
     z-index: 30;
-    padding: 5px;
-}
-
-.grid-top-left .grid-title {
-    background-color: #ffef1d;
-    color: black;
-}
-
-.grid-top-right .grid-title {
-    background-color: #ed5e94;
     color: white;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
 }
 
-.grid-bottom-left .grid-title {
-    background-color: #c32500;
-    color: white;
-}
+.grid-top-left .grid-title { background-color: #ffef1d; color: black; }
+.grid-top-right .grid-title { background-color: #ed5e94; color: white; }
+.grid-bottom-left .grid-title { background-color: #c32500; color: white; }
+.grid-bottom-right .grid-title { background-color: #3a6ff9; color: white; }
 
-.grid-bottom-right .grid-title {
-    background-color: #3a6ff9;
-    color: white;
-}
+.grid-top-right .grid-subtitle { right: -75px; }
+.grid-bottom-right .grid-subtitle { right: -75px; }
 
 .members-grid img {
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
     z-index: 25;
+    margin-left: -20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .members-content { width: 60%; }
+}
+
+@media screen and (max-width: 768px) {
+    .members-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 50vh;
+    }
+
+    .grid-subtitle {
+        font-size: 0.5em; /* Reduced subtitle size by 2x */
+    }
+
+    .members-grid::after {
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .members-content {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .members-grid {
+        height: 40vh;
+    }
+
+    .members-grid::after {
+        height: 60vh;
+    }
+
+    .grid-title {
+        font-size: 0.6em;
+        top: 5px;
+    }
+
+    .grid-subtitle {
+        font-size: 0.25em; /* Further reduced on smaller screens */
+        top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .members-grid img {
+        max-width: 100%;
+        max-height: 100%;
+        margin-left: -5px;
+    }
 }
