@@ -595,6 +595,7 @@ section:nth-child(even) {
    }
 }
 /* Video Container */
+/* Video Container */
 .video-container {
     width: 100%;
     height: 80vh; /* Increased height by 20vh */
@@ -632,6 +633,12 @@ section:nth-child(even) {
 }
 
 #progressBar,
-#durationSlider {
+#playbackSpeed {
     width: 30%; /* Width of sliders */
 }
+
+label {
+    color: white;
+    margin-left: 10px;
+}
+

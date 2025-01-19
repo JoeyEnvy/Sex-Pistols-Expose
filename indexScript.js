@@ -72,6 +72,7 @@ document.querySelector('.hamburger-menu').addEventListener('click', function() {
 //info section video 
 
 window.onload = function () {
+    
     // Array of video files
     const videos = [
         'videos/1.mp4',
@@ -85,57 +86,61 @@ window.onload = function () {
     // Get elements
     const videoPlayer = document.querySelector('#videoPlayer');
     const videoSource = document.querySelector('#videoSource');
-    const playPauseButton = document.querySelector('#playPauseButton');
-    const progressBar = document.querySelector('#progressBar');
-    const durationSlider = document.querySelector('#durationSlider');
-    const changeVideoButton = document.querySelector('#changeVideoButton');
+    
+	// Get control elements
+	const playPauseButton = document.getElementById('playPauseButton');
+	const progressBar = document.getElementById('progressBar');
+	const playbackSpeed = document.getElementById('playbackSpeed');
+	const changeVideoButton = document.getElementById('changeVideoButton');
 
-    // Function to play a random video
-    function playRandomVideo() {
-        const randomVideo = videos[Math.floor(Math.random() * videos.length)];
-        videoSource.src = randomVideo;
+	// Function to play a random video
+	function playRandomVideo() {
+		const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+		videoSource.src = randomVideo;
 
-        videoPlayer.load();
+		videoPlayer.load();
 
-        videoPlayer.addEventListener('loadedmetadata', function () {
-            const randomStartTime = Math.random() * videoPlayer.duration;
-            videoPlayer.currentTime = randomStartTime;
-            videoPlayer.play();
-        });
-    }
+		videoPlayer.addEventListener('loadedmetadata', function () {
+			const randomStartTime = Math.random() * videoPlayer.duration;
+			videoPlayer.currentTime = randomStartTime;
+			videoPlayer.play();
+		});
+	}
 
-    // Play or pause the video when the button is clicked
-    playPauseButton.addEventListener('click', function () {
-        if (videoPlayer.paused) {
-            videoPlayer.play();
-            playPauseButton.textContent = 'Pause';
-        } else {
-            videoPlayer.pause();
-            playPauseButton.textContent = 'Play';
-        }
-    });
+	// Play or pause the video when the button is clicked
+	playPauseButton.addEventListener('click', function () {
+		if (videoPlayer.paused) {
+			videoPlayer.play();
+			playPauseButton.textContent = 'Pause';
+		} else {
+			videoPlayer.pause();
+			playPauseButton.textContent = 'Play';
+		}
+	});
 
-    // Update progress bar as the video plays
-    videoPlayer.addEventListener('timeupdate', function () {
-        const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100 || 0;
-        progressBar.value = progress;
-    });
+	// Update progress bar as the video plays
+	videoPlayer.addEventListener('timeupdate', function () {
+		const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100 || 0;
+		progressBar.value = progress;
+	});
 
-    // Seek to a new position when progress bar is changed
-    progressBar.addEventListener('input', function () {
-        const newTime = (progressBar.value / 100) * videoPlayer.duration;
-        videoPlayer.currentTime = newTime;
-    });
+	// Seek to a new position when progress bar is changed
+	progressBar.addEventListener('input', function () {
+		const newTime = (progressBar.value / 100) * videoPlayer.duration;
+		videoPlayer.currentTime = newTime;
+	});
 
-    // Adjust playback speed using duration slider
-    durationSlider.addEventListener('input', function () {
-        videoPlayer.playbackRate = durationSlider.value; // Adjust playback rate
-    });
+	// Adjust playback speed using playback speed slider
+	playbackSpeed.addEventListener('input', function () {
+	    const speed = parseFloat(playbackSpeed.value);
+	    videoPlayer.playbackRate = speed; // Adjust playback rate
+	    console.log(`Playback Speed Set To ${speed}x`);
+	});
 
-    // Change to a random video when "Change Video" button is clicked
-    changeVideoButton.addEventListener('click', playRandomVideo);
+	// Change to a random video when "Change Video" button is clicked
+	changeVideoButton.addEventListener('click', playRandomVideo);
 
-    // Play a random video on page load
-    playRandomVideo();
+	// Play a random video on page load
+	playRandomVideo();
 };
 
