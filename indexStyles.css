@@ -54,7 +54,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: yellow;
+    color: #ffef1d;
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 24px;
@@ -62,7 +62,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #8B008B;
+    color: #ed5e94;
 }
 
 .facebook-button {
@@ -87,15 +87,15 @@ nav ul li a.active {
 
 .sex-pistols {
     font-family: 'Sex Pistols', sans-serif;
-    color: yellow;
+    color: #ffef1d;
     font-size: 28px;
-    background-color: #8B008B;
+    background-color: #ff0000;
     padding: 5px;
 }
 
 .expose {
     font-family: 'Sex Pistols', sans-serif;
-    color: #800000;
+    color: #3a6ff9;
     font-size: 32px;
     background-color: white;
     padding: 5px;
@@ -127,31 +127,30 @@ main {
    flex-direction: column;
    align-items: center;
    justify-content: flex-start;
-   padding: 70px 20px 0;
+   padding: 30px 20px 0;
 }
 
 .button-slideshow {
    position: relative;
    overflow: visible;
    width: 240px;
-   margin: 5vh auto;
+   margin: 3vh auto;
    text-align: center;
 }
 
 .slide-button {
    font-family: 'Sex Pistols', sans-serif;
-   font-size: 32px;
-   padding: 20px;
-   background-color: #8B008B;
-   color: yellow;
-   border: 3px solid yellow;
+   font-size: 28px;
+   padding: 15px;
+   background-color: #ffef1d;
+   color: #c32500;
+   border: 3px solid #3a6ff9;
    border-radius: 50%;
    cursor: pointer;
    display: none;
-   width: 180px;
-   height: 180px;
-   transition: all .3s ease;
-   position: relative;
+   width: 160px;
+   height: 160px;
+   transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .slide-button.active {
@@ -159,67 +158,59 @@ main {
 }
 
 .slide-button:hover {
-   background-color: #FF1493;
-   color: #FFFFFF;
+   background-color: #3a6ff9;
+   color: #ffef1d;
+   transform: scale(1.1);
+   transition: none;
 }
 
-.slide-button.sliding {
-   transform: translateX(-100%);
+.slide-button[data-target="#gigs"] {
+    color: #ed5e94;
 }
 
-/* button colours slideshow top page */
-
-.slide-button:nth-child(2) {
-    background-color: #8B008B; /* Dark Purple */
-    color: yellow;
+.slide-button[data-target="#videos"] {
+    background-color: #ff6b6b;
+    color: #ffef1d;
 }
 
-.slide-button:nth-child(3) {
-    background-color: #00008B; /* Dark Blue */
-    color: white;
+.slide-button[data-target="#contact"] {
+    color: #ff0000;
 }
-
-.slide-button:nth-child(4) {
-    background-color: #8B0000; /* Dark Red */
-    color: white;
-}
-
-.slide-button:hover {
-    background-color: #FFFFFF; /* White */
-    color: #000000; /* Black */
-}
-
-
-
-/* button colours slideshow top page */
-
 
 .arrow {
    position: absolute;
    top: 50%;
    transform: translateY(-50%);
-   font-size: 24px;
-   color: yellow;
+   font-size: 42px;
+   font-weight: bold;
+   color: #ffef1d;
    cursor: pointer;
    z-index: 10;
    background-color: rgba(0, 0, 0, 0.7);
-   padding: 10px;
+   padding: 15px;
    border-radius: 50%;
+   border: 3px solid #ffef1d;
+   transition: all 0.3s ease;
+}
+
+.arrow:hover {
+   background-color: rgba(255, 255, 255, 0.3);
+   transform: translateY(-50%) scale(1.1);
 }
 
 .arrow.left {
-   left: -40px;
+   left: -60px;
 }
 
 .arrow.right {
-   right: -40px;
+   right: -60px;
 }
 
 .safety-pin {
    position: absolute;
-   top: -20px;
-   right: -20px;
-   width: 40px;
+   top: -25px;
+   right: -25px;
+   width: 50px;
    height: auto;
    transform: rotate(45deg);
 }
@@ -227,6 +218,10 @@ main {
 @keyframes slideIn {
    from { transform: translateX(-100%); opacity: 0; }
    to { transform: translateX(0); opacity: 1; }
+}
+
+.sliding {
+    animation: slideIn 0.5s ease-out;
 }
 
 .click-hint {
@@ -286,7 +281,7 @@ section {
    display: flex;
    justify-content: center;
    align-items: center;
-   color: yellow;
+   color: #ffef1d;
    font-size: 2em;
    text-align: center;
    margin: 0;
@@ -307,8 +302,15 @@ section:nth-child(even) {
     left: 0;
     width: 0;
     height: 4px;
-    background-color: yellow;
+    background-color: #ffef1d;
     z-index: 1001;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffef1d;
 }
 
 @media (max-width: 768px) {
@@ -316,24 +318,41 @@ section:nth-child(even) {
         background-image: url('images/Mobile/1.jpg');
     }
     nav {
-        flex-direction: column;
+        flex-wrap: wrap;
         height: auto;
         padding: 10px;
     }
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
+    .facebook-button {
+        order: 1;
+        margin-right: 10px;
     }
-    nav ul li {
-        margin: 5px 0;
+    .facebook-button img {
+        height: 20px;
+    }
+    .facebook-button span {
+        display: none;
     }
     .band-name {
-        font-size: 20px;
-        margin: 10px 0;
-        align-self: flex-end;
+        order: 2;
+        font-size: 18px;
     }
-    .facebook-button {
-        margin-bottom: 10px;
+    .hamburger-menu {
+        display: block;
+        order: 3;
+    }
+    nav ul {
+        display: none;
+        width: 100%;
+        order: 4;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    nav ul.show {
+        display: flex;
+    }
+    nav ul li {
+        margin: 10px 0;
     }
     .main-title {
         font-size: 40px;
@@ -346,7 +365,121 @@ section:nth-child(even) {
     }
     .hero-section {
         min-height: 100vh;
+        padding-top: 120px;
     }
+    .slide-button {
+        width: 140px;
+        height: 140px;
+        font-size: 24px;
+    }
+    .arrow {
+        font-size: 28px;
+        padding: 10px;
+    }
+    .arrow.left {
+        left: -40px;
+    }
+    .arrow.right {
+        right: -40px;
+    }
+    .additional-title {
+        font-size: 40px;
+    }
+    .logo-container img {
+        max-width: 80%;
+    }
+}
+
+
+/* info section */
+
+#info {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.info-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-title {
+    font-family: 'Chinese Rocks', sans-serif;
+    color: #ffef1d;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    width: 100%;
+    height: 60vh; /* Adjusted to maintain a height of 60vh */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-columns {
+    display: flex;
+    width: 100%;
+    height: 70vh; /* Set height to 70vh */
+}
+
+.column {
+    flex: 1;
+    height: 100%;
+}
+
+.left-column, .right-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-column img, .right-column img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.center-column {
+    /* Add styles for center column content */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .info-columns {
+        flex-direction: column; /* Stack columns vertically */
+        height: auto; /* Allow auto height for stacking */
+    }
+
+    .left-column {
+        width: 100%; /* Full width on mobile */
+        height: 50vh; /* Cover half the viewport */
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    .left-column img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Ensure image fits well */
+    }
+
+   .right-column {
+       display: none; /* Hide right column on mobile */
+   }
 }
 
 

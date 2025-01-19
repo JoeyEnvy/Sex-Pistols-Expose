@@ -6,14 +6,14 @@
     <title>Sex Pistols Expose</title>
     <link rel="stylesheet" href="indexStyles.css">
 </head>
-<body id="top">
+<body>
     <nav>
         <a href="https://www.facebook.com/sexpistolsexpose" class="facebook-button">
             <img src="images/facebook.png" alt="Facebook">
             <span>Find us on Facebook</span>
         </a>
         <ul>
-<li><a href="#top" class="home-link">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#info">Info</a></li>
             <li><a href="#members">Members</a></li>
             <li><a href="#gigs">Gigs</a></li>
@@ -22,44 +22,65 @@
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
+        <div class="hamburger-menu">☰</div>
         <a href="https://sexpistolsexpose.com" class="band-name">
             <span class="sex-pistols">Sex Pistols</span>
             <span class="expose">Expose</span>
         </a>
     </nav>
 
-    <!-- Scroll Progress Bar -->
     <div class="scroll-progress"></div>
 
-    <!-- Parallax Background -->
     <div class="parallax-bg"></div>
 
     <main>
-        <div class="hero-section">
-            <div class="button-slideshow">
-                <div class="arrow left">&lt;</div>
-                <button class="slide-button active" data-target="#gigs">Gigs</button>
-                <button class="slide-button" data-target="#videos">Videos</button>
-                <button class="slide-button" data-target="#contact">Book Us</button>
-                <div class="arrow right">&gt;</div>
-                <img src="images/safety-pin.png" alt="Safety Pin" class="safety-pin">
-                <p class="click-hint">Click to explore</p>
+        <section id="home">
+            <div class="hero-section">
+                <div class="button-slideshow">
+                    <div class="arrow left" id="prev-arrow">&lt;</div>
+                    <button class="slide-button active" data-target="#gigs">Gigs</button>
+                    <button class="slide-button" data-target="#videos">Videos</button>
+                    <button class="slide-button" data-target="#contact">Book Us</button>
+                    <div class="arrow right" id="next-arrow">&gt;</div>
+                    <img src="images/safety-pin.png" alt="Safety Pin" class="safety-pin">
+                    <p class="click-hint">Click to explore</p>
+                </div>
+
+                <h2 class="sub-title-1">Never Mind</h2>
+                <h3 class="sub-title-2">the bollocks</h3>
+                <h2 class="sub-title-3">here's the</h2>
+
+                <div class="logo-container">
+                    <img src="images/Logo/Logo.svg" alt="Sex Pistols Expose Logo">
+                </div>
+
+                <h2 class="additional-title">Formerly the Sex Pistols Experience</h2>
             </div>
-
-            <h2 class="sub-title-1">Never Mind</h2>
-            <h3 class="sub-title-2">the bollocks</h3>
-            <h2 class="sub-title-3">here's the</h2>
-
-            <div class="logo-container">
-                <img src="images/Logo/Logo.svg" alt="Sex Pistols Expose Logo">
-            </div>
-
-            <h2 class="additional-title">Formerly the Sex Pistols Experience</h2>
+        </section>
+<section id="info">
+    <div class="info-container">
+        <h2 class="info-title">Watch Here</h2>
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="videos/1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
+        <div class="info-columns">
+            <div class="column left-column">
+                <img src="images/Section 2 Passport.png" alt="Passport">
+            </div>
+            <div class="column center-column">
+                <!-- Content for center column -->
+            </div>
+            <div class="column right-column">
+                <img src="images/Section 2 Passport.png" alt="Passport">
+            </div>
+        </div>
+    </div>
+</section>
 
-        <!-- Sections -->
-        <section id="home"><h1>Welcome to Sex Pistols Expose</h1></section>
-        <section id="info"><h2>Info</h2></section>
+
         <section id="members"><h2>Members</h2></section>
         <section id="gigs"><h2>Gigs</h2></section>
         <section id="shop"><h2>Shop</h2></section>
@@ -71,3 +92,4 @@
     <script src="indexScript.js"></script>
 </body>
 </html>
+

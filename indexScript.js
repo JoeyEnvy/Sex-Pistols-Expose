@@ -35,28 +35,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling for navbar links (excluding Home)
-    document.querySelectorAll('nav a[href^="#"]:not([href="#top"])').forEach(anchor => {
+    // Smooth scrolling for all navbar links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
-
-    // Home button functionality
-    const homeLink = document.querySelector('nav a[href="#top"]');
-    if (homeLink) {
-        homeLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
 
     // Scroll Progress Bar
     window.addEventListener('scroll', function() {
@@ -71,3 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+//hamburger menu 
+
+document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('show');
+});
