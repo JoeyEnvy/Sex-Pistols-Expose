@@ -395,6 +395,7 @@ section:nth-child(even) {
 
 /* Unique Section Styling */
 /* General Section Styling */
+/* Unique Section Styling */
 #info-section {
     width: 100vw;
     min-height: 100vh;
@@ -432,14 +433,15 @@ section:nth-child(even) {
     object-fit: cover;
 }
 
-/* Desktop Styles (Default) */
+/* Columns Section */
 .info-columns {
-    display: flex; /* Horizontal layout for desktop */
-    flex-direction: row; 
+    display: flex; /* Ensures horizontal layout */
+    flex-direction: row; /* Horizontal alignment */
     width: 100%;
     height: 70vh; /* Set height to 70vh */
 }
 
+/* Left Column Styling */
 .info-left-column,
 .info-right-column {
     flex: 1; /* Equal width for left and right columns */
@@ -453,6 +455,7 @@ section:nth-child(even) {
     max-height: 70vh; /* Ensure images fit within their columns */
 }
 
+/* Center Column Styling */
 .info-center-column {
     flex: 1; /* Equal width for the center column */
     display: flex;
@@ -466,13 +469,14 @@ section:nth-child(even) {
     align-items: center;
 }
 
+/* Top and Bottom Images on Desktop (2x larger) */
 .info-top-image,
 .info-bottom-image {
     max-width: 50%; /* Make these images larger on desktop (2x larger than before) */
 }
 
 .middle-image-container {
-   position: relative; 
+   position: relative; /* Positioning for overlaying elements on middle image */
    display: inline-block; 
    max-width :80%; /* Make middle image larger on desktop */
    max-height :50%; 
@@ -499,14 +503,14 @@ section:nth-child(even) {
 /* Mobile Styles (Overriding Desktop) */
 @media (max-width: 768px) {
    .info-columns {
-       flex-direction: row; /* Two columns visible on mobile (left and middle) */
+       flex-direction: row; /* Keep columns horizontal on mobile */
        height:auto; 
        align-items:center; 
        justify-content:center; 
    }
 
    .info-left-column,
-   .info-center-column {
+   .info-right-column {
        flex-basis :50% ; /* Each column takes up half of the screen width */
        display:flex ;
        justify-content:center ;
@@ -518,12 +522,12 @@ section:nth-child(even) {
    }
 
    .info-left-image {
-       max-height :50vh ; /* Limit height for mobile view to half of viewport height */
+       max-height :40vh ; /* Limit height for mobile view to ensure it fits well */
        object-fit :contain ; 
    }
 
    .center-images img{
-       max-width :90%; /* Scale down images for smaller screens */
+       max-width :80%; /* Scale down images for smaller screens */
        object-fit :contain;}
 
    .center-images img:nth-child(2) { /* Middle image (Am a Mess) should be largest */
@@ -541,14 +545,14 @@ section:nth-child(even) {
 /* Extra Small Screens (Below ~480px wide) */
 @media (max-width: 480px) {
    .info-columns {
-       flex-direction: column; /* Stack columns vertically for very small screens */
+       flex-direction: row; /* Keep columns horizontal for very small screens as well */
        align-items:center ; 
        justify-content:center ;
    }
 
    .info-left-column,
    .info-center-column {
-       width :100% ; /* Each column takes full width of viewport on extra small screens */
+       width :50% ; /* Each column takes half of viewport width on extra small screens */
        text-align:center ;
    }
 
