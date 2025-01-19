@@ -451,7 +451,6 @@ section:nth-child(even) {
 .info-left-image,
 .info-right-image {
     max-height: 70vh; /* Ensure images fit within their columns */
-    object-fit: contain; /* Maintain aspect ratio */
 }
 
 /* Center Column Styling */
@@ -470,14 +469,14 @@ section:nth-child(even) {
 
 .info-top-image,
 .info-bottom-image {
-    max-width: 30%; /* Make these smaller compared to the middle image */
+    max-width: 40%; /* Smaller compared to middle image */
 }
 
 .middle-image-container {
    position: relative; /* Positioning for overlaying elements on middle image */
-   display: inline-block; /* Ensures proper layout of middle image and icons */
-   max-width :40%; /* Middle image is slightly larger than top/bottom images */
-   max-height :40%; 
+   display: inline-block; 
+   max-width :80%; /* Make middle image larger on desktop */
+   max-height :50%; 
 }
 
 .info-middle-image {
@@ -490,43 +489,57 @@ section:nth-child(even) {
 .info-middle-image:hover {
    transform :scale(1.1);}
 
-/* Download Icon and Arrow Styles */
+/* Download Icon Styles */
 .info-download-icon {
    position:absolute; 
    bottom:-10px; 
    right:-10px; 
-   max-width :40%; /* Ensure download icon is small and proportional */
+   max-width :40%; 
 }
 
-.css-arrow {
-   position:absolute; 
-   left:-25px; /* Adjust position to place arrow to the left of the badge */
-   top :50%; 
-   transform :translateY(-50%); 
-   width :20px; 
-   height :20px; 
-   border-left :5px solid transparent ; 
-   border-right :5px solid transparent ; 
-   border-top :10px solid #ff0000 ; /* Red arrow pointing leftward */
-}
-
-/* Mobile Styles */
+/* Responsive Design for Mobile Devices */
 @media (max-width: 768px) {
    .info-columns {
-       flex-direction: column; /* Stack columns vertically on mobile */
-       height:auto; /* Allow auto height for stacking */
-       align-items:center; /* Center-align content vertically */
-       justify-content:center; /* Center content in the column */
+       flex-direction: row; /* Keep columns horizontal on mobile */
+       height:auto; 
+       align-items:center; 
+       justify-content:center; 
    }
 
-   .info-left-column img,
-   .info-right-column img {
-       display:none; /* Hide right column and left column images on mobile */
+   .info-left-column {
+       flex-basis: 50%; /* Left column takes up half of the screen width on mobile */
+       display:flex ;
+       justify-content:center ;
+       align-items:center ;
+   }
+
+   .info-left-image {
+       max-height :50vh ; /* Limit height for mobile view to half of viewport height */
+       object-fit :contain ; 
+   }
+
+   .info-center-column {
+       flex-basis :50% ; /* Center column takes up half of screen width on mobile */
+       display:flex ;
+       justify-content:center ;
+       align-items:center ;
    }
 
    .center-images img{
-       max-width :90%; /* Increase width slightly on mobile for better visibility */
-       object-fit :contain;}
+       max-width :80%; /* Increase width slightly on mobile for better visibility */
+       object-fit :contain;
+
+       /* Adjust sizes for mobile view, making middle image largest */
+       &:nth-child(2) { /* Middle image (Am a Mess) should be largest */
+           max-width :90%; /* Make it larger than others on mobile */
+           max-height :60vh; /* Ensure it fits well within viewport height */
+       }
+       
+       &:nth-child(1), &:nth-child(3) { /* Top and bottom images (God Save The Queen and Never Mind Badge) should be smaller */
+           max-width :70%;
+           max-height :40vh; /* Ensure they fit nicely in mobile view as well */
+       }
+   }
 }
 
 
