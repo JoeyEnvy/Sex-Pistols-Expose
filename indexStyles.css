@@ -393,11 +393,73 @@ section:nth-child(even) {
 
 /* info section */
 
-.center-column {
+/* Unique Section Styling */
+#info-section {
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Stack images vertically */
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.info-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Video Section */
+.info-title {
+    font-family: 'Chinese Rocks', sans-serif;
+    color: #ffef1d;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    width: 100%;
+    height: 60vh; /* Adjusted to maintain a height of 60vh */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Columns Section */
+.info-columns {
+    display: flex; /* Ensures horizontal layout */
+    flex-direction: row; /* Horizontal alignment */
+    width: 100%;
+    height: 70vh; /* Set height to 70vh */
+}
+
+/* Left Column Styling */
+.info-left-column,
+.info-right-column {
+    flex: 1; /* Equal width for left and right columns */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-left-image,
+.info-right-image {
+    max-height: 70vh; /* Ensure images fit within their columns */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+/* Center Column Styling */
+.info-center-column {
+    flex: 1; /* Equal width for the center column */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .center-images {
@@ -406,32 +468,65 @@ section:nth-child(even) {
     align-items: center;
 }
 
-.hover-image {
-    max-width: 80%; /* Adjust width as needed */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+.info-top-image,
+.info-bottom-image {
+    max-width: 30%; /* Make these smaller compared to the middle image */
 }
 
-.top-image {
-    margin-bottom: 10px; /* Space below top image */
+.middle-image-container {
+   position: relative; /* Positioning for overlaying elements on middle image */
+   display: inline-block; /* Ensures proper layout of middle image and icons */
+   max-width :40%; /* Middle image is slightly larger than top/bottom images */
+   max-height :40%; 
 }
 
-.middle-image {
-    margin: 10px 0; /* Space above and below middle image */
+.info-middle-image {
+   display:block; 
+   max-width :100%; 
+   max-height :100%; 
+   object-fit :contain ; 
+   transition :transform .3s ease-in-out;}
+
+.info-middle-image:hover {
+   transform :scale(1.1);}
+
+/* Download Icon and Arrow Styles */
+.info-download-icon {
+   position:absolute; 
+   bottom:-10px; 
+   right:-10px; 
+   max-width :40%; /* Ensure download icon is small and proportional */
 }
 
-.middle-image:hover {
-    transform: scale(1.1); /* Enlarge on hover */
+.css-arrow {
+   position:absolute; 
+   left:-25px; /* Adjust position to place arrow to the left of the badge */
+   top :50%; 
+   transform :translateY(-50%); 
+   width :20px; 
+   height :20px; 
+   border-left :5px solid transparent ; 
+   border-right :5px solid transparent ; 
+   border-top :10px solid #ff0000 ; /* Red arrow pointing leftward */
 }
 
-.bottom-image {
-    margin-top: 10px; /* Space above bottom image */
-}
-
-/* Mobile Styles for Center Column Images */
+/* Mobile Styles */
 @media (max-width: 768px) {
-    .hover-image {
-        max-width: 90%; /* Increase width on mobile for better visibility */
-    }
+   .info-columns {
+       flex-direction: column; /* Stack columns vertically on mobile */
+       height:auto; /* Allow auto height for stacking */
+       align-items:center; /* Center-align content vertically */
+       justify-content:center; /* Center content in the column */
+   }
+
+   .info-left-column img,
+   .info-right-column img {
+       display:none; /* Hide right column and left column images on mobile */
+   }
+
+   .center-images img{
+       max-width :90%; /* Increase width slightly on mobile for better visibility */
+       object-fit :contain;}
 }
 
 
