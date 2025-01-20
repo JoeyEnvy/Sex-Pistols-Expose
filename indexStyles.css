@@ -703,6 +703,91 @@ z-index: 50px;
     margin: 20px 0;
 }
 
+/* quote slider and title for members */
+
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('fonts/ChineseRocks.woff2') format('woff2');
+}
+
+.quote-slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 50px;
+}
+
+.quote-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.quote {
+    flex: 0 0 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    font-family: 'Chinese Rocks', sans-serif;
+    text-align: center;
+    border: 1px solid black;
+    color: white;
+}
+
+.quote p {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.quote .author {
+    font-style: italic;
+    font-size: 54px;
+}
+
+.members-heading {
+    font-family: 'Chinese Rocks', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 81px;
+    color: white;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .quote p {
+        font-size: 21px;
+    }
+    .quote .author {
+        font-size: 36px;
+    }
+    .members-heading {
+        font-size: 54px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .quote-slider {
+        padding: 10px 0 5px; /* Reduced padding, especially at the bottom */
+        margin-top: 20px; /* Reduced top margin */
+    }
+    .quote {
+        padding: 10px 15px 5px; /* Reduced padding, especially at the bottom */
+    }
+    .quote p {
+        font-size: 18px;
+    }
+    .quote .author {
+        font-size: 27px;
+    }
+    .members-heading {
+        font-size: 42px;
+        margin-top: 20px; /* Reduced top margin */
+    }
+}
+
+
+
+/* profiles for members */
+
 .members-grid {
     width: 100%;
     height: 90vh; /* Reduced height to move grids closer */
@@ -844,44 +929,100 @@ margin-top: 1040px;
 
 #gigs {
     width: 100vw;
-    height: 600vh; /* Keep this height */
+    height: 600vh;
     background-image: url('images/Backgrounds/fwefgwefweg_edited.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
     z-index: 40;
-    margin-top: 0vh; /* Add margin to push it down below the red divider */
+    margin-top: 0vh;
+}
+
+.gigs-title-wrapper {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: 100px;
+    z-index: 41;
 }
 
 .gigs-main-title {
     color: white;
-    text-align: center;
     font-family: 'Chinese Rocks', sans-serif;
-    position: absolute;
-    top: 100px; /* Moves title upwards by 500px */
-    width: 100%;
-    z-index: 60;
-    padding: 20px; /* Add some padding for better appearance */
-    background-color: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
-    border: 5px dashed #ff0000; /* Red dashed border for punk style */
-    border-radius: 10px; /* Rounded corners for a softer look */
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Glow effect */
+    font-size: 2em;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 5px dashed #ff0000;
+    border-bottom: 5px dashed #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    position: relative;
+    z-index: 1;
 }
 
 .safety-pin {
-    width: 70px; /* Increased size */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 10px; /* Set margin to create space between pins and text */
-    z-index: 100; /* High z-index for visibility */
+    width: 210px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
 }
 
 .left-pin {
-    transform: rotate(-45deg); /* Slight rotation for style */
+    left: calc(50% - 450px); /* Moved inwards by 300px */
+    transform: rotate(-45deg) translateY(-50%);
 }
 
 .right-pin {
-    transform: rotate(45deg); /* Slight rotation for style */
+    right: calc(50% - 450px); /* Moved inwards by 300px */
+    transform: rotate(45deg) translateY(-50%);
 }
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .safety-pin {
+        width: 150px;
+    }
+    .left-pin {
+        left: calc(50% - 300px);
+    }
+    .right-pin {
+        right: calc(50% - 300px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gigs-main-title {
+        font-size: 1.5em;
+    }
+    .safety-pin {
+        width: 100px;
+    }
+    .left-pin {
+        left: calc(50% - 200px);
+    }
+    .right-pin {
+        right: calc(50% - 200px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gigs-main-title {
+        font-size: 1.2em;
+    }
+    .safety-pin {
+        width: 80px;
+    }
+    .left-pin {
+        left: calc(50% - 150px);
+    }
+    .right-pin {
+        right: calc(50% - 150px);
+    }
+}
+
 
 #gigs {
     position: relative; /* Ensures absolute positioning works correctly */

@@ -144,3 +144,17 @@ window.onload = function () {
 	playRandomVideo();
 };
 
+
+//quote sllider between members and information 
+
+const quoteContainer = document.querySelector('.quote-container');
+const quotes = document.querySelectorAll('.quote');
+let currentIndex = 0;
+
+function slideQuotes() {
+    currentIndex = (currentIndex + 1) % quotes.length;
+    quoteContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+setInterval(slideQuotes, 3000);
+
