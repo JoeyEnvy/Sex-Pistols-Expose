@@ -936,30 +936,34 @@ opacity: 100%;
     background-position: center;
     position: relative;
     z-index: 40;
-    margin-top: -75px;  /* Pull section up by red divider height */
-    padding: 100px 5% 50px;  /* Increase top padding */
+    margin-top: -75px;
+    padding: 100px 5% 50px;
     box-sizing: border-box;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gigs-title-wrapper {
-    position: relative;
-    width: 100vw !important;
+width: 100vw !important;
     display: flex;
+padding-top: 25px;
+padding-bottom: 25px;
     justify-content: center;
     align-items: center;
-    margin-top: 0;  /* Remove margin-top */
-    margin-bottom: 550px;  /* Remove margin-bottom */
+    margin-bottom: 50px;
+    position: relative;
 }
 
-/* Main Title Styling */
 .gigs-main-title {
     color: white;
+padding-top: 25px;
+padding-bottom: 25px;
     font-family: 'Chinese Rocks', sans-serif;
     font-size: 2em;
     text-align: center;
     margin: 0 auto;
-    padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.7);
     width: 100vw !important;
     border-top: 5px dashed #ff0000;
@@ -969,33 +973,28 @@ opacity: 100%;
         0 0 20px rgba(0, 0, 255, 0.5);
     position: relative;
     z-index: 1;
-    width: 50%; /* Adjust width as needed */
 }
 
-/* Safety Pin Base Styling */
 .safety-pin {
-    width: 120px;  /* Slightly larger default size */
+    width: 120px;
     height: auto;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    transition: transform 0.3s ease;
 }
 
-/* Left Safety Pin Positioning */
 .left-pin {
     left: calc(50% - 380px);
     transform: rotate(-45deg) translateY(-50%);
 }
 
-/* Right Safety Pin Positioning */
 .right-pin {
     right: calc(50% - 380px);
     transform: rotate(45deg) translateY(-50%);
 }
 
-/* Hover Effects for Safety Pins */
 .safety-pin:hover {
     transform: 
         rotate(0deg) 
@@ -1003,71 +1002,58 @@ opacity: 100%;
         scale(1.1);
 }
 
-/* Responsive Adjustments for Large Screens (1200px+) */
-@media screen and (max-width: 1200px) {
-    .safety-pin {
-        width: 100px;
-    }
-    .left-pin {
-        left: calc(50% - 320px);
-    }
-    .right-pin {
-        right: calc(50% - 320px);
-    }
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('Fonts/chinese rocks rg.otf') format('opentype');
 }
 
-/* Tablet Responsive Design (768px - 1200px) */
-@media screen and (max-width: 768px) {
-    #gigs {
-        padding: 80px 2% 40px;
-    }
-    .gigs-main-title {
-        font-size: 1.6em;
-        width: 70%;
-        min-width: 250px;
-    }
-    .safety-pin {
-        width: 80px;
-    }
-    .left-pin {
-        left: calc(50% - 250px);
-    }
-    .right-pin {
-        right: calc(50% - 250px);
-    }
+.bandsintown-widget {
+    width: 100%;
+    max-width: 75%;
+    border: 25px solid white;
+    border-radius: 10px;
+    padding: 0;
+    margin-top: 20px;
 }
 
-/* Mobile Responsive Design (Below 480px) */
-@media screen and (max-width: 480px) {
-    #gigs {
-        padding: 60px 1% 30px;
-    }
-    .gigs-main-title {
-        font-size: 1.3em;
-        width: 90%;
-        min-width: 200px;
-        padding: 15px 0;
-    }
-    .safety-pin {
-        width: 60px;
-    }
-    .left-pin {
-        left: calc(50% - 200px);
-    }
-    .right-pin {
-        right: calc(50% - 200px);
-    }
+/* Ensure widget uses Chinese Rocks font */
+.bit-widget-initializer {
+    font-family: 'Chinese Rocks', sans-serif !important;
 }
 
-/* Ultra Small Devices */
-@media screen and (max-width: 375px) {
-    .gigs-main-title {
-        font-size: 1.1em;
-    }
-    .safety-pin {
-        width: 50px;
-    }
+/* Target specific elements for color alternation */
+.bit-event-list .bit-event:nth-child(odd) .bit-event-title {
+    color: red !important;
 }
+
+.bit-event-list .bit-event:nth-child(even) .bit-event-title {
+    color: blue !important;
+}
+
+/* Larger buttons with more prominent styling */
+.bit-event-ticket-cta,
+.bit-play-my-city-cta {
+    background-color: red !important;
+    color: white !important;
+    padding: 15px 40px !important;
+    font-size: 18px !important;
+    text-transform: uppercase !important;
+    border-radius: 5px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.bit-event-ticket-cta:hover,
+.bit-play-my-city-cta:hover {
+    background-color: blue !important;
+}
+
+.bit-event-rsvp-cta {
+    background-color: white !important;
+    color: black !important;
+    padding: 10px 30px !important;
+    text-transform: uppercase !important;
+}
+
 
 
 .yellow-divider {
