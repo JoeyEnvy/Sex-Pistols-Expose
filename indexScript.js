@@ -158,3 +158,19 @@ function slideQuotes() {
 
 setInterval(slideQuotes, 3000);
 
+
+//badge slider before fammous people 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slideContainer = document.querySelector('.badge-slide-container');
+    let currentSlide = 0;
+
+    function nextSlide() {
+        currentSlide++;
+        if (currentSlide > 2) currentSlide = 0;
+        slideContainer.style.transform = `translateX(-${currentSlide * 33.33}%)`;
+    }
+
+    setInterval(nextSlide, 3000);
+});
+
