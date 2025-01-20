@@ -953,6 +953,137 @@ margin-top: 0px;
 
 
 
+/* Base Styles */
+.famous-people-section {
+    width: 100vw;
+    height: 350vh;
+    position: absolute;
+    top: 2900px;
+    left: 0;
+    background-color: black;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.famous-people-title {
+    color: white;
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 4rem;
+    margin-top: 110px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 3000; 
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.famous-people-wrapper {
+    width: 65%;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.famous-people-background {
+    width: 100%;
+    height: 100%;
+    background-image: url('images/Famous\ Peoople.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Tablet Responsiveness */
+@media screen and (max-width: 1024px) {
+    .famous-people-section {
+        height: 250vh;
+        top: 2500px;
+    }
+
+    .famous-people-title {
+        font-size: 3rem;
+        margin-top: 80px;
+    }
+
+    .famous-people-wrapper {
+        width: 80%;
+        height: 70%;
+    }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .famous-people-section {
+        height: 200vh;
+        top: 2000px;
+    }
+
+    .famous-people-title {
+        font-size: 2.5rem;
+        margin-top: 50px;
+        letter-spacing: 2px;
+    }
+
+    .famous-people-wrapper {
+        width: 90%;
+        height: 60%;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .famous-people-section {
+        height: 150vh;
+        top: 1800px;
+    }
+
+    .famous-people-title {
+        font-size: 2rem;
+        margin-top: 30px;
+        letter-spacing: 1px;
+    }
+
+    .famous-people-wrapper {
+        width: 95%;
+        height: 50%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .famous-people-section {
+        position: static;
+        height: auto;
+        background-color: white;
+    }
+
+    .famous-people-title {
+        color: black;
+        font-size: 2rem;
+        margin-top: 20px;
+        text-shadow: none;
+    }
+
+    .famous-people-wrapper {
+        width: 100%;
+        height: 500px;
+    }
+
+    .famous-people-background {
+        background-color: transparent;
+        border: 1px solid black;
+    }
+}
+
+
+
+
+
 .red-divider {
     margin-top: 5000px;
     width: 100vw;
