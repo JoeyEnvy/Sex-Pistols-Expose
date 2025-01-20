@@ -1078,13 +1078,13 @@ padding-bottom: 25px;
     align-items: flex-start;
     padding: 20px;
     gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .gigs-poster-column {
-    width: 50%;
+    width: calc(50% - 10px);
     padding: 15px;
     box-sizing: border-box;
-    position: relative;
 }
 
 .gigs-poster-image {
@@ -1105,7 +1105,7 @@ padding-bottom: 25px;
 }
 
 .gigs-right-column {
-    width: 50%;
+    width: calc(50% - 10px);
     display: flex;
     flex-direction: column;
 }
@@ -1121,13 +1121,13 @@ padding-bottom: 25px;
     padding: 20px;
     position: relative;
     margin-bottom: 20px;
+    border-radius: 10px; /* Added rounded corners */
 }
 
 .gigs-social-column h3, 
 .gigs-social-column p {
     color: white;
-    font-family: 'Chinese Rocks', sans-serif;
-    margin-bottom: 15px;
+    font-family: 'Chinese Rocks', sans-serif; /* Ensure using Chinese Rocks for this text */
 }
 
 .gigs-social-icons {
@@ -1135,81 +1135,124 @@ padding-bottom: 25px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Space between icons */
 }
 
 .social-icon {
-    width: 75px;
+    width: 75px; 
     height: 75px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    border-radius: 5px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: white; 
+    border-radius: 5px; 
+    transition: transform 0.3s ease, background-color 0.3s ease; 
 }
 
 .social-icon:hover {
-    transform: scale(1.2);
+   transform: scale(1.2);
 }
 
 .social-icon img {
-    width: 60px;
-    height: 60px; 
+   width: 60px; 
+   height: 60px; 
 }
 
 .more-gigs-link {
-    font-size: 1.5em;
-    transition: all 0.3s ease; 
+   font-size: 1.5em; 
+   transition: all 0.3s ease; 
 }
 
 .more-gigs-link:hover {
-    transform: scale(1.1);
+   transform: scale(1.1); 
 }
 
 .more-gigs-image {
-    position: absolute; 
-    bottom: 35px;
-    right: calc(10px + 250px);
-    width: 60px;
-    height: 60px; 
-    z-index: 10; 
-    transition: transform 0.3s ease; 
+   position: absolute; 
+   bottom: 35px; 
+   right: calc(10px + 250px); 
+   width: 60px; 
+   height: 60px; 
+   z-index: 10; 
+   transition: transform 0.3s ease; 
 }
 
 .more-gigs-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+   width: 100%; 
+   height: 100%; 
+   object-fit: contain; 
 }
 
 .more-gigs-image:hover {
-   transform: scale(1.2) rotate(5deg);
+   transform: scale(1.2) rotate(5deg); 
 }
 
+/* Gig History Section */
 .gig-history {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 20px;
-    font-size: 14px;
-    font-family: 'MailartRubberstamp-Regular', sans-serif;
-    max-height: 300px;
-    overflow-y: auto;
+   width: 100%; /* Full width */
+   background-color: rgba(0, 0, 0, 0.4); /* Background color */
+   padding: 20px; /* Padding for content */
+   font-size: 16px; /* Font size set to Arial */
+   font-family: Arial, sans-serif; /* Font family set to Arial */
+   max-height: 600px; /* Increased height to double previous size */
+   overflow-y: auto; /* Scroll if content exceeds height */
+   border-radius: 10px; /* Rounded corners for consistency */
 }
 
 .gig-history h3 {
-    color: white;
-    margin-bottom: 10px;
+    color: white; /* Title color */
+    margin-bottom: 15px; /* Spacing below title */
+    font-family: 'Chinese Rocks', sans-serif; /* Title font set to Chinese Rocks */
+    font-size: 32px; /* Increased font size for the title */
 }
 
 .gig-history h4 {
-    color: white;
-    margin-bottom: 10px;
+   color:white; /* Subheading color */
+   margin-bottom :10px; /* Spacing below subheading */
 }
 
 .gig-history p {
-    color: white;
-    margin: 5px 0;
+   color:white; /* Paragraph text color */
+   margin :5px 0; /* Spacing between paragraphs */
+}
+
+/* Improved scrollbar styling for better aesthetics */
+.gig-history::-webkit-scrollbar {
+   width :10px; /* Width of scrollbar */
+}
+
+.gig-history::-webkit-scrollbar-track {
+   background :rgba(255,255,255,0.1); /* Background of scrollbar track */
+   border-radius :5px; /* Rounded corners for track */
+}
+
+.gig-history::-webkit-scrollbar-thumb {
+   background :rgba(255,255,255,0.3); /* Color of scrollbar thumb */
+   border-radius :5px; /* Rounded corners for thumb */
+}
+
+.gig-history::-webkit-scrollbar-thumb:hover {
+   background :rgba(255,255,255,0.5); /* Hover state for thumb */
+}
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width :768px) {
+   .gigs-additional-info {
+       flex-direction :column; /* Stack vertically on small screens */
+       align-items :center; /* Center items horizontally on smaller screens */
+       gap :10px; /* Adjust gap for smaller screens */
+   }
+
+   .gigs-poster-column,
+   .gigs-right-column {
+       width :100%; /* Full width on small screens */
+       padding :5px; /* Reduced padding for smaller screens */
+   }
+
+   .more-gigs-image {
+       right :10px; /* Adjust position on small screens */
+       bottom :10px;
+   }
 }
 
 
