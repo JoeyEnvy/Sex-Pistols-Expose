@@ -936,20 +936,20 @@ opacity: 100%;
     background-position: center;
     position: relative;
     z-index: 40;
-    margin-top: 0vh;
-    padding: 100px 5% 50px;
+    margin-top: -75px;  /* Pull section up by red divider height */
+    padding: 100px 5% 50px;  /* Increase top padding */
     box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
-/* Title Wrapper Configuration */
 .gigs-title-wrapper {
     position: relative;
-    width: 100%;
+    width: 100vw !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-top: 0;  /* Remove margin-top */
+    margin-bottom: 550px;  /* Remove margin-bottom */
 }
 
 /* Main Title Styling */
@@ -961,6 +961,7 @@ opacity: 100%;
     margin: 0 auto;
     padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw !important;
     border-top: 5px dashed #ff0000;
     border-bottom: 5px dashed #ff0000;
     box-shadow: 
@@ -969,7 +970,6 @@ opacity: 100%;
     position: relative;
     z-index: 1;
     width: 50%; /* Adjust width as needed */
-    min-width: 300px; /* Minimum width for readability */
 }
 
 /* Safety Pin Base Styling */
