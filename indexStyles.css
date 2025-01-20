@@ -916,10 +916,8 @@ opacity: 100%;
     }
 }
 
-/* dividers and gig section */
-
 .red-divider {
-margin-top: 1040px;
+    margin-top: 1040px;
     width: 100vw;
     height: 75px;
     background-color: rgba(255, 0, 0, 0.8);
@@ -927,25 +925,34 @@ margin-top: 1040px;
     z-index: 50;
 }
 
+/* Gigs Section Full CSS Solution */
+
+/* Gigs Section Global Styling */
 #gigs {
     width: 100vw;
-    height: 600vh;
+    height: auto;
     background-image: url('images/Backgrounds/fwefgwefweg_edited.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
     z-index: 40;
     margin-top: 0vh;
+    padding: 100px 5% 50px;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Title Wrapper Configuration */
 .gigs-title-wrapper {
-    position: absolute;
-    width: 100vw;
-    left: 0;
-    top: 100px;
-    z-index: 41;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
 }
 
+/* Main Title Styling */
 .gigs-main-title {
     color: white;
     font-family: 'Chinese Rocks', sans-serif;
@@ -956,49 +963,93 @@ margin-top: 1040px;
     background-color: rgba(0, 0, 0, 0.7);
     border-top: 5px dashed #ff0000;
     border-bottom: 5px dashed #ff0000;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    box-shadow: 
+        0 0 10px rgba(255, 0, 0, 0.8), 
+        0 0 20px rgba(0, 0, 255, 0.5);
     position: relative;
     z-index: 1;
+    width: 50%; /* Adjust width as needed */
+    min-width: 300px; /* Minimum width for readability */
 }
 
+/* Safety Pin Base Styling */
 .safety-pin {
-    width: 210px;
+    width: 120px;  /* Slightly larger default size */
     height: auto;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
+/* Left Safety Pin Positioning */
 .left-pin {
-    left: calc(50% - 450px); /* Moved inwards by 300px */
+    left: calc(50% - 380px);
     transform: rotate(-45deg) translateY(-50%);
 }
 
+/* Right Safety Pin Positioning */
 .right-pin {
-    right: calc(50% - 450px); /* Moved inwards by 300px */
+    right: calc(50% - 380px);
     transform: rotate(45deg) translateY(-50%);
 }
 
-/* Responsive adjustments */
+/* Hover Effects for Safety Pins */
+.safety-pin:hover {
+    transform: 
+        rotate(0deg) 
+        translateY(-50%) 
+        scale(1.1);
+}
+
+/* Responsive Adjustments for Large Screens (1200px+) */
 @media screen and (max-width: 1200px) {
     .safety-pin {
-        width: 150px;
+        width: 100px;
     }
     .left-pin {
-        left: calc(50% - 300px);
+        left: calc(50% - 320px);
     }
     .right-pin {
-        right: calc(50% - 300px);
+        right: calc(50% - 320px);
     }
 }
 
+/* Tablet Responsive Design (768px - 1200px) */
 @media screen and (max-width: 768px) {
+    #gigs {
+        padding: 80px 2% 40px;
+    }
     .gigs-main-title {
-        font-size: 1.5em;
+        font-size: 1.6em;
+        width: 70%;
+        min-width: 250px;
     }
     .safety-pin {
-        width: 100px;
+        width: 80px;
+    }
+    .left-pin {
+        left: calc(50% - 250px);
+    }
+    .right-pin {
+        right: calc(50% - 250px);
+    }
+}
+
+/* Mobile Responsive Design (Below 480px) */
+@media screen and (max-width: 480px) {
+    #gigs {
+        padding: 60px 1% 30px;
+    }
+    .gigs-main-title {
+        font-size: 1.3em;
+        width: 90%;
+        min-width: 200px;
+        padding: 15px 0;
+    }
+    .safety-pin {
+        width: 60px;
     }
     .left-pin {
         left: calc(50% - 200px);
@@ -1008,24 +1059,14 @@ margin-top: 1040px;
     }
 }
 
-@media screen and (max-width: 480px) {
+/* Ultra Small Devices */
+@media screen and (max-width: 375px) {
     .gigs-main-title {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
     .safety-pin {
-        width: 80px;
+        width: 50px;
     }
-    .left-pin {
-        left: calc(50% - 150px);
-    }
-    .right-pin {
-        right: calc(50% - 150px);
-    }
-}
-
-
-#gigs {
-    position: relative; /* Ensures absolute positioning works correctly */
 }
 
 
@@ -1036,6 +1077,8 @@ margin-top: 1040px;
     position: relative;
     z-index: 50;
 }
+
+
 
 
 
