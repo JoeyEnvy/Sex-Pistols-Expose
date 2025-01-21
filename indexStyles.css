@@ -1484,13 +1484,8 @@ padding-bottom: 25px;
 /* dividers and gig section */
 
 
-/*shop section */
-
 .bandcamp-shop {
     position: relative;
-    background-image: url('images/Me Nath New Background Expose Shirt.jpg');
-    background-size: cover;
-    background-position: center;
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -1498,16 +1493,19 @@ padding-bottom: 25px;
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
+    overflow: hidden;
 }
 
-.bandcamp-shop::before {
-    content: "";
+.background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('images/Me Nath New Background Expose Shirt.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.55; /* Updated to 55% opacity */
     z-index: 1;
 }
 
@@ -1515,8 +1513,8 @@ padding-bottom: 25px;
     font-family: 'Chinese Rocks', sans-serif;
     color: white;
     text-align: center;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+    margin-bottom: 0.25rem; /* Slightly reduced margin for desktop */
+    margin-top: 80px;
     font-size: clamp(2rem, 5vw, 4rem);
     position: relative;
     z-index: 2;
@@ -1539,6 +1537,7 @@ padding-bottom: 25px;
     max-width: 100%;
     border: 0;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    opacity: 1;
 }
 
 /* Comprehensive Responsive Breakpoints */
@@ -1547,11 +1546,15 @@ padding-bottom: 25px;
         width: 90%;
         height: auto;
     }
-    
+
+
+
     .bandcamp-container iframe {
         height: 60vh;
     }
 }
+
+
 
 @media screen and (max-width: 768px) {
     .bandcamp-container {
@@ -1559,18 +1562,176 @@ padding-bottom: 25px;
     }
     
     .bandcamp-container iframe {
-        height: 50vh;
+        height: 70vh; /* Increased vertical length on mobile */
     }
     
     .shop-title {
-        margin: 1rem 0;
+        margin: 1rem 0; /* Ensures title remains above embed with margin */
         font-size: clamp(1.5rem, 4vw, 3rem);
     }
 }
 
 @media screen and (max-width: 480px) {
     .bandcamp-container iframe {
-        height: 40vh;
+        height: 65vh; /* Further adjusted for smaller screens */
     }
 }
+
+
+
+/* videos sections */ 
+
+
+
+.videos-section {
+    position: relative;
+    width: 100vw;
+    height: 150vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.videos-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/Backgrounds/MeNathVideosBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.videos-title {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 5px dashed #d8bfd8; /* Light Purple */
+    border-bottom: 5px dashed #ffffe0; /* Light Yellow */
+    box-shadow: 
+        0 0 10px rgba(216, 191, 216, 0.8), 
+        0 0 20px rgba(255, 255, 224, 0.5);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.videos-container {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 6rem);
+    z-index: 2;
+    position: relative;
+}
+
+.video-preview-column {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.main-video-preview {
+    width: 90%;
+    aspect-ratio: 16/9;
+    background: rgba(0,0,0,0.5);
+}
+
+.main-video-preview iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.video-list-column {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 4rem 2rem 2rem;
+    overflow-y: auto;
+}
+
+.video-list-item {
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.video-list-item:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+@media screen and (max-width: 1024px) {
+    .videos-section {
+        height: 120vh;
+    }
+
+    .video-list-column {
+        padding: 2rem 3rem 2rem 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .videos-section {
+        height: 100vh;
+    }
+
+    .videos-container {
+        flex-direction: column;
+    }
+
+    .video-preview-column,
+    .video-list-column {
+        width: 100%;
+        height: 50%;
+    }
+
+    .videos-title {
+        font-size: 1.5em;
+        padding: 10px 0;
+    }
+
+    .video-list-column {
+        padding: 1rem 2rem;
+    }
+
+    .video-list-item {
+        padding: 0.75rem;
+        margin: 0.25rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .videos-section {
+        height: 90vh;
+    }
+
+    .videos-title {
+        font-size: 1.2em;
+    }
+
+    .video-list-column {
+        padding: 0.5rem 1rem;
+    }
+
+    .video-list-item {
+        padding: 0.5rem;
+        margin: 0.15rem;
+    }
+}
+
 
