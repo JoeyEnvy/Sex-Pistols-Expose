@@ -803,13 +803,28 @@ z-index: 50px;
     content: '';
     position: absolute;
     left: 0;
-opacity: 100%;
-    bottom: -115vh; /* Increased from -100vh to -115vh */
+    opacity: 100%;
+    bottom: -115vh;
     width: 100%;
-    height: 115vh; /* Increased from 100vh to 115vh */
-  background-color: rgba(0, 0, 0, 0.99); // Increased to 90% opacity
+    height: 115vh;
+    background-color: rgba(0, 0, 0, 0.99);
     z-index: 1;
 }
+
+@media screen and (max-width: 768px) {
+    .members-grid::after {
+        bottom: -70vh; /* Slightly moved up from previous -90vh */
+        height: 90vh; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .members-grid::after {
+        bottom: -60vh; /* Slightly moved up from previous -80vh */
+        height: 80vh; 
+    }
+}
+
 
 .members-grid div {
     display: flex;
@@ -918,29 +933,28 @@ opacity: 100%;
 
 
 .blue-divider {
-margin-bottom: -4145px;
+    margin-bottom: -4145px;
     width: 100vw;
     height: 125px;
-    background-color: rgba(0, 0, 255, 0.5); /* Blue with 50% opacity */
-    position: absolute; /* Changed from relative */
-    left: 0; /* Ensure full width */
-    margin-top: 20px; /* Optional: add some space above divider */
-z-index:5000 ; 
+    background-color: rgba(0, 0, 255, 0.5);
+    position: absolute;
+    left: 0;
+    margin-top: 20px;
+    z-index: 5000;
 }
 
-
 .badge-slider {
-margin-top: 0px;
+    margin-top: 0px;
     position: relative;
     width: 100%;
-    height: 200px;  /* Adjust based on your image sizes */
+    height: 200px;
     overflow: hidden;
 }
 
 .badge-slide-container {
     display: flex;
     position: absolute;
-    width: 300%;  /* 3 images wide */
+    width: 300%;
     height: 100%;
     transition: transform 1s ease-in-out;
 }
@@ -950,8 +964,6 @@ margin-top: 0px;
     height: 60%;
     object-fit: contain;
 }
-
-
 
 /* Base Styles */
 .famous-people-section {
@@ -964,7 +976,7 @@ margin-top: 0px;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -972,7 +984,7 @@ margin-top: 0px;
     color: white;
     font-family: 'Chinese Rocks', sans-serif;
     font-size: 4rem;
-    margin-top: 110px;
+    margin-top: 400px;
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -998,100 +1010,81 @@ margin-top: 0px;
     background-repeat: no-repeat;
 }
 
-/* Tablet Responsiveness */
-@media screen and (max-width: 1024px) {
-    .famous-people-section {
-        height: 250vh;
-        top: 2500px;
-    }
-
-    .famous-people-title {
-        font-size: 3rem;
-        margin-top: 80px;
-    }
-
-    .famous-people-wrapper {
-        width: 80%;
-        height: 70%;
-    }
-}
-
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-    .famous-people-section {
-        height: 200vh;
-        top: 2000px;
-    }
-
-    .famous-people-title {
-        font-size: 2.5rem;
-        margin-top: 50px;
-        letter-spacing: 2px;
-    }
-
-    .famous-people-wrapper {
-        width: 90%;
-        height: 60%;
-    }
-}
-
-/* Small Mobile Devices */
-@media screen and (max-width: 480px) {
-    .famous-people-section {
-        height: 150vh;
-        top: 1800px;
-    }
-
-    .famous-people-title {
-        font-size: 2rem;
-        margin-top: 30px;
-        letter-spacing: 1px;
-    }
-
-    .famous-people-wrapper {
-        width: 95%;
-        height: 50%;
-    }
-}
-
-/* Print Styles */
-@media print {
-    .famous-people-section {
-        position: static;
-        height: auto;
-        background-color: white;
-    }
-
-    .famous-people-title {
-        color: black;
-        font-size: 2rem;
-        margin-top: 20px;
-        text-shadow: none;
-    }
-
-    .famous-people-wrapper {
-        width: 100%;
-        height: 500px;
-    }
-
-    .famous-people-background {
-        background-color: transparent;
-        border: 1px solid black;
-    }
-}
-
-
-
-
-
 .red-divider {
-    margin-top: 5000px;
+    margin-top: 4250px;
     width: 100vw;
-    height: 75px;
+    height: 100px;
     background-color: rgba(255, 0, 0, 0.8);
     position: relative;
     z-index: 50;
 }
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .blue-divider {
+        height: 75px;
+        margin-bottom: -3500px;
+        margin-top: calc(10px - 22.5vh);
+        z-index: 10000;
+    }
+    
+    .blue-divider .badge-slider {
+        transform: scale(0.9);
+        margin-top: -40px;
+    }
+
+    .famous-people-section {
+        height: 200vh;
+        top: 2000px;
+        z-index: 9999;
+    }
+
+    .famous-people-title {
+        font-size: 2.5rem;
+        margin-top: calc(30px - 22.5vh);
+        transform: translateY(-200px); /* Move only the title up by 200px */
+    }
+
+    .famous-people-wrapper {
+        width: 90%;
+        height: 90%;
+        margin-top: calc(-30px - 15vh);
+    }
+
+    .famous-people-background {
+        background-size: contain;
+        background-position: top center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blue-divider {
+        height: 50px;
+        margin-bottom: -1925px;
+        margin-top: calc(5px - 22.5vh);
+    }
+
+    .famous-people-section {
+        height: 150vh;
+        margin-top: 100px; 
+    }
+
+    .famous-people-title {
+        margin-top: -200px;
+        font-size: 2rem;
+        transform: translateY(-200px); /* Move only the title up by 200px */
+    } 
+
+    .famous-people-wrapper {
+        width: 95%;
+        height: 95%;
+        margin-top: calc(-40px - 15vh);
+    }
+}
+
+
+
+
 
 /* Gigs Section Full CSS Solution */
 
