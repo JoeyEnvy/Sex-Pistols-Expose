@@ -174,3 +174,17 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(nextSlide, 3000);
 });
 
+
+//videos section 
+
+document.querySelectorAll('.video-preview').forEach(video => {
+    // Already muted and looping in HTML, so remove play/pause logic
+    video.addEventListener('mouseenter', (e) => {
+        e.target.style.transform = 'scale(1.25)';
+    });
+
+    video.addEventListener('mouseleave', (e) => {
+        e.target.style.transform = 'scale(1)';
+    });
+});
+
