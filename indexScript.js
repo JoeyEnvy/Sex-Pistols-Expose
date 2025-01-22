@@ -175,16 +175,78 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//videos section 
-
+// Videos section
 document.querySelectorAll('.video-preview').forEach(video => {
-    // Already muted and looping in HTML, so remove play/pause logic
     video.addEventListener('mouseenter', (e) => {
-        e.target.style.transform = 'scale(1.25)';
+        e.target.style.transform = 'scale(1.05)';
+        e.target.muted = false;
+        e.target.play();
     });
 
     video.addEventListener('mouseleave', (e) => {
         e.target.style.transform = 'scale(1)';
+        e.target.muted = true;
+        e.target.pause();
+    });
+
+    video.addEventListener('click', (e) => {
+        if (e.target.requestFullscreen) {
+            e.target.requestFullscreen();
+        } else if (e.target.webkitRequestFullscreen) { // Safari
+            e.target.webkitRequestFullscreen();
+        } else if (e.target.msRequestFullscreen) { // IE11
+            e.target.msRequestFullscreen();
+        }
     });
 });
 
+// Videos left column YouTube videos
+const videoUrls = [
+    'QMiCFUGKfJk',
+    '7jSArFxkDJA',
+    'EiMTH-S2w5c',
+    'n7_yuWR4MLU',
+    '5uOyv-kuDFo',
+    'gCBlFa_T1tU',
+    'gX84aDKuTEI',
+    'S90mZFXesik',
+    '74buo35OgWY',
+    '66TUTHbtS9w',
+    'F2ZL1tDA_LQ',
+    'vuQGO103QtU',
+    'NyLQBk222BA',
+    'Z_2N7AyzhuU',
+    'tiPxzC4Pf7Q',
+    'SFt_rNp_b90',
+    'PDPRBhmiowk'
+];
+
+let currentVideoIndex = 0;
+
+function changeVideo(index) {
+    currentVideoIndex = index;
+    const mainPlayer = document.getElementById('mainPlayer');
+    mainPlayer.src = `https://www.youtube.com/embed/${videoUrls[currentVideoIndex]}?autoplay=1&mute=0`;
+}
+
+document.getElementById('changeVideo').onclick = () => {
+    changeVideo((currentVideoIndex + 1) % videoUrls.length);
+};
+
+window.onload = () => {
+    changeVideo(0);
+};
+
+// Intersection Observer to play video when in view
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const mainPlayer = document.getElementById('mainPlayer');
+            if (!mainPlayer.src) {
+                changeVideo(0);
+            }
+        }
+    });
+}, { threshold: 0.5 });
+
+observer.observe(document.querySelector('.video-player-container'));

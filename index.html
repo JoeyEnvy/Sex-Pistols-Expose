@@ -390,15 +390,13 @@
     <div class="videos-background"></div>
     <h2 class="videos-title">Videos</h2>
     <div class="videos-container">
-        <div class="video-preview-column">
-            <div class="main-video-preview">
-                <iframe 
-                    src="placeholder-video-url" 
-                    frameborder="0" 
-                    allowfullscreen>
-                </iframe>
+        <div class="video-player-container">
+            <div class="main-video">
+                <iframe id="mainPlayer" src="" frameborder="0" allowfullscreen allow="autoplay"></iframe>
             </div>
+            <button id="changeVideo">Change Video</button>
         </div>
+
         <div class="video-list-column">
             <div class="video-list-item">
                 <video 
@@ -407,7 +405,8 @@
                     autoplay 
                     muted 
                     loop 
-                    preload="metadata">
+                    preload="metadata"
+                    playsinline>
                 </video>
             </div>
             <div class="video-list-item">
@@ -417,7 +416,8 @@
                     autoplay 
                     muted 
                     loop 
-                    preload="metadata">
+                    preload="metadata"
+                    playsinline>
                 </video>
             </div>
             <div class="video-list-item">
@@ -427,7 +427,8 @@
                     autoplay 
                     muted 
                     loop 
-                    preload="metadata">
+                    preload="metadata"
+                    playsinline>
                 </video>
             </div>
             <div class="video-list-item">
@@ -437,7 +438,8 @@
                     autoplay 
                     muted 
                     loop 
-                    preload="metadata">
+                    preload="metadata"
+                    playsinline>
                 </video>
             </div>
             <div class="video-list-item">
@@ -447,7 +449,8 @@
                     autoplay 
                     muted 
                     loop 
-                    preload="metadata">
+                    preload="metadata"
+                    playsinline>
                 </video>
             </div>
             <div class="video-list-item">
@@ -457,7 +460,8 @@
                     autoplay 
                     muted 
                     loop 
-                    preload="metadata">
+                    preload="metadata"
+                    playsinline>
                 </video>
             </div>
             <div class="video-list-item">
@@ -467,12 +471,25 @@
                     autoplay 
                     muted 
                     loop 
-                    preload="metadata">
+                    preload="metadata"
+                    playsinline>
+                </video>
+            </div>
+            <div class="video-list-item">
+                <video 
+                    src="videos/8.mp4" 
+                    class="video-preview" 
+                    autoplay 
+                    muted 
+                    loop 
+                    preload="metadata"
+                    playsinline>
                 </video>
             </div>
         </div>
     </div>
 </section>
+
 
 
 
