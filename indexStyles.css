@@ -1812,36 +1812,101 @@ padding-bottom: 25px;
 
 /* gallery section */
 
-.purple-divider {
+.gallery-purple-divider {
     width: 100vw;
-    height: 100px;
-    background-color: rgba(128, 0, 128, 0.6); /* Purple with 60% opacity */
+    height: 125px;
+    background-color: rgba(128, 0, 128, 0.6);
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-burgundy-divider {
+    width: 100vw;
+    height: 500px;
+    background-color: rgb(128, 0, 0);
+    position: relative;
+    z-index: 2;
 }
 
 .gallery-section {
+    position: relative;
     width: 100vw;
     height: 125vh;
+}
+
+.gallery-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('images/Menu Background PC 1.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     opacity: 0.7;
+    z-index: 1;
+}
+
+.gallery-content {
     position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-main-title {
+    width: 100vw;
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 5px dashed #ff69b4;
+    border-bottom: 5px dashed #ff69b4;
+    box-shadow: 
+        0 0 10px rgba(255, 105, 180, 0.8), 
+        0 0 20px rgba(255, 105, 180, 0.5);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-container {
+    display: flex;
+    width: 100%;
+    height: calc(125vh - 200px);
+}
+
+.gallery-left-column,
+.gallery-right-column {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-left-slider-container,
+.gallery-right-slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gallery-left-slider,
+.gallery-right-slider {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
 }
 
-.burgundy-divider {
-    width: 100vw;
-    height: 500px;
-    background-color: rgb(128, 0, 0); /* Burgundy, 100% opacity */
+.gallery-left-slider img,
+.gallery-right-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.gallery-title {
-    color: white;
-    text-align: center;
-    font-size: 2em;
-    margin-top: 2rem;
-}
 

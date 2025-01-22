@@ -250,3 +250,35 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 observer.observe(document.querySelector('.video-player-container'));
+
+
+//gallery section 
+
+function createSlider(startIndex, endIndex, sliderId) {
+    const slider = document.querySelector(`#gallery .${sliderId}`);
+    
+    for (let i = startIndex; i <= endIndex; i++) {
+        const img = document.createElement('img');
+        img.src = `images/${i}.jpeg`;
+        img.alt = `Gallery Image ${i}`;
+        img.onerror = function() {
+            console.warn(`Image ${i}.jpeg failed to load`);
+            this.style.display = 'none';
+        };
+        slider.appendChild(img);
+    }
+
+    let currentIndex = 0;
+    const totalImages = endIndex - startIndex + 1;
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalImages;
+        slider.style.transform = `translateY(-${(currentIndex / totalImages) * 100}%)`;
+    }, 3000); // Change image every 3 seconds
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    createSlider(2, 76, 'gallery-left-slider');
+    createSlider(77, 131, 'gallery-right-slider');
+});
+
