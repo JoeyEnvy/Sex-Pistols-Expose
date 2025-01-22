@@ -254,31 +254,97 @@ observer.observe(document.querySelector('.video-player-container'));
 
 //gallery section 
 
-function createSlider(startIndex, endIndex, sliderId) {
+function createSlider(startIndex, endIndex, sliderId, isMainSlider = false) {
     const slider = document.querySelector(`#gallery .${sliderId}`);
     
+    // Clear any existing images
+    slider.innerHTML = '';
+    
+    const images = [];
     for (let i = startIndex; i <= endIndex; i++) {
         const img = document.createElement('img');
-        img.src = `images/${i}.jpeg`;
+        img.src = `images/gallery/${i}.jpeg`;
         img.alt = `Gallery Image ${i}`;
+        img.classList.add('gallery-image');
+        
         img.onerror = function() {
             console.warn(`Image ${i}.jpeg failed to load`);
             this.style.display = 'none';
         };
+        
+        img.addEventListener('click', () => {
+            const modal = document.querySelector('.image-modal');
+            const modalImage = modal.querySelector('.modal-content img');
+            modalImage.src = img.src;
+            modal.style.display = 'flex';
+        });
+        
+        images.push(img);
         slider.appendChild(img);
     }
 
     let currentIndex = 0;
-    const totalImages = endIndex - startIndex + 1;
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalImages;
-        slider.style.transform = `translateY(-${(currentIndex / totalImages) * 100}%)`;
-    }, 3000); // Change image every 3 seconds
+    // Initially show first image
+    if (images.length > 0) {
+        images[0].classList.add('active');
+    }
+
+    // Main slider with auto-transition
+    if (!isMainSlider) {
+        setInterval(() => {
+            // Remove active class from current image
+            images[currentIndex].classList.remove('active');
+            
+            // Move to next image
+            currentIndex = (currentIndex + 1) % images.length;
+            
+            // Add active class to next image
+            images[currentIndex].classList.add('active');
+        }, 3000); // Change image every 3 seconds
+    }
+
+    // Right column wall of images
+    if (sliderId === 'gallery-right-slider') {
+        const rightColumn = document.querySelector('.gallery-right-column');
+        rightColumn.innerHTML = ''; // Clear existing content
+        
+        images.forEach(img => {
+            img.classList.remove('active');
+            img.style.opacity = '1';
+            img.style.position = 'static';
+            rightColumn.appendChild(img);
+        });
+    }
+}
+
+function initializeImageModal() {
+    const modal = document.createElement('div');
+    modal.classList.add('image-modal');
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="" alt="Large Image">
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    const closeModal = modal.querySelector('.close-modal');
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    initializeImageModal();
     createSlider(2, 76, 'gallery-left-slider');
-    createSlider(77, 131, 'gallery-right-slider');
+    createSlider(77, 133, 'gallery-right-slider');
 });
+
 
