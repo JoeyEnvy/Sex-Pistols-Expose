@@ -254,97 +254,160 @@ observer.observe(document.querySelector('.video-player-container'));
 
 //gallery section 
 
-function createSlider(startIndex, endIndex, sliderId, isMainSlider = false) {
-    const slider = document.querySelector(`#gallery .${sliderId}`);
+document.addEventListener('DOMContentLoaded', function() {
+    const leftColumn = document.querySelector('.gallery-left-column');
+    const rightColumn = document.querySelector('.gallery-right-column');
+
+    // Left column setup
+    const largePreview = document.createElement('div');
+    largePreview.className = 'large-preview';
+    largePreview.innerHTML = '<img src="" alt="Large Preview">';
     
-    // Clear any existing images
-    slider.innerHTML = '';
+    const carousel = document.createElement('div');
+    carousel.className = 'carousel';
     
+    const prevButton = document.createElement('button');
+    prevButton.className = 'carousel-button prev';
+    prevButton.textContent = '◀';
+    
+    const nextButton = document.createElement('button');
+    nextButton.className = 'carousel-button next';
+    nextButton.textContent = '▶';
+
+    leftColumn.appendChild(largePreview);
+    leftColumn.appendChild(carousel);
+    leftColumn.appendChild(prevButton);
+    leftColumn.appendChild(nextButton);
+
+    // Right column setup
+    const wallImage = document.createElement('div');
+    wallImage.className = 'right-column-wall';
+    wallImage.innerHTML = '<img src="" alt="Wall Image">';
+
+    const previews = document.createElement('div');
+    previews.className = 'right-column-previews';
+    previews.innerHTML = `
+        <div class="preview-container">
+            <img src="" alt="Preview 1" class="preview-image">
+            <button class="preview-button prev">◀</button>
+            <button class="preview-button next">▶</button>
+        </div>
+        <div class="preview-container">
+            <img src="" alt="Preview 2" class="preview-image">
+            <button class="preview-button prev">◀</button>
+            <button class="preview-button next">▶</button>
+        </div>
+    `;
+
+    rightColumn.appendChild(wallImage);
+    rightColumn.appendChild(previews);
+
     const images = [];
-    for (let i = startIndex; i <= endIndex; i++) {
-        const img = document.createElement('img');
-        img.src = `images/gallery/${i}.jpeg`;
-        img.alt = `Gallery Image ${i}`;
-        img.classList.add('gallery-image');
-        
-        img.onerror = function() {
-            console.warn(`Image ${i}.jpeg failed to load`);
-            this.style.display = 'none';
-        };
-        
-        img.addEventListener('click', () => {
-            const modal = document.querySelector('.image-modal');
-            const modalImage = modal.querySelector('.modal-content img');
-            modalImage.src = img.src;
-            modal.style.display = 'flex';
-        });
-        
-        images.push(img);
-        slider.appendChild(img);
+    for (let i = 2; i <= 133; i++) {
+        images.push(`images/gallery/${i}.jpeg`);
     }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    shuffleArray(images);
 
     let currentIndex = 0;
 
-    // Initially show first image
-    if (images.length > 0) {
-        images[0].classList.add('active');
+    function updateLargePreview() {
+        largePreview.querySelector('img').src = images[currentIndex];
     }
 
-    // Main slider with auto-transition
-    if (!isMainSlider) {
-        setInterval(() => {
-            // Remove active class from current image
-            images[currentIndex].classList.remove('active');
-            
-            // Move to next image
-            currentIndex = (currentIndex + 1) % images.length;
-            
-            // Add active class to next image
-            images[currentIndex].classList.add('active');
-        }, 3000); // Change image every 3 seconds
+    function updateCarousel() {
+        carousel.innerHTML = '';
+        for (let i = 0; i < 5; i++) {
+            const index = (currentIndex + i) % images.length;
+            const img = document.createElement('img');
+            img.src = images[index];
+            img.alt = `Carousel Image ${index + 1}`;
+            img.className = 'carousel-image';
+            img.addEventListener('click', () => {
+                currentIndex = index;
+                updateLargePreview();
+                updateCarousel();
+            });
+            carousel.appendChild(img);
+        }
     }
 
-    // Right column wall of images
-    if (sliderId === 'gallery-right-slider') {
-        const rightColumn = document.querySelector('.gallery-right-column');
-        rightColumn.innerHTML = ''; // Clear existing content
-        
-        images.forEach(img => {
-            img.classList.remove('active');
-            img.style.opacity = '1';
-            img.style.position = 'static';
-            rightColumn.appendChild(img);
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLargePreview();
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLargePreview();
+        updateCarousel();
+    });
+
+    function openFullscreen(imageSrc) {
+        const modal = document.createElement('div');
+        modal.className = 'fullscreen-modal';
+        modal.innerHTML = `
+            <img src="${imageSrc}" alt="Fullscreen Image" class="fullscreen-image">
+            <span class="close-fullscreen">&times;</span>
+        `;
+        document.body.appendChild(modal);
+
+        modal.style.display = 'flex';
+        modal.querySelector('.close-fullscreen').addEventListener('click', () => {
+            document.body.removeChild(modal);
         });
     }
-}
 
-function initializeImageModal() {
-    const modal = document.createElement('div');
-    modal.classList.add('image-modal');
-    modal.innerHTML = `
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img src="" alt="Large Image">
-        </div>
-    `;
-    document.body.appendChild(modal);
-
-    const closeModal = modal.querySelector('.close-modal');
-    closeModal.addEventListener('click', () => {
-        modal.style.display = 'none';
+    largePreview.addEventListener('click', () => {
+        openFullscreen(images[currentIndex]);
     });
 
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
+    wallImage.addEventListener('click', () => {
+        openFullscreen(wallImage.querySelector('img').src);
+    });
+
+    // Setup preview images in right column
+    const previewContainers = previews.querySelectorAll('.preview-container');
+    previewContainers.forEach((container, index) => {
+        const img = container.querySelector('img');
+        const prevBtn = container.querySelector('.prev');
+        const nextBtn = container.querySelector('.next');
+        let previewIndex = index;
+
+        function updatePreview() {
+            img.src = images[previewIndex];
         }
+
+        prevBtn.addEventListener('click', () => {
+            previewIndex = (previewIndex - 1 + images.length) % images.length;
+            updatePreview();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            previewIndex = (previewIndex + 1) % images.length;
+            updatePreview();
+        });
+
+        img.addEventListener('click', () => {
+            openFullscreen(img.src);
+        });
+
+        updatePreview();
     });
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-    initializeImageModal();
-    createSlider(2, 76, 'gallery-left-slider');
-    createSlider(77, 133, 'gallery-right-slider');
+    updateLargePreview();
+    updateCarousel();
+
+    // Randomly change wall image
+    setInterval(() => {
+        wallImage.querySelector('img').src = images[Math.floor(Math.random() * images.length)];
+    }, 5000);
 });
-
-
