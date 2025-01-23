@@ -2128,3 +2128,35 @@ cursor: pointer;
         margin-bottom: 40px;
     }
 }
+
+/* burgundy spotify divider */
+
+.gallery-burgundy-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Double the original height */
+}
+
+.gallery-burgundy-divider iframe {
+    width: 50vw;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1024px) {
+    .gallery-burgundy-divider {
+        height: 400px; /* Reduced for mobile */
+        position: absolute;
+        bottom: -150px; /* Push slightly down to sit correctly */
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .gallery-burgundy-divider iframe {
+        width: 100%; /* More responsive on mobile */
+        height: 100%;
+    }
+}
