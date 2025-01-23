@@ -2504,3 +2504,110 @@ cursor: pointer;
 /* contact form part */
 
 
+#punk-contact-page {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.punk-contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.punk-contact-blue-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.punk-contact-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.punk-contact-form-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.punk-contact-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.punk-rock-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.punk-form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.punk-form-group {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.punk-form-group label {
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.punk-form-group input,
+.punk-form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
+    color: black;
+    border-radius: 5px;
+}
+
+.punk-submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.punk-submit-button:hover {
+    background-color: darkred;
+}
+
+/* logo last */ 
+
+
+
+/* footer */
+
+
