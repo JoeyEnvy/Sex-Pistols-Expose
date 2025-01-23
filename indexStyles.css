@@ -2504,6 +2504,7 @@ cursor: pointer;
 
 /* contact form part */
 
+/* Base Styles */
 #punk-contact-page {
     width: 100vw;
     height: 100vh;
@@ -2560,12 +2561,13 @@ cursor: pointer;
 }
 
 .punk-contact-title {
-    color: yellow;
-    background-color: purple;
-    padding: 5px 10px;
-    font-size: 2rem;
+    color: white;
+    background-color: rgba(128, 0, 128, 0.3);
+    padding: 10px 20px;
+    font-size: 6rem;
     margin-bottom: 30px;
-    z-index: 4;
+    z-index: 10;
+    display: inline-block;
 }
 
 .punk-rock-form-container {
@@ -2582,7 +2584,7 @@ cursor: pointer;
 }
 
 .punk-form-group {
-    width: 50%; /* Reduced horizontal length */
+    width: 50%;
     margin-bottom: 20px;
 }
 
@@ -2598,19 +2600,19 @@ cursor: pointer;
 .punk-form-group textarea {
     width: 100%;
     padding: 12px;
-    background: rgba(255, 0, 0, 0.75); /* Increased red opacity */
+    background: rgba(255, 0, 0, 0.75);
     border: 2px solid white;
-    color: white; /* White text for typing */
+    color: white;
     border-radius: 5px;
     font-family: 'Chinese Rocks', sans-serif;
 }
 
 .punk-form-group textarea {
-    height: 200px; /* Longer vertical box for message */
+    height: 250px;
 }
 
 .punk-submit-button {
-    width: 250px; /* Larger button */
+    width: 250px;
     padding: 20px;
     background-color: red;
     color: white;
@@ -2618,7 +2620,7 @@ cursor: pointer;
     border-radius: 150px;
     cursor: pointer;
     font-family: 'Chinese Rocks', sans-serif;
-    font-size: 1.2rem; /* Larger text */
+    font-size: 1.2rem;
     margin-top: 20px;
     align-self: flex-start;
     transition: all 0.3s ease;
@@ -2633,9 +2635,109 @@ cursor: pointer;
     position: absolute;
     bottom: 50px;
     right: 50px;
-    width: 250px;
+    width: 600px; /* 0.5x smaller */
     height: auto;
     z-index: 5;
+}
+
+.ents-widget {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 400px; /* Slightly smaller */
+    height: 550px;
+    background: white;
+    z-index: 6;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1440px) {
+    .punk-contact-title {
+        font-size: 4rem;
+    }
+    
+    .punk-contact-form-wrapper {
+        width: 60%;
+    }
+    
+    .punk-form-group {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .punk-contact-title {
+        font-size: 3rem;
+    }
+    
+    .punk-contact-form-wrapper {
+        width: 70%;
+        padding-left: 30px;
+    }
+    
+    .punk-form-group {
+        width: 100%;
+    }
+    
+    .ents-widget {
+        width: 300px;
+        height: 450px;
+    }
+    
+    .punk-sex-pistols-logo {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #punk-contact-page {
+        flex-direction: column;
+    }
+    
+    .punk-contact-form-wrapper {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .punk-contact-title {
+        font-size: 2.5rem;
+    }
+    
+    .ents-widget {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 300px;
+        margin-top: 20px;
+    }
+    
+    .punk-sex-pistols-logo {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .punk-contact-title {
+        font-size: 2rem;
+    }
+    
+    .punk-form-group input,
+    .punk-form-group textarea {
+        padding: 8px;
+    }
+    
+    .punk-submit-button {
+        width: 100%;
+    }
 }
 
 
