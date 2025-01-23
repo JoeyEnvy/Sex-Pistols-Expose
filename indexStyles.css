@@ -933,7 +933,7 @@ z-index: 50px;
 
 
 .blue-divider {
-    margin-bottom: -4145px;
+    margin-bottom: 0px;
     width: 100vw;
     height: 125px;
     background-color: rgba(0, 0, 255, 0.5);
@@ -970,7 +970,7 @@ z-index: 50px;
     width: 100vw;
     height: 350vh;
     position: absolute;
-    top: 2900px;
+    top: 1900px;
     left: 0;
     background-color: black;
     z-index: 1;
@@ -2033,24 +2033,26 @@ cursor: pointer;
 }
 @media screen and (max-width: 1024px) {
    .gallery-background {
-        height: 200vh; /* Extended vertical space */
-        position: absolute; /* Ensure precise positioning */
-        bottom: 0; /* Align to bottom edge */
+        height: 200vh;
+        position: absolute;
+        bottom: 0;
         left: 0;
         width: 100%;
     }
 
     .gallery-container {
         flex-direction: column;
-        height: 300vh; /* Match background height */
+        height: 300vh;
     }
 
     .gallery-burgundy-divider {
-        position: absolute; /* Position precisely */
-        bottom: 0; /* Align to bottom edge */
+        position: absolute;
+        bottom: 200vh; /* Positioned to sit above contact section */
         left: 0;
         width: 100%;
+        z-index: 15; /* Ensure it sits above previous sections */
     }
+
     .gallery-left-column,
     .gallery-right-column {
         width: 100%;
@@ -2111,6 +2113,11 @@ cursor: pointer;
 
     .gallery-burgundy-divider {
         height: 300px;
+        position: absolute;
+        bottom: 200vh; /* Consistent positioning */
+        left: 0;
+        width: 100%;
+        z-index: 15;
     }
 
     .carousel-image {
@@ -2120,7 +2127,7 @@ cursor: pointer;
     }
 
     .right-column-wall {
-        height: 40vh; /* Adjusted height */
+        height: 40vh;
         margin-bottom: 40px;
     }
 
@@ -2129,13 +2136,11 @@ cursor: pointer;
     }
 }
 
-/* burgundy spotify divider */
-
 .gallery-burgundy-divider {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px; /* Double the original height */
+    height: 400px;
 }
 
 .gallery-burgundy-divider iframe {
@@ -2147,19 +2152,20 @@ cursor: pointer;
 
 @media screen and (max-width: 1024px) {
     .gallery-burgundy-divider {
-        height: 400px; /* Reduced for mobile */
+        height: 400px;
         position: absolute;
-        bottom: -150px; /* Push slightly down to sit correctly */
+        bottom: 200vh; /* Positioned to sit above contact section */
         left: 0;
         width: 100%;
-        z-index: 10;
+        z-index: 15;
     }
 
     .gallery-burgundy-divider iframe {
-        width: 100%; /* More responsive on mobile */
+        width: 100%;
         height: 100%;
     }
 }
+
 
 /* contact section */
 
@@ -2171,7 +2177,11 @@ cursor: pointer;
     width: 100vw;
     height: 130vh;
     position: relative;
-    margin-top: -50px;
+    margin-top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-background {
@@ -2186,9 +2196,9 @@ cursor: pointer;
 
 .contact-section {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
-    z-index: 2;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2220,8 +2230,6 @@ cursor: pointer;
     width: 90%;
     height: auto;
     object-fit: contain;
-    position: relative;
-    top: -15%;
 }
 
 .passport-image {
@@ -2275,14 +2283,11 @@ cursor: pointer;
     color: white;
 }
 
-/* Additional Section Pretty Vacant Facebook Embed */
-
-
 .additional-section {
     width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+    height: auto; 
+    position: relative; 
+    z-index: 10;
 }
 
 .additional-section-background {
@@ -2292,8 +2297,6 @@ cursor: pointer;
     width: 100%;
     height: 100%;
     background-color: black;
-    z-index: 0;
-    opacity: 60%;
 }
 
 .additional-black-background {
@@ -2302,69 +2305,202 @@ cursor: pointer;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* This is already 60% opacity */
-    z-index: 1;
-    opacity: 60%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0.6;
 }
 
 .additional-section-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   position: relative; 
+   z-index: 2; 
+   width: 100%; 
+   height: 100%; 
+   display: flex; 
+   justify-content: center; 
+   align-items: center; 
 }
 
 .half-image {
-    width: auto;
-    height: 100vh;
-    object-fit: cover;
-    z-index: 2;
+   width: auto; 
+   height: 100vh; 
+   object-fit: cover; 
+   z-index: 2; 
 }
 
 .facebook-embed {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 350px;
+   position: absolute; 
+   top: 50%; 
+   left: 50%; 
+   transform: translate(-50%, -50%); 
+   z-index: 3; 
+   display: flex; 
+   flex-direction: column; 
+   align-items: center; 
+   width: 350px; 
 }
 
 .facebook-embed iframe {
-    width: 350px;
-    height: 550px;
+   width: 350px; 
+   height: 550px; 
 }
 
 .messenger-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    margin-top: 20px;
-    color: white;
-    transition: transform 0.3s ease;
-    z-index: 4;
+   display: flex; 
+   flex-direction: column; 
+   align-items: center; 
+   text-decoration: none; 
+   margin-top: 20px; 
+   color: white; 
+   transition: transform .3s ease; 
+   z-index: 4; 
 }
 
 .messenger-link img {
-    width: 100px;
-    height: 100px;
+   width: 100px; 
+   height: 100px; 
 }
 
 .messenger-link span {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: white;
-    font-family: Arial, sans-serif;
+   margin-top: 10px; 
+   font-size: 1rem; 
+   color: white; 
+   font-family: "Arial", sans-serif; 
 }
 
 .messenger-link:hover {
-    transform: scale(1.1);
+   transform: scale(1.1); 
 }
+
+@media screen and (max-width: 1024px) {
+    #contact {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-top: 110vh; 
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-section {
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-information {
+        width: 90%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .contact-left-column,
+    .contact-middle-column,
+    .contact-right-column {
+        width: 30%;
+        margin-bottom: 0;
+    }
+
+    .contact-section-details {
+        width: 90%;
+        padding: 15px;
+        margin-top: 20px;
+        font-size: 0.85rem; 
+    }
+
+    .additional-section {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 10;
+    }
+
+    .half-image {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    .facebook-embed {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        width: 100%;
+        max-width: 350px;
+        z-index: 3;
+    }
+
+    .messenger-link {
+        position: absolute;
+        top: 75vh; /* Moved down further */
+        left: 50%;
+        transform: translate(-75%, -75%) scale(0.7);
+        z-index: 4;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #contact {
+        margin-top: -25vh;
+        height: auto;
+    }
+
+    .contact-information {
+        width: 80%;
+    }
+
+    .contact-section-details {
+        width: 80%;
+    }
+
+    .additional-section {
+        height: auto;
+    }
+
+    .facebook-embed {
+        transform: none;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #contact {
+        height: 150vh;
+    }
+
+    .contact-information {
+        width: 50%;
+    }
+
+    .contact-section-details {
+        width: 50%;
+    }
+
+    .facebook-embed {
+        transform: none;
+    }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    #contact {
+        height: 200vh;
+    }
+
+    .contact-information {
+        flex-direction: row;
+    }
+
+    .additional-section {
+        height: auto;
+    }
+}
+
+
+/* contact form part */
+
 
