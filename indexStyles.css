@@ -2160,3 +2160,211 @@ cursor: pointer;
         height: 100%;
     }
 }
+
+/* contact section */
+
+/* first part info contact */ 
+
+
+/* Contact Section Full CSS */
+#contact {
+    width: 100vw;
+    height: 130vh;
+    position: relative;
+    margin-top: -50px;
+}
+
+.contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.contact-section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-information {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-left-column,
+.contact-right-column {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-middle-column {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.queen-image {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    top: -15%;
+}
+
+.passport-image {
+    width: 200%;
+    height: auto;
+}
+
+.contact-section-details {
+    width: 60%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    background-color: rgba(50, 50, 50, 0.4);
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.contact-info-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.contact-info-item img {
+    width: 30px;
+    opacity: 0.9;
+}
+
+.contact-info-item span {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+.contact-info-item:hover span {
+    color: white;
+}
+
+/* Additional Section Pretty Vacant Facebook Embed */
+
+
+.additional-section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.additional-section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 0;
+    opacity: 60%;
+}
+
+.additional-black-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* This is already 60% opacity */
+    z-index: 1;
+    opacity: 60%;
+}
+
+.additional-section-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.half-image {
+    width: auto;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.facebook-embed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+}
+
+.facebook-embed iframe {
+    width: 350px;
+    height: 550px;
+}
+
+.messenger-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 20px;
+    color: white;
+    transition: transform 0.3s ease;
+    z-index: 4;
+}
+
+.messenger-link img {
+    width: 100px;
+    height: 100px;
+}
+
+.messenger-link span {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.messenger-link:hover {
+    transform: scale(1.1);
+}
+
