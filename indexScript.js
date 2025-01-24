@@ -411,3 +411,24 @@ document.addEventListener('DOMContentLoaded', function() {
         wallImage.querySelector('img').src = images[Math.floor(Math.random() * images.length)];
     }, 5000);
 });
+
+
+//logo part 
+
+function adjustLogoHeight() {
+    const logoSection = document.querySelector('.logo-section-responsive');
+    if (window.innerWidth <= 575.98) {
+        logoSection.style.height = '20vh';
+    } else if (window.innerWidth <= 767.98) {
+        logoSection.style.height = '25vh';
+    } else if (window.innerWidth <= 991.98) {
+        logoSection.style.height = '30vh';
+    } else if (window.innerWidth <= 1199.98) {
+        logoSection.style.height = '35vh';
+    } else {
+        logoSection.style.height = '50vh';
+    }
+}
+
+window.addEventListener('resize', adjustLogoHeight);
+adjustLogoHeight(); // Call once on page load
