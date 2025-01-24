@@ -145,6 +145,40 @@ window.onload = function () {
 };
 
 
+//sex pistols top page quote slider 3 quotes 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteContainer = document.querySelector('.additional-title');
+    const quotes = [
+        "FORMERLY THE\nSEX PISTOLS EXPERIENCE",
+        "TOUR INFORMATION BELOW\n2025", 
+        "John Lydon:\n\"Good fucking luck with it\""
+    ];
+    let currentQuoteIndex = 0;
+
+    function updateQuote() {
+        quoteContainer.style.opacity = 0;
+        
+        setTimeout(() => {
+            quoteContainer.textContent = quotes[currentQuoteIndex];
+            quoteContainer.style.opacity = 1;
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        }, 500);
+    }
+
+    // Initial quote display
+    quoteContainer.textContent = quotes[currentQuoteIndex];
+
+    // Create a unique interval identifier
+    const quoteRotationInterval = setInterval(updateQuote, 3000);
+
+    // Optional: Add cleanup to prevent memory leaks
+    window.addEventListener('beforeunload', () => {
+        clearInterval(quoteRotationInterval);
+    });
+});
+
+
 //quote sllider between members and information 
 
 const quoteContainer = document.querySelector('.quote-container');
