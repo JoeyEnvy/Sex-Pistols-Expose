@@ -471,9 +471,7 @@ main {
     font-family: 'Punkaholic', sans-serif;
     color: white;
     text-align: center;
-   
-    margin-top: -20px;
-    text-size: 65px;
+    margin: 5px 0;
     width: 100%;
 }
 
