@@ -157,25 +157,24 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentQuoteIndex = 0;
 
     function updateQuote() {
+        // Fade out effect
         quoteContainer.style.opacity = 0;
-        
+
         setTimeout(() => {
+            // Update text content
             quoteContainer.textContent = quotes[currentQuoteIndex];
+            // Fade in effect
             quoteContainer.style.opacity = 1;
+            // Move to the next quote
             currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-        }, 500);
+        }, 500); // Match this delay with CSS transition time
     }
 
-    // Initial quote display
+    // Initial display of the first quote
     quoteContainer.textContent = quotes[currentQuoteIndex];
 
-    // Create a unique interval identifier
-    const quoteRotationInterval = setInterval(updateQuote, 3000);
-
-    // Optional: Add cleanup to prevent memory leaks
-    window.addEventListener('beforeunload', () => {
-        clearInterval(quoteRotationInterval);
-    });
+    // Rotate quotes every 3 seconds
+    setInterval(updateQuote, 3000);
 });
 
 
