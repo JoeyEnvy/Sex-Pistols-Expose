@@ -43,7 +43,7 @@
                     <div class="arrow left" id="prev-arrow">&lt;</div>
                     <button class="slide-button active" data-target="#gigs">Gigs</button>
                     <button class="slide-button" data-target="#videos">Videos</button>
-                    <button class="slide-button" data-target="#contact">Book Us</button>
+                    <button class="slide-button" data-target="#punk-contact-page">Book Us</button>
                     <div class="arrow right" id="next-arrow">&gt;</div>
                   
                     <p class="click-hint">Click to explore</p>
@@ -379,11 +379,20 @@
     <div class="background-image"></div>
     <h2 class="shop-title">Shop</h2>
     <div class="bandcamp-container">
-        <iframe 
-            src="https://sexpistolsexpose.bandcamp.com/merch" 
-            seamless 
-            frameborder="0">
-        </iframe>
+       <div class="loader-container">
+    <div class="loader"></div>
+    <p class="loading-text">Loading Bandcamp store...</p>
+</div>
+<iframe 
+    src="https://sexpistolsexpose.bandcamp.com/merch" 
+    seamless 
+    frameborder="0"
+    loading="lazy"
+    width="100%"
+    height="600"
+    onload="this.style.opacity=1; document.querySelector('.loader-container').style.display='none';">
+</iframe>
+
     </div>
 </section>
 

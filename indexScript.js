@@ -2,12 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.slide-button');
     const leftArrow = document.querySelector('.arrow.left');
     const rightArrow = document.querySelector('.arrow.right');
+    const scrollProgress = document.querySelector('.scroll-progress');
     let currentIndex = 0;
+    let autoScrollInterval;
 
     function showButton(index) {
         buttons.forEach(button => button.classList.remove('active', 'sliding'));
-        buttons[index].classList.add('active');
-        buttons[index].classList.add('sliding');
+        buttons[index].classList.add('active', 'sliding');
         setTimeout(() => buttons[index].classList.remove('sliding'), 300);
     }
 
@@ -21,17 +22,23 @@ document.addEventListener('DOMContentLoaded', function() {
         showButton(currentIndex);
     }
 
-    setInterval(showNextButton, 3000);
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(showNextButton, 3000);
+    }
 
-    leftArrow.addEventListener('click', showPrevButton);
-    rightArrow.addEventListener('click', showNextButton);
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+    }
+
+    if (leftArrow) leftArrow.addEventListener('click', showPrevButton);
+    if (rightArrow) rightArrow.addEventListener('click', showNextButton);
 
     buttons.forEach(button => {
         button.addEventListener('click', function() {
-            const target = this.getAttribute('data-target');
-            document.querySelector(target).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('data-target'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
@@ -41,25 +48,51 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
-    // Scroll Progress Bar
+    // Combine scroll events and use requestAnimationFrame for performance
+    let ticking = false;
     window.addEventListener('scroll', function() {
-        const scrollProgress = document.querySelector('.scroll-progress');
-        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = window.scrollY;
-        
-        if (scrollableHeight > 0) {
-            const progress = (scrolled / scrollableHeight) * 100;
-            scrollProgress.style.width = `${progress}%`;
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                updateScrollProgress();
+                console.log('Page scrolled to:', window.scrollY);
+                ticking = false;
+            });
+            ticking = true;
         }
     });
+
+    function updateScrollProgress() {
+        if (scrollProgress) {
+            const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = window.scrollY;
+            
+            if (scrollableHeight > 0) {
+                const progress = (scrolled / scrollableHeight) * 100;
+                scrollProgress.style.width = `${progress}%`;
+            }
+        }
+    }
+
+    // Start auto-scroll on page load
+    startAutoScroll();
+
+    // Optional: Stop auto-scroll when user interacts with the page
+    document.addEventListener('click', stopAutoScroll);
+    document.addEventListener('scroll', stopAutoScroll);
 });
+
+window.addEventListener('load', function() {
+    console.log('Page loaded');
+    window.scrollTo(0, 0); // Ensure page starts at the top
+});
+
+
+
 
 
 //hamburger menu 
