@@ -882,7 +882,6 @@ margin-bottom: -25px;
     align-items: center;
 }
 
-/* Video Section */
 .info-title {
     font-family: 'Chinese Rocks', sans-serif;
     color: #ffef1d;
@@ -892,182 +891,7 @@ margin-bottom: -25px;
 
 .video-container {
     width: 100%;
-    height: 80vh; /* Increased height by 20vh */
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Video Controls */
-.video-controls {
-    display: flex;
-    justify-content: space-between; /* Space between controls */
-    align-items: center; /* Center controls vertically */
-}
-
-#changeVideoButton {
-    background-color: #ffef1d; /* Button color */
-    border: none; /* Remove default border */
-    padding: 10px 15px; /* Padding for button */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-#playbackSlider,
-#durationSlider {
-    width: 70%; /* Width of sliders */
-}
-
-/* Columns Section */
-.info-columns {
-    display: flex; /* Ensures horizontal layout */
-    flex-direction: row; /* Horizontal alignment */
-    width: 100%;
-    height: 70vh; /* Set height to 70vh */
-}
-
-/* Left Column Styling */
-.info-left-column,
-.info-right-column {
-    flex: 1; /* Equal width for left and right columns */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.info-left-image,
-.info-right-image {
-    max-height: 70vh; /* Ensure images fit within their columns */
-}
-
-/* Center Column Styling */
-.info-center-column {
-    flex: 1; /* Equal width for the center column */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.center-images {
-    display: flex;
-    flex-direction: column; /* Stack images vertically */
-    align-items: center;
-}
-
-/* Top and Bottom Images on Desktop (2x larger) */
-.info-top-image,
-.info-bottom-image {
-    max-width: 50%; /* Make these images larger on desktop (2x larger than before) */
-}
-
-.middle-image-container {
-   position: relative; /* Positioning for overlaying elements on middle image */
-   display: inline-block; 
-   max-width :80%; /* Make middle image larger on desktop */
-   max-height :50%; 
-}
-
-.info-middle-image {
-   display:block; 
-   max-width :100%; 
-   max-height :100%; 
-   object-fit :contain ; 
-   transition :transform .3s ease-in-out;}
-
-.info-middle-image:hover {
-   transform :scale(1.1);}
-
-/* Download Icon Styles */
-.info-download-icon {
-   position:absolute; 
-   bottom:-10px; 
-   right:-10px; 
-   max-width :40%; 
-}
-
-/* Mobile Styles (Overriding Desktop) */
-@media (max-width: 768px) {
-   .info-columns {
-       flex-direction: row; /* Keep columns horizontal on mobile */
-       height:auto; 
-       align-items:center; 
-       justify-content:center; 
-       margin-left:-10%; /* Move columns slightly to the left */
-   }
-
-   .info-left-column,
-   .info-center-column {
-       flex-basis :50% ; /* Each column takes up half of the screen width */
-       display:flex ;
-       justify-content:center ;
-       align-items:center ;
-       padding-left: 5%; /* Add some padding to keep spacing nice on mobile */
-       padding-right: 5%; /* Add some padding to keep spacing nice on mobile */
-   }
-
-   .info-right-column {
-       display:none; /* Hide right column on mobile */
-   }
-
-   .info-left-image,
-   .info-right-image { /* Scale both left and right images equally larger on mobile */
-       max-height :50vh ; /* Limit height for mobile view to ensure it fits well */
-       object-fit :contain ; 
-       width :90%; /* Scale larger in general position on mobile */
-   }
-
-   .center-images img{
-       max-width :90%; /* Scale down images for smaller screens */
-       object-fit :contain;}
-
-   .center-images img:nth-child(2) { /* Middle image (Am a Mess) should be largest */
-       max-width :90%; 
-       max-height :60vh; /* Ensure it fits well within viewport height */
-   }
-   
-   .center-images img:nth-child(1),
-   .center-images img:nth-child(3) { /* Top and bottom images should be smaller */
-       max-width :70%;
-       max-height :40vh; 
-   }
-}
-
-/* Extra Small Screens (Below ~480px wide) */
-@media (max-width: 480px) {
-   .info-columns {
-       flex-direction: row; /* Keep columns horizontal for very small screens as well */
-       align-items:center ; 
-       justify-content:center ;
-       margin-left:-5%; /* Adjust margin for very small screens as well for centering effect*/
-   }
-
-   .info-left-column,
-   .info-center-column {
-       width :50% ; /* Each column takes half of viewport width on extra small screens */
-       text-align:center ;
-   }
-
-   .info-left-image,
-   .center-images img {
-       max-width :80%; /* Scale down all images further for small screens */
-       max-height:auto ;
-       margin-bottom :10px ; 
-   }
-
-   .center-images img:nth-child(2) { /* Middle image remains larger than others */
-       max-width :90%;
-       margin-bottom :15px ; 
-   }
-}
-/* Video Container */
-/* Video Container */
-.video-container {
-    width: 100%;
-    height: 80vh; /* Increased height by 20vh */
+    height: 80vh;
     overflow: hidden;
     margin-bottom: 20px;
     position: relative;
@@ -1079,7 +903,6 @@ margin-bottom: -25px;
     object-fit: cover;
 }
 
-/* Video Controls */
 .video-controls {
     position: absolute;
     bottom: 10px;
@@ -1095,20 +918,151 @@ margin-bottom: -25px;
 
 #playPauseButton,
 #changeVideoButton {
-    background-color: #ffef1d; /* Button color */
-    border: none; /* Remove default border */
-    padding: 10px 15px; /* Padding for button */
-    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #ffef1d;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
 #progressBar,
 #playbackSpeed {
-    width: 30%; /* Width of sliders */
+    width: 30%;
 }
 
-label {
+.video-controls label {
     color: white;
     margin-left: 10px;
+}
+
+.info-columns {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+}
+
+.info-left-column,
+.info-right-column,
+.info-center-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-left-image,
+.info-right-image {
+    max-height: 70vh;
+}
+
+.center-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-top-image,
+.info-bottom-image {
+    max-width: 50%;
+}
+
+.middle-image-container {
+    position: relative;
+    display: inline-block;
+    max-width: 80%;
+    max-height: 50%;
+}
+
+.info-middle-image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.info-middle-image:hover {
+    transform: scale(1.1);
+}
+
+.info-download-icon {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    max-width: 40%;
+}
+
+@media (max-width: 768px) {
+    .info-columns {
+        flex-direction: row;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        margin-left: -10%;
+    }
+
+    .info-left-column,
+    .info-center-column {
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .info-right-column {
+        display: none;
+    }
+
+    .info-left-image,
+    .info-right-image {
+        max-height: 50vh;
+        object-fit: contain;
+        width: 90%;
+    }
+
+    .center-images img {
+        max-width: 90%;
+        object-fit: contain;
+    }
+
+    .center-images img:nth-child(2) {
+        max-width: 90%;
+        max-height: 60vh;
+    }
+
+    .center-images img:nth-child(1),
+    .center-images img:nth-child(3) {
+        max-width: 70%;
+        max-height: 40vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-columns {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-left: -5%;
+    }
+
+    .info-left-column,
+    .info-center-column {
+        width: 50%;
+        text-align: center;
+    }
+
+    .info-left-image,
+    .center-images img {
+        max-width: 80%;
+        max-height: auto;
+        margin-bottom: 10px;
+    }
+
+    .center-images img:nth-child(2) {
+        max-width: 90%;
+        margin-bottom: 15px;
+    }
 }
 
 

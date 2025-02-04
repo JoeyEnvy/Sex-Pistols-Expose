@@ -92,6 +92,37 @@ window.addEventListener('load', function() {
 });
 
 
+//sex pistols top page quote slider 3 quotes 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const quoteContainer = document.querySelector('.additional-title');
+    const quotes = [
+        "FORMERLY THE\nSEX PISTOLS EXPERIENCE",
+        "TOUR INFORMATION BELOW\n2025", 
+        "John Lydon:\n\"Good fucking luck with it\""
+    ];
+    let currentQuoteIndex = 0;
+
+    function updateQuote() {
+        // Fade out effect
+        quoteContainer.style.opacity = 0;
+
+        setTimeout(() => {
+            // Update text content
+            quoteContainer.textContent = quotes[currentQuoteIndex];
+            // Fade in effect
+            quoteContainer.style.opacity = 1;
+            // Move to the next quote
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        }, 500); // Match this delay with CSS transition time
+    }
+
+    // Initial display of the first quote
+    quoteContainer.textContent = quotes[currentQuoteIndex];
+
+    // Rotate quotes every 3 seconds
+    setInterval(updateQuote, 3000);
+});
 
 
 
@@ -177,37 +208,58 @@ window.onload = function () {
 	playRandomVideo();
 };
 
+//info section i'm a mess contact slider
 
-//sex pistols top page quote slider 3 quotes 
+document.querySelector('.mess-image-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('punk-contact-page').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+
+//shop sectio (in the wrong place)
 
 document.addEventListener('DOMContentLoaded', function() {
-    const quoteContainer = document.querySelector('.additional-title');
-    const quotes = [
-        "FORMERLY THE\nSEX PISTOLS EXPERIENCE",
-        "TOUR INFORMATION BELOW\n2025", 
-        "John Lydon:\n\"Good fucking luck with it\""
-    ];
-    let currentQuoteIndex = 0;
-
-    function updateQuote() {
-        // Fade out effect
-        quoteContainer.style.opacity = 0;
-
-        setTimeout(() => {
-            // Update text content
-            quoteContainer.textContent = quotes[currentQuoteIndex];
-            // Fade in effect
-            quoteContainer.style.opacity = 1;
-            // Move to the next quote
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-        }, 500); // Match this delay with CSS transition time
+    const shopSection = document.getElementById('shop');
+    const bandcampIframe = document.getElementById('bandcamp-iframe');
+    const allLinks = document.querySelectorAll('a[href^="#"]');
+    
+    function loadIframe() {
+        if (bandcampIframe.getAttribute('src') === '') {
+            bandcampIframe.src = bandcampIframe.getAttribute('data-src');
+            bandcampIframe.onload = function() {
+                this.style.opacity = 1;
+                document.querySelector('.loader-container').style.display = 'none';
+            };
+        }
     }
 
-    // Initial display of the first quote
-    quoteContainer.textContent = quotes[currentQuoteIndex];
+    allLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetId === 'shop' || targetElement.offsetTop > shopSection.offsetTop) {
+                loadIframe();
+            }
+            
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
 
-    // Rotate quotes every 3 seconds
-    setInterval(updateQuote, 3000);
+    // Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                loadIframe();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 }); // 10% of the element is visible
+
+    observer.observe(shopSection);
 });
 
 
