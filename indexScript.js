@@ -206,45 +206,50 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const shopSection = document.getElementById('shop');
     const bandcampIframe = document.getElementById('bandcamp-iframe');
-    const allLinks = document.querySelectorAll('a[href^="#"]');
+    const allLinks = document.querySelectorAll('a[href^="#"]:not([href="#videoPlayer"])');
     
     function loadIframe() {
-        if (bandcampIframe.getAttribute('src') === '') {
+        if (bandcampIframe && bandcampIframe.getAttribute('src') === '') {
             bandcampIframe.src = bandcampIframe.getAttribute('data-src');
             bandcampIframe.onload = function() {
                 this.style.opacity = 1;
-                document.querySelector('.loader-container').style.display = 'none';
+                const loaderContainer = document.querySelector('.loader-container');
+                if (loaderContainer) {
+                    loaderContainer.style.display = 'none';
+                }
             };
         }
     }
 
     allLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             
-            if (targetId === 'shop' || targetElement.offsetTop > shopSection.offsetTop) {
-                loadIframe();
+            if (targetElement) {
+                e.preventDefault();
+                if (targetId === 'shop' || (shopSection && targetElement.offsetTop > shopSection.offsetTop)) {
+                    loadIframe();
+                }
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
-            
-            targetElement.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
     // Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                loadIframe();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 }); // 10% of the element is visible
+    if (shopSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    loadIframe();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 }); // 10% of the element is visible
 
-    observer.observe(shopSection);
+        observer.observe(shopSection);
+    }
 });
-
 
 //quote sllider between members and information 
 
