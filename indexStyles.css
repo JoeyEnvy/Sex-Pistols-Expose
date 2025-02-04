@@ -862,10 +862,7 @@ margin-bottom: -25px;
 
 /* info section */
 
-/* Unique Section Styling */
 /* General Section Styling */
-/* Unique Section Styling */
-/* Unique Section Styling */
 #info-section {
     width: 100vw;
     min-height: 100vh;
@@ -895,6 +892,7 @@ margin-bottom: -25px;
     overflow: hidden;
     margin-bottom: 20px;
     position: relative;
+    z-index: 1;
 }
 
 .video-container video {
@@ -914,6 +912,7 @@ margin-bottom: -25px;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
     border-radius: 8px;
+    z-index: 2;
 }
 
 #playPauseButton,
@@ -922,6 +921,12 @@ margin-bottom: -25px;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#playPauseButton:hover,
+#changeVideoButton:hover {
+    background-color: #e6d800;
 }
 
 #progressBar,

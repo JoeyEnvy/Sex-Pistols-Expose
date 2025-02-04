@@ -135,9 +135,7 @@ document.querySelector('.hamburger-menu').addEventListener('click', function() {
 
 //info section video 
 
-window.onload = function () {
-    
-    // Array of video files
+document.addEventListener('DOMContentLoaded', function() {
     const videos = [
         'videos/1.mp4',
         'videos/3.mp4',
@@ -147,78 +145,63 @@ window.onload = function () {
         'videos/7.mp4'
     ];
 
-    // Get elements
-    const videoPlayer = document.querySelector('#videoPlayer');
-    const videoSource = document.querySelector('#videoSource');
-    
-	// Get control elements
-	const playPauseButton = document.getElementById('playPauseButton');
-	const progressBar = document.getElementById('progressBar');
-	const playbackSpeed = document.getElementById('playbackSpeed');
-	const changeVideoButton = document.getElementById('changeVideoButton');
+    const videoPlayer = document.getElementById('videoPlayer');
+    const videoSource = document.getElementById('videoSource');
+    const playPauseButton = document.getElementById('playPauseButton');
+    const progressBar = document.getElementById('progressBar');
+    const volumeControl = document.getElementById('volumeControl');
+    const playbackSpeed = document.getElementById('playbackSpeed');
+    const changeVideoButton = document.getElementById('changeVideoButton');
 
-	// Function to play a random video
-	function playRandomVideo() {
-		const randomVideo = videos[Math.floor(Math.random() * videos.length)];
-		videoSource.src = randomVideo;
+    function playRandomVideo() {
+        const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+        videoSource.src = randomVideo;
+        videoPlayer.load();
+        videoPlayer.addEventListener('loadedmetadata', function() {
+            const randomStartTime = Math.random() * videoPlayer.duration;
+            videoPlayer.currentTime = randomStartTime;
+            videoPlayer.play();
+        }, { once: true });
+    }
 
-		videoPlayer.load();
-
-		videoPlayer.addEventListener('loadedmetadata', function () {
-			const randomStartTime = Math.random() * videoPlayer.duration;
-			videoPlayer.currentTime = randomStartTime;
-			videoPlayer.play();
-		});
-	}
-
-	// Play or pause the video when the button is clicked
-	playPauseButton.addEventListener('click', function () {
-		if (videoPlayer.paused) {
-			videoPlayer.play();
-			playPauseButton.textContent = 'Pause';
-		} else {
-			videoPlayer.pause();
-			playPauseButton.textContent = 'Play';
-		}
-	});
-
-	// Update progress bar as the video plays
-	videoPlayer.addEventListener('timeupdate', function () {
-		const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100 || 0;
-		progressBar.value = progress;
-	});
-
-	// Seek to a new position when progress bar is changed
-	progressBar.addEventListener('input', function () {
-		const newTime = (progressBar.value / 100) * videoPlayer.duration;
-		videoPlayer.currentTime = newTime;
-	});
-
-	// Adjust playback speed using playback speed slider
-	playbackSpeed.addEventListener('input', function () {
-	    const speed = parseFloat(playbackSpeed.value);
-	    videoPlayer.playbackRate = speed; // Adjust playback rate
-	    console.log(`Playback Speed Set To ${speed}x`);
-	});
-
-	// Change to a random video when "Change Video" button is clicked
-	changeVideoButton.addEventListener('click', playRandomVideo);
-
-	// Play a random video on page load
-	playRandomVideo();
-};
-
-//info section i'm a mess contact slider
-
-document.querySelector('.mess-image-link').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.getElementById('punk-contact-page').scrollIntoView({
-        behavior: 'smooth'
+    playPauseButton.addEventListener('click', function() {
+        if (videoPlayer.paused) {
+            videoPlayer.play();
+            playPauseButton.textContent = 'Pause';
+        } else {
+            videoPlayer.pause();
+            playPauseButton.textContent = 'Play';
+        }
     });
+
+    videoPlayer.addEventListener('timeupdate', function() {
+        const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+        progressBar.value = progress;
+    });
+
+    progressBar.addEventListener('input', function() {
+        const time = (progressBar.value / 100) * videoPlayer.duration;
+        videoPlayer.currentTime = time;
+    });
+
+    volumeControl.addEventListener('input', function() {
+        videoPlayer.volume = this.value;
+        videoPlayer.muted = (this.value === '0');
+    });
+
+    playbackSpeed.addEventListener('input', function() {
+        videoPlayer.playbackRate = parseFloat(this.value);
+    });
+
+    changeVideoButton.addEventListener('click', playRandomVideo);
+
+    // Initial setup
+    videoPlayer.muted = true;
+    volumeControl.value = 0;
+    playRandomVideo();
 });
 
-
-//shop sectio (in the wrong place)
+//shop section (in the wrong place)
 
 document.addEventListener('DOMContentLoaded', function() {
     const shopSection = document.getElementById('shop');

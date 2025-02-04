@@ -63,7 +63,7 @@
 <section id="info-section">
     <div class="info-container">
         <h2 class="info-title">Watch Here</h2>
- <div class="video-container">
+        <div class="video-container">
             <video id="videoPlayer" autoplay muted>
                 <source id="videoSource" src="videos/1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -71,6 +71,10 @@
             <div class="video-controls">
                 <button id="playPauseButton">Pause</button>
                 <input type="range" id="progressBar" value="0" step="0.1" min="0" max="100">
+                <div class="volume-container">
+                    <label for="volumeControl">Volume:</label>
+                    <input type="range" id="volumeControl" value="1" step="0.1" min="0" max="1">
+                </div>
                 <label for="playbackSpeed">Speed:</label>
                 <input type="range" id="playbackSpeed" value="1" step="0.1" min="0.5" max="1.5">
                 <button id="changeVideoButton">Change Video</button>
@@ -84,10 +88,9 @@
                 <div class="center-images">
                     <img src="images/god save queen badge .png" alt="God Save The Queen Badge" class="info-top-image">
                     <div class="middle-image-container">
-  <a href="#punk-contact-page" class="mess-image-link">
-    <img src="images/Am a Mess .png" alt="Am a Mess" class="info-middle-image punk-navigation-trigger">
-</a>
-
+                        <a href="#punk-contact-page" class="mess-image-link">
+                            <img src="images/Am a Mess .png" alt="Am a Mess" class="info-middle-image punk-navigation-trigger">
+                        </a>
                         <img src="images/Click-Download-PNG_red.png" alt="Download Icon" class="info-download-icon">
                     </div>
                     <img src="images/never mind badge .png" alt="Never Mind Badge" class="info-bottom-image">
