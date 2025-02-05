@@ -863,6 +863,7 @@ section:nth-child(even) {
     display: flex;
     justify-content: center;
     align-items: center;
+
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -1225,8 +1226,8 @@ section:nth-child(even) {
         padding-top: 25vh; /* Push down by 25vh */
     }
     .info-left-image {
-        opacity: 0.5;
-        max-width: 100%;
+        opacity: 0.35;
+        max-width: 80%;
         height: auto;
         transform: scale(2);
     }
@@ -1292,11 +1293,13 @@ section:nth-child(even) {
 #members-section {
     width: 100vw;
     position: relative;
-    margin-top: calc(20vh - 195px); /* Moved up additional 5px */
+    margin-top: calc(20vh - 182.5px); /* Moved up additional 5px */
     background-image: url('images/Info.jpg');
     background-size: cover;
+   
     background-position: center;
     opacity: 0.85;
+    z-index: 501;
     min-height: 100vh;
 }
 
@@ -1314,6 +1317,7 @@ section:nth-child(even) {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+   opacity: 10;
 }
 
 .members-content {
@@ -1325,16 +1329,20 @@ section:nth-child(even) {
     padding: 20px;
     border-radius: 10px;
 z-index: 50px;
+   z-index: 550;
+ opacity: 10;
 }
 
 .members-content p {
     margin-bottom: 15px;
+    opacity: 1;
 }
 
 .members-content hr {
     border: none;
     border-top: 1px solid #555;
     margin: 20px 0;
+opacity: 1;
 }
 
 /* quote slider and title for members */
@@ -1387,8 +1395,18 @@ z-index: 50px;
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
+
+   
+
+  #members-section {
+    margin-top: calc(-7.5vh + 60px);
+    }
+    .quote
+   .members-background {
+      opacity: 0.85;
+    }
     .quote p {
-        font-size: 21px;
+       opacity: 1;
     }
     .quote .author {
         font-size: 36px;
@@ -1504,6 +1522,34 @@ z-index: 50px;
          1px  1px 0 #000;
 }
 
+
+
+
+@media screen and (min-width: 420px) {
+  .grid-subtitle {
+    font-size: 0.9rem;
+    left: 2px;
+  }
+}
+
+
+@media screen and (min-width: 543px) {
+  .grid-subtitle {
+    font-size: 1rem;
+    left: 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-subtitle {
+    font-size: 2.5rem !important;
+    margin-left:-50px !important;
+    margin-bottom: 50px !important;
+  }
+}
+
+
+
 .grid-top-left .grid-title { background-color: #ffef1d; color: black; }
 .grid-top-right .grid-title { background-color: #ed5e94; color: white; }
 .grid-bottom-left .grid-title { background-color: #c32500; color: white; }
@@ -1536,6 +1582,7 @@ z-index: 50px;
     }
 
     .members-grid::after {
+ margin-top: 200vh !important;
         height: 70vh;
     }
 }
@@ -1552,6 +1599,7 @@ z-index: 50px;
     }
 
     .members-grid::after {
+       
         height: 60vh;
     }
 
@@ -1576,12 +1624,12 @@ z-index: 50px;
 
 .blue-divider {
     margin-bottom: 0px;
+    margin-top: 450vh;
     width: 100vw;
     height: 125px;
     background-color: rgba(0, 0, 255, 0.5);
     position: absolute;
     left: 0;
-    margin-top: 20px;
     z-index: 5000;
 }
 
@@ -1607,6 +1655,75 @@ z-index: 50px;
     object-fit: contain;
 }
 
+/* Media Queries */
+
+/* Large tablets and small desktops */
+@media screen and (max-width: 1024px) {
+    .blue-divider {
+        margin-top: 400vh;
+        height: 100px;
+    }
+
+    .badge-slider {
+        height: 180px;
+    }
+
+    .badge-slide {
+        height: 55%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .blue-divider {
+         margin-top: calc(-50vh + 150px) !important;
+        height: 80px; 
+        
+    }
+
+    .badge-slider {
+        margin-top: -7px !important;
+transform: scale(0.9) !important;
+        height: 160px;
+    }
+
+    .badge-slide {
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .blue-divider {
+        margin-top: 300vh;
+        height: 60px;
+    }
+
+    .badge-slider {
+        height: 140px;
+    }
+
+    .badge-slide {
+        height: 45%;
+    }
+}
+
+
+/* Small smartphones */
+@media screen and (max-width: 480px) {
+    .blue-divider {
+        margin-top: 300vh;
+        height: 60px;
+    }
+
+    .badge-slider {
+        height: 140px;
+    }
+
+    .badge-slide {
+        height: 45%;
+    }
+}
+
 /* Base Styles */
 .famous-people-section {
     width: 100vw;
@@ -1615,9 +1732,10 @@ z-index: 50px;
     top: 1900px;
     left: 0;
     background-color: black;
-    z-index: 1;
+    z-index: 499;
     display: flex;
     flex-direction: column;
+    margin-top: 115vh;
     justify-content: flex-start;
     align-items: center;
 }
@@ -1653,12 +1771,12 @@ z-index: 50px;
 }
 
 .red-divider {
-    margin-top: 4250px;
+    margin-top: 440vh;
     width: 100vw;
     height: 100px;
     background-color: rgba(255, 0, 0, 0.8);
     position: relative;
-    z-index: 50;
+    z-index: 600;
 }
 
 /* Mobile Responsiveness */
@@ -1738,8 +1856,8 @@ z-index: 50px;
     background-size: cover;
     background-position: center;
     position: relative;
-    z-index: 40;
-    margin-top: 0px;
+    z-index: 599;
+    margin-top: -10vh;
     padding: 100px 5% 50px;
     box-sizing: border-box;
     overflow-x: hidden;
@@ -2162,7 +2280,7 @@ padding-bottom: 25px;
     background-image: url('images/Me Nath New Background Expose Shirt.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.8;
+    opacity: 0.5;
     z-index: 1;
 }
 
@@ -2961,10 +3079,10 @@ cursor: pointer;
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    background-color: rgba(50, 50, 50, 0.4);
+    background-color: rgba(50, 50, 50, 0.10);
     padding: 40px 50px;
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
 }
 
 .contact-info-item {
