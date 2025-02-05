@@ -9,18 +9,14 @@
 }
 
 @font-face {
-    font-family: 'Mailart Rubberstamp';
-    src: url('Fonts/MailartRubberstamp-Regular.otf') format('opentype');
+    font-family: 'Chinese Rocks';
+    src: url('Fonts/chinese rocks rg.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Chinese Rocks';
-    src: url('Fonts/chinese rocks rg.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Mailart Rubberstamp';
+    src: url('Fonts/MailartRubberstamp-Regular.otf') format('opentype');
 }
-
-
 
 * {
     margin: 0;
@@ -48,7 +44,6 @@ nav {
     align-items: center;
     padding: 0 20px;
     z-index: 1000;
-        font-family: 'Chinese Rocks', sans-serif;
 }
 
 nav ul {
@@ -89,6 +84,67 @@ nav ul li a.active {
     font-size: 24px;
     cursor: pointer;
     color: #ffef1d;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .parallax-bg {
+        background-image: url('images/Mobile/1.jpg');
+    }
+    .hero-section {
+        margin-top: 50px;
+        min-height: 100vh;
+        padding-top: 100px;
+    }
+    .logo-container {
+        margin-left: -40%;
+        margin-top: -80px;
+    }
+    .logo-container img {
+        max-width: 140%;
+    }
+    .main-title {
+        font-size: 40px;
+    }
+    .sub-title-1, .sub-title-2 {
+        font-size: 36px;
+    }
+    .sub-title-3 {
+        font-size: 28px;
+    }
+    .slide-button {
+        width: 140px;
+        height: 140px;
+        font-size: 24px;
+    }
+    .button-slideshow {
+        margin: 5px auto;
+    }
+    .arrow.left {
+        left: -50px;
+    }
+    .arrow.right {
+        right: -50px;
+    }
+    .additional-title {
+        font-size: 48px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .additional-title {
+        font-size: 36px;
+    }
+    .button-slideshow {
+        width: 240px;
+    }
+    .arrow.left {
+        left: -40px;
+    }
+    .arrow.right {
+        right: -40px;
+    }
 }
 
 /* Global Styles */
@@ -232,6 +288,231 @@ main {
     padding: 5px;
 }
 
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    nav {
+        padding: 10px 20px;
+    }
+    nav ul li {
+        margin: 0 20px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1180px) {
+    .facebook-button span {
+        display: none;
+    }
+    .facebook-button img {
+        height: 20px;
+    }
+}
+
+@media (max-width: 1060px) {
+    .band-name img {
+        max-height: 55px; /* Larger on screens below 1060px */
+    }
+}
+
+@media (max-width: 992px) {
+    nav {
+        padding: 10px 15px;
+    }
+    nav ul li {
+        margin: 0 15px;
+    }
+    nav ul li a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+    .facebook-button {
+        order: 1;
+        margin-right: 10px;
+    }
+    .facebook-button img {
+        height: 18px;
+    }
+    .band-name {
+        order: 2;
+        font-size: 16px;
+    }
+    .hamburger-menu {
+        display: block;
+        order: 3;
+    }
+    nav ul {
+        display: none;
+        width: 100%;
+        order: 4;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7); /* 70% opacity */
+    }
+    nav ul.show {
+        display: flex;
+    }
+    nav ul li {
+        margin: 10px 20px;
+    }
+    nav ul li a {
+        font-size: 28px; /* Larger text for hamburger menu */
+    }
+    .parallax-bg {
+        background-image: url('images/Mobile/1.jpg');
+    }
+    .hero-section {
+        margin-top: 50px;
+        min-height: 100vh;
+        padding-top: 100px;
+    }
+    .logo-container {
+        margin-left: -40%;
+        margin-top: -80px;
+    }
+    .logo-container img {
+        max-width: 140%;
+    }
+    .main-title {
+        font-size: 40px;
+    }
+    .sub-title-1, .sub-title-2 {
+        font-size: 36px;
+    }
+    .sub-title-3 {
+        font-size: 28px;
+    }
+    .slide-button {
+        width: 140px;
+        height: 140px;
+        font-size: 24px;
+    }
+    .button-slideshow {
+        margin: 5px auto;
+    }
+    .arrow.left {
+        left: -50px;
+    }
+    .arrow.right {
+        right: -50px;
+    }
+    .additional-title {
+        font-size: 48px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul li a {
+        font-size: 24px; /* Adjusted for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 22px; /* Adjusted for better readability */
+    }
+    .additional-title {
+        font-size: 36px;
+    }
+    .button-slideshow {
+        width: 240px;
+    }
+    .arrow.left {
+        left: -40px;
+    }
+    .arrow.right {
+        right: -40px;
+    }
+}
+
+@media (max-width: 375px) {
+    nav ul li a {
+        font-size: 20px; /* Adjusted for better readability */
+    }
+}
+
+@media (max-width: 320px) {
+    nav ul li a {
+        font-size: 18px; /* Adjusted for better readability */
+    }
+
+}
+
+
+.band-name img {
+    max-height: 55px; /* Base size slightly larger than original */
+    margin: 0 5px;
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    .band-name img {
+        max-height: 90px; /* Larger on these screen sizes */
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: nowrap; /* Prevent wrapping */
+        height: auto;
+        padding: 10px;
+        justify-content: space-between; /* Spread items evenly */
+    }
+    
+    .facebook-button {
+        order: 1;
+        margin-right: 10px;
+    }
+    
+    .band-name {
+        order: 2;
+        flex-grow: 1; /* Allow logo to take up remaining space */
+        text-align: center; /* Center the logo */
+    }
+    
+    .hamburger-menu {
+        display: block;
+        order: 3;
+    }
+    
+    nav ul {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Position below the navbar */
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7); /* 70% opacity */
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 10px 20px;
+    }
+    
+    nav ul li a {
+        font-size: 28px; /* Larger text for hamburger menu */
+    }
+}
+
+
+/* Hero section */
+
+/* Hero Section */
 /* Hero Section */
 .hero-section {
     margin-top: -175px;
@@ -407,7 +688,6 @@ main {
 
 /* Click Hint */
 .click-hint {
-    font-family: 'Chinese Rocks', sans-serif;
     font-size: 18px;
     color: white;
     text-align: center;
@@ -445,6 +725,133 @@ section:nth-child(even) {
     height: 4px;
     background-color: #ffef1d;
     z-index: 1001;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+    .logo-container {
+        padding: 0.1vh 0; /* Converted 1px to vh */
+    }
+    .logo-container img {
+        max-width: 55%;
+    }
+    .main-title {
+        font-size: 7vh; /* Converted 70px to vh */
+    }
+    .sub-title-1, .sub-title-2 {
+        font-size: 4.4vh; /* Converted 44px to vh */
+    }
+    .sub-title-3 {
+        font-size: 3.2vh; /* Converted 32px to vh */
+    }
+    .additional-title {
+        font-size: 6.6vh; /* Converted 66px to vh */
+    }
+    .button-slideshow {
+        margin: 22vh auto 3vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .parallax-bg {
+        background-image: url('images/Mobile/1.jpg');
+    }
+    .hero-section {
+        margin-top: -15vh; /* Converted -125px to vh */
+        padding-top: 0;
+    }
+    .logo-container {
+        justify-content: flex-start;
+        padding: 22vh 0 0; /* Converted 180px to vh */
+    }
+    .logo-container img {
+        max-width: 140%;
+        margin-left: 3vw; /* Converted 25px to vw */
+        margin-top: -12vh; /* Converted -100px to vh */
+    }
+    .main-title {
+        font-size: 5vh; /* Converted 40px to vh */
+    }
+    .sub-title-1, .sub-title-2 {
+        font-size: 4.5vh; /* Converted 36px to vh */
+    }
+    .sub-title-3 {
+        font-size: 3.5vh; /* Converted 28px to vh */
+    }
+    .slide-button {
+        width: 17.5vh; /* Converted 140px to vh */
+        height: 17.5vh; /* Converted 140px to vh */
+        font-size: 3vh; /* Converted 24px to vh */
+    }
+    .button-slideshow {
+        margin: 20vh auto 2vh;
+    }
+    .arrow.left {
+        left: -6.25vw; /* Converted -50px to vw */
+    }
+    .arrow.right {
+        right: -6.25vw; /* Converted -50px to vw */
+    }
+    .additional-title {
+        font-size: 6.5vh; /* Converted 52px to vh */
+        margin-bottom: -6.25vh; /* Converted -50px to vh */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        padding: 20vh 0 0; /* Converted 160px to vh */
+    }
+    .hero-section {
+        margin-top: -18.75vh; /* Converted -150px to vh */
+        padding-top: 0;
+    }
+    .logo-container img {
+        max-width: 130%;
+        margin-left: 2.5vw; /* Converted 20px to vw */
+        margin-top: -7.5vh; /* Converted -60px to vh */
+    }
+    .additional-title {
+        font-size: 5vh; /* Converted 40px to vh */
+        margin-bottom: -6.25vh; /* Converted -50px to vh */
+    }
+    .button-slideshow {
+        width: 30vh; /* Converted 240px to vh */
+        margin: 25vh auto 2vh;
+    }
+    .arrow.left {
+        left: -5vw; /* Converted -40px to vw */
+    }
+    .arrow.right {
+        right: -5vw; /* Converted -40px to vw */
+    }
+}
+
+@media (max-width: 320px) {
+    .logo-container {
+        padding: 17.5vh 0 0; /* Converted 140px to vh */
+    }
+    .hero-section {
+        margin-top: -21.875vh; /* Converted -175px to vh */
+        padding-top: 0;
+    }
+    .logo-container img {
+        max-width: 130%;
+        margin-left: 3.125vw; /* Converted 25px to vw */
+        margin-top: -7.5vh; /* Converted -60px to vh */
+    }
+    .additional-title {
+        font-size: 4.25vh; /* Converted 34px to vh */
+        margin-bottom: -3.125vh; /* Converted -25px to vh */
+    }
+    .slide-button {
+        width: 15vh; /* Converted 120px to vh */
+        height: 15vh; /* Converted 120px to vh */
+        font-size: 2.5vh; /* Converted 20px to vh */
+    }
+    .button-slideshow {
+        margin: 22vh auto 1vh;
+    }
 }
 
 
@@ -611,6 +1018,266 @@ section:nth-child(even) {
     height: 100%;
 }
 
+/* For screens 1920px and above */
+@media (min-width: 1920px) {
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        width: 5.2vw; /* Using viewport width for more flexible sizing */
+        max-width: 100px;
+    }
+    .info-left-image,
+    .info-right-image {
+        max-height: 50vh;
+        width: auto;
+    }
+}
+
+/* For screens between 1919px and 1385px */
+@media (max-width: 1919px) and (min-width: 1385px) {
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        width: 10.4vw;
+        max-width: 200px;
+    }
+    .info-left-image,
+    .info-right-image {
+        max-height: 65vh;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1384px) and (max-width: 1920px) {
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        width: 9.4vw;
+        max-width: 180px;
+        margin-bottom: 1.3vw; /* Using vw for margin as well */
+    }
+}
+
+@media (max-width: 1384px) {
+    .info-right-column {
+        display: none;
+    }
+    
+    .info-left-column {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: 80%;
+        height: 80%;
+    }
+    
+    .info-left-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0.7;
+    }
+    
+    .info-center-column {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+    
+    .center-images {
+        transform: translateY(-4.3vh); /* Using vh instead of fixed pixels */
+    }
+    
+    .info-top-image,
+    .info-bottom-image {
+        width: 10.8vw;
+        max-width: 150px;
+    }
+    .middle-image-container {
+        width: 14.4vw;
+        max-width: 200px;
+    }
+}
+
+/* Updated media query for screens between 768px and 1384px */
+@media (min-width: 768px) and (max-width: 1384px) {
+    .video-container {
+        margin-bottom: 175px; /* Significantly increased space below video */
+    }
+
+    .info-container {
+        position: relative;
+        margin-bottom: 150px; /* Added significant margin to push content below */
+    }
+
+    .info-left-column {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%; /* Increased from 80% to 100% */
+        height: 100%; /* Increased from 80% to 100% */
+        z-index: 1;
+    }
+
+    .info-left-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0.5;
+        transform: scale(1.5); /* Increase the size of the image */
+    }
+
+    .center-images {
+        position: relative;
+        height: auto;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0;
+        margin-top: 0px; /* Added significant space above images */
+        margin-bottom: 225px; /* Added significant space below images */
+        z-index: 2; /* Ensure this is above the background image */
+    }
+
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        position: relative;
+        width: 120px;
+        max-width: 120px;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .middle-image-container {
+        width: 150px;
+        max-width: 150px;
+    }
+
+    .info-center-column {
+        margin-top: 200px; /* Significantly increased space above center column */
+        margin-bottom: 200px; /* Significantly increased space below center column */
+        position: relative; /* Ensure this is positioned */
+        z-index: 2; /* Ensure this is above the background image */
+    }
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        margin-bottom: 10vh;
+        position: relative;
+        overflow: visible;
+    }
+
+    .video-controls {
+        flex-direction: column;
+        align-items: stretch;
+        bottom: -30vh;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+    }
+
+    #progressBar,
+    #playbackSpeed,
+    #volumeControl {
+        width: 100%;
+        margin: 0.65vh 0;
+    }
+
+    .volume-container,
+    .speed-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .video-controls label {
+        margin-left: 0;
+        margin-bottom: 0.65vh;
+    }
+
+    #playPauseButton,
+    #changeVideoButton {
+        width: 100%;
+        margin: 0.65vh 0;
+    }
+
+    .info-columns {
+        flex-direction: column;
+        height: auto;
+    }
+    .info-left-column,
+    .info-center-column {
+        width: 100%;
+        margin-bottom: 2.6vh;
+    }
+    .info-left-column {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 25vh; /* Push down by 25vh */
+    }
+    .info-left-image {
+        opacity: 0.35;
+        max-width: 80%;
+        height: auto;
+        transform: scale(2);
+    }
+    .info-top-image,
+    .info-bottom-image {
+        width: 20vw;
+        max-width: 154px;
+    }
+    .middle-image-container {
+        width: 25vw;
+        max-width: 192.5px;
+    }
+
+    .center-images {
+        padding-top: 35vh;
+        transform: scale(1.3);
+        margin-bottom: 20vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-container {
+        width: 95%;
+    }
+    .video-container {
+        height: 50vh;
+    }
+    .info-title {
+        font-size: 1.5em;
+    }
+    .info-left-image {
+        max-width: 90%;
+        max-height: 40vh;
+    }
+    .info-top-image,
+    .info-bottom-image {
+        width: 26.67vw;
+        max-width: 128px;
+    }
+    .middle-image-container {
+        width: 34.67vw;
+        max-width: 166.4px;
+    }
+    .info-download-icon {
+        max-width: 30%;
+    }
+}
+
+
+
 /* members section and info */ 
 
 @font-face {
@@ -726,7 +1393,234 @@ opacity: 1;
     color: white;
 }
 
-/* blue divider underneath member to famous section */
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+
+   
+
+  #members-section {
+    margin-top: calc(-7.5vh + 60px);
+    }
+    .quote
+   .members-background {
+      opacity: 0.85;
+    }
+    .quote p {
+       opacity: 1;
+    }
+    .quote .author {
+        font-size: 36px;
+    }
+    .members-heading {
+        font-size: 54px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .quote-slider {
+        padding: 10px 0 5px; /* Reduced padding, especially at the bottom */
+        margin-top: 20px; /* Reduced top margin */
+    }
+    .quote {
+        padding: 10px 15px 5px; /* Reduced padding, especially at the bottom */
+    }
+    .quote p {
+        font-size: 18px;
+    }
+    .quote .author {
+        font-size: 27px;
+    }
+    .members-heading {
+        font-size: 42px;
+        margin-top: 20px; /* Reduced top margin */
+    }
+}
+
+
+
+/* profiles for members */
+
+.members-grid {
+    width: 100%;
+    height: 90vh; /* Reduced height to move grids closer */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: transparent;
+    position: relative;
+    z-index: 30; /* Increased z-index for top grid items */
+}
+
+.members-grid::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    opacity: 100%;
+    bottom: -115vh;
+    width: 100%;
+    height: 115vh;
+    background-color: rgba(0, 0, 0, 0.99);
+    z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .members-grid::after {
+        bottom: -70vh; /* Slightly moved up from previous -90vh */
+        height: 90vh; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .members-grid::after {
+        bottom: -60vh; /* Slightly moved up from previous -80vh */
+        height: 80vh; 
+    }
+}
+
+
+.members-grid div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 40;
+}
+
+.members-heading-anchor {
+    display: block;
+    position: relative;
+    top: -100px; /* Adjust this value as needed */
+    visibility: hidden;
+}
+
+
+.grid-title {
+    font-family: 'Sex Pistols', sans-serif;
+    position: absolute;
+    top: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    width: 50vw; /* Equalized to 50vw */
+    left: 0; /* Centered */
+    z-index: 50;
+}
+
+.grid-subtitle {
+    font-family: 'Punkaholic', sans-serif;
+    position: absolute;
+    top: 70px;
+    font-size: 1.33em;
+    text-align: center;
+    width: 100%;
+    z-index: 30;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+
+
+@media screen and (min-width: 420px) {
+  .grid-subtitle {
+    font-size: 0.9rem;
+    left: 2px;
+  }
+}
+
+
+@media screen and (min-width: 543px) {
+  .grid-subtitle {
+    font-size: 1rem;
+    left: 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-subtitle {
+    font-size: 2.5rem !important;
+    margin-left:-50px !important;
+    margin-bottom: 50px !important;
+  }
+}
+
+
+
+.grid-top-left .grid-title { background-color: #ffef1d; color: black; }
+.grid-top-right .grid-title { background-color: #ed5e94; color: white; }
+.grid-bottom-left .grid-title { background-color: #c32500; color: white; }
+.grid-bottom-right .grid-title { background-color: #3a6ff9; color: white; }
+
+.grid-top-right .grid-subtitle { right: -75px; }
+.grid-bottom-right .grid-subtitle { right: -75px; }
+
+.members-grid img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    z-index: 25;
+    margin-left: -20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .members-content { width: 60%; }
+}
+
+@media screen and (max-width: 768px) {
+    .members-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 50vh;
+    }
+
+    .grid-subtitle {
+        font-size: 0.5em; /* Reduced subtitle size by 2x */
+    }
+
+    .members-grid::after {
+ margin-top: 200vh !important;
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .members-content {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .members-grid {
+        height: 40vh;
+    }
+
+    .members-grid::after {
+       
+        height: 60vh;
+    }
+
+    .grid-title {
+        font-size: 0.6em;
+        top: 5px;
+    }
+
+    .grid-subtitle {
+        font-size: 0.25em; /* Further reduced on smaller screens */
+        top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .members-grid img {
+        max-width: 100%;
+        max-height: 100%;
+        margin-left: -5px;
+    }
+}
+
 
 .blue-divider {
     margin-bottom: 0px;
@@ -761,6 +1655,74 @@ opacity: 1;
     object-fit: contain;
 }
 
+/* Media Queries */
+
+/* Large tablets and small desktops */
+@media screen and (max-width: 1024px) {
+    .blue-divider {
+        margin-top: 400vh;
+        height: 100px;
+    }
+
+    .badge-slider {
+        height: 180px;
+    }
+
+    .badge-slide {
+        height: 55%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .blue-divider {
+         margin-top: calc(-50vh + 150px) !important;
+        height: 80px; 
+        
+    }
+
+    .badge-slider {
+        margin-top: -7px !important;
+transform: scale(0.9) !important;
+        height: 160px;
+    }
+
+    .badge-slide {
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .blue-divider {
+        margin-top: 300vh;
+        height: 60px;
+    }
+
+    .badge-slider {
+        height: 140px;
+    }
+
+    .badge-slide {
+        height: 45%;
+    }
+}
+
+
+/* Small smartphones */
+@media screen and (max-width: 480px) {
+    .blue-divider {
+        margin-top: 300vh;
+        height: 60px;
+    }
+
+    .badge-slider {
+        height: 140px;
+    }
+
+    .badge-slide {
+        height: 45%;
+    }
+}
 
 /* Base Styles */
 .famous-people-section {
@@ -816,6 +1778,72 @@ opacity: 1;
     position: relative;
     z-index: 600;
 }
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .blue-divider {
+        height: 75px;
+        margin-bottom: -3500px;
+        margin-top: calc(10px - 22.5vh);
+        z-index: 10000;
+    }
+    
+    .blue-divider .badge-slider {
+        transform: scale(0.9);
+        margin-top: -40px;
+    }
+
+    .famous-people-section {
+        height: 200vh;
+        top: 2000px;
+        z-index: 9999;
+    }
+
+    .famous-people-title {
+        font-size: 2.5rem;
+        margin-top: calc(30px - 22.5vh);
+        transform: translateY(-200px); /* Move only the title up by 200px */
+    }
+
+    .famous-people-wrapper {
+        width: 90%;
+        height: 90%;
+        margin-top: calc(-30px - 15vh);
+    }
+
+    .famous-people-background {
+        background-size: contain;
+        background-position: top center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blue-divider {
+        height: 50px;
+        margin-bottom: -1925px;
+        margin-top: calc(5px - 22.5vh);
+    }
+
+    .famous-people-section {
+        height: 150vh;
+        margin-top: 100px; 
+    }
+
+    .famous-people-title {
+        margin-top: -200px;
+        font-size: 2rem;
+        transform: translateY(-200px); /* Move only the title up by 200px */
+    } 
+
+    .famous-people-wrapper {
+        width: 95%;
+        height: 95%;
+        margin-top: calc(-40px - 15vh);
+    }
+}
+
+
+
 
 
 /* Gigs Section Full CSS Solution */
@@ -1140,6 +2168,76 @@ padding-bottom: 25px;
    background :rgba(255,255,255,0.5); /* Hover state for thumb */
 }
 
+/* Responsive design adjustments for smaller screens */
+@media (max-width :768px) {
+   .gigs-additional-info {
+       flex-direction :column; /* Stack vertically on small screens */
+       align-items :center; /* Center items horizontally on smaller screens */
+       gap :10px; /* Adjust gap for smaller screens */
+   }
+
+   .gigs-poster-column,
+   .gigs-right-column {
+       width :100%; /* Full width on small screens */
+       padding :5px; /* Reduced padding for smaller screens */
+   }
+
+   .more-gigs-image {
+       right :10px; /* Adjust position on small screens */
+       bottom :10px;
+   }
+}
+
+
+/* clickable red hand */
+.more-gigs-image {
+    position: absolute; 
+    bottom: 75x;  /* Move down by 25px (originally 10px) */
+    right: calc(10px + 125px);   /* Move right by 250px */
+    width: 60px;   /* Size remains at 60px */
+    height: 60px; 
+    z-index: 10;   /* Ensure it's above other elements */
+    transition: transform 0.3s ease; 
+}
+
+.more-gigs-image img {
+    width: 100%;    /* Fill the container */
+    height: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.more-gigs-image:hover {
+   transform: scale(1.2) rotate(5deg);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .gigs-additional-info {
+        flex-direction: column;
+    }
+
+    .gigs-poster-column,
+    .gigs-social-column {
+        width: 100%;
+    }
+}
+
+
+/* Mobile Responsiveness for Bandsintown Widget */
+@media screen and (max-width: 768px) {
+    .bandsintown-widget {
+        width: 100vw;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bit-widget-initializer {
+        font-size: 28px !important;
+    }
+}
+
+
 
 
 
@@ -1158,7 +2256,7 @@ padding-bottom: 25px;
 /* dividers and gig section */
 
 
-/* shop main css */
+/* dividers and gig section */
 
 
 #shop.bandcamp-shop {
@@ -1258,6 +2356,63 @@ padding-bottom: 25px;
     display: none;
 }
 
+@media screen and (max-width: 1200px) {
+    .bandcamp-container {
+        width: 85vw;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #shop.bandcamp-shop {
+        height: 130vh;
+    }
+
+    .bandcamp-container {
+        width: 90vw;
+        height: 80vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #shop.bandcamp-shop {
+        height: 120vh;
+    }
+
+    .shop-title {
+        margin-top: 60px;
+        font-size: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .bandcamp-container {
+        width: 95vw;
+        height: 70vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #shop.bandcamp-shop {
+        height: 110vh;
+    }
+
+    .shop-title {
+        margin-top: 40px;
+    }
+
+    .bandcamp-container {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #shop.bandcamp-shop {
+        height: 100vh;
+    }
+
+    .bandcamp-container {
+        height: 50vh;
+    }
+}
+
 
 /* videos sections */ 
 
@@ -1322,7 +2477,6 @@ padding-bottom: 25px;
 }
 
 .youtube-title {
-        font-family: 'Chinese Rocks', sans-serif;
     width: 100%;
     text-align: center;
     color: white;
@@ -1412,6 +2566,83 @@ padding-bottom: 25px;
     transform: scale(1.05);
 }
 
+@media screen and (max-width: 1024px) {
+    .videos-section {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .videos-container {
+        flex-direction: column;
+    }
+
+    .video-player-container,
+    .video-list-column {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .videos-title {
+        font-size: 1.5em;
+    }
+
+    .youtube-title {
+        font-size: 1.2em;
+    }
+
+    .main-video iframe {
+        border-radius: 75px;
+    }
+
+    .video-list-column {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .video-description {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .videos-title {
+        font-size: 1.2em;
+    }
+
+    .youtube-title {
+        font-size: 1em;
+    }
+
+    .main-video {
+        width: 95%; /* Slightly larger YouTube preview on mobile */
+    }
+
+    .main-video iframe {
+        border-radius: 50px;
+    }
+
+    .video-list-column {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        padding-right: 2rem; /* Center preview videos on mobile */
+        margin: 0 auto;
+    }
+
+    .video-list-item {
+        justify-self: center;
+        max-width: calc(100% / 1.2); /* Slightly larger preview videos */
+    }
+
+    .video-description {
+        font-size: 0.4em; /* Much smaller text below video */
+        padding: 5px;
+    }
+
+    .youtube-logo {
+        width: 30px;
+    }
+}
 
 
 /* gallery section */
@@ -1635,6 +2866,141 @@ color: white;
 font-size: 30px;
 cursor: pointer;
 }
+@media screen and (max-width: 1024px) {
+   .gallery-background {
+        height: 200vh;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        height: 300vh;
+    }
+
+    .gallery-burgundy-divider {
+        position: absolute;
+        bottom: 200vh; /* Positioned to sit above contact section */
+        left: 0;
+        width: 100%;
+        z-index: 15; /* Ensure it sits above previous sections */
+    }
+
+    .gallery-left-column,
+    .gallery-right-column {
+        width: 100%;
+        height: auto;
+        margin-bottom: 40px;
+        padding: 0 5%;
+    }
+
+    .large-preview {
+        height: 50vh;
+        margin-bottom: 10px;
+    }
+
+    .carousel-container {
+        margin: 10px auto;
+    }
+
+    .carousel-image {
+        width: 150px;
+        height: 150px;
+        margin: 0 10px;
+        margin-bottom: 15px;
+    }
+
+    .right-column-wall {
+        height: 50vh;
+        margin-bottom: 30px;
+    }
+
+    .right-column-previews {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preview-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .preview-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .gallery-section * {
+        z-index: 10;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-main-title {
+        font-size: 1.5em;
+    }
+
+    .gallery-purple-divider {
+        height: 80px;
+    }
+
+    .gallery-burgundy-divider {
+        height: 300px;
+        position: absolute;
+        bottom: 200vh; /* Consistent positioning */
+        left: 0;
+        width: 100%;
+        z-index: 15;
+    }
+
+    .carousel-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 40px;
+    }
+
+    .right-column-wall {
+        height: 40vh;
+        margin-bottom: 40px;
+    }
+
+    .preview-image {
+        margin-bottom: 40px;
+    }
+}
+
+.gallery-burgundy-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.gallery-burgundy-divider iframe {
+    width: 50vw;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1024px) {
+    .gallery-burgundy-divider {
+        height: 400px;
+        position: absolute;
+        bottom: 200vh; /* Positioned to sit above contact section */
+        left: 0;
+        width: 100%;
+        z-index: 15;
+    }
+
+    .gallery-burgundy-divider iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 
 /* contact section */
 
@@ -1840,6 +3206,135 @@ cursor: pointer;
    transform: scale(1.1); 
 }
 
+@media screen and (max-width: 1024px) {
+    #contact {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-top: 110vh; 
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-section {
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-information {
+        width: 90%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .contact-left-column,
+    .contact-middle-column,
+    .contact-right-column {
+        width: 30%;
+        margin-bottom: 0;
+    }
+
+    .contact-section-details {
+        width: 90%;
+        padding: 15px;
+        margin-top: 20px;
+        font-size: 0.85rem; 
+    }
+
+    .additional-section {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 10;
+    }
+
+    .half-image {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    .facebook-embed {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        width: 100%;
+        max-width: 350px;
+        z-index: 3;
+    }
+
+    .messenger-link {
+        position: absolute;
+        top: 75vh; /* Moved down further */
+        left: 50%;
+        transform: translate(-75%, -75%) scale(0.7);
+        z-index: 4;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #contact {
+        margin-top: -25vh;
+        height: auto;
+    }
+
+    .contact-information {
+        width: 80%;
+    }
+
+    .contact-section-details {
+        width: 80%;
+    }
+
+    .additional-section {
+        height: auto;
+    }
+
+    .facebook-embed {
+        transform: none;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #contact {
+        height: 150vh;
+    }
+
+    .contact-information {
+        width: 50%;
+    }
+
+    .contact-section-details {
+        width: 50%;
+    }
+
+    .facebook-embed {
+        transform: none;
+    }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    #contact {
+        height: 200vh;
+    }
+
+    .contact-information {
+        flex-direction: row;
+    }
+
+    .additional-section {
+        height: auto;
+    }
+}
 
 
 /* contact form part */
@@ -1994,6 +3489,143 @@ cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* Media Queries */
+@media screen and (max-width: 1440px) {
+    .punk-contact-title {
+        font-size: 4rem;
+    }
+    
+    .punk-contact-form-wrapper {
+        width: 60%;
+    }
+    
+    .punk-form-group {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .punk-contact-title {
+        font-size: 3rem;
+    }
+    
+    .punk-contact-form-wrapper {
+        width: 70%;
+        padding-left: 30px;
+    }
+    
+    .punk-form-group {
+        width: 100%;
+    }
+    
+    .ents-widget {
+        width: 300px;
+        height: 450px;
+    }
+    
+    .punk-sex-pistols-logo {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #punk-contact-page {
+        flex-direction: column;
+    }
+    
+    .punk-contact-form-wrapper {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        padding-left: 40px; /* Increased left padding to move content right */
+    }
+    
+    .punk-contact-title {
+        font-size: 2.5rem;
+    }
+    
+    .ents-widget {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 300px;
+        margin-top: 20px;
+    }
+    
+    .punk-sex-pistols-logo {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        margin-top: 20px;
+    }
+    
+    .punk-form-group {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .punk-contact-title {
+        font-size: 2rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .punk-contact-form-wrapper {
+        padding: 15px;
+        padding-left: 30px; /* Slightly less padding for very small screens */
+    }
+    
+    .punk-rock-form-container {
+        width: 90%; /* Increased width to allow for more centering */
+        margin: 0 auto; /* Center the form container */
+    }
+    
+    .punk-form-group input,
+    .punk-form-group textarea {
+        padding: 8px;
+    }
+    
+    .punk-submit-button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 15px;
+    }
+    
+    .ents-widget {
+        height: 250px;
+    }
+    
+    .punk-sex-pistols-logo {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .punk-contact-title {
+        font-size: 1.5rem;
+    }
+    
+    .punk-contact-form-wrapper {
+        padding: 10px;
+    }
+    
+    .punk-form-group label {
+        font-size: 0.9rem;
+    }
+    
+    .punk-form-group input,
+    .punk-form-group textarea {
+        padding: 6px;
+    }
+    
+    .punk-submit-button {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
 
 
 
@@ -2019,7 +3651,6 @@ cursor: pointer;
 
 /* Footer */
 .punk-footer {
-        font-family: 'Chinese Rocks', sans-serif;
     background-color: #1a1a1a;
     color: #ffffff;
     display: grid;
@@ -2108,983 +3739,101 @@ cursor: pointer;
     margin-top: 1rem;
 }
 
-
-
-
-/* media queries different devices, mobile tablet, phone etc */
-
-/* Base styles here (for mobile devices) */
-
-/* Media Queries for Responsive Design */
-
-/* Base styles here (for mobile devices) */
-
-/* Media Queries for Responsive Design */
-
-/* Small phones (max-width: 320px) */
-@media screen and (max-width: 320px) {
-    /* HERO SECTION */
-    nav ul li a {
-        font-size: 20px;
-    }
-    .logo-container {
-        padding: 17.5vh 0 0;
-    }
-    .hero-section {
-        margin-top: -21.875vh;
-        padding-top: 0;
-    }
-    .logo-container img {
-        max-width: 130%;
-        margin-left: 3.125vw;
-        margin-top: -7.5vh;
-    }
-    .additional-title {
-        font-size: 4.25vh;
-        margin-bottom: -3.125vh;
-    }
-    .slide-button {
-        width: 15vh;
-        height: 15vh;
-        font-size: 2.5vh;
-    }
-    .button-slideshow {
-        margin: 22vh auto 1vh;
-    }
-
-    /* MEMBERS SECTION */
-    .grid-subtitle {
-        font-size: 0.25em;
-    }
-
-    /* VIDEOS SECTION */
-    #shop.bandcamp-shop {
-        height: 100vh;
-    }
-    .bandcamp-container {
-        height: 50vh;
-    }
-
-    /* CONTACT FORM SECTION */
-    .punk-contact-title {
-        font-size: 1.5rem;
-    }
-    .punk-contact-form-wrapper {
-        padding: 10px;
-    }
-    .punk-form-group label {
-        font-size: 0.9rem;
-    }
-    .punk-form-group input,
-    .punk-form-group textarea {
-        padding: 6px;
-    }
-    .punk-submit-button {
-        padding: 12px;
-        font-size: 0.9rem;
-    }
-}
-
-/* Large phones (max-width: 480px) */
-@media screen and (max-width: 480px) {
-    /* HERO SECTION */
-    nav ul li a {
-        font-size: 24px;
-    }
-    .additional-title {
-        font-size: 5vh;
-        margin-bottom: -6.25vh;
-    }
-    .button-slideshow {
-        width: 30vh;
-        margin: 25vh auto 2vh;
-    }
-    .arrow.left {
-        left: -5vw;
-    }
-    .arrow.right {
-        right: -5vw;
-    }
-
-    /* INFORMATION SECTION */
-    .info-container {
-        width: 95%;
-    }
-    .video-container {
-        height: 50vh;
-    }
-    .info-title {
-        font-size: 1.5em;
-    }
-    .info-left-image {
-        max-width: 90%;
-        max-height: 40vh;
-    }
-    .info-top-image,
-    .info-bottom-image {
-        width: 26.67vw;
-        max-width: 128px;
-    }
-    .middle-image-container {
-        width: 34.67vw;
-        max-width: 166.4px;
-    }
-    .info-download-icon {
-        max-width: 30%;
-    }
-
-    /* MEMBERS SECTION */
-    .quote-slider {
-        padding: 10px 0 5px;
-        margin-top: 20px;
-    }
-    .quote {
-        padding: 10px 15px 5px;
-    }
-    .quote p {
-        font-size: 18px;
-    }
-    .quote .author {
-        font-size: 27px;
-    }
-    .members-heading {
-        font-size: 42px;
-        margin-top: 20px;
-    }
-    .members-content {
-        width: 90%;
-        font-size: 14px;
-        padding: 10px;
-    }
-    .members-grid {
-        height: 40vh;
-    }
-    .members-grid::after {
-        bottom: -60vh;
-        height: 80vh; 
-    }
-    .grid-title {
-        font-size: 0.6em;
-        top: 5px;
-    }
-    .grid-subtitle {
-        font-size: 0.9rem;
-        top: 30px;
-        margin-bottom: 15px;
-    }
-    .members-grid img {
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: -5px;
-    }
-
-    /* FAMOUS PERSON/FRIENDS SECTION */
-    .blue-divider {
-        height: 50px;
-        margin-bottom: -1925px;
-        margin-top: calc(5px - 22.5vh);
-    }
-    .famous-people-section {
-        height: 150vh;
-        margin-top: 100px; 
-    }
-    .famous-people-title {
-        margin-top: -200px;
-        font-size: 2rem;
-        transform: translateY(-200px);
-    } 
-    .famous-people-wrapper {
-        width: 95%;
-        height: 95%;
-        margin-top: calc(-40px - 15vh);
-    }
-
-    /* VIDEOS SECTION */
-    #shop.bandcamp-shop {
-        height: 110vh;
-    }
-    .shop-title {
-        margin-top: 40px;
-    }
-    .bandcamp-container {
-        height: 60vh;
-    }
-
-    /* CONTACT FORM SECTION */
-    .punk-contact-title {
-        font-size: 2rem;
-        text-align: center;
-        width: 100%;
-    }
-    .punk-contact-form-wrapper {
-        padding: 15px;
-        padding-left: 30px;
-    }
-    .punk-rock-form-container {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .punk-form-group input,
-    .punk-form-group textarea {
-        padding: 8px;
-    }
-    .punk-submit-button {
-        width: 100%;
-        font-size: 1rem;
-        padding: 15px;
-    }
-    .ents-widget {
-        height: 250px;
-    }
-    .punk-sex-pistols-logo {
-        width: 150px;
-    }
-
-    /* FOOTER SECTION */
-    .punk-footer {
-        font-size: 1rem;
-    }
-    .punk-footer h3 {
-        font-size: 1.5rem;
-    }
-    .social-icon {
-        width: 40px;
-        height: 40px;
-    }
-    .social-icon img {
-        width: 34px;
-        height: 34px;
-    }
-    .logo-section {
-        height: 20vh !important;
-    }
-}
-
-/* Tablets (max-width: 768px) */
-@media screen and (max-width: 768px) {
-
-font-family: 'Chinese Rocks', sans-serif;
-
-    /* NAV SECTION */
-    nav {
-        flex-wrap: nowrap;
-        height: auto;
-        padding: 10px 15px;
-    }
-    .facebook-button {
-        order: 0;
-        margin-right: 0;
-    }
-    .facebook-button img {
-        height: 20px;
-    }
-    .band-name {
-        order: 0;
-        font-size: initial;
-    }
-
-font-family: 'Chinese Rocks', sans-serif;
-    .hamburger-menu {
-        display: none;
-    }
-    nav ul {
-        display: flex;
-        width: auto;
-        order: 0;
-        flex-direction: row;
-        align-items: center;
-        background-color: transparent;
-    }
-    nav ul li {
-        margin: 0 15px;
-    }
-    nav ul li a {
-        font-size: 18px;
-    }
-
-    /* HERO SECTION */
-    .parallax-bg {
-         background-image: url('images/Mobile/1.jpg');
-    }
-    .hero-section {
-        margin-top: -15vh;
-        padding-top: 0;
-    }
-    .logo-container {
-        justify-content: flex-start;
-        padding: 22vh 0 0;
-    }
-    .logo-container img {
-        max-width: 140%;
-        margin-left: 3vw;
-        margin-top: -12vh;
-    }
-    .main-title {
-        font-size: 5vh;
-    }
-    .sub-title-1, .sub-title-2 {
-        font-size: 4.5vh;
-    }
-    .sub-title-3 {
-        font-size: 3.5vh;
-    }
-    .slide-button {
-        width: 17.5vh;
-        height: 17.5vh;
-        font-size: 3vh;
-    }
-    .button-slideshow {
-        margin: 20vh auto 2vh;
-    }
-    .arrow.left {
-        left: -6.25vw;
-    }
-    .arrow.right {
-        right: -6.25vw;
-    }
-    .additional-title {
-        font-size: 6.5vh;
-        margin-bottom: -6.25vh;
-    }
-
-    /* INFORMATION SECTION */
-    .video-container {
-        margin-bottom: 175px;
-    }
-    .info-container {
-        position: relative;
-        margin-bottom: 150px;
-    }
-    .info-left-column {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-    .info-left-image {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        opacity: 0.5;
-        transform: scale(1.5);
-    }
-    .center-images {
-        position: relative;
-        height: auto;
-        min-height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 50px 0;
-        margin-top: 0px;
-        margin-bottom: 225px;
-        z-index: 2;
-    }
-    .info-top-image,
-    .info-bottom-image,
-    .middle-image-container {
-        position: relative;
-        width: 120px;
-        max-width: 120px;
-        height: auto;
-        margin: 20px 0;
-    }
-    .middle-image-container {
-        width: 150px;
-        max-width: 150px;
-    }
-    .info-center-column {
-        margin-top: 200px;
-        margin-bottom: 200px;
-        position: relative;
-        z-index: 2;
-    }
-
-    /* MEMBERS SECTION */
-    #members-section {
-        margin-top: calc(-7.5vh + 60px);
-    }
-    .quote .members-background {
-        opacity: 0.85;
-    }
-    .quote p {
-        opacity: 1;
-    }
-    .quote .author {
-        font-size: 36px;
-    }
-    .members-heading {
-        font-size: 54px;
-    }
-    .members-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        height: 50vh;
-    }
-    .grid-subtitle {
-        font-size: 2.5rem;
-        margin-left:-50px;
-        margin-bottom: 50px;
-    }
-    .members-grid::after {
-        bottom: -70vh;
-        height: 90vh; 
-        margin-top: 200vh;
-    }
-
-    /* FAMOUS PERSON/FRIENDS SECTION */
-    .famous-people-section {
-        height: 200vh;
-        top: 2000px;
-        z-index: 9999;
-    }
-    .famous-people-title {
-        font-size: 2.5rem;
-        margin-top: calc(30px - 22.5vh);
-        transform: translateY(-200px);
-    }
-    .famous-people-wrapper {
-        width: 90%;
-        height: 90%;
-        margin-top: calc(-30px - 15vh);
-    }
-    .famous-people-background {
-        background-size: contain;
-        background-position: top center;
-    }
-
-    /* GIGGING/BANDCAMP SECTION */
-    .gigs-additional-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    .gigs-poster-column,
-    .gigs-right-column,
-    .gigs-social-column {
-        width: 100%;
-        padding: 5px;
-    }
-    .more-gigs-image {
-        right: 10px;
-        bottom: 10px;
-    }
-    .bandsintown-widget {
-        width: 100vw;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    .bit-widget-initializer {
-        font-size: 28px !important;
-    }
-
-    /* VIDEOS SECTION */
-    #shop.bandcamp-shop {
-        height: 120vh;
-    }
-    .shop-title {
-        margin-top: 60px;
-        font-size: clamp(1.5rem, 4vw, 3rem);
-    }
-    .bandcamp-container {
-        width: 95vw;
-        height: 70vh;
-    }
-
-    /* GALLERY SECTION */
-    .gallery-main-title {
-        font-size: 1.5em;
-    }
-    .gallery-purple-divider {
-        height: 80px;
-    }
-    .gallery-burgundy-divider {
-        height: 300px;
-        position: absolute;
-        bottom: 200vh;
-        left: 0;
-        width: 100%;
-        z-index: 15;
-    }
-    .carousel-image {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 40px;
-    }
-    .right-column-wall {
-        height: 40vh;
-        margin-bottom: 40px;
-    }
-    .preview-image {
-        margin-bottom: 40px;
-    }
-
-    /* BLUE DIVIDER AND BADGE SLIDER */
-    .blue-divider {
-        margin-top: calc(-50vh + 150px);
-        height: 80px; 
-    }
-    .badge-slider {
-        margin-top: -7px;
-        transform: scale(0.9);
-        height: 160px;
-    }
-    .badge-slide {
-        height: 50%;
-    }
-
-    /* CONTACT FORM SECTION */
-    #punk-contact-page {
-        flex-direction: column;
-    }
-    .punk-contact-form-wrapper {
-        width: 90%;
-        height: auto;
-        padding: 20px;
-        padding-left: 40px;
-    }
-    .punk-contact-title {
-        font-size: 2.5rem;
-    }
-        .ents-widget {
-        position: relative;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 300px;
-        margin-top: 20px;
-    }
-    .punk-sex-pistols-logo {
-        position: relative;
-        bottom: 0;
-        right: 0;
-        width: 200px;
-        margin-top: 20px;
-    }
-    .punk-form-group {
-        width: 100%;
-    }
-
-    /* FOOTER SECTION */
-    .punk-footer {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 2rem;
-    }
-    .footer-left, .footer-middle, .footer-right {
-        margin-bottom: 2rem;
-    }
-    .social-links {
-        justify-content: center;
-    }
-    .footer-right {
-        grid-column: span 1;
-    }
-    .logo-section {
-        height: 25vh !important;
-    }
-    .social-icon {
-        width: 50px;
-        height: 50px;
-    }
-    .social-icon img {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-/* Small laptops and tablets (max-width: 1024px) */
-@media screen and (max-width: 1024px) {
-
-
-
-
-    /* GALLERY SECTION */
-    .gallery-background {
-        height: 200vh;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-    }
-    .gallery-container {
-        flex-direction: column;
-        height: 300vh;
-    }
-    .gallery-burgundy-divider {
-        position: absolute;
-        bottom: 200vh;
-        left: 0;
-        width: 100%;
-        z-index: 15;
-    }
-    .gallery-left-column,
-    .gallery-right-column {
-        width: 100%;
-        height: auto;
-        margin-bottom: 40px;
-        padding: 0 5%;
-    }
-    .large-preview {
-        height: 50vh;
-        margin-bottom: 10px;
-    }
-    .carousel-container {
-        margin: 10px auto;
-    }
-    .carousel-image {
-        width: 150px;
-        height: 150px;
-        margin: 0 10px;
-        margin-bottom: 15px;
-    }
-    .right-column-wall {
-        height: 50vh;
-        margin-bottom: 30px;
-    }
-    .right-column-previews {
-        flex-direction: column;
-        align-items: center;
-    }
-    .preview-container {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-    .preview-image {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    .gallery-section * {
-        z-index: 10;
-    }
-
-    /* CONTACT INFORMATION SECTION */
-    #contact {
-        width: 100%;
-        height: auto;
-        position: relative;
-        margin-top: 110vh; 
-        z-index: 10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .contact-section {
-        width: 100%;
-        position: relative;
-        z-index: 10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .contact-information {
-        width: 90%;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 20px 0;
-    }
-    .contact-left-column,
-    .contact-middle-column,
-    .contact-right-column {
-        width: 30%;
-        margin-bottom: 0;
-    }
-    .contact-section-details {
-        width: 90%;
-        padding: 15px;
-        margin-top: 20px;
-        font-size: 0.85rem; 
-    }
-
-    /* CONTACT SOCIAL MEDIA SECTION */
-    .additional-section {
-        width: 100%;
-        height: auto;
-        position: relative;
-        z-index: 10;
-    }
-    .half-image {
-        width: 100%;
-        height: auto;
-        max-height: 200px;
-    }
-    .facebook-embed {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0.8);
-        width: 100%;
-        max-width: 350px;
-        z-index: 3;
-    }
-    .messenger-link {
-        position: absolute;
-        top: 75vh;
-        left: 50%;
-        transform: translate(-75%, -75%) scale(0.7);
-        z-index: 4;
-    }
-
-    /* CONTACT FORM SECTION */
-    .punk-contact-title {
-        font-size: 3rem;
-    }
-    .punk-contact-form-wrapper {
-        width: 70%;
-        padding-left: 30px;
-    }
-    .punk-form-group {
-        width: 100%;
-    }
-    .ents-widget {
-        width: 300px;
-        height: 450px;
-    }
-    .punk-sex-pistols-logo {
-        width: 250px;
-    }
-
-    /* FOOTER SECTION */
+@media (max-width: 1199.98px) {
     .punk-footer {
         padding: 3rem;
         font-size: 1.1rem;
     }
+
     .punk-footer h3 {
         font-size: 1.8rem;
     }
+
     .social-icon {
         width: 60px;
         height: 60px;
     }
+
     .social-icon img {
         width: 50px;
         height: 50px;
     }
+
     .logo-section {
         height: 35vh !important;
     }
 }
 
-/* Landscape orientation for small height screens */
-@media screen and (max-height: 600px) and (orientation: landscape) {
-    /* CONTACT INFORMATION SECTION */
-    #contact {
-        height: 200vh;
-    }
-    .contact-information {
-        flex-direction: row;
+@media (max-width: 991.98px) {
+    .punk-footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
 
-    /* CONTACT SOCIAL MEDIA SECTION */
-    .additional-section {
-        height: auto;
+    .footer-right {
+        grid-column: span 2;
     }
-}
 
-/* Non-media query styles */
-
-/* BLUE DIVIDER AND BADGE SLIDER */
-.blue-divider {
-    margin-bottom: 0px;
-    margin-top: 450vh;
-    width: 100vw;
-    height: 125px;
-    background-color: rgba(0, 0, 255, 0.5);
-    position: absolute;
-    left: 0;
-    z-index: 5000;
-}
-
-.badge-slider {
-    margin-top: 0px;
-    position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-.badge-slide-container {
-    display: flex;
-    position: absolute;
-    width: 300%;
-    height: 100%;
-    transition: transform 1s ease-in-out;
-}
-
-.badge-slide {
-    width: calc(100% / 3);
-    height: 60%;
-    object-fit: contain;
-}
-
-/* MEMBERS SECTION */
-.members-grid {
-    width: 100%;
-    height: 90vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    background-color: transparent;
-    position: relative;
-    z-index: 30;
-}
-
-.members-grid::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    opacity: 100%;
-    bottom: -115vh;
-    width: 100%;
-    height: 115vh;
-    background-color: rgba(0, 0, 0, 0.99);
-    z-index: 1;
-}
-
-.members-grid div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 40;
-}
-
-.members-heading-anchor {
-    display: block;
-    position: relative;
-    top: -100px;
-    visibility: hidden;
-}
-
-.grid-title {
-    font-family: 'Sex Pistols', sans-serif;
-    position: absolute;
-    top: 20px;
-    font-size: 1.5em;
-    text-align: center;
-    width: 50vw;
-    left: 0;
-    z-index: 50;
-}
-
-.grid-subtitle {
-    font-family: 'Punkaholic', sans-serif;
-    position: absolute;
-    top: 70px;
-    font-size: 1.33em;
-    text-align: center;
-    width: 100%;
-    z-index: 30;
-    color: white;
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-}
-
-.grid-top-left .grid-title { background-color: #ffef1d; color: black; }
-.grid-top-right .grid-title { background-color: #ed5e94; color: white; }
-.grid-bottom-left .grid-title { background-color: #c32500; color: white; }
-.grid-bottom-right .grid-title { background-color: #3a6ff9; color: white; }
-
-.grid-top-right .grid-subtitle { right: -75px; }
-.grid-bottom-right .grid-subtitle { right: -75px; }
-
-.members-grid img {
-    max-width: 80%;
-    max-height: 80%;
-    object-fit: contain;
-    z-index: 25;
-    margin-left: -20px;
-}
-
-/* GIGGING/BANDCAMP SECTION */
-.more-gigs-image {
-    position: absolute; 
-    bottom: 75px;
-    right: calc(10px + 125px);
-    width: 60px;
-    height: 60px; 
-    z-index: 10;
-    transition: transform 0.3s ease; 
-}
-
-.more-gigs-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.more-gigs-image:hover {
-   transform: scale(1.2) rotate(5deg);
-}
-
-/* GALLERY SECTION */
-.gallery-burgundy-divider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-}
-
-.gallery-burgundy-divider iframe {
-    width: 50vw;
-    height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-/* Additional general styles */
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
-
-.container {
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Accessibility improvements */
-:focus {
-    outline: 2px solid #4a90e2;
-    outline-offset: 2px;
-}
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* Print styles */
-@media print {
-    .no-print {
-        display: none;
-    }
-    body {
-        font-size: 12pt;
-    }
-    a[href]:after {
-        content: " (" attr(href) ")";
+    .logo-section {
+        height: 30vh !important;
     }
 }
 
+@media (max-width: 767.98px) {
+    .punk-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        margin-bottom: 2rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-right {
+        grid-column: span 1;
+    }
+
+    .logo-section {
+        height: 25vh !important;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .punk-footer {
+        font-size: 1rem;
+    }
+
+    .punk-footer h3 {
+        font-size: 1.5rem;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-icon img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logo-section {
+        height: 20vh !important;
+    }
+}
 

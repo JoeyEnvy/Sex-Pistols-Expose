@@ -9,18 +9,14 @@
 }
 
 @font-face {
-    font-family: 'Mailart Rubberstamp';
-    src: url('Fonts/MailartRubberstamp-Regular.otf') format('opentype');
+    font-family: 'Chinese Rocks';
+    src: url('Fonts/chinese rocks rg.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'Chinese Rocks';
-    src: url('Fonts/chinese rocks rg.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Mailart Rubberstamp';
+    src: url('Fonts/MailartRubberstamp-Regular.otf') format('opentype');
 }
-
-
 
 * {
     margin: 0;
@@ -48,7 +44,6 @@ nav {
     align-items: center;
     padding: 0 20px;
     z-index: 1000;
-        font-family: 'Chinese Rocks', sans-serif;
 }
 
 nav ul {
@@ -407,7 +402,6 @@ main {
 
 /* Click Hint */
 .click-hint {
-    font-family: 'Chinese Rocks', sans-serif;
     font-size: 18px;
     color: white;
     text-align: center;
@@ -1322,7 +1316,6 @@ padding-bottom: 25px;
 }
 
 .youtube-title {
-        font-family: 'Chinese Rocks', sans-serif;
     width: 100%;
     text-align: center;
     color: white;
@@ -2019,7 +2012,6 @@ cursor: pointer;
 
 /* Footer */
 .punk-footer {
-        font-family: 'Chinese Rocks', sans-serif;
     background-color: #1a1a1a;
     color: #ffffff;
     display: grid;
@@ -2117,12 +2109,8 @@ cursor: pointer;
 
 /* Media Queries for Responsive Design */
 
-/* Base styles here (for mobile devices) */
-
-/* Media Queries for Responsive Design */
-
-/* Small phones (max-width: 320px) */
-@media screen and (max-width: 320px) {
+/* Small phones (320px and up) */
+@media (min-width: 320px) {
     /* HERO SECTION */
     nav ul li a {
         font-size: 20px;
@@ -2164,7 +2152,10 @@ cursor: pointer;
     .bandcamp-container {
         height: 50vh;
     }
+}
 
+/* Small phones (320px and down) */
+@media screen and (max-width: 320px) {
     /* CONTACT FORM SECTION */
     .punk-contact-title {
         font-size: 1.5rem;
@@ -2185,8 +2176,8 @@ cursor: pointer;
     }
 }
 
-/* Large phones (max-width: 480px) */
-@media screen and (max-width: 480px) {
+/* Large phones (480px and up) */
+@media (min-width: 480px) {
     /* HERO SECTION */
     nav ul li a {
         font-size: 24px;
@@ -2309,7 +2300,10 @@ cursor: pointer;
     .bandcamp-container {
         height: 60vh;
     }
+}
 
+/* Large phones (480px and down) */
+@media screen and (max-width: 480px) {
     /* CONTACT FORM SECTION */
     .punk-contact-title {
         font-size: 2rem;
@@ -2339,7 +2333,10 @@ cursor: pointer;
     .punk-sex-pistols-logo {
         width: 150px;
     }
+}
 
+/* Large phones (576px and down) */
+@media (max-width: 575.98px) {
     /* FOOTER SECTION */
     .punk-footer {
         font-size: 1rem;
@@ -2360,11 +2357,8 @@ cursor: pointer;
     }
 }
 
-/* Tablets (max-width: 768px) */
-@media screen and (max-width: 768px) {
-
-font-family: 'Chinese Rocks', sans-serif;
-
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
     /* NAV SECTION */
     nav {
         flex-wrap: nowrap;
@@ -2382,8 +2376,6 @@ font-family: 'Chinese Rocks', sans-serif;
         order: 0;
         font-size: initial;
     }
-
-font-family: 'Chinese Rocks', sans-serif;
     .hamburger-menu {
         display: none;
     }
@@ -2404,7 +2396,7 @@ font-family: 'Chinese Rocks', sans-serif;
 
     /* HERO SECTION */
     .parallax-bg {
-         background-image: url('images/Mobile/1.jpg');
+        background-image: url('images/Desktop/1.jpg');
     }
     .hero-section {
         margin-top: -15vh;
@@ -2637,12 +2629,15 @@ font-family: 'Chinese Rocks', sans-serif;
     .badge-slide {
         height: 50%;
     }
+}
 
+/* Tablets (768px and down) */
+@media screen and (max-width: 768px) {
     /* CONTACT FORM SECTION */
     #punk-contact-page {
         flex-direction: column;
     }
-    .punk-contact-form-wrapper {
+        .punk-contact-form-wrapper {
         width: 90%;
         height: auto;
         padding: 20px;
@@ -2651,7 +2646,7 @@ font-family: 'Chinese Rocks', sans-serif;
     .punk-contact-title {
         font-size: 2.5rem;
     }
-        .ents-widget {
+    .ents-widget {
         position: relative;
         top: 0;
         right: 0;
@@ -2698,12 +2693,23 @@ font-family: 'Chinese Rocks', sans-serif;
     }
 }
 
-/* Small laptops and tablets (max-width: 1024px) */
-@media screen and (max-width: 1024px) {
+/* Small laptops (992px and down) */
+@media (max-width: 991.98px) {
+    /* FOOTER SECTION */
+    .punk-footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .footer-right {
+        grid-column: span 2;
+    }
+    .logo-section {
+        height: 30vh !important;
+    }
+}
 
-
-
-
+/* Tablets and small laptops (1024px and down) */
+@media (max-width: 1024px) {
     /* GALLERY SECTION */
     .gallery-background {
         height: 200vh;
@@ -2849,9 +2855,25 @@ font-family: 'Chinese Rocks', sans-serif;
     .punk-sex-pistols-logo {
         width: 250px;
     }
+}
 
-    /* FOOTER SECTION */
-    .punk-footer {
+/* Large desktops (1920px and up) */
+@media screen and (min-width: 1920px) {
+    /* CONTACT INFORMATION SECTION */
+    #contact {
+        height: 150vh;
+    }
+    .contact-information {
+        width: 50%;
+    }
+    .contact-section-details {
+        width: 50%;
+    }
+
+    /* CONTACT SOCIAL MEDIA SECTION */
+    .facebook-embed {
+        transform: none;
+    }punk-footer {
         padding: 3rem;
         font-size: 1.1rem;
     }
@@ -2868,6 +2890,17 @@ font-family: 'Chinese Rocks', sans-serif;
     }
     .logo-section {
         height: 35vh !important;
+    }
+
+    /* CONTACT FORM SECTION */
+    .punk-contact-title {
+        font-size: 4rem;
+    }
+    .punk-contact-form-wrapper {
+        width: 60%;
+    }
+    .punk-form-group {
+        width: 70%;
     }
 }
 
@@ -3086,5 +3119,10 @@ body {
         content: " (" attr(href) ")";
     }
 }
+
+
+
+
+
 
 
