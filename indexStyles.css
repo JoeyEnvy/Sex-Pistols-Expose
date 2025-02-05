@@ -730,25 +730,25 @@ section:nth-child(even) {
 /* Media Queries for Responsive Design */
 @media (max-width: 1024px) {
     .logo-container {
-        padding: 1px 0; /* Further reduced padding for screens above 768px */
+        padding: 0.1vh 0; /* Converted 1px to vh */
     }
     .logo-container img {
         max-width: 55%;
     }
     .main-title {
-        font-size: 70px;
+        font-size: 7vh; /* Converted 70px to vh */
     }
     .sub-title-1, .sub-title-2 {
-        font-size: 44px;
+        font-size: 4.4vh; /* Converted 44px to vh */
     }
     .sub-title-3 {
-        font-size: 32px;
+        font-size: 3.2vh; /* Converted 32px to vh */
     }
     .additional-title {
-        font-size: 66px;
+        font-size: 6.6vh; /* Converted 66px to vh */
     }
     .button-slideshow {
-        margin: 22vh auto 3vh; /* Drastically increased top margin */
+        margin: 22vh auto 3vh;
     }
 }
 
@@ -757,105 +757,100 @@ section:nth-child(even) {
         background-image: url('images/Mobile/1.jpg');
     }
     .hero-section {
-        margin-top: -125px; /* Removed negative margin */
+        margin-top: -15vh; /* Converted -125px to vh */
         padding-top: 0;
     }
     .logo-container {
-        justify-content: flex-start; /* Move logo to the LEFT */
-        padding: 180px 0 0; /* Drastically increased top padding, removed bottom padding */
+        justify-content: flex-start;
+        padding: 22vh 0 0; /* Converted 180px to vh */
     }
     .logo-container img {
-        max-width: 140%; /* Significantly increased logo size for screens below 768px */
-        margin-left: 25px; /* Move logo to the left by a significant margin */
-        margin-top: -100px;
+        max-width: 140%;
+        margin-left: 3vw; /* Converted 25px to vw */
+        margin-top: -12vh; /* Converted -100px to vh */
     }
     .main-title {
-        font-size: 40px;
+        font-size: 5vh; /* Converted 40px to vh */
     }
     .sub-title-1, .sub-title-2 {
-        font-size: 36px;
+        font-size: 4.5vh; /* Converted 36px to vh */
     }
     .sub-title-3 {
-        font-size: 28px;
+        font-size: 3.5vh; /* Converted 28px to vh */
     }
     .slide-button {
-        width: 140px;
-        height: 140px;
-        font-size: 24px;
+        width: 17.5vh; /* Converted 140px to vh */
+        height: 17.5vh; /* Converted 140px to vh */
+        font-size: 3vh; /* Converted 24px to vh */
     }
     .button-slideshow {
-        margin: 20vh auto 2vh; /* Drastically increased top margin */
+        margin: 20vh auto 2vh;
     }
     .arrow.left {
-        left: -50px;
+        left: -6.25vw; /* Converted -50px to vw */
     }
     .arrow.right {
-        right: -50px;
+        right: -6.25vw; /* Converted -50px to vw */
     }
     .additional-title {
-        font-size: 52px;
-margin-bottom: -50px;
+        font-size: 6.5vh; /* Converted 52px to vh */
+        margin-bottom: -6.25vh; /* Converted -50px to vh */
     }
 }
 
 @media (max-width: 480px) {
     .logo-container {
-        padding: 160px 0 0; /* Further increased top padding */
+        padding: 20vh 0 0; /* Converted 160px to vh */
     }
-
-  .hero-section {
-        margin-top: -150px; /* Removed negative margin */
+    .hero-section {
+        margin-top: -18.75vh; /* Converted -150px to vh */
         padding-top: 0;
     }
-
     .logo-container img {
-        max-width: 130%; /* Slightly reduced from 768px breakpoint, but still very large */
-        margin-left: 20px; /* Further left positioning */
-        margin-top: -60px;
+        max-width: 130%;
+        margin-left: 2.5vw; /* Converted 20px to vw */
+        margin-top: -7.5vh; /* Converted -60px to vh */
     }
     .additional-title {
-        font-size: 40px;
-margin-bottom: -50px;
-
+        font-size: 5vh; /* Converted 40px to vh */
+        margin-bottom: -6.25vh; /* Converted -50px to vh */
     }
     .button-slideshow {
-        width: 240px;
-        margin: 25vh auto 2vh; /* Drastically increased top margin for screens below 480px */
+        width: 30vh; /* Converted 240px to vh */
+        margin: 25vh auto 2vh;
     }
     .arrow.left {
-        left: -40px;
+        left: -5vw; /* Converted -40px to vw */
     }
     .arrow.right {
-        right: -40px;
+        right: -5vw; /* Converted -40px to vw */
     }
 }
 
 @media (max-width: 320px) {
     .logo-container {
-        padding: 140px 0 0; /* Adjusted top padding for smallest screens */
-     
+        padding: 17.5vh 0 0; /* Converted 140px to vh */
     }
-
-  .hero-section {
-        margin-top: -175px; /* Removed negative margin */
+    .hero-section {
+        margin-top: -21.875vh; /* Converted -175px to vh */
         padding-top: 0;
     }
     .logo-container img {
-       max-width: 130%; /* Slightly reduced from 768px breakpoint, but still very large */
-        margin-left: 25px; /* Further left positioning */
-        margin-top: -60px;
+        max-width: 130%;
+        margin-left: 3.125vw; /* Converted 25px to vw */
+        margin-top: -7.5vh; /* Converted -60px to vh */
     }
     .additional-title {
-        font-size: 34px;
-margin-bottom: -25px;
+        font-size: 4.25vh; /* Converted 34px to vh */
+        margin-bottom: -3.125vh; /* Converted -25px to vh */
     }
     .slide-button {
-        width: 120px;
-        height: 120px;
-        font-size: 20px;
+        width: 15vh; /* Converted 120px to vh */
+        height: 15vh; /* Converted 120px to vh */
+        font-size: 2.5vh; /* Converted 20px to vh */
     }
     .button-slideshow {
-        margin: 22vh auto 1vh; /* Drastically increased top margin for smallest screens */
+        margin: 22vh auto 1vh;
     }
 }
 
