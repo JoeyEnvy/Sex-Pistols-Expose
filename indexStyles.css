@@ -862,7 +862,6 @@ margin-bottom: -25px;
 
 /* info section */
 
-/* General Section Styling */
 #info-section {
     width: 100vw;
     min-height: 100vh;
@@ -930,7 +929,8 @@ margin-bottom: -25px;
 }
 
 #progressBar,
-#playbackSpeed {
+#playbackSpeed,
+#volumeControl {
     width: 30%;
 }
 
@@ -939,10 +939,17 @@ margin-bottom: -25px;
     margin-left: 10px;
 }
 
+.volume-container,
+.speed-container {
+    display: flex;
+    align-items: center;
+}
+
 .info-columns {
     display: flex;
     width: 100%;
     height: 70vh;
+    position: relative;
 }
 
 .info-left-column,
@@ -954,27 +961,18 @@ margin-bottom: -25px;
     align-items: center;
 }
 
-.info-left-image,
-.info-right-image {
-    max-height: 70vh;
-}
-
 .center-images {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.info-top-image,
-.info-bottom-image {
-    max-width: 50%;
+    position: relative;
+    z-index: 2;
 }
 
 .middle-image-container {
+    left: 0px; /* Move middle image to the right by 25px */
     position: relative;
     display: inline-block;
-    max-width: 80%;
-    max-height: 50%;
 }
 
 .info-middle-image {
@@ -996,77 +994,272 @@ margin-bottom: -25px;
     max-width: 40%;
 }
 
-@media (max-width: 768px) {
-    .info-columns {
-        flex-direction: row;
-        height: auto;
-        align-items: center;
-        justify-content: center;
-        margin-left: -10%;
-    }
+.mess-image-link .info-middle-image.punk-navigation-trigger {
+    margin-right: 200px; /* Move only the "I'm a Mess" image to the right by 50px */
+}
 
-    .info-left-column,
-    .info-center-column {
-        flex-basis: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+.info-top-image,
+.info-bottom-image {
+    position: relative;
+    left: 0px; /* Move these back to the left to compensate */
+}
 
-    .info-right-column {
-        display: none;
-    }
+/* Use a flexible container for the images */
+.center-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
 
+/* Use a flexible container for the images */
+.center-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* For screens 1920px and above */
+@media (min-width: 1920px) {
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        width: 5.2vw; /* Using viewport width for more flexible sizing */
+        max-width: 100px;
+    }
     .info-left-image,
     .info-right-image {
         max-height: 50vh;
+        width: auto;
+    }
+}
+
+/* For screens between 1919px and 1385px */
+@media (max-width: 1919px) and (min-width: 1385px) {
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        width: 10.4vw;
+        max-width: 200px;
+    }
+    .info-left-image,
+    .info-right-image {
+        max-height: 65vh;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1384px) and (max-width: 1920px) {
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        width: 9.4vw;
+        max-width: 180px;
+        margin-bottom: 1.3vw; /* Using vw for margin as well */
+    }
+}
+
+@media (max-width: 1384px) {
+    .info-right-column {
+        display: none;
+    }
+    
+    .info-left-column {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: 80%;
+        height: 80%;
+    }
+    
+    .info-left-image {
+        width: 100%;
+        height: 100%;
         object-fit: contain;
+        opacity: 0.7;
+    }
+    
+    .info-center-column {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+    
+    .center-images {
+        transform: translateY(-4.3vh); /* Using vh instead of fixed pixels */
+    }
+    
+    .info-top-image,
+    .info-bottom-image {
+        width: 10.8vw;
+        max-width: 150px;
+    }
+    .middle-image-container {
+        width: 14.4vw;
+        max-width: 200px;
+    }
+}
+
+/* Updated media query for screens between 768px and 1384px */
+@media (min-width: 768px) and (max-width: 1384px) {
+    .video-container {
+        margin-bottom: 175px; /* Significantly increased space below video */
+    }
+
+    .info-container {
+        position: relative;
+        margin-bottom: 150px; /* Added significant margin to push content below */
+    }
+
+    .info-left-column {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%; /* Increased from 80% to 100% */
+        height: 100%; /* Increased from 80% to 100% */
+        z-index: 1;
+    }
+
+    .info-left-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0.5;
+        transform: scale(1.5); /* Increase the size of the image */
+    }
+
+    .center-images {
+        position: relative;
+        height: auto;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0;
+        margin-top: 0px; /* Added significant space above images */
+        margin-bottom: 225px; /* Added significant space below images */
+        z-index: 2; /* Ensure this is above the background image */
+    }
+
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        position: relative;
+        width: 120px;
+        max-width: 120px;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .middle-image-container {
+        width: 150px;
+        max-width: 150px;
+    }
+
+    .info-center-column {
+        margin-top: 200px; /* Significantly increased space above center column */
+        margin-bottom: 200px; /* Significantly increased space below center column */
+        position: relative; /* Ensure this is positioned */
+        z-index: 2; /* Ensure this is above the background image */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .video-container {
+        margin-bottom: 19.5vh;
+    }
+
+    .video-controls {
+        flex-direction: column;
+        align-items: stretch;
+        bottom: -18.2vh;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+    }
+
+    #progressBar,
+    #playbackSpeed,
+    #volumeControl {
+        width: 100%;
+        margin: 0.65vh 0;
+    }
+
+    .volume-container,
+    .speed-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .video-controls label {
+        margin-left: 0;
+        margin-bottom: 0.65vh;
+    }
+
+    #playPauseButton,
+    #changeVideoButton {
+        width: 100%;
+        margin: 0.65vh 0;
+    }
+
+    .info-columns {
+        flex-direction: column;
+        height: auto;
+    }
+    .info-left-column,
+    .info-center-column {
+        width: 100%;
+        margin-bottom: 2.6vh;
+    }
+    .info-left-column {
         width: 90%;
+        height: 90%;
     }
-
-    .center-images img {
-        max-width: 90%;
-        object-fit: contain;
+    .info-top-image,
+    .info-bottom-image {
+        width: 15.6vw;
+        max-width: 120px;
     }
-
-    .center-images img:nth-child(2) {
-        max-width: 90%;
-        max-height: 60vh;
-    }
-
-    .center-images img:nth-child(1),
-    .center-images img:nth-child(3) {
-        max-width: 70%;
-        max-height: 40vh;
+    .middle-image-container {
+        width: 19.5vw;
+        max-width: 150px;
     }
 }
 
 @media (max-width: 480px) {
-    .info-columns {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-left: -5%;
+    .info-container {
+        width: 95%;
     }
-
-    .info-left-column,
-    .info-center-column {
-        width: 50%;
-        text-align: center;
+    .video-container {
+        height: 50vh;
     }
-
-    .info-left-image,
-    .center-images img {
-        max-width: 80%;
-        max-height: auto;
-        margin-bottom: 10px;
+    .info-title {
+        font-size: 1.5em;
     }
-
-    .center-images img:nth-child(2) {
+    .info-left-image {
         max-width: 90%;
-        margin-bottom: 15px;
+        max-height: 40vh;
+    }
+    .info-top-image,
+    .info-bottom-image {
+        width: 20.8vw;
+        max-width: 100px;
+    }
+    .middle-image-container {
+        width: 27.1vw;
+        max-width: 130px;
+    }
+    .info-download-icon {
+        max-width: 30%;
     }
 }
 
