@@ -2759,11 +2759,11 @@ cursor: pointer;
  .members-title {
       .members-title {
         margin-top: -10vh; /* Move up by 10vh */
-        font-size: 1.2em; /* Slightly bigger, adjust as needed */
+        font-size: 4em; /* Slightly bigger, adjust as needed */
     }
 
   .members-heading {
-        font-size: 2.8em; /* Slightly bigger */
+        font-size: 4em; /* Slightly bigger */
         margin-top: -10vh; /* Move up by 10vh */
     }
 
