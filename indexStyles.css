@@ -763,11 +763,12 @@ opacity: 1;
 
 .black-extender {
     position: relative;
-    bottom: -100vh; /* Positions it right at the bottom of the members section */
+    top: 0vh;
     left: 0;
     width: 100vw;
-    height: 100vh; /* Makes it extend for another full viewport height */
+    height: 150vh; /* Makes it extend for another full viewport height */
     background-color: black;
+    opacity: 0.8;
     z-index: 1; /* Ensures it's above the background but below the content */
 }
 
@@ -835,7 +836,7 @@ opacity: 1;
     width: 100vw;
     height: 125px;
     background-color: rgba(0, 0, 255, 0.5);
-    position: absolute;
+    position: relative;
     left: 0;
     z-index: 5000;
 }
@@ -871,10 +872,10 @@ opacity: 1;
 
     left: 0;
     background-color: black;
-    z-index: 499;
+    z-index: 1;
     display: flex;
     flex-direction: column;
-    margin-top: 115vh;
+    opacity: 0.80;
     justify-content: flex-start;
     align-items: center;
 }
@@ -1274,7 +1275,7 @@ padding-bottom: 25px;
     background-image: url('images/Me Nath New Background Expose Shirt.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.75;
     z-index: 1;
 }
 
@@ -1356,10 +1357,11 @@ padding-bottom: 25px;
 
 .videos-background {
     position: absolute;
-    top: 0;
+
     left: 0;
     width: 100%;
     height: 100%;
+    margin-top: -10vh;
     background-image: url('images/Backgrounds/MeNathVideosBackground.jpg');
     background-size: cover;
     background-position: center;
@@ -2090,19 +2092,42 @@ cursor: pointer;
 
 /* logo last */ 
 
+/* Logo Section */
 .logo-section {
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffef1d;
+    position: relative;
+}
+
+.logo-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    opacity: 0.2;
+    z-index: 1;
 }
 
 .large-logo {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
+    position: relative;
+    z-index: 2;
 }
+
+/* Spotify Embed Section */
+.gallery-burgundy-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Ensure the iframe itself is responsive */
+.gallery-burgundy-divider iframe {
+    max-width: 100%;
+    height: 600px;
+}
+
 
 /* footer */
 
