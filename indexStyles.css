@@ -2303,7 +2303,7 @@ cursor: pointer;
 
 /*info1024 media queries */ 
 
-@media screen and (max-width: 1024px) {
+
     #info-section {
         background-color: rgba(0, 0, 0, 0.75);
         position: relative;
@@ -2403,10 +2403,23 @@ cursor: pointer;
         height: auto;
         margin-top: 20px;
     }
+
+/*members2024 */
+
+
+ .members-content {
+        width: 80%; /* Increased from default width */
+    }
+
+.members-title {
+        font-size: 2em; /* Increased size */
+        margin-top: -10vh; /* Moved up by 10vh */
+    }
+
 }
 
 
-}
+
 
 /* Max-width: 768px */
 @media (max-width: 768px) {
@@ -2610,6 +2623,22 @@ cursor: pointer;
         width: 70px;
         margin-top: 20px;
     }
+
+/* members768 */
+
+/* Members section */
+  #members-section {
+    margin-top: -20px;
+  }
+
+  /* Information paragraphs */
+  .members-content {
+    width: 70%; /* Increased width */
+    border: 2px solid black;
+  }
+
+
+
 }
 
 /* Max-width: 480px */
@@ -2712,11 +2741,6 @@ cursor: pointer;
         right: 20px;
     }
 
-
-}
-
-/* Max-width: 420px */
-@media (max-width: 420px) {
     .button-slideshow {
         margin: 15vh auto 2vh; /* Increased top margin */
     }
@@ -2728,6 +2752,52 @@ cursor: pointer;
     .additional-title {
         font-size: 32px;
         margin-bottom: -400px; /* Reduced bottom margin */
+    }
+
+
+/* Members section */
+ .members-title {
+      .members-title {
+        margin-top: -10vh; /* Move up by 10vh */
+        font-size: 1.2em; /* Slightly bigger, adjust as needed */
+    }
+
+  .members-heading {
+        font-size: 2.8em; /* Slightly bigger */
+        margin-top: -10vh; /* Move up by 10vh */
+    }
+
+    .members-content {
+        width: 90%;
+        border: 3px solid black;
+    }
+
+    .quote-slider {
+        font-size: 0.8em;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+    }
+
+.quote-container {
+        animation: slideInPauseOut 15s linear infinite;
+    }
+    .members-grid {
+        gap: 10px;
+    }
+
+    .members-grid img {
+        max-width: 110%;
+        max-height: 85%;
+    }
+
+    .grid-title {
+        font-size: 6.5vw;
+    }
+
+    .grid-subtitle {
+        font-size: 4.5vw;
     }
 
 }
@@ -2771,7 +2841,8 @@ cursor: pointer;
 
     .additional-title {
         font-size: 28px;
-        margin-bottom: -600px; /* Further reduced bottom margin */
+        margin-bottom: -600px; /* Further reduced bottom margin */ 
+        z-index: 500;
     }
 
     .button-slideshow {
@@ -2806,44 +2877,168 @@ cursor: pointer;
 
 
    /* info320 css */
+
+#info-section {
+        margin-top: -200px;
+    }
+
     .info-title {
-        font-size: 0.8em; /* Reduced title size */
+        font-size: 0.8em;
     }
 
     .video-container {
-        height: 20vh; /* Halved the video container height */
+        height: 25vh;
+        position: relative;
     }
 
     .video-controls {
-        padding: 5px; /* Reduced padding */
+        position: absolute; /* Ensure absolute positioning */
+        bottom: 15px; /* Slightly raised by reducing the bottom value */
+        left: 0;
+        right: 0;
+        display: flex; /* Ensure the controls are evenly spaced */
+        flex-direction: column; /* Stack the controls vertically */
+        align-items: center; /* Center the controls horizontally */
+background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+        padding: 5px; /* Ensure padding is maintained */
+        height: 120px; /* Ensure the controls take up enough height */
+        margin-bottom: -175px; /* Increased margin below video controls */
+    }
+
+    #playPauseButton,
+    #changeVideoButton,
+    #progressBar,
+    .volume-container,
+    .speed-container {
+        height: 50%; /* Adjust height as necessary */
+        width: 60%; /* Set a default width, adjust as necessary */
+        margin-bottom: 4px; /* Maintain consistent spacing */
     }
 
     #playPauseButton,
     #changeVideoButton {
-        padding: 4px 6px; /* Further reduced padding */
-        font-size: 0.4em; /* Significantly reduced font size */
+        font-size: 0.4em; /* Maintain font size */
+        padding: 4px 6px; /* Maintain padding */
+        font-weight: thin;
     }
 
     .info-columns {
-        margin-top: 50px; /* Added margin to push elements down */
+        margin-top: 50px; /* Ensure elements do not overlap */
+        flex-direction: column; /* Force elements to stack vertically */
+        height: auto; /* Remove fixed height to ensure responsiveness */
+        gap: 20px; /* Provide consistent spacing between elements */
+        margin-bottom: 30px; /* Add margin for spacing */
+    }
+
+    .info-left-column {
+        display: none; /* Hide unnecessary content */
+    }
+
+    .info-right-column {
+        width: 100%; /* Take up the full width */
+        overflow: hidden; /* Ensure content is contained */
+    }
+
+    .info-right-image {
+        width: 110%; /* Slight enlargement */
+        height: auto; /* Maintain aspect ratio */
+        max-width: none; /* Ensure it scales correctly */
+        transform: translateX(-5%); /* Center content */
     }
 
     .info-center-column {
-        height: 125px; /* Halved the info center column height */
+        width: 100%; /* Full width */
+        max-width: 250px; /* Ensure the text remains contained */
+        height: auto; /* Ensure elements are responsive */
     }
 
     .info-top-image,
     .info-bottom-image,
     .middle-image-container {
-        width: 50px; /* Further reduced image width */
-        max-height: 50px; /* Further reduced image height */
+        position: static; /* Ensure elements stack */
+        width: 100px; /* Default width */
+        max-height: 100px; /* Set max height */
     }
 
     .info-download-icon {
-        width: 30px; /* Further reduced icon width */
-        right: 5px; /* Further adjusted right position */
+        position: relative; /* Adjust for better placement */
+        left: 30px; /* Fine-tune position */
+        top: -40px; /* Align icon properly */
+        width: 50px; /* Ensure correct width */
     }
 
+/* Members section */
+ .members-title {
+        margin-top: 0;
+        font-size: 0.8em;
+    }
 
+    .members-heading {
+        font-size: 2.5em; /* Made smaller */
+        margin-top: 10vh; /* Moved down by 10vh */
+        margin-bottom: 10px; /* Reduced space below */
+    }
+
+    .members-content {
+        width: 95%;
+        border: 5px solid black;
+    }
+
+    .quote-slider {
+        font-size: 0.7em;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+        overflow: hidden;
+    }
+
+    .quote-container {
+        animation: slideInPauseOut 20s linear infinite; /* Slowed down animation */
+    }
+
+    .members-grid {
+        gap: 1px; /* Reduced gap */
+        margin-top: -20px; /* Moved up slightly */
+    }
+
+    .members-grid img {
+        max-width: 130%; /* Larger images */
+        max-height: 95%;
+    }
+
+    .grid-title {
+        font-size: 8vw; /* Larger font */
+        word-wrap: break-word;
+    }
+
+    .grid-subtitle {
+        font-size: 6vw; /* Larger font */
+    }
+
+    .grid-top-right .grid-title {
+        font-size: 7vw;
+    }
+
+    .grid-top-left, .grid-top-right {
+        margin-bottom: -35px; /* Reduced margin */
+    }
+
+    .grid-bottom-left, .grid-bottom-right {
+        margin-top: -35px; /* Reduced margin */
+    }
 }
+
+@keyframes slideInPauseOut {
+    0% { transform: translateX(100%); }
+    20% { transform: translateX(0); }
+    80% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+}
+
+
+
+
+
 
