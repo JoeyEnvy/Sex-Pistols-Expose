@@ -2239,8 +2239,13 @@ cursor: pointer;
 
 
 /* Navbar styles for screens up to 1024px */
-/* Max-width: 1024px */
-/* Max-width: 1024px */
+
+
+
+
+
+
+
 @media (max-width: 1024px) {
     /* Navbar styles */
     nav ul li a {
@@ -2295,6 +2300,112 @@ cursor: pointer;
         width: 180px;
         height: 180px;
     }
+
+/*info1024 media queries */ 
+
+@media screen and (max-width: 1024px) {
+    #info-section {
+        background-color: rgba(0, 0, 0, 0.75);
+        position: relative;
+        overflow: visible;
+    }
+
+    .info-container {
+        width: 90%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .video-container {
+        height: 60vh;
+        overflow: visible;
+    }
+
+    .video-controls {
+        flex-direction: column;
+        bottom: -220px;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        z-index: 1000;
+        overflow: visible;
+    }
+
+    #playPauseButton,
+    #changeVideoButton,
+    #progressBar,
+    .volume-container,
+    .speed-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+.info-columns {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 240px;
+        margin-bottom: 100px;
+        position: relative;
+    }
+
+    .info-columns::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('images/Section 2 Passport.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.5;
+        z-index: -1;
+    }
+
+    .info-left-column,
+    .info-right-column {
+        display: none;
+    }
+
+    .info-center-column {
+        flex-basis: 100%;
+        height: auto;
+        max-height: none;
+        width: 100%;
+        max-width: 300px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        max-width: 180px;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .info-middle-image.punk-navigation-trigger {
+        width: 95%;
+        max-width: 200px;
+        height: auto;
+    }
+
+    .info-download-icon {
+        position: static;
+        width: 60px;
+        height: auto;
+        margin-top: 20px;
+    }
+}
+
+
 }
 
 /* Max-width: 768px */
@@ -2417,9 +2528,114 @@ cursor: pointer;
     .arrow.right {
         right: -45px;
     }
+
+/* info768 media */ 
+
+
+ .info-title {
+        font-size: 1.5em;
+    }
+
+    .video-container {
+        height: 50vh;
+        margin-bottom: 120px; /* Provide space for controls below */
+    }
+
+    .video-controls {
+        flex-direction: column;
+        bottom: -110px;
+        background-color: transparent;
+        padding: 10px;
+    }
+
+    #progressBar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .volume-container,
+    .speed-container,
+    #playPauseButton,
+    #changeVideoButton {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    #playPauseButton,
+    #changeVideoButton {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    .info-columns {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 30px;
+    }
+
+    .info-left-column {
+        display: none; /* Remove one passport image */
+    }
+
+    .info-right-column {
+        position: relative;
+        width: 80%;
+        max-width: 380px;
+    }
+
+    .info-right-image {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .info-center-column {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        position: relative;
+        left: 0;
+        transform: none;
+        width: 150px;
+        max-height: 150px;
+    }
+
+    .info-top-image {
+        align-self: flex-start;
+    }
+
+    .info-bottom-image {
+        align-self: flex-end;
+    }
+
+    .middle-image-container {
+        align-self: center;
+    }
+
+    .info-download-icon {
+        width: 70px;
+        right: 25px;
+        bottom: 15px;
+    }
+
 }
 
 /* Max-width: 480px */
+
+
 @media (max-width: 480px) {
     /* Navbar styles */
     nav {
@@ -2486,6 +2702,38 @@ cursor: pointer;
     .arrow.right {
         right: -35px;
     }
+
+/* info480 media */ 
+
+.info-container {
+        width: 95%;
+    }
+
+    .video-container {
+        height: 40vh;
+    }
+
+    .info-title {
+        font-size: 1.2em;
+    }
+
+    .info-center-column {
+        height: 300px;
+    }
+
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        width: 120px;
+        max-height: 120px;
+    }
+
+    .info-download-icon {
+        width: 60px;
+        right: 20px;
+    }
+
+
 }
 
 /* Max-width: 420px */
@@ -2502,6 +2750,7 @@ cursor: pointer;
         font-size: 32px;
         margin-bottom: -400px; /* Reduced bottom margin */
     }
+
 }
 
 /* Max-width: 320px */
@@ -2575,5 +2824,40 @@ cursor: pointer;
     .click-hint {
         font-size: 14px;
     }
+
+
+    /* info320 css */ 
+
+       .info-title {
+        font-size: 1em;
+    }
+
+    .video-container {
+        height: 30vh;
+    }
+
+    .info-center-column {
+        height: 250px;
+    }
+
+    .info-top-image,
+    .info-bottom-image,
+    .middle-image-container {
+        width: 100px;
+        max-height: 100px;
+    }
+
+    .info-download-icon {
+        width: 50px;
+        right: 10px;
+    }
+
+    #playPauseButton,
+    #changeVideoButton {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+
 }
 
