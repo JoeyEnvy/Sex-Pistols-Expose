@@ -437,6 +437,15 @@ section:nth-child(even) {
     z-index: 1001;
 }
 
+/*attachment for section container, similar to flexbox */
+
+attachment-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 200vh; /* Ensures at least two full viewport heights */
+    width: 100%;
+}
+
 
 /* info section */
 
@@ -446,12 +455,15 @@ section:nth-child(even) {
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .info-container {
     width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -462,6 +474,8 @@ section:nth-child(even) {
     color: #ffef1d;
     font-size: 2em;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
 }
 
 .video-container {
@@ -487,9 +501,9 @@ section:nth-child(even) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 20px;
     z-index: 2;
 }
 
@@ -499,12 +513,15 @@ section:nth-child(even) {
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 #playPauseButton:hover,
 #changeVideoButton:hover {
     background-color: #e6d800;
+    transform: scale(1.05);
 }
 
 #progressBar,
@@ -516,6 +533,8 @@ section:nth-child(even) {
 .video-controls label {
     color: white;
     margin-left: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .volume-container,
@@ -529,77 +548,92 @@ section:nth-child(even) {
     width: 100%;
     height: 70vh;
     position: relative;
+    gap: 20px;
+    padding: 20px 0;
+    align-items: center; /* This will help align the columns vertically */
 }
 
 .info-left-column,
 .info-right-column,
 .info-center-column {
-    flex: 1;
+    flex-basis: calc(33.33% - 20px); /* Equal widths for all columns */
+}
+
+.info-left-image,
+.info-right-image {
+    display: block;
+    width: 420px; /* Fixed width, adjust as needed */
+    height: 560px; /* Fixed height, adjust as needed */
+    object-fit: contain;
+    transition: all 0.3s ease;
+}.info-left-image:hover,
+.info-right-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.info-center-column {
+    position: relative;
+    height: 600px; /* Fixed height */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
-.center-images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 2;
+.info-top-image,
+.info-bottom-image,
+.middle-image-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+.info-top-image {
+    top: 0;
+}
+
+.info-bottom-image {
+    bottom: 0;
 }
 
 .middle-image-container {
-    left: 0px; /* Move middle image to the right by 25px */
-    position: relative;
-    display: inline-block;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
 }
 
-.info-middle-image {
-    display: block;
-    max-width: 100%;
-    max-height: 100%;
+.info-middle-image.punk-navigation-trigger {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    transition: transform 0.3s ease-in-out;
+}
+
+.info-download-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 35px;
+    width: 80px;
+    height: auto;
+}
+
+.mess-image-link {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
 }
 
 .info-middle-image:hover {
     transform: scale(1.1);
 }
 
-.info-download-icon {
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    max-width: 40%;
-}
 
-.mess-image-link .info-middle-image.punk-navigation-trigger {
-    margin-right: 200px; /* Move only the "I'm a Mess" image to the right by 50px */
-}
 
-.info-top-image,
-.info-bottom-image {
-    position: relative;
-    left: 0px; /* Move these back to the left to compensate */
-}
-
-/* Use a flexible container for the images */
-.center-images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-/* Use a flexible container for the images */
-.center-images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
 
 /* members section and info */ 
 
@@ -616,15 +650,15 @@ section:nth-child(even) {
 #members-section {
     width: 100vw;
     position: relative;
-    margin-top: calc(20vh - 182.5px); /* Moved up additional 5px */
+    margin-top: 0; /* Remove the previous margin-top */
     background-image: url('images/Info.jpg');
     background-size: cover;
-   
     background-position: center;
-    opacity: 0.85;
+    opacity: 0.75;
     z-index: 501;
     min-height: 100vh;
 }
+
 
 .members-background {
     width: 100%;
@@ -819,7 +853,6 @@ opacity: 1;
     background-position: center;
     position: relative;
     z-index: 599;
-    margin-top: -10vh;
     padding: 100px 5% 50px;
     box-sizing: border-box;
     overflow-x: hidden;
