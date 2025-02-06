@@ -2423,37 +2423,46 @@ cursor: pointer;
 
 /* black1024extender */ 
 
-black-extender {
-    height: -50vh;
-  }
+.black-extender {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 1;
+}
 
 
 /* famous1024 */
 
-   .famous-people-section {
-        height: 150vh; /* Increased height for longer section */
+ .famous-people-section {
+        height: 310vh; /* Increased by 10vh */
         padding: 0;
         position: relative;
         overflow: hidden;
-        transform: translateY(-50vh); /* Move everything up by 50vh */
-        opacity: 0.75; /* Set opacity to 0.75 as requested */
+        opacity: 0.75;
+        margin-bottom: 100vh;
+        width: 100%; /* Ensure it fits within viewport */
+        max-width: 100vw;
     }
     .famous-people-title {
         position: absolute;
-        top: 0;
+        top: 20vh; /* Align with the bottom of black-extender */
         left: 0;
         right: 0;
         font-size: 3.5rem;
         margin-top: 5vh;
         z-index: 2;
-        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better visibility */
+        background-color: rgba(0, 0, 0, 0.5);
         padding: 2vh 0;
     }
     .famous-people-wrapper {
         width: 100%;
-        height: calc(100% - 20vh); /* Adjusted to account for title space */
+        height: calc(100% - 40vh); /* Adjusted for black-extender and title */
         position: absolute;
-        top: 20vh; /* Pushed down to make room for title */
+        top: 40vh; /* Pushed down to accommodate black-extender and title */
         left: 0;
     }
     .famous-people-background {
@@ -2464,7 +2473,6 @@ black-extender {
         top: 0;
         left: 0;
     }
-
 }
 
 
