@@ -456,8 +456,8 @@ attachment-container {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
-    margin-bottom: 0;
-    padding-bottom: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .info-container {
@@ -649,16 +649,14 @@ attachment-container {
 
 #members-section {
     width: 100vw;
+    min-height: 100vh;
     position: relative;
-    margin-top: 0; /* Remove the previous margin-top */
     background-image: url('images/Info.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.75;
-    z-index: 501;
-    min-height: 100vh;
+    opacity: 0.8;
+    z-index: 2;
 }
-
 
 .members-background {
     width: 100%;
@@ -750,11 +748,90 @@ opacity: 1;
     color: white;
 }
 
+/* members grid section actual members */
+
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('Fonts/chinese rocks rg.otf') format('opentype');
+}
+
+.members-section {
+    position: relative;
+    height: 200vh;
+    width: 100vw;
+}
+
+.black-extender {
+    position: relative;
+    bottom: -100vh; /* Positions it right at the bottom of the members section */
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Makes it extend for another full viewport height */
+    background-color: black;
+    z-index: 1; /* Ensures it's above the background but below the content */
+}
+
+
+.members-heading {
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 6vw;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    position: relative;
+    z-index: 5000;
+}
+
+.members-grid {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    z-index: 5000;
+}
+
+.members-grid > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 5000;
+}
+
+.grid-title {
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 5vw;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.grid-subtitle {
+    font-size: 3vw;
+    margin-bottom: 25px;
+}
+
+.members-grid img {
+    max-width: 90%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.grid-top-left .grid-title { color: #ffef1d; background-color: #ed5e94; }
+.grid-top-right .grid-title { color: #c32500; background-color: #3a6ff9; }
+.grid-bottom-left .grid-title { color: #c32500; background-color: #3a6ff9; }
+.grid-bottom-right .grid-title { color: #ff2c2c; background-color: #ffef1d; }
+
+
 /* blue divider underneath member to famous section */
 
 .blue-divider {
     margin-bottom: 0px;
-    margin-top: 450vh;
     width: 100vw;
     height: 125px;
     background-color: rgba(0, 0, 255, 0.5);
@@ -790,8 +867,8 @@ opacity: 1;
 .famous-people-section {
     width: 100vw;
     height: 350vh;
-    position: absolute;
-    top: 1900px;
+    position: relative;
+
     left: 0;
     background-color: black;
     z-index: 499;
@@ -832,27 +909,18 @@ opacity: 1;
     background-repeat: no-repeat;
 }
 
-.red-divider {
-    margin-top: 440vh;
-    width: 100vw;
-    height: 100px;
-    background-color: rgba(255, 0, 0, 0.8);
-    position: relative;
-    z-index: 600;
-}
-
 
 /* Gigs Section Full CSS Solution */
 
 /* Gigs Section Global Styling */
 #gigs {
     width: 100vw;
-    height: auto;
+    min-height: 100vh;
+    position: relative;
     background-image: url('images/Backgrounds/fwefgwefweg_edited.jpg');
     background-size: cover;
     background-position: center;
-    position: relative;
-    z-index: 599;
+    z-index: 3;
     padding: 100px 5% 50px;
     box-sizing: border-box;
     overflow-x: hidden;
@@ -1185,15 +1253,16 @@ padding-bottom: 25px;
 
 
 #shop.bandcamp-shop {
-    position: relative;
-    height: 150vh;
     width: 100vw;
+    min-height: 150vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 2rem 0;
     overflow: hidden;
+    z-index: 4;
 }
 
 .background-image {
@@ -1295,9 +1364,8 @@ padding-bottom: 25px;
     background-size: cover;
     background-position: center;
     opacity: 0.7;
-    z-index: 1;
+    z-index: -1;
 }
-
 .videos-section {
     position: relative;
     width: 100vw;
@@ -1454,9 +1522,10 @@ position: relative;
 z-index: 2;
 }
 .gallery-section {
-position: relative;
-width: 100vw;
-height: 125vh;
+    position: relative;
+    width: 100vw;
+    min-height: 125vh;
+    z-index: 5;
 }
 .gallery-background {
 position: absolute;
@@ -1667,10 +1736,9 @@ cursor: pointer;
 /* Contact Section Full CSS */
 #contact {
     width: 100vw;
-    height: 130vh;
+    min-height: 130vh;
     position: relative;
-    margin-top: 0;
-    z-index: 10;
+    z-index: 6;
     display: flex;
     justify-content: center;
     align-items: center;
