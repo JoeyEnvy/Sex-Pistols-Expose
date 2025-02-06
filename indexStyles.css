@@ -2532,105 +2532,84 @@ cursor: pointer;
 /* info768 media */ 
 
 
- .info-title {
-        font-size: 1.5em;
-    }
-
-    .video-container {
+.video-container {
         height: 50vh;
-        margin-bottom: 120px; /* Provide space for controls below */
+        margin-bottom: 200px; /* Further increased space for controls below */
     }
 
     .video-controls {
         flex-direction: column;
-        bottom: -110px;
-        background-color: transparent;
+        bottom: -225px; /* Moved even further down */
+        background-color: rgba(0, 0, 0, 0.8);
         padding: 10px;
+        height: 50%;
     }
 
-    #progressBar {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
+    #playPauseButton,
+    #changeVideoButton,
+    #progressBar,
     .volume-container,
-    .speed-container,
-    #playPauseButton,
-    #changeVideoButton {
-        width: 100%;
-        margin-bottom: 5px;
+    .speed-container {
+        height: 60%;
+        width: 70%; /* Further scaled down */
+        margin-bottom: 6px;
     }
 
     #playPauseButton,
     #changeVideoButton {
-        font-size: 0.9em;
-        padding: 8px 12px;
+        font-size: 0.5em; /* Smaller font */
+        padding: 6px 8px; /* Smaller padding */
+        font-weight: thins;
     }
 
     .info-columns {
+        margin-top: 75px;
         flex-direction: column;
-        align-items: center;
         height: auto;
-        gap: 30px;
+        gap: 30px; /* Reduced gap */
+        margin-bottom: 50px; /* Further reduced margin beneath the middle container */
     }
 
     .info-left-column {
-        display: none; /* Remove one passport image */
+        display: none;
     }
 
     .info-right-column {
-        position: relative;
-        width: 80%;
-        max-width: 380px;
+        width: 100%;
     }
 
     .info-right-image {
-        width: 100%;
+        width: 120%; /* Increase the image size by 20% */
         height: auto;
-        margin: 0 auto;
+        max-width: none;
+        transform: translateX(-10%); /* Center the enlarged image */
     }
 
     .info-center-column {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 100%;
+        height: auto;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+        max-width: 300px;
+        position: static;
+        transform: none;
     }
 
     .info-top-image,
     .info-bottom-image,
     .middle-image-container {
-        position: relative;
-        left: 0;
+        position: static;
         transform: none;
         width: 150px;
         max-height: 150px;
-    }
-
-    .info-top-image {
-        align-self: flex-start;
-    }
-
-    .info-bottom-image {
-        align-self: flex-end;
-    }
-
-    .middle-image-container {
-        align-self: center;
+        margin: 12px 0; /* Slightly reduced margin */
     }
 
     .info-download-icon {
+        position: relative;
+        left: 50px;
+        top: -60px; /* Moved up by 30px */
         width: 70px;
-        right: 25px;
-        bottom: 15px;
+        margin-top: 20px;
     }
-
 }
 
 /* Max-width: 480px */
@@ -2826,36 +2805,43 @@ cursor: pointer;
     }
 
 
-    /* info320 css */ 
-
-       .info-title {
-        font-size: 1em;
+   /* info320 css */
+    .info-title {
+        font-size: 0.8em; /* Reduced title size */
     }
 
     .video-container {
-        height: 30vh;
+        height: 20vh; /* Halved the video container height */
+    }
+
+    .video-controls {
+        padding: 5px; /* Reduced padding */
+    }
+
+    #playPauseButton,
+    #changeVideoButton {
+        padding: 4px 6px; /* Further reduced padding */
+        font-size: 0.4em; /* Significantly reduced font size */
+    }
+
+    .info-columns {
+        margin-top: 50px; /* Added margin to push elements down */
     }
 
     .info-center-column {
-        height: 250px;
+        height: 125px; /* Halved the info center column height */
     }
 
     .info-top-image,
     .info-bottom-image,
     .middle-image-container {
-        width: 100px;
-        max-height: 100px;
+        width: 50px; /* Further reduced image width */
+        max-height: 50px; /* Further reduced image height */
     }
 
     .info-download-icon {
-        width: 50px;
-        right: 10px;
-    }
-
-    #playPauseButton,
-    #changeVideoButton {
-        padding: 8px 12px;
-        font-size: 0.9em;
+        width: 30px; /* Further reduced icon width */
+        right: 5px; /* Further adjusted right position */
     }
 
 
