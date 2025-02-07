@@ -766,7 +766,7 @@ opacity: 1;
     top: 0vh;
     left: 0;
     width: 100vw;
-    height: 150vh; /* Makes it extend for another full viewport height */
+    height: 110vh; /* Makes it extend for another full viewport height */
     background-color: black;
     opacity: 0.8;
     z-index: 1; /* Ensures it's above the background but below the content */
@@ -865,54 +865,56 @@ opacity: 1;
 
 
 /* Base Styles */
-.famous-people-section {
-    width: 100vw;
-    height: 100vh; /* Adjusted height */
-    position: relative;
-    left: 0;
-    background-color: black;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    opacity: 0.80;
-    align-items: center; /* Center items horizontally */
-    overflow: hidden;
-    padding-top: 5vh; /* Spacing from top */
+/* famousmain */
+.friends-pistols-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.famous-people-title {
-    color: white;
-    font-family: 'Chinese Rocks', sans-serif;
-    font-size: 4rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    z-index: 3000;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 2vh; /* Space below title */
+.friends-pistols-title {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+  width: 100%;
 }
 
-.famous-people-wrapper {
-    width: 100%;
-    height: 75vh; /* Adjusted height to fit content */
-    position: relative;
-    overflow: hidden;
-    flex-grow: 1; /* Take up remaining space */
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+.friends-pistols-image-container {
+  position: absolute;
+  top: 50vh; /* Extended 30vh above the original 20vh position */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.famous-people-background {
-    width: 100%;
-    height: 100%;
-    background-image: url('images/Famous\ Peoople.jpg');
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
+.friends-pistols-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
 }
+
+.friends-pistols-bg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+
 
 /* Gigs Section Full CSS Solution */
 
@@ -2430,7 +2432,7 @@ cursor: pointer;
     top: 0;
     left: 0;
     width: 100%;
-    height: 20vh;
+    height: 50vh;
     background-color: black;
     opacity: 0.8;
     z-index: 1;
@@ -2438,25 +2440,30 @@ cursor: pointer;
 
 /* famous1024 */
 .famous-people-section {
-        height: auto; /* Allow content to determine height */
+        height: 100vh; /* Keep full viewport height */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .famous-people-title {
         font-size: 3rem;
-        margin-top: 10px; /* Reduced top margin for 1024px */
+        margin-top: 5vh; /* Use viewport height for consistent spacing */
     }
 
     .famous-people-wrapper {
-        width: 90%; /* Slightly narrower on smaller screens */
-        height: auto; /* Let content determine height */
-        margin-top: 5px; /* Reduced top margin for 1024px */
+        width: 90%;
+        height: 80vh; /* Use a fixed percentage of viewport height */
+        margin-top: 2vh;
     }
 
     .famous-people-background {
-        height: 0;
-        padding-bottom: 100%; /* Creates a 1:1 aspect ratio */
+        height: 100%;
         background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
     }
+
 }
 
 
@@ -2687,15 +2694,24 @@ black-extender {
 /* famous768 */
 
 .famous-people-section {
-        height: 250vh;
+        height: auto;
     }
+
     .famous-people-title {
-        margin-top: calc(400px - 10vh);
-        font-size: 3rem;
+        font-size: 2.8rem;
+        margin-top: 12px;
     }
+
     .famous-people-wrapper {
-        width: 85%;
-        height: 70%;
+        width: 90%;
+        height: auto;
+        margin-top: 6px;
+    }
+
+    .famous-people-background {
+        height: 0;
+        padding-bottom: 105%;
+        background-size: contain;
     }
 
 }
@@ -2848,7 +2864,9 @@ h2.members-title {
         animation: slideInPauseOut 15s linear infinite;
     }
     .members-grid {
-        gap: 10px;
+        gap: 10px; 
+       
+            
     }
 
     .members-grid img {
@@ -2867,7 +2885,7 @@ h2.members-title {
 /* black480extender */ 
 
 black-extender {
-    height: 140vh;
+    display: hidden;
   }
 
 
@@ -2875,17 +2893,26 @@ black-extender {
 /* famous480 */
 
 .famous-people-section {
-        height: 200vh;
+        height: auto;
     }
+
     .famous-people-title {
-        margin-top: calc(400px - 20vh);
         font-size: 2.5rem;
-        letter-spacing: 2px;
+        margin-top: -40vh;
     }
+
     .famous-people-wrapper {
-        width: 90%;
-        height: 60%;
+        width: 92%;
+        height: auto;
+        margin-top: 4px;
     }
+
+    .famous-people-background {
+        height: 0;
+        padding-bottom: 110%;
+        background-size: contain;
+    }
+
 
 }
 
@@ -3092,6 +3119,7 @@ h2.members-title {
     .members-grid {
         gap: 1px; /* Reduced gap */
         margin-top: -20px; /* Moved up slightly */
+        margin-bottom: -15vh;
     }
 
     .members-grid img {
@@ -3133,31 +3161,39 @@ h2.members-title {
 /* black320extender */ 
 
 black-extender {
-    height: 140vh;
+    display:hidden;
   }
 
 
 
 
-/*fammous320*/
+/*famous320*/
 
 
-.famous-people-section {
-        height: 150vh;
+
+    .famous-people-section {
+        height: auto;
     }
+
     .famous-people-title {
-        margin-top: calc(400px - 30vh);
         font-size: 2rem;
-        letter-spacing: 1px;
+        margin-top: 5px;
     }
+
     .famous-people-wrapper {
         width: 95%;
-        height: 50%;
+        height: auto;
+        margin-top: 3px;
+    }
+
+    .famous-people-background {
+        height: 0;
+        padding-bottom: 120%;
+        background-size: contain;
     }
 
 
-}
-
+F
 
 @media (min-width: 1025px) {
 
@@ -3168,16 +3204,27 @@ black-extender {
   }
 
 
-    .famous-people-section {
-        height: 400vh;
+/* famous1025 */
+
+  .famous-people-section {
+        height: 100vh;
     }
+
     .famous-people-title {
-        font-size: 4.5rem;
-        margin-top: 450px;
+        font-size: 4rem;
+        margin-top: 20px;
     }
+
     .famous-people-wrapper {
-        width: 60%;
-        height: 85%;
+        width: 80%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .famous-people-background {
+        height: 0;
+        padding-bottom: 90%;
+        background-size: contain;
     }
 }
 
