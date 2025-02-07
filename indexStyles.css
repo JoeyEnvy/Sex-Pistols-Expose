@@ -2546,7 +2546,20 @@ cursor: pointer;
     }
 
 
+/* contact1024 section part 1 and social */
 
+ .contact-information {
+        width: 80%;
+    }
+    
+    .contact-section-details {
+        width: 80%;
+    }
+    
+    .facebook-embed {
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
 
 
@@ -2927,9 +2940,52 @@ cursor: pointer;
 
 
 
-/* spotify768 */ 
+/* contact768 */ 
 
- .
+ #contact {
+        min-height: auto;
+        padding: 50px 0;
+    }
+    
+    .contact-information {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+.contact-left-column,
+  .contact-middle-column,
+  .contact-right-column {
+    width: 30%; /* Slightly reduce width to ensure they fit */
+  }
+    
+    .queen-image,
+    .passport-image {
+        width: 90vw;
+        max-width: 400px;
+    }
+    
+
+    .contact-section-details {
+        width: 90%;
+        padding: 30px 20px;
+    }
+    
+    .additional-section-content {
+        flex-direction: column;
+    }
+    
+    .half-image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .facebook-embed {
+        position: static;
+        transform: none;
+        margin-top: 30px;
+    }
+
 
 
 }
@@ -3254,7 +3310,25 @@ h2.members-title {
 
 
 
-/* spotify480 */ 
+/* contact480 */
+
+.contact-info-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-info-item img {
+        margin-bottom: 10px;
+    }
+    
+    .contact-info-item span {
+        font-size: 1rem;
+    }
+    
+    .facebook-embed,
+    .facebook-embed iframe {
+        width: 90vw;
+    } 
 
 
 
@@ -3626,9 +3700,16 @@ h2.members-title {
         font-size: 14px;
     }
 
-/* spotify320 * /
+/* contact320 * /
 
-
+ .queen-image,
+    .passport-image {
+        max-width: 80px; /* Further reduce image size for very small screens */
+    }
+    
+    .contact-info-item span {
+        font-size: 0.8rem;
+    }
 
 }
 
