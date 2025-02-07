@@ -538,3 +538,8 @@ function adjustLogoHeight() {
 
 window.addEventListener('resize', adjustLogoHeight);
 adjustLogoHeight(); // Call once on page load
+
+
+
+//spotify embed 
+

@@ -1516,13 +1516,45 @@ background-color: rgba(128, 0, 128, 0.6);
 position: relative;
 z-index: 2;
 }
+
+
+
+
+
+
+
+
+
+
+/* Spotify Embed Section */
+
+/* Base styles */
 .gallery-burgundy-divider {
-width: 100vw;
-height: 500px;
-background-color: rgb(128, 0, 0);
-position: relative;
-z-index: 2;
+    background-color: #800020;
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents potential overflow issues */
+    position: relative; /* Creates positioning context for iframe */
 }
+
+.gallery-burgundy-divider iframe {
+    position: absolute; /* Allows precise positioning */
+    top: 50%;          /* Vertically center the iframe */
+    left: 50%;         /* Horizontally center the iframe */
+    transform: translate(-50%, -50%); /* Corrects for iframe's own dimensions */
+    width: 100%;        /* Sets width to half of the container */
+    height: 100%;       /* Adjust height as needed; 80% provides some spacing */
+    border: none;       /* Removes the default border */
+    border-radius: 10px; /* Adds rounded corners */
+
+}
+
+
+
+
 .gallery-section {
     position: relative;
     width: 100vw;
@@ -2114,19 +2146,8 @@ cursor: pointer;
     z-index: 2;
 }
 
-/* Spotify Embed Section */
-.gallery-burgundy-divider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
 
-/* Ensure the iframe itself is responsive */
-.gallery-burgundy-divider iframe {
-    max-width: 100%;
-    height: 600px;
-}
+
 
 
 /* footer */
@@ -2458,7 +2479,7 @@ cursor: pointer;
         font-size: 28px !important;
     }
 
-/* videos */ 
+/* videos1024 */ 
 
 .videos-container {
         flex-direction: column;
@@ -2480,6 +2501,56 @@ cursor: pointer;
         width: 48%;
         margin-bottom: 1rem;
     }
+
+/*gallery1024 */ 
+
+.gallery-section {
+        min-height: 100vh;
+    }
+
+    .gallery-main-title {
+        font-size: 1.8em;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .gallery-left-column,
+    .gallery-right-column {
+        width: 100%;
+        height: auto;
+    }
+
+    .large-preview {
+        width: 90%;
+        height: 50vh;
+    }
+
+    .carousel-container {
+        width: 95%;
+    }
+
+    .carousel-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .right-column-wall {
+        height: 40vh;
+    }
+
+    .preview-image {
+        height: 18vh;
+    }
+
+
+
+
+
+
+
 }
 
 
@@ -2818,6 +2889,49 @@ cursor: pointer;
     }
 
 
+/* gallery768 */ 
+
+.gallery-purple-divider {
+        height: 100px;
+    }
+
+    .gallery-burgundy-divider {
+        height: 400px;
+    }
+
+    .gallery-main-title {
+        font-size: 1.6em;
+    }
+
+    .large-preview {
+        height: 40vh;
+    }
+
+    .carousel-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .carousel-button {
+        top: 85%;
+    }
+
+    .right-column-wall {
+        height: 35vh;
+    }
+
+    .preview-image {
+        height: 15vh;
+    }
+
+
+
+
+/* spotify768 */ 
+
+ .
+
+
 }
 
 
@@ -3077,6 +3191,72 @@ h2.members-title {
     .youtube-title {
         font-size: 1.2em;
     }
+
+
+/* gallery480 */ 
+
+.gallery-purple-divider {
+        height: 80px;
+    }
+
+    .gallery-burgundy-divider {
+        height: 300px;
+    }
+
+    .gallery-main-title {
+        font-size: 1.4em;
+        padding: 10px 0;
+    }
+
+    .large-preview {
+        width: 95%;
+        height: 35vh;
+        margin: 3% auto;
+    }
+
+    .carousel-container {
+        width: 100%;
+    }
+
+    .carousel-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .carousel-button {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .right-column-wall {
+        width: 95%;
+        height: 30vh;
+    }
+
+    .right-column-previews {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preview-container {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .preview-image {
+        height: 20vh;
+    }
+
+    .preview-button {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+
+
+/* spotify480 */ 
+
+
 
 }
 
@@ -3402,6 +3582,53 @@ h2.members-title {
     #changeVideo {
         font-size: 0.6em;
     }
+
+
+/* gallery320 */
+
+.gallery-purple-divider {
+        height: 60px;
+    }
+
+    .gallery-burgundy-divider {
+        height: 250px;
+    }
+
+    .gallery-main-title {
+        font-size: 1.2em;
+        padding: 8px 0;
+    }
+
+    .large-preview {
+        height: 30vh;
+    }
+
+    .carousel-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .carousel-button {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .right-column-wall {
+        height: 25vh;
+    }
+
+    .preview-image {
+        height: 18vh;
+    }
+
+    .preview-button {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+/* spotify320 * /
+
+
 
 }
 
