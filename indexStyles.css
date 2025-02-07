@@ -867,49 +867,52 @@ opacity: 1;
 /* Base Styles */
 .famous-people-section {
     width: 100vw;
-    height: 350vh;
+    height: 100vh; /* Adjusted height */
     position: relative;
-
     left: 0;
     background-color: black;
     z-index: 1;
     display: flex;
     flex-direction: column;
     opacity: 0.80;
-    justify-content: flex-start;
-    align-items: center;
+    align-items: center; /* Center items horizontally */
+    overflow: hidden;
+    padding-top: 5vh; /* Spacing from top */
 }
 
 .famous-people-title {
     color: white;
     font-family: 'Chinese Rocks', sans-serif;
     font-size: 4rem;
-    margin-top: 400px;
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    z-index: 3000; 
+    z-index: 3000;
     position: relative;
     text-align: center;
     width: 100%;
+    margin-bottom: 2vh; /* Space below title */
 }
 
 .famous-people-wrapper {
-    width: 65%;
-    height: 80%;
+    width: 100%;
+    height: 75vh; /* Adjusted height to fit content */
     position: relative;
     overflow: hidden;
+    flex-grow: 1; /* Take up remaining space */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 .famous-people-background {
     width: 100%;
     height: 100%;
     background-image: url('images/Famous\ Peoople.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
 }
-
 
 /* Gigs Section Full CSS Solution */
 
@@ -2421,8 +2424,7 @@ cursor: pointer;
         margin-top: -10vh; /* Moved up by 10vh */
     }
 
-/* black1024extender */ 
-
+/* black1024extender */
 .black-extender {
     position: relative;
     top: 0;
@@ -2434,44 +2436,26 @@ cursor: pointer;
     z-index: 1;
 }
 
-
 /* famous1024 */
+.famous-people-section {
+        height: auto; /* Allow content to determine height */
+    }
 
- .famous-people-section {
-        height: 310vh;
-        padding: 0;
-        position: relative;
-        overflow-x: hidden; /* Prevent horizontal overflow */
-        opacity: 0.75;
-        margin-bottom: 0; /* Removed bottom margin */
-        width: 100%;
-        max-width: 100vw; /* Ensure it fits within viewport */
-    }
     .famous-people-title {
-        position: absolute;
-        top: 20vh;
-        left: 0;
-        right: 0;
-        font-size: 3.5rem;
-        margin-top: 5vh;
-        z-index: 2;
-        background-color: rgba(0, 0, 0, 0.5);
-        padding: 2vh 0;
+        font-size: 3rem;
+        margin-top: 10px; /* Reduced top margin for 1024px */
     }
+
     .famous-people-wrapper {
-        width: 100%;
-        height: calc(100% - 40vh); /* Adjusted for black-extender and title */
-        position: absolute;
-        top: 40vh; /* Pushed down to accommodate black-extender and title */
-        left: 0;
+        width: 90%; /* Slightly narrower on smaller screens */
+        height: auto; /* Let content determine height */
+        margin-top: 5px; /* Reduced top margin for 1024px */
     }
+
     .famous-people-background {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
+        height: 0;
+        padding-bottom: 100%; /* Creates a 1:1 aspect ratio */
+        background-size: contain;
     }
 }
 
