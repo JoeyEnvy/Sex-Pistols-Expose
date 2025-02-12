@@ -1971,13 +1971,15 @@ cursor: pointer;
 
 /* Base Styles */
 #punk-contact-page {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    padding: 150px 20px 100px;
 }
 
 .punk-contact-background {
@@ -2002,93 +2004,105 @@ cursor: pointer;
     z-index: 2;
 }
 
+.punk-contact-form-wrapper {
+    width: 75vw; /* Total width of both columns */
+    margin-right: 10vh;
+    max-width: none;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .punk-contact-background-image {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50%; 
+    width: 50%;
     height: 100%;
     object-fit: cover;
     z-index: 1;
-}
-
-.punk-contact-form-wrapper {
-    width: 50%;
-    height: 100%;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 50px;
-    position: relative;
 }
 
 .punk-contact-title {
     color: white;
     background-color: rgba(128, 0, 128, 0.3);
     padding: 10px 20px;
-    font-size: 6rem;
-    margin-bottom: 30px;
+    font-size: 8rem;
+    margin-bottom: 50px;
     z-index: 10;
     display: inline-block;
+    text-align: center;
 }
 
+.form-and-widget-container {
+    display: flex; /* Side-by-side layout */
+    justify-content: center;  /* This centers both columns */
+}
+
+/* Form Column */
 .punk-rock-form-container {
-    width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    width: auto; /*  Let content determine width */
+    max-width: 750px; /* Set a fixed max-width for the form */
+    margin-right: 50px; /*  Add space between form and widget */
 }
 
-.punk-form-row {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
+/* Align labels next to inputs */
 .punk-form-group {
-    width: 50%;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
 }
 
-.punk-form-group label {
+.punk-sex-pistols-label {
     color: white;
-    margin-left: 10px;
-    margin-bottom: 5px;
+    font-family: "Chinese Rocks", sans-serif;
     font-size: 1rem;
-    font-family: 'Chinese Rocks', sans-serif;
+    margin-right: 15px;
+    flex-shrink: 0;
+    width: 150px; /* Fixed label width */
+    text-align: right;
 }
 
 .punk-form-group input,
 .punk-form-group textarea {
-    width: 100%;
-    padding: 12px;
+    flex-grow: 1;
+    width: calc(100% - 165px); /* Input width based on label width */
+    padding: 15px;
     background: rgba(255, 0, 0, 0.75);
     border: 2px solid white;
     color: white;
     border-radius: 5px;
-    font-family: 'Chinese Rocks', sans-serif;
+    font-family: "Chinese Rocks", sans-serif;
 }
 
 .punk-form-group textarea {
-    height: 250px;
+    height: 150px;
+    resize: none;
 }
 
+/* Submit button styling */
 .punk-submit-button {
-    width: 250px;
-    padding: 20px;
+    width: 10vw;
+    padding: 10px 20px;
     background-color: red;
     color: white;
-    border: 5px solid white;
-    border-radius: 150px;
+    border: 2px solid white;
+    border-radius: 25px;
     cursor: pointer;
-    font-family: 'Chinese Rocks', sans-serif;
-    font-size: 1.2rem;
+    font-family: "Chinese Rocks", sans-serif;
+    font-size: 0.9rem;
     margin-top: 20px;
-    align-self: flex-start;
-    transition: all 0.3s ease;
+    align-self: center;
+    transition: all 0.3s ease-in-out;
 }
 
 .punk-submit-button:hover {
@@ -2096,37 +2110,38 @@ cursor: pointer;
     color: red;
 }
 
-.punk-sex-pistols-logo {
-    position: absolute;
-    bottom: 25px;
-    right: -25px; /* Negative right value to move slightly outside the form */
-    width: 600px;
-    height: auto;
-    z-index: 5;
+/* Widget Column */
+.widget-column {
+    display: flex;
+    justify-content: center;
+    width: auto; /* Let content determine width */
 }
 
-
 .ents-widget {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    width: 400px; /* Slightly smaller */
-    height: 550px;
-    background: white;
+    width: 300px; /* Fixed widget width */
+    height: calc(400px + 15vh);
+    background-color: white;
     z-index: 6;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+.ents-widget iframe {
+    width: 100%;
+    height: 100%;
+}
 
+/* Ensure proper spacing between form and widget */
+.form-and-widget-container {
+    gap: 0px;  /* Remove gap;  spacing is handled by margin-right on form */
+}
 
-
-/* logo last */ 
 
 /* Logo Section */
 .logo-section {
     position: relative;
+    text-align: center;
 }
 
 .logo-section::before {
@@ -2144,32 +2159,25 @@ cursor: pointer;
 .large-logo {
     position: relative;
     z-index: 2;
+    width: 70%;
+    margin: 0 auto;
 }
-
-
-
-
-
-/* footer */
-
-
 
 /* Footer */
 .punk-footer {
-        font-family: 'Chinese Rocks', sans-serif;
+    font-family: 'Chinese Rocks', sans-serif;
     background-color: #1a1a1a;
     color: #ffffff;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    display: flex;
+    justify-content: space-between;
     padding: 4rem;
     font-size: 1.2rem;
     line-height: 1.6;
 }
 
 .footer-left, .footer-middle, .footer-right {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
+    margin: 0 10px;
 }
 
 .punk-footer h3 {
@@ -2244,7 +2252,6 @@ cursor: pointer;
     font-size: 1.3rem;
     margin-top: 1rem;
 }
-
 
 
 
@@ -2561,6 +2568,33 @@ cursor: pointer;
         transform: translateX(-50%);
     }
 
+/* contactform1024 */ 
+
+
+.punk-contact-form-wrapper {
+        width: 90vw;
+        margin-right: 0;
+    }
+    
+    .punk-contact-title {
+        font-size: 10rem;
+    }
+    
+    .form-and-widget-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .punk-rock-form-container {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .ents-widget {
+        width: 100%;
+        max-width: 300px;
+    }
 
 
 
@@ -2986,7 +3020,59 @@ cursor: pointer;
         margin-top: 30px;
     }
 
+/* contact768 form, logo and footer */ 
 
+  /* ContactForm768 */
+
+
+  }
+  
+  .punk-contact-form-wrapper {
+    margin-top: 20vh;
+  }
+  
+  .widget-column {
+    display: none;
+  }
+  
+  .punk-submit-button {
+    width: 15vw;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
+
+.punk-contact-title {
+        font-size: 8rem;
+    }
+    
+    .punk-sex-pistols-label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+    
+    .punk-form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .punk-form-group input,
+    .punk-form-group textarea {
+        width: 100%;
+    }
+    
+
+
+    /* Logo Section */
+    .large-logo {
+        width: 60%; 
+        margin-bottom: 20px; 
+        margin-left:auto;margin-right:auto
+      ;
+      
+      
+      
+      ;}
 
 }
 
@@ -3330,7 +3416,49 @@ h2.members-title {
         width: 90vw;
     } 
 
+/* contact480 form, logo and footer */ 
 
+ /* Contact Form */
+
+
+   .punk-contact-title {
+        font-size: 6rem;
+    }
+    
+    #punk-contact-page {
+        padding: 100px 10px 50px;
+    }
+
+
+    /* Logo Section */
+    .large-logo {
+        width: 70%; /* Slightly larger than on smaller devices */
+        margin: 0 auto; /* Center the logo */
+    }
+
+    /* Footer */
+ .punk-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .punk-contact-form-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .punk-rock-form-container,
+    .ents-widget {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
 }
 
@@ -3711,7 +3839,53 @@ h2.members-title {
         font-size: 0.8rem;
     }
 
+/* contact320 form, logo and footer */ 
+
+
+
+
+.punk-contact-title {
+        font-size: 4rem;
+    }
+    
+    .punk-submit-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+
+
+
+    /* Logo Section */
+    .large-logo {
+        width: 80%; /* Scale down the logo */
+        margin: 0 auto; /* Center the logo */
+    }
+
+    /* Footer */
+    .punk-footer {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        text-align: center; /* Center-align all footer content */
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
 }
 
 
 
+
+
+@media (min-width: 1025px) {
+  .punk-contact-background-image {
+    width: 60%;
+    height: 120%;
+  }
+}
