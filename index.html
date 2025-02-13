@@ -686,23 +686,23 @@
                     <div class="punk-form-row">
                         <div class="punk-form-group">
                             <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
-                            <input type="text" id="punk-first-name" name="punk-first-name" required>
+                            <input type="text" id="punk-first-name" name="punk-first-name" required aria-label="First Name">
                         </div>
                         
                         <div class="punk-form-group">
                             <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
-                            <input type="text" id="punk-last-name" name="punk-last-name" required>
+                            <input type="text" id="punk-last-name" name="punk-last-name" required aria-label="Last Name">
                         </div>
                     </div>
                     
                     <div class="punk-form-group">
                         <label for="punk-email" class="punk-sex-pistols-label">Email</label>
-                        <input type="email" id="punk-email" name="punk-email" required>
+                        <input type="email" id="punk-email" name="punk-email" required aria-label="Email">
                     </div>
                     
                     <div class="punk-form-group">
                         <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
-                        <textarea id="punk-message" name="punk-message" required></textarea>
+                        <textarea id="punk-message" name="punk-message" required aria-label="Message"></textarea>
                     </div>
                     
                     <button type="submit" class="punk-submit-button">Submit</button>
@@ -711,9 +711,9 @@
                 <div class="ents-widget">
                     <iframe 
                         src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=400&height=550&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                        width="400" 
+                        width="100%" 
                         height="550" 
-                        style="border:none;overflow:hidden" 
+                        style="border:none;overflow:hidden;max-width:400px;" 
                         scrolling="no" 
                         frameborder="0" 
                         allowfullscreen="true" 
@@ -732,7 +732,7 @@
 <script>
     // Initialize EmailJS with your actual user ID
     (function() {
-        emailjs.init("sexpistolsexposegmail");  // Use your actual EmailJS user ID
+        emailjs.init("YOUR_USER_ID_HERE");  // Replace with your actual EmailJS user ID
     })();
 
     document.getElementById('punk-rock-contact-form').addEventListener('submit', function(event) {
@@ -740,23 +740,21 @@
 
         // Collect form data
         var templateParams = {
-            to_name: "Joe Mort",  // Name of the person receiving the email (your name)
+            to_name: "Joe Mort",  // Name of the person receiving the email
             from_name: document.getElementById("punk-first-name").value + " " + document.getElementById("punk-last-name").value,
             from_email: document.getElementById("punk-email").value,
             message: document.getElementById("punk-message").value,
-            reply_to: document.getElementById("punk-email").value  // Reply to the sender's email
+            reply_to: document.getElementById("punk-email").value
         };
 
-        // Log the templateParams to check the values
-        console.log(templateParams);
-
         // Send email using EmailJS
-        emailjs.send("sexpistolsexposegmail", "sexpistolsgmailtemplate", templateParams)  // Use your actual Service ID and Template ID
+        emailjs.send("service_9lq4npt", "template_0drkhxd", templateParams)
         .then(function(response) {
             alert("Your message has been sent successfully!");
+            document.getElementById('punk-rock-contact-form').reset(); // Clear the form after successful submission
         }, function(error) {
             alert("Oops! Something went wrong. Please try again.");
-            console.log('EmailJS Error:', error);  // Log the error to the console for debugging
+            console.error('EmailJS Error:', error);  // Log the error to the console for debugging
         });
     });
 </script>
