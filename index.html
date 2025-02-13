@@ -674,7 +674,10 @@
         <div class="punk-contact-blue-overlay"></div>
         
         <!-- Background Image with lazy loading -->
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="images/god save the queen blue red flag.jpg" alt="Punk Rock Background" class="punk-contact-background-image lazy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" 
+             data-src="images/god save the queen blue red flag.jpg" 
+             alt="Punk Rock Background" 
+             class="punk-contact-background-image lazy">
         
         <!-- Contact Form Container -->
         <div class="punk-contact-form-wrapper">
@@ -682,7 +685,29 @@
             
             <div class="form-and-widget-container">
                 <form id="punk-rock-contact-form" class="punk-rock-form-container">
-                    <!-- Form content remains unchanged -->
+                    <div class="punk-form-row">
+                        <div class="punk-form-group">
+                            <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
+                            <input type="text" id="punk-first-name" name="punk-first-name" required aria-label="First Name">
+                        </div>
+                        
+                        <div class="punk-form-group">
+                            <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
+                            <input type="text" id="punk-last-name" name="punk-last-name" required aria-label="Last Name">
+                        </div>
+                    </div>
+                    
+                    <div class="punk-form-group">
+                        <label for="punk-email" class="punk-sex-pistols-label">Email</label>
+                        <input type="email" id="punk-email" name="punk-email" required aria-label="Email">
+                    </div>
+                    
+                    <div class="punk-form-group">
+                        <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
+                        <textarea id="punk-message" name="punk-message" required aria-label="Message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="punk-submit-button">Submit</button>
                 </form>
 
                 <div class="ents-widget">
@@ -703,6 +728,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- Add the EmailJS library -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
