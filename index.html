@@ -732,9 +732,9 @@
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 <script>
+    // Initialize EmailJS with your actual user ID
     (function() {
-        emailjs.send("sexpistolsexposegmail","sexpistolsexposegmail");
-  // Initialize EmailJS with your actual user ID
+        emailjs.init("sexpistolsexposegmail");  // Use your actual EmailJS user ID
     })();
 
     document.getElementById('punk-rock-contact-form').addEventListener('submit', function(event) {
@@ -750,7 +750,7 @@
         };
 
         // Send email using EmailJS
-        emailjs.send("sexpistolsexposegmail","sexpistolsexposegmail' , templateParams)  // Replace 'your_template_id' with your actual template ID
+        emailjs.send("sexpistolsexposegmail", "sexpistolsexposegmail", templateParams)  // Use your service ID and template ID
         .then(function(response) {
             alert("Your message has been sent successfully!");
         }, function(error) {
