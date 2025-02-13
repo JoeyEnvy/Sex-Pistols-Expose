@@ -3120,19 +3120,14 @@ cursor: pointer;
 /* logo768 */ 
 
 
-.logo-section {
-        height: 150px; /* Adjust this value as needed for a smaller height */
-    }
 
-    .large-logo {
-        width: 90%; /* Increase width percentage for better visibility on smaller screens */
-        max-height: 130px; /* Ensure the logo doesn't exceed the new section height */
-    }
+
 
 /* footer768 */ 
 
     /* Footer */
     .punk-footer {
+        margin-bottom: -60vh;
         flex-direction: column;
         padding: 2rem;
     }

@@ -207,45 +207,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const shopSection = document.getElementById('shop');
     const bandcampIframe = document.getElementById('bandcamp-iframe');
     const allLinks = document.querySelectorAll('a[href^="#"]:not([href="#videoPlayer"])');
-    
+    let isManualScroll = false;
+
     function loadIframe() {
-        if (bandcampIframe && bandcampIframe.getAttribute('src') === '') {
-            bandcampIframe.src = bandcampIframe.getAttribute('data-src');
-            bandcampIframe.onload = function() {
-                this.style.opacity = 1;
-                const loaderContainer = document.querySelector('.loader-container');
-                if (loaderContainer) {
-                    loaderContainer.style.display = 'none';
-                }
-            };
-        }
+        // ... (keep the existing loadIframe function)
     }
 
     allLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
-                e.preventDefault();
+                isManualScroll = true;
                 if (targetId === 'shop' || (shopSection && targetElement.offsetTop > shopSection.offsetTop)) {
                     loadIframe();
                 }
                 targetElement.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    isManualScroll = false;
+                }, 1000); // Adjust this timeout as needed
             }
         });
     });
 
-    // Intersection Observer
+    // Modified Intersection Observer
     if (shopSection) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !isManualScroll) {
                     loadIframe();
-                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 }); // 10% of the element is visible
+        }, { threshold: 0.1 });
 
         observer.observe(shopSection);
     }
