@@ -541,5 +541,3 @@ adjustLogoHeight(); // Call once on page load
 
 
 
-//spotify embed 
-

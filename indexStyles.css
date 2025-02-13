@@ -2013,7 +2013,7 @@ cursor: pointer;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -2578,13 +2578,38 @@ cursor: pointer;
 /* contactform1024 */ 
 
 
-.punk-contact-form-wrapper {
+#punk-contact-page {
+        min-height: 170vh; /* Increased by an extra 20vh */
+      
+    }
+
+    .punk-contact-background,
+    .punk-contact-blue-overlay,
+    .punk-contact-background-image {
+        height: 200vh; /* Increased by an extra 20vh */
+ 
+    }
+
+    .punk-contact-background-image {
+        width: 70vw;
+    }
+
+    #punk-contact-page {
+        padding-top: 5vh;
+    }
+
+    .punk-contact-form-wrapper {
         width: 90vw;
         margin-right: 0;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
     }
     
     .punk-contact-title {
-        font-size: 10rem;
+        margin-top: -17.5vh;
+        font-size: 6rem;
     }
     
     .form-and-widget-container {
@@ -2598,11 +2623,28 @@ cursor: pointer;
         margin-bottom: 30px;
     }
     
+    .punk-form-group input,
+    .punk-form-group textarea {
+            width: calc(100% + 0vw) !important; /* Forcefully apply the new 
+        padding: 20px; /* Increased padding for larger input boxes */
+        margin-right: 20vw !important;
+    }
+    
+    .punk-form-group textarea {
+        height: 200px; /* Increased height for textarea */
+    }
+    
+    .punk-submit-button {
+        width: 20vw !important; /* Increased from 10vw */
+        padding: 15px 25px; /* Increased padding */
+        font-size: 1.5rem !important; /* Increased font size */
+    }
+    
     .ents-widget {
         width: 100%;
         max-width: 300px;
+        margin-top: 30px;
     }
-
 
 
 }
@@ -3075,17 +3117,50 @@ cursor: pointer;
     }
     
 
+/* logo768 */ 
 
-    /* Logo Section */
+
+.logo-section {
+        height: 150px; /* Adjust this value as needed for a smaller height */
+    }
+
     .large-logo {
-        width: 60%; 
-        margin-bottom: 20px; 
-        margin-left:auto;margin-right:auto
-      ;
-      
-      
-      
-      ;}
+        width: 90%; /* Increase width percentage for better visibility on smaller screens */
+        max-height: 130px; /* Ensure the logo doesn't exceed the new section height */
+    }
+
+/* footer768 */ 
+
+    /* Footer */
+    .punk-footer {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .footer-left, .footer-middle, .footer-right {
+        flex: none;
+        width: 100%;
+        margin: 0 0 2rem 0;
+    }
+
+    .footer-middle ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .footer-middle li {
+        width: 48%; /* Adjust as needed for two columns */
+        margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .creator-info {
+        text-align: center;
+    }
 
 }
 
@@ -3435,13 +3510,13 @@ h2.members-title {
         width: 90vw;
     } 
 
-/* contact480 form, logo and footer */ 
+/* contactform480, logo and footer */ 
 
  /* Contact Form */
 
 
    .punk-contact-title {
-        font-size: 6rem;
+        font-size: 3rem;
     }
     
     #punk-contact-page {
@@ -3449,10 +3524,23 @@ h2.members-title {
     }
 
 
-    /* Logo Section */
-    .large-logo {
-        width: 70%; /* Slightly larger than on smaller devices */
-        margin: 0 auto; /* Center the logo */
+ section.logo-section.logo-section-responsive {
+        height: 20vh !important;
+        min-height: 20vh !important;
+        max-height: 20vh !important;
+        background-color: red !important; /* Debug style */
+        overflow: visible !important; /* Changed from hidden to see if content is overflowing */
+    }
+
+    section.logo-section.logo-section-responsive .large-logo {
+        width: 120% !important;
+        height: auto !important;
+        max-height: 20vh !important; /* Ensure logo doesn't exceed container height */
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    } auto !important;
     }
 
     /* Footer */
@@ -3737,121 +3825,17 @@ h2.members-title {
 
 /* gigs320 */ 
 
-#gigs {
-        padding: 30px 2% 15px;
-    }
 
-    .gigs-main-title {
-        font-size: 1.2em;
-    }
 
-    .safety-pin {
-        width: 50px;
-    }
 
-    .left-pin {
-        left: calc(50% - 160px);
-    }
-
-    .right-pin {
-        right: calc(50% - 160px);
-    }
-
-    .bandsintown-widget {
-        max-width: 100%;
-        border-width: 5px;
-    }
-
-    .bit-widget-initializer {
-        font-size: 18px !important;
-    }
-
-    .gigs-social-column h3 {
-        font-size: 1.2em;
-    }
-
-    .more-gigs-image {
-        right: calc(10px + 80px);
-        width: 40px;
-        height: 40px;
-    }
-
-    .gig-history {
-        font-size: 12px;
-    }
-
-    .gig-history h3 {
-        font-size: 20px;
-    }
 
 /*videos320 */ 
 
-.videos-title {
-        font-size: 1em;
-    }
-    
-    .video-list-column {
-        grid-template-columns: repeat(1, 1fr);
-    }
 
-    .main-video iframe {
-        border-radius: 15px;
-    }
-    
-    .video-description {
-        font-size: 0.55em;
-    }
-
-    .youtube-title {
-        font-size: 1em;
-    }
-
-    #changeVideo {
-        font-size: 0.6em;
-    }
 
 
 /* gallery320 */
 
-.gallery-purple-divider {
-        height: 60px;
-    }
-
-    .gallery-burgundy-divider {
-        height: 250px;
-    }
-
-    .gallery-main-title {
-        font-size: 1.2em;
-        padding: 8px 0;
-    }
-
-    .large-preview {
-        height: 30vh;
-    }
-
-    .carousel-image {
-        width: 70px;
-        height: 70px;
-    }
-
-    .carousel-button {
-        padding: 6px;
-        font-size: 14px;
-    }
-
-    .right-column-wall {
-        height: 25vh;
-    }
-
-    .preview-image {
-        height: 18vh;
-    }
-
-    .preview-button {
-        padding: 6px;
-        font-size: 14px;
-    }
 
 /* contact320 * /
 
@@ -3869,38 +3853,6 @@ h2.members-title {
 
 
 
-.punk-contact-title {
-        font-size: 4rem;
-    }
-    
-    .punk-submit-button {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-
-
-
-
-    /* Logo Section */
-    .large-logo {
-        width: 80%; /* Scale down the logo */
-        margin: 0 auto; /* Center the logo */
-    }
-
-    /* Footer */
-    .punk-footer {
-        grid-template-columns: 1fr; /* Single column layout */
-        gap: 1rem;
-        padding: 2rem;
-    }
-
-    .footer-left, .footer-middle, .footer-right {
-        text-align: center; /* Center-align all footer content */
-    }
-
-    .social-links {
-        justify-content: center;
-    }
 
 }
 
@@ -3913,4 +3865,11 @@ h2.members-title {
     width: 60%;
     height: 120%;
   }
+}
+
+
+@media screen and (max-width: 1324px) {
+    .punk-contact-background-image {
+        width: 70vw; /* Increased from 50% to approximately 70vw */
+    }
 }
