@@ -92,12 +92,12 @@
     <div class="info-container">
         <h2 class="info-title">Watch Here</h2>
         <div class="video-container">
-            <video id="videoPlayer" autoplay muted>
-                <source id="videoSource" src="videos/1.mp4" type="video/mp4">
+            <video id="videoPlayer" muted preload="none">
+                <source id="videoSource" data-src="videos/1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="video-controls">
-                <button id="playPauseButton">Pause</button>
+                <button id="playPauseButton">Play</button>
                 <input type="range" id="progressBar" value="0" step="0.1" min="0" max="100">
                 <div class="volume-container">
                     <label for="volumeControl">Volume:</label>
@@ -110,27 +110,26 @@
         </div>
         <div class="info-columns">
             <div class="info-left-column">
-                <img src="images/Section 2 Passport.png" alt="Passport" class="info-left-image">
+                <img data-src="images/Section 2 Passport.png" alt="Passport" class="info-left-image lazy">
             </div>
             <div class="info-center-column">
                 <div class="center-images">
-                    <img src="images/god save queen badge .png" alt="God Save The Queen Badge" class="info-top-image">
+                    <img data-src="images/god save queen badge .png" alt="God Save The Queen Badge" class="info-top-image lazy">
                     <div class="middle-image-container">
                         <a href="#punk-contact-page" class="mess-image-link">
-                            <img src="images/Am a Mess .png" alt="Am a Mess" class="info-middle-image punk-navigation-trigger">
+                            <img data-src="images/Am a Mess .png" alt="Am a Mess" class="info-middle-image punk-navigation-trigger lazy">
                         </a>
-                        <img src="images/Click-Download-PNG_red.png" alt="Download Icon" class="info-download-icon">
+                        <img data-src="images/Click-Download-PNG_red.png" alt="Download Icon" class="info-download-icon lazy">
                     </div>
-                    <img src="images/never mind badge .png" alt="Never Mind Badge" class="info-bottom-image">
+                    <img data-src="images/never mind badge .png" alt="Never Mind Badge" class="info-bottom-image lazy">
                 </div>
             </div>
             <div class="info-right-column">
-                <img src="images/Section 2 Passport.png" alt="Passport" class="info-right-image">
+                <img data-src="images/Section 2 Passport.png" alt="Passport" class="info-right-image lazy">
             </div>
         </div>
     </div>
 </section>
-
 
 
 <section id="members-section">

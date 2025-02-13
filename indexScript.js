@@ -153,70 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const playbackSpeed = document.getElementById('playbackSpeed');
     const changeVideoButton = document.getElementById('changeVideoButton');
 
-    let videoInitialized = false;
-
-    // Prevent default video from playing
-    videoPlayer.autoplay = false;
-    videoPlayer.load();
-
-    function initializeVideo() {
-        if (!videoInitialized) {
-            videoInitialized = true;
-            videoPlayer.muted = true;
-            volumeControl.value = 0;
-            playRandomVideo();
-
-            playPauseButton.addEventListener('click', togglePlayPause);
-            videoPlayer.addEventListener('timeupdate', updateProgressBar);
-            progressBar.addEventListener('input', seek);
-            volumeControl.addEventListener('input', adjustVolume);
-            playbackSpeed.addEventListener('input', adjustPlaybackSpeed);
-            changeVideoButton.addEventListener('click', playRandomVideo);
-        }
-    }
-
-    // Initialize video on user interaction or when scrolled into view
-    document.addEventListener('click', initializeVideo, { once: true });
-    document.addEventListener('scroll', checkVideoVisibility);
-
-    function checkVideoVisibility() {
-        const rect = videoPlayer.getBoundingClientRect();
-        const isVisible = (rect.top >= 0 && rect.bottom <= window.innerHeight);
-        if (isVisible) {
-            initializeVideo();
-            document.removeEventListener('scroll', checkVideoVisibility);
-        }
-    }
-
-    function togglePlayPause() {
-        if (videoPlayer.paused) {
-            videoPlayer.play();
-            playPauseButton.textContent = 'Pause';
-        } else {
-            videoPlayer.pause();
-            playPauseButton.textContent = 'Play';
-        }
-    }
-
-    function updateProgressBar() {
-        const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
-        progressBar.value = progress;
-    }
-
-    function seek() {
-        const time = (progressBar.value / 100) * videoPlayer.duration;
-        videoPlayer.currentTime = time;
-    }
-
-    function adjustVolume() {
-        videoPlayer.volume = this.value;
-        videoPlayer.muted = (this.value === '0');
-    }
-
-    function adjustPlaybackSpeed() {
-        videoPlayer.playbackRate = parseFloat(this.value);
-    }
-
     function playRandomVideo() {
         const randomVideo = videos[Math.floor(Math.random() * videos.length)];
         videoSource.src = randomVideo;
@@ -227,7 +163,75 @@ document.addEventListener('DOMContentLoaded', function() {
             videoPlayer.play();
         }, { once: true });
     }
+
+    playPauseButton.addEventListener('click', function() {
+        if (videoPlayer.paused) {
+            videoPlayer.play();
+            playPauseButton.textContent = 'Pause';
+        } else {
+            videoPlayer.pause();
+            playPauseButton.textContent = 'Play';
+        }
+    });
+
+    videoPlayer.addEventListener('timeupdate', function() {
+        const progress = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+        progressBar.value = progress;
+    });
+
+    progressBar.addEventListener('input', function() {
+        const time = (progressBar.value / 100) * videoPlayer.duration;
+        videoPlayer.currentTime = time;
+    });
+
+    volumeControl.addEventListener('input', function() {
+        videoPlayer.volume = this.value;
+        videoPlayer.muted = (this.value === '0');
+    });
+
+    playbackSpeed.addEventListener('input', function() {
+        videoPlayer.playbackRate = parseFloat(this.value);
+    });
+
+    changeVideoButton.addEventListener('click', playRandomVideo);
+
+    // Initial setup
+    videoPlayer.muted = true;
+    volumeControl.value = 0;
+    playRandomVideo();
 });
+
+//info lazy loading part 
+
+document.addEventListener("DOMContentLoaded", function() {
+        var lazyElements = [].slice.call(document.querySelectorAll(".lazy"));
+        var videoPlayer = document.getElementById('videoPlayer');
+        var videoSource = document.getElementById('videoSource');
+
+        if ("IntersectionObserver" in window) {
+            let lazyObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        let lazyElement = entry.target;
+                        if (lazyElement.tagName.toLowerCase() === 'img') {
+                            lazyElement.src = lazyElement.dataset.src;
+                        } else if (lazyElement === videoPlayer) {
+                            videoSource.src = videoSource.dataset.src;
+                            videoPlayer.load();
+                        }
+                        lazyElement.classList.remove("lazy");
+                        lazyObserver.unobserve(lazyElement);
+                    }
+                });
+            });
+
+            lazyElements.forEach(function(lazyElement) {
+                lazyObserver.observe(lazyElement);
+            });
+            lazyObserver.observe(videoPlayer);
+        }
+    });
+
 
 //shop section (in the wrong place)
 
