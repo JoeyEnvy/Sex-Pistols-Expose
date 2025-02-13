@@ -2012,6 +2012,7 @@ cursor: pointer;
 .punk-contact-form-wrapper {
     width: 75vw; /* Total width of both columns */
     margin-right: 10vh;
+  margin-top: 15vh;
     max-width: none;
     z-index: 3;
     display: flex;
@@ -2067,7 +2068,8 @@ cursor: pointer;
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    width: 100%;
+ width: 100%;
+    margin-right: 50vh;
 }
 
 .punk-sex-pistols-label {
@@ -2108,7 +2110,7 @@ cursor: pointer;
     border-radius: 25px;
     cursor: pointer;
     font-family: "Chinese Rocks", sans-serif;
-    font-size: 3rem;
+    font-size: 1.25rem;
     margin-top: 20px;
     align-self: center;
     transition: all 0.3s ease-in-out;
