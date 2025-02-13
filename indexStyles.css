@@ -2256,6 +2256,102 @@ cursor: pointer;
 
 
 
+
+
+/* BACKTOTOP */ 
+
+
+
+/* Global Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------------------------
+   Common Back-to-Top Button Styles
+-------------------------------------------- */
+a.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000; /* High z-index to appear above all other elements */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* --------------------------------------------
+   Desktop Back-to-Top Button Styles
+   (Uses the image at 240px width)
+-------------------------------------------- */
+a.back-to-top.desktop {
+  display: none; /* Hidden by default; shown via media query */
+}
+
+a.back-to-top.desktop img {
+  width: 240px;  /* 3x larger than a base 80px image */
+  height: auto;
+}
+
+/* --------------------------------------------
+   Mobile Back-to-Top Button Styles
+-------------------------------------------- */
+
+/* Outer container: a 60x60px circular badge with a 4px yellow border */
+a.back-to-top.mobile {
+  display: none; /* Hidden by default; will be enabled on mobile screens */
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 4px solid #FFFF00 !important; /* Bright yellow outer border */
+  border-radius: 50% !important;          /* Perfectly circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner element: fills the outer container with a bright purple background,
+   has a 2px deep purple border, and centers a yellow arrow inside */
+a.back-to-top.mobile span.mobile-inner {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #8A2BE2 !important; /* Bright purple interior */
+  border: 2px solid #800080 !important; /* Deep purple border */
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFF00 !important;            /* Yellow arrow color */
+  font-size: 2rem !important;            /* Large arrow (approx. 4x base size) */
+}
+
+/* --------------------------------------------
+   Media Queries to Toggle Desktop vs. Mobile
+-------------------------------------------- */
+
+/* Show the desktop button on screens 768px and wider */
+@media (min-width: 768px) {
+  a.back-to-top.desktop {
+    display: block;
+  }
+  a.back-to-top.mobile {
+    display: none;
+  }
+}
+
+/* Show the mobile button on screens 767px and below */
+@media (max-width: 767px) {
+  a.back-to-top.desktop {
+    display: none;
+  }
+  a.back-to-top.mobile {
+    display: flex;
+  }
+}
+
+
+
+
+
 /* media queries different devices, mobile tablet, phone etc */
 
 /* Base styles here (for mobile devices) */

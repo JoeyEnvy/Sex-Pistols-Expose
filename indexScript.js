@@ -206,11 +206,32 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const shopSection = document.getElementById('shop');
     const bandcampIframe = document.getElementById('bandcamp-iframe');
+    const loaderContainer = document.querySelector('.loader-container');
     const allLinks = document.querySelectorAll('a[href^="#"]:not([href="#videoPlayer"])');
     let isManualScroll = false;
+    let iframeLoaded = false;
 
     function loadIframe() {
-        // ... (keep the existing loadIframe function)
+        if (!iframeLoaded && bandcampIframe) {
+            bandcampIframe.src = bandcampIframe.dataset.src;
+            iframeLoaded = true;
+            loaderContainer.style.display = 'block';
+            bandcampIframe.style.display = 'none';
+            
+            bandcampIframe.onload = function() {
+                loaderContainer.style.display = 'none';
+                bandcampIframe.style.display = 'block';
+            };
+        }
+    }
+
+    function unloadIframe() {
+        if (iframeLoaded && bandcampIframe) {
+            bandcampIframe.src = '';
+            iframeLoaded = false;
+            loaderContainer.style.display = 'block';
+            bandcampIframe.style.display = 'none';
+        }
     }
 
     allLinks.forEach(link => {
@@ -221,23 +242,26 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (targetElement) {
                 isManualScroll = true;
-                if (targetId === 'shop' || (shopSection && targetElement.offsetTop > shopSection.offsetTop)) {
+                if (targetId === 'shop') {
                     loadIframe();
+                } else {
+                    unloadIframe();
                 }
                 targetElement.scrollIntoView({ behavior: 'smooth' });
                 setTimeout(() => {
                     isManualScroll = false;
-                }, 1000); // Adjust this timeout as needed
+                }, 1000);
             }
         });
     });
 
-    // Modified Intersection Observer
     if (shopSection) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !isManualScroll) {
                     loadIframe();
+                } else if (!entry.isIntersecting && !isManualScroll) {
+                    unloadIframe();
                 }
             });
         }, { threshold: 0.1 });
@@ -245,7 +269,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(shopSection);
     }
 });
-
 
 //quote sllider between members and information 
 
@@ -534,6 +557,27 @@ function adjustLogoHeight() {
 
 window.addEventListener('resize', adjustLogoHeight);
 adjustLogoHeight(); // Call once on page load
+
+
+
+
+
+
+//BACKTOTOP 
+
+
+
+    // Smooth scroll to top functionality
+    document.querySelectorAll('.back-to-top').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+
 
 
 
