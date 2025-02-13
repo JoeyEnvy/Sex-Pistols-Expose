@@ -239,7 +239,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 120%;
     padding: 2px 0; /* Extremely reduced padding for screens above 768px */
     position: relative;
     z-index: 2;
@@ -2013,7 +2013,7 @@ cursor: pointer;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -2092,6 +2092,7 @@ cursor: pointer;
 /* Submit button styling */
 .punk-submit-button {
     width: 10vw;
+    height: 7.5vh; 
     padding: 10px 20px;
     background-color: red;
     color: white;
@@ -2099,7 +2100,7 @@ cursor: pointer;
     border-radius: 25px;
     cursor: pointer;
     font-family: "Chinese Rocks", sans-serif;
-    font-size: 0.9rem;
+    font-size: 3rem;
     margin-top: 20px;
     align-self: center;
     transition: all 0.3s ease-in-out;
@@ -2292,11 +2293,17 @@ cursor: pointer;
         max-height: calc(45px - (1024px - 100vw) * 0.005);
     }
 
-    /* Hero section styles */
+    /* Hero1024 */
     .hero-section {
         margin-top: -150px;
         padding: 20px 15px 0;
     }
+
+.logo-container {
+
+    width: 140%;
+    MARGIN-LEFT: 50PX;
+}
 
     .logo-container img {
         max-width: 70%;
@@ -2672,7 +2679,7 @@ cursor: pointer;
         min-height: calc(45px * 1.25);
     }
 
-    /* Hero section styles */
+    /* Hero768 */
     .hero-section {
         margin-top: -120px;
         padding: 15px 10px 0;
@@ -2681,6 +2688,12 @@ cursor: pointer;
     .logo-container img {
         max-width: 90%;
     }
+
+.logo-container {
+
+    width: 135%;
+    MARGIN-LEFT: 60PX;
+}
 
     .main-title {
         font-size: 60px;
@@ -3039,7 +3052,7 @@ cursor: pointer;
     width: 15vw;
     padding: 12px 24px;
     font-size: 1.1rem;
-  }
+  }LOGO1024
 
 .punk-contact-title {
         font-size: 8rem;
@@ -3097,7 +3110,7 @@ cursor: pointer;
         min-height: calc(45px * 1.15);
     }
 
-    /* Hero section styles */
+    /* Hero480 */
     .hero-section {
         margin-top: -100px;
         padding: 10px 5px 0;
@@ -3106,6 +3119,12 @@ cursor: pointer;
     .logo-container img {
         max-width: 95%;
     }
+
+.logo-container {
+
+    width: 140%;
+    MARGIN-LEFT: -50PX;
+}
 
     .main-title {
         font-size: 50px;
@@ -3120,7 +3139,7 @@ cursor: pointer;
     }
 
     .additional-title {
-        font-size: 36px;
+        font-size: 28px;
         margin-bottom: 30px;
     }
 
@@ -3477,15 +3496,21 @@ h2.members-title {
         max-height: calc(45px * 2);
     }
 
-    /* Hero section styles */
+    /* Hero320 */
     .hero-section {
         margin-top: -80px;
         padding: 5px 3px 0;
     }
 
     .logo-container img {
-        max-width: 110%;
+        max-width: 150%;
     }
+
+.logo-container {
+
+    width: 130%;
+    MARGIN-RIGHT: 50PX;
+}
 
     .main-title {
         font-size: 40px;
@@ -3500,7 +3525,7 @@ h2.members-title {
     }
 
     .additional-title {
-        font-size: 28px;
+        font-size: 8px;
         margin-bottom: -600px; /* Further reduced bottom margin */ 
         z-index: 500;
     }
@@ -3524,11 +3549,11 @@ h2.members-title {
     }
 
     .arrow.left {
-        left: -30px;
+        left: -70px;
     }
 
     .arrow.right {
-        right: -30px;
+        right: -70px;
     }
 
     .click-hint {
