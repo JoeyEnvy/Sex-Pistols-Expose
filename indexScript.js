@@ -613,3 +613,58 @@ adjustLogoHeight(); // Call once on page load
 
 
 
+//contact section form parts and lazy loading 
+
+    // Initialize EmailJS with your public key
+    (function() {
+        emailjs.init("i80sxC4oCU-8VMJFL");
+    })();
+
+    document.getElementById('punk-rock-contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent default form submission
+
+        // Collect form data
+        var templateParams = {
+            to_name: "Joe Mort",  // Name of the person receiving the email
+            from_name: document.getElementById("punk-first-name").value + " " + document.getElementById("punk-last-name").value,
+            from_email: document.getElementById("punk-email").value,
+            message: document.getElementById("punk-message").value,
+            reply_to: document.getElementById("punk-email").value
+        };
+
+        // Send email using EmailJS
+        emailjs.send("service_9lq4npt", "template_0drkhxd", templateParams)
+        .then(function(response) {
+            alert("Your message has been sent successfully!");
+            document.getElementById('punk-rock-contact-form').reset(); // Clear the form after successful submission
+        }, function(error) {
+            alert("Oops! Something went wrong. Please try again.");
+            console.error('EmailJS Error:', error);  // Log the error to the console for debugging
+        });
+    });
+
+    // Lazy loading implementation
+    document.addEventListener("DOMContentLoaded", function() {
+        var lazyElements = [].slice.call(document.querySelectorAll(".lazy"));
+
+        if ("IntersectionObserver" in window) {
+            let lazyObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        let lazyElement = entry.target;
+                        if (lazyElement.tagName.toLowerCase() === 'iframe') {
+                            lazyElement.src = lazyElement.dataset.src;
+                        } else if (lazyElement.tagName.toLowerCase() === 'img') {
+                            lazyElement.src = lazyElement.dataset.src;
+                        }
+                        lazyElement.classList.remove("lazy");
+                        lazyObserver.unobserve(lazyElement);
+                    }
+                });
+            });
+
+            lazyElements.forEach(function(lazyElement) {
+                lazyObserver.observe(lazyElement);
+            });
+        }
+    });
