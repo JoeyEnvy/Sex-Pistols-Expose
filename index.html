@@ -726,8 +726,6 @@
     </div>
 </section>
 
-
-
 <!-- Add the EmailJS library -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
@@ -742,19 +740,23 @@
 
         // Collect form data
         var templateParams = {
-            to_name: "Joe Mort Test",  // Name of the person receiving the email
+            to_name: "Joe Mort",  // Name of the person receiving the email (your name)
             from_name: document.getElementById("punk-first-name").value + " " + document.getElementById("punk-last-name").value,
             from_email: document.getElementById("punk-email").value,
             message: document.getElementById("punk-message").value,
             reply_to: document.getElementById("punk-email").value  // Reply to the sender's email
         };
 
+        // Log the templateParams to check the values
+        console.log(templateParams);
+
         // Send email using EmailJS
-        emailjs.send("sexpistolsexposegmail", "sexpistolsexposegmail", templateParams)  // Use your service ID and template ID
+        emailjs.send("sexpistolsexposegmail", "your_template_id", templateParams)  // Replace 'your_template_id' with your actual template ID
         .then(function(response) {
             alert("Your message has been sent successfully!");
         }, function(error) {
             alert("Oops! Something went wrong. Please try again.");
+            console.log('EmailJS Error:', error);  // Log the error to the console for debugging
         });
     });
 </script>
