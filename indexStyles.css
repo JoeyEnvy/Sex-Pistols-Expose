@@ -2302,7 +2302,7 @@ a.back-to-top.mobile {
 
 a.back-to-top.mobile > img {
   
-  width: 100px; /* Smaller image for mobile */
+  width: 75px; /* Smaller image for mobile */
   height: auto;
 }
 
@@ -2394,8 +2394,8 @@ a.back-to-top.mobile > img {
 
   /* Adjust icon size and positioning on mobile */
   .facebook-icon, .email-icon {
-    width: 75px;  /* Larger size on mobile */
-    height: 75px; /* Larger size on mobile */
+    width: 60px;  /* Larger size on mobile */
+    height: 60px; /* Larger size on mobile */
   }
 
   /* Ensure icons are touching */
@@ -2404,7 +2404,7 @@ a.back-to-top.mobile > img {
   }
 
   .email-icon {
-    margin-left: -35px; /* Small negative margin to make them touch */
+    margin-left: -20px; /* Small negative margin to make them touch */
   }
 }
 
