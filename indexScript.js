@@ -246,6 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
 //quote sllider between members and information 
 
 const quoteContainer = document.querySelector('.quote-container');
