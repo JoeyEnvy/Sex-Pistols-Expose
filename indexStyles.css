@@ -240,7 +240,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 120%;
-    padding: 2px 0; /* Extremely reduced padding for screens above 768px */
+    padding: 2px 0; /
     position: relative;
     z-index: 2;
 }
@@ -3352,8 +3352,8 @@ a.back-to-top.mobile > img {
 
 .logo-container {
 
-    width: 140%;
-    MARGIN-LEFT: -50PX;
+    width: 160%;
+    MARGIN-LEFT: -0PX;
 }
 
     .main-title {
