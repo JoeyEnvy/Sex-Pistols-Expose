@@ -733,7 +733,7 @@
 
 <script>
     (function() {
-        emailjs.init("user_yourUserID");  // Initialize EmailJS with your user ID (replace 'yourUserID' with your actual user ID)
+        emailjs.init("user_yourUserID");  // Initialize EmailJS with your actual user ID
     })();
 
     document.getElementById('punk-rock-contact-form').addEventListener('submit', function(event) {
@@ -741,7 +741,7 @@
 
         // Collect form data
         var templateParams = {
-            to_name: "Chris Fear",  // Name of the person receiving the email
+            to_name: "Joe Mort Test",  // Name of the person receiving the email
             from_name: document.getElementById("punk-first-name").value + " " + document.getElementById("punk-last-name").value,
             from_email: document.getElementById("punk-email").value,
             message: document.getElementById("punk-message").value,
