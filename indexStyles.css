@@ -2302,7 +2302,7 @@ a.back-to-top.mobile {
 
 a.back-to-top.mobile > img {
   
-  width: 125px; /* Smaller image for mobile */
+  width: 100px; /* Smaller image for mobile */
   height: auto;
 }
 
@@ -2338,7 +2338,7 @@ a.back-to-top.mobile > img {
 
 
 
-v/* Common styles for all social icons */
+/* Common styles for social icons */
 .unique-social {
   position: fixed;
   z-index: 9999;
@@ -2346,84 +2346,74 @@ v/* Common styles for all social icons */
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  width: 60px; /* Fixed icon size */
-  height: 60px;
-  border-radius: 10px; /* Soft rounded corners */
+  transition: all 0.3s ease;
 }
 
 /* Facebook Icon */
 .facebook-icon {
-  background-color: #4267B2; /* Facebook Blue */
-  margin-right: 10px; /* Space between icons */
+  position: fixed;
+  bottom: 20px; /* Space from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the icon exactly */
+  width: 120px; /* Increased size (2x) */
+  height: 120px; /* Increased size (2x) */
+  margin-right: 0; /* No margin between icons */
 }
 
 /* Email Icon */
 .email-icon {
-  background-color: #6a1b9a; /* Purple color */
+  position: fixed;
+  bottom: 20px; /* Space from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the icon exactly */
+  width: 120px; /* Increased size (2x) */
+  height: 120px; /* Increased size (2x) */
 }
 
 /* Facebook & Email Icon Images */
 .unique-social img {
-  width: 35px;
-  height: 35px;
-  border-radius: 5px; /* Slight roundness to the image */
-}
-
-/* Desktop View Styling */
-@media (min-width: 768px) {
-  /* Positioning the icons at the bottom center on desktop */
-  .facebook-icon, .email-icon {
-    position: fixed;
-    bottom: 20px; /* Adjust this value to give them space from the bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-  }
-
-  /* Icons will touch but not overlap */
-  .facebook-icon {
-    margin-right: 10px; /* Gap between the icons */
-  }
-
-  .email-icon {
-    margin-left: 10px; /* Gap between the icons */
-  }
+  width: 100%; /* Fill the container with image */
+  height: 100%; /* Fill the container with image */
+  border-radius: 50%; /* Circular image */
 }
 
 /* Mobile View Styling */
 @media (max-width: 767px) {
-  /* Mobile view display */
-  .unique-social {
-    display: block;
-    width: 50px; /* Smaller icon size on mobile */
-    height: 50px;
-  }
-
-  /* Facebook Icon on Mobile */
-  .facebook-icon {
-    background-color: #4267B2; /* Facebook Blue */
-    margin-right: 5px; /* Less margin to avoid overflowing */
-  }
-
-  /* Email Icon on Mobile */
-  .email-icon {
-    background-color: #6a1b9a; /* Purple color */
-  }
-
-  /* Ensure the icons are centered and placed with spacing */
+  /* Show the icons only on mobile */
   .facebook-icon, .email-icon {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    display: inline-block; /* Display both side by side */
   }
 
-  /* Fix the image sizes for mobile */
-  .facebook-icon img, .email-icon img {
-    width: 30px; /* Resize for mobile */
-    height: 30px;
+  .facebook-icon {
+    margin-right: 0; /* Ensure no margin between the icons */
+  }
+
+  .email-icon {
+    margin-left: 0; /* Ensure no margin between the icons */
+  }
+
+  /* Adjust icon size and positioning on mobile */
+  .facebook-icon, .email-icon {
+    width: 75px;  /* Larger size on mobile */
+    height: 75px; /* Larger size on mobile */
+  }
+
+  /* Ensure icons are touching */
+  .facebook-icon {
+    margin-left: 25px; /* Small negative margin to make them touch */
+  }
+
+  .email-icon {
+    margin-left: -35px; /* Small negative margin to make them touch */
   }
 }
 
+/* Desktop Styling: Hide the icons */
+@media (min-width: 768px) {
+  .facebook-icon, .email-icon {
+    display: none; /* Hide icons on desktop */
+  }
+}
 
 
 /* media queries different devices, mobile tablet, phone etc */
