@@ -3698,58 +3698,10 @@ h2.members-title {
 
 /* contactform480, logo and footer */ 
 
-   /* Contact Form */
-    .punk-contact-title {
-        font-size: 2rem;
-    }
-    
-    #punk-contact-page {
-        padding: 50px 10px 30px;
-    }
 
-    /* Submit Button */
-    #punk-contact-form input[type="submit"] {
-        font-size: 1rem;
-        padding: 10px 20px;
-        width: 100%; /* Full width for better touch target */
-    }
 
-    /* Logo Section */
-    section.logo-section.logo-section-responsive {
-        height: 15vh !important;
-        min-height: 15vh !important;
-        max-height: 15vh !important;
-        overflow: hidden !important;
-    }
 
-    section.logo-section.logo-section-responsive .large-logo {
-        width: 90% !important;
-        max-height: 15vh !important;
-        object-fit: contain !important;
-    }
 
-@media screen and (max-width: 360px) {
-    /* Further adjustments for very small screens */
-    .punk-contact-title {
-        font-size: 1.5rem;
-    }
-
-    #punk-contact-form input[type="submit"] {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-
-    section.logo-section.logo-section-responsive {
-        height: 12vh !important;
-        min-height: 12vh !important;
-        max-height: 12vh !important;
-    }
-
-    section.logo-section.logo-section-responsive .large-logo {
-        width: 85% !important;
-        max-height: 12vh !important;
-    }
-}
 
     /* Footer */
  .punk-footer {
@@ -3776,6 +3728,35 @@ h2.members-title {
     }
 
 }
+
+
+
+
+
+
+@media screen and (max-width: 360px) {
+    /* Further adjustments for very small screens */
+    .punk-contact-title {
+        font-size: 1.5rem;
+    }
+
+    #punk-contact-form input[type="submit"] {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    section.logo-section.logo-section-responsive {
+        height: 12vh !important;
+        min-height: 12vh !important;
+        max-height: 12vh !important;
+    }
+
+    section.logo-section.logo-section-responsive .large-logo {
+        width: 85% !important;
+        max-height: 12vh !important;
+    }
+}
+
 
 /* Max-width: 320px */
 @media (max-width: 320px) {

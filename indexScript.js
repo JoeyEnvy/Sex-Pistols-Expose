@@ -605,7 +605,7 @@ adjustLogoHeight(); // Call once on page load
 
 //contact section form parts and lazy loading 
 
-    // Initialize EmailJS with your public key
+// Initialize EmailJS with your public key
 (function() {
     emailjs.init("i80sxC4oCU-8VMJFL");
 })();
@@ -623,7 +623,7 @@ document.getElementById('punk-rock-contact-form').addEventListener('submit', fun
     };
 
     // Send email using EmailJS
-    emailjs.sendForm("service_9lq4npt", "template_0drkhxd", this)
+    emailjs.send("service_9lq4npt", "template_0drkhxd", templateParams)
     .then(function(response) {
         alert("Your message has been sent successfully!");
         document.getElementById('punk-rock-contact-form').reset(); // Clear the form after successful submission
@@ -658,3 +658,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+
+//contactsubmitbuttonresponsitivity 
+
+function adjustButtonFontSize() {
+    if (window.innerWidth <= 480) {
+        document.querySelector('.punk-submit-button').style.fontSize = '0.9rem';
+    } else {
+        document.querySelector('.punk-submit-button').style.fontSize = ''; // Reset to default
+    }
+}
+
+window.addEventListener('resize', adjustButtonFontSize);
+adjustButtonFontSize(); // Call once on page load
