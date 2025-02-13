@@ -1980,6 +1980,11 @@ cursor: pointer;
     justify-content: flex-start;
     align-items: center;
     padding: 150px 20px 100px;
+    /* Add these background properties */
+    background-image: url('images/1650 background 1000 22.jpg'); /* Set your image path */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
 }
 
 .punk-contact-background {
@@ -2019,14 +2024,16 @@ cursor: pointer;
 }
 
 .punk-contact-background-image {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+    /* Remove these styles */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    /* width: 50%; */
+    /* height: 100%; */
+    /* object-fit: cover; */
+    /* z-index: 1; */
+    display: none; /* Hide the img tag */
 }
 
 .punk-contact-title {
@@ -2043,6 +2050,7 @@ cursor: pointer;
 .form-and-widget-container {
     display: flex; /* Side-by-side layout */
     justify-content: center;  /* This centers both columns */
+    gap: 0px;  /* Remove gap; spacing is handled by margin-right on form */
 }
 
 /* Form Column */
@@ -2133,10 +2141,6 @@ cursor: pointer;
     height: 100%;
 }
 
-/* Ensure proper spacing between form and widget */
-.form-and-widget-container {
-    gap: 0px;  /* Remove gap;  spacing is handled by margin-right on form */
-}
 
 
 /* Logo Section */
@@ -2428,26 +2432,6 @@ a.back-to-top.mobile > img {
 
 
 /* Navbar styles for screens up to 1024px */
-
-
-
-
-
-
-@media (min-width: 1025px) {
-  .punk-contact-background-image {
-    width: 60%;
-    height: 120%;
-  }
-}
-
-
-@media screen and (max-width: 1324px) {
-    .punk-contact-background-image {
-        width: 70vw; /* Increased from 50% to approximately 70vw */
-    }
-}
-
 
 
 
@@ -2768,74 +2752,6 @@ a.back-to-top.mobile > img {
 
 /* contactform1024 */ 
 
-
-#punk-contact-page {
-        min-height: 170vh; /* Increased by an extra 20vh */
-      
-    }
-
-    .punk-contact-background,
-    .punk-contact-blue-overlay,
-    .punk-contact-background-image {
-        height: 200vh; /* Increased by an extra 20vh */
- 
-    }
-
-    .punk-contact-background-image {
-        width: 70vw;
-    }
-
-    #punk-contact-page {
-        padding-top: 5vh;
-    }
-
-    .punk-contact-form-wrapper {
-        width: 90vw;
-        margin-right: 0;
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-    }
-    
-    .punk-contact-title {
-        margin-top: -17.5vh;
-        font-size: 6rem;
-    }
-    
-    .form-and-widget-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .punk-rock-form-container {
-        max-width: 100%;
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-    
-    .punk-form-group input,
-    .punk-form-group textarea {
-            width: calc(100% + 0vw) !important; /* Forcefully apply the new 
-        padding: 20px; /* Increased padding for larger input boxes */
-        margin-right: 20vw !important;
-    }
-    
-    .punk-form-group textarea {
-        height: 200px; /* Increased height for textarea */
-    }
-    
-    .punk-submit-button {
-        width: 20vw !important; /* Increased from 10vw */
-        padding: 15px 25px; /* Increased padding */
-        font-size: 1.5rem !important; /* Increased font size */
-    }
-    
-    .ents-widget {
-        width: 100%;
-        max-width: 300px;
-        margin-top: 30px;
-    }
 
 
 }
@@ -3271,42 +3187,7 @@ a.back-to-top.mobile > img {
   /* ContactForm768 */
 
 
-  }
-  
-  .punk-contact-form-wrapper {
-    margin-top: 20vh;
-  }
-  
-  .widget-column {
-    display: none;
-  }
-  
-  .punk-submit-button {
-    width: 15vw;
-    padding: 12px 24px;
-    font-size: 1.1rem;
-  }LOGO1024
 
-.punk-contact-title {
-        font-size: 8rem;
-    }
-    
-    .punk-sex-pistols-label {
-        width: 100%;
-        text-align: left;
-        margin-bottom: 5px;
-    }
-    
-    .punk-form-group {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .punk-form-group input,
-    .punk-form-group textarea {
-        width: 100%;
-    }
-    
 
 /* logo768 */ 
 
