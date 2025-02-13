@@ -361,19 +361,9 @@ document.querySelectorAll('.video-preview').forEach(video => {
 const videoUrls = [
     'QMiCFUGKfJk',
     '7jSArFxkDJA',
-    'EiMTH-S2w5c',
     'n7_yuWR4MLU',
-    '5uOyv-kuDFo',
-    'gCBlFa_T1tU',
-    'gX84aDKuTEI',
-    'S90mZFXesik',
     '74buo35OgWY',
-    '66TUTHbtS9w',
-    'F2ZL1tDA_LQ',
-    'vuQGO103QtU',
-    'NyLQBk222BA',
     'Z_2N7AyzhuU',
-    'tiPxzC4Pf7Q',
     'SFt_rNp_b90',
     'PDPRBhmiowk'
 ];
