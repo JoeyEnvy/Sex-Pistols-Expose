@@ -614,38 +614,40 @@
         <!-- Blue Overlay Background -->
         <div class="punk-contact-blue-overlay"></div>
         
-        <!-- Background Image with lazy loading -->
-        <img src="images/god save the queen blue red flag.jpg" 
+        <!-- Background Image with lazy loading and proper sizing -->
+        <img itemprop="image" src="images/god save the queen blue red flag.jpg" 
              alt="Punk Rock Background" 
              class="punk-contact-background-image"
-             loading="lazy" width="100" height="100">
+             loading="lazy" width="600" height="400">
         
         <!-- Contact Form Container -->
         <div class="punk-contact-form-wrapper">
             <h1 class="punk-contact-title" style="font-family: 'Punkaholic';" itemprop="headline">Contact Us</h1>
+            <meta itemprop="name" content="Sex Pistols Expose Contact Form">
+            <meta itemprop="description" content="Contact Sex Pistols Expose to book the band or for any inquiries.">
             
             <div class="form-and-widget-container">
                 <form id="punk-rock-contact-form" class="punk-rock-form-container" action="#" method="post">
                     <div class="punk-form-row">
                         <div class="punk-form-group">
                             <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
-                            <input type="text" id="punk-first-name" name="punk-first-name" required aria-label="First Name">
+                            <input type="text" id="punk-first-name" name="punk-first-name" required aria-label="First Name" itemprop="givenName">
                         </div>
                         
                         <div class="punk-form-group">
                             <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
-                            <input type="text" id="punk-last-name" name="punk-last-name" required aria-label="Last Name">
+                            <input type="text" id="punk-last-name" name="punk-last-name" required aria-label="Last Name" itemprop="familyName">
                         </div>
                     </div>
                     
                     <div class="punk-form-group">
                         <label for="punk-email" class="punk-sex-pistols-label">Email</label>
-                        <input type="email" id="punk-email" name="punk-email" required aria-label="Email">
+                        <input type="email" id="punk-email" name="punk-email" required aria-label="Email" itemprop="email">
                     </div>
                     
                     <div class="punk-form-group">
                         <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
-                        <textarea id="punk-message" name="punk-message" required aria-label="Message"></textarea>
+                        <textarea id="punk-message" name="punk-message" required aria-label="Message" itemprop="comment"></textarea>
                     </div>
                     
                     <button type="submit" class="punk-submit-button">Submit</button>
@@ -670,6 +672,7 @@
         </div>
     </div>
 </section>
+
 
 
 <!-- Add the EmailJS library -->
