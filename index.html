@@ -668,6 +668,7 @@
     </div>
 </div>
 
+<!-- Contact Form HTML -->
 <section id="punk-contact-page">
     <div class="punk-contact-background">
         <!-- Blue Overlay Background -->
@@ -724,6 +725,40 @@
         </div>
     </div>
 </section>
+
+
+
+<!-- Add the EmailJS library -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+    (function() {
+        emailjs.init("user_yourUserID");  // Initialize EmailJS with your user ID (replace 'yourUserID' with your actual user ID)
+    })();
+
+    document.getElementById('punk-rock-contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent default form submission
+
+        // Collect form data
+        var templateParams = {
+            to_name: "Chris Fear",  // Name of the person receiving the email
+            from_name: document.getElementById("punk-first-name").value + " " + document.getElementById("punk-last-name").value,
+            from_email: document.getElementById("punk-email").value,
+            message: document.getElementById("punk-message").value,
+            reply_to: document.getElementById("punk-email").value  // Reply to the sender's email
+        };
+
+        // Send email using EmailJS
+        emailjs.send('sexpistolsexposegmail', 'your_template_id', templateParams)  // Replace 'your_template_id' with your actual template ID
+        .then(function(response) {
+            alert("Your message has been sent successfully!");
+        }, function(error) {
+            alert("Oops! Something went wrong. Please try again.");
+        });
+    });
+</script>
+
+
 
 
 
