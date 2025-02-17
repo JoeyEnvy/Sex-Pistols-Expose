@@ -2613,6 +2613,50 @@ cursor: pointer;
 
   /* contactform1024 */
 
+
+
+
+
+
+.punk-contact-form-wrapper {
+        width: 90vw;
+        margin-right: 0;
+        margin-top: 10vh;
+    }
+
+    .form-and-widget-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .punk-rock-form-container {
+        width: 100%;
+        max-width: 600px;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .widget-column {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .punk-contact-title {
+        font-size: 6rem;
+    }
+
+    .punk-submit-button {
+        width: 20vw;
+        font-size: 1rem;
+    }
+
+
+
+
+
+
+
+
   /*YELLOWLOGO1024 */
 
   .yellow-punk-pistol-logo-container {
