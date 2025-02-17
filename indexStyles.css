@@ -2146,29 +2146,48 @@ cursor: pointer;
 
 
 /* Logo Section */
-.logo-section {
-    position: relative;
-    text-align: center;
+.yellow-punk-pistol-logo-container {
+  position: relative;
+  height: 50vh; /* Adjust this value as needed */
+  text-align: center;
+  overflow: hidden;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
-.logo-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+.yellow-punk-pistol-logo-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.punk-pistol-logo {
+  position: relative;
+  z-index: 2;
+  max-height: 60%;
+  width: auto;
+  max-width: 100%; /* Make sure it doesn't exceed container width */
+  /* Remove these, as flexbox is handling centering: */
+  /* margin: 0 auto; */
+  /* display: inline-block; */
+  /* vertical-align: middle; */
+}
+
+/* The pseudo-element is no longer needed with Flexbox: */
+/* Helper to vertically center the logo */
+/* .yellow-punk-pistol-logo-container::after {
+    content: '';
+    display: inline-block;
     height: 100%;
-    background-color: yellow;
-    opacity: 0.2;
-    z-index: 1;
-}
-
-.large-logo {
-    position: relative;
-    z-index: 2;
-    width: 70%;
-    margin: 0 auto;
-}
+    vertical-align: middle;
+} */
 
 /* Footer */
 .punk-footer {
@@ -2296,527 +2315,536 @@ cursor: pointer;
 
 
 
+/* Max-width: 1024px */
 @media (max-width: 1024px) {
-    /* Navbar styles */
-    nav ul li a {
-        font-size: 18px;
-    }
+  /* Navbar styles */
+  nav ul li a {
+    font-size: 18px;
+  }
 
-    .facebook-button span {
-        display: none;
-    }
+  .facebook-button span {
+    display: none;
+  }
 
-    .facebook-button img {
-        height: 28px;
-    }
+  .facebook-button img {
+    height: 28px;
+  }
 
-    .band-name img {
-        max-height: calc(45px - (1024px - 100vw) * 0.005);
-    }
+  .band-name img {
+    max-height: calc(45px - (1024px - 100vw) * 0.005);
+  }
 
-    /* Hero1024 */
-    .hero-section {
-        margin-top: -150px;
-        padding: 20px 15px 0;
-    }
+  /* Hero1024 */
+  .hero-section {
+    margin-top: -150px;
+    padding: 20px 15px 0;
+  }
 
-.logo-container {
-
+  .logo-container {
     width: 140%;
-    MARGIN-LEFT: 50PX;
+    margin-left: 50px;
+  }
+
+  .logo-container img {
+    max-width: 70%;
+  }
+
+  .main-title {
+    font-size: 70px;
+  }
+
+  .sub-title-1,
+  .sub-title-2 {
+    font-size: 42px;
+  }
+
+  .sub-title-3 {
+    font-size: 32px;
+  }
+
+  .additional-title {
+    font-size: 64px;
+    margin-bottom: 80px;
+  }
+
+  .button-slideshow {
+    margin: 25vh auto 3vh; /* Increased top margin */
+  }
+
+  .slide-button {
+    font-size: 24px;
+    width: 180px;
+    height: 180px;
+  }
+
+  /*info1024 media queries */
+
+  #info-section {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: relative;
+    overflow: visible;
+  }
+
+  .info-container {
+    width: 90%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .video-container {
+    height: 60vh;
+    overflow: visible;
+  }
+
+  .video-controls {
+    flex-direction: column;
+    bottom: -220px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 1000;
+    overflow: visible;
+  }
+
+  #playPauseButton,
+  #changeVideoButton,
+  #progressBar,
+  .volume-container,
+  .speed-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .info-columns {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 240px;
+    margin-bottom: 100px;
+    position: relative;
+  }
+
+  .info-columns::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/Section 2 Passport.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .info-left-column,
+  .info-right-column {
+    display: none;
+  }
+
+  .info-center-column {
+    flex-basis: 100%;
+    height: auto;
+    max-height: none;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .info-top-image,
+  .info-bottom-image,
+  .middle-image-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 180px;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .info-middle-image.punk-navigation-trigger {
+    width: 95%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  .info-download-icon {
+    position: static;
+    width: 60px;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  /*members1024 */
+
+  .members-grid {
+  }
+
+  .members-content {
+    width: 80%; /* Increased from default width */
+  }
+
+  .members-title {
+    font-size: 2em; /* Increased size */
+    margin-top: -10vh; /* Moved up by 10vh */
+  }
+
+  /* friends1024 */
+
+  .friends-pistols-title {
+    font-size: 4rem;
+  }
+
+  /* gigs2024 */
+
+  #gigs {
+    padding: 80px 4% 40px;
+  }
+
+  .gigs-main-title {
+    font-size: 1.8em;
+  }
+
+  .safety-pin {
+    width: 100px;
+  }
+
+  .left-pin {
+    left: calc(50% - 320px);
+  }
+
+  .right-pin {
+    right: calc(50% - 320px);
+  }
+
+  .bandsintown-widget {
+    max-width: 85%;
+  }
+
+  .bit-widget-initializer {
+    font-size: 28px !important;
+  }
+
+  /* videos1024 */
+
+  .videos-container {
+    flex-direction: column;
+  }
+
+  .video-player-container,
+  .video-list-column {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .video-list-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+
+  .video-list-item {
+    width: 48%;
+    margin-bottom: 1rem;
+  }
+
+  /*gallery1024 */
+
+  .gallery-section {
+    min-height: 100vh;
+  }
+
+  .gallery-main-title {
+    font-size: 1.8em;
+  }
+
+  .gallery-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .gallery-left-column,
+  .gallery-right-column {
+    width: 100%;
+    height: auto;
+  }
+
+  .large-preview {
+    width: 90%;
+    height: 50vh;
+  }
+
+  .carousel-container {
+    width: 95%;
+  }
+
+  .carousel-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .right-column-wall {
+    height: 40vh;
+  }
+
+  .preview-image {
+    height: 18vh;
+  }
+
+  /* contact1024 section part 1 and social */
+
+  .contact-information {
+    width: 80%;
+  }
+
+  .contact-section-details {
+    width: 80%;
+  }
+
+  .facebook-embed {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* contactform1024 */
+
+  /*YELLOWLOGO1024 */
+
+  .yellow-punk-pistol-logo-container {
+    height: 40vh;
+  }
+
+  .punk-pistol-logo {
+    max-height: 55%;
+  }
+
+
 }
 
-    .logo-container img {
-        max-width: 70%;
-    }
-
-    .main-title {
-        font-size: 70px;
-    }
-
-    .sub-title-1, .sub-title-2 {
-        font-size: 42px;
-    }
-
-    .sub-title-3 {
-        font-size: 32px;
-    }
-
-    .additional-title {
-        font-size: 64px;
-        margin-bottom: 80px;
-    }
-
-    .button-slideshow {
-        margin: 25vh auto 3vh; /* Increased top margin */
-    }
-
-    .slide-button {
-        font-size: 24px;
-        width: 180px;
-        height: 180px;
-    }
-
-/*info1024 media queries */ 
-
-
-    #info-section {
-        background-color: rgba(0, 0, 0, 0.75);
-        position: relative;
-        overflow: visible;
-    }
-
-    .info-container {
-        width: 90%;
-        position: relative;
-        z-index: 2;
-    }
-
-    .video-container {
-        height: 60vh;
-        overflow: visible;
-    }
-
-    .video-controls {
-        flex-direction: column;
-        bottom: -220px;
-        left: 0;
-        right: 0;
-        padding: 10px;
-        z-index: 1000;
-        overflow: visible;
-    }
-
-    #playPauseButton,
-    #changeVideoButton,
-    #progressBar,
-    .volume-container,
-    .speed-container {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-.info-columns {
-        height: auto;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 240px;
-        margin-bottom: 100px;
-        position: relative;
-    }
-
-    .info-columns::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url('images/Section 2 Passport.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.5;
-        z-index: -1;
-    }
-
-    .info-left-column,
-    .info-right-column {
-        display: none;
-    }
-
-    .info-center-column {
-        flex-basis: 100%;
-        height: auto;
-        max-height: none;
-        width: 100%;
-        max-width: 300px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .info-top-image,
-    .info-bottom-image,
-    .middle-image-container {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 95%;
-        max-width: 180px;
-        height: auto;
-        margin: 20px 0;
-    }
-
-    .info-middle-image.punk-navigation-trigger {
-        width: 95%;
-        max-width: 200px;
-        height: auto;
-    }
-
-    .info-download-icon {
-        position: static;
-        width: 60px;
-        height: auto;
-        margin-top: 20px;
-    }
-
-/*members1024 */
-
-.members-grid {
 
 
 
-}
-
- .members-content {
-        width: 80%; /* Increased from default width */
-    }
-
-.members-title {
-        font-size: 2em; /* Increased size */
-        margin-top: -10vh; /* Moved up by 10vh */
-    }
 
 
-/* friends1024 */ 
-
-.friends-pistols-title {
-        font-size: 4rem;
-    }
-
-/* gigs2024 */ 
-
-#gigs {
-        padding: 80px 4% 40px;
-    }
-
-    .gigs-main-title {
-        font-size: 1.8em;
-    }
-
-    .safety-pin {
-        width: 100px;
-    }
-
-    .left-pin {
-        left: calc(50% - 320px);
-    }
-
-    .right-pin {
-        right: calc(50% - 320px);
-    }
-
-    .bandsintown-widget {
-        max-width: 85%;
-    }
-
-    .bit-widget-initializer {
-        font-size: 28px !important;
-    }
-
-/* videos1024 */ 
-
-.videos-container {
-        flex-direction: column;
-    }
-    
-    .video-player-container, .video-list-column {
-        width: 90%;
-        margin: 0 auto;
-    }
-    
-    .video-list-column {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 1rem 0;
-    }
-    
-    .video-list-item {
-        width: 48%;
-        margin-bottom: 1rem;
-    }
-
-/*gallery1024 */ 
-
-.gallery-section {
-        min-height: 100vh;
-    }
-
-    .gallery-main-title {
-        font-size: 1.8em;
-    }
-
-    .gallery-container {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .gallery-left-column,
-    .gallery-right-column {
-        width: 100%;
-        height: auto;
-    }
-
-    .large-preview {
-        width: 90%;
-        height: 50vh;
-    }
-
-    .carousel-container {
-        width: 95%;
-    }
-
-    .carousel-image {
-        width: 120px;
-        height: 120px;
-    }
-
-    .right-column-wall {
-        height: 40vh;
-    }
-
-    .preview-image {
-        height: 18vh;
-    }
-
-
-/* contact1024 section part 1 and social */
-
- .contact-information {
-        width: 80%;
-    }
-    
-    .contact-section-details {
-        width: 80%;
-    }
-    
-    .facebook-embed {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-/* contactform1024 */ 
-
-
-
-}
 
 
 
 
 /* Max-width: 768px */
 @media (max-width: 768px) {
+  .parallax-bg {
+    background-image: url('images/Mobile/1.jpg');
+    background-attachment: scroll; /* Optional: change to scroll for better mobile performance */
+  }
 
-.parallax-bg {
-        background-image: url('images/Mobile/1.jpg');
-        background-attachment: scroll; /* Optional: change to scroll for better mobile performance */
-    }
+  /* Navbar styles */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
 
-    /* Navbar styles */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 15px;
-    }
+  nav ul {
+    display: none;
+  }
 
-    nav ul {
-        display: none;
-    }
+  nav ul.show {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px 0;
+    z-index: 1000;
+  }
 
-    nav ul.show {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        height: auto;
-        max-height: 75vh;
-        background-color: rgba(0, 0, 0, 0.75);
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        overflow-y: auto;
-        padding: 20px 0;
-        z-index: 1000;
-    }
+  nav ul.show li {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
 
-    nav ul.show li {
-        margin: 10px 0;
-        width: 100%;
-        text-align: center;
-    }
+  nav ul.show li a {
+    font-size: 24px;
+    color: #ffef1d;
+    display: block;
+    padding: 10px 0;
+  }
 
-    nav ul.show li a {
-        font-size: 24px;
-        color: #ffef1d;
-        display: block;
-        padding: 10px 0;
-    }
+  .facebook-button {
+    order: 1;
+  }
 
-    .facebook-button {
-        order: 1;
-    }
+  .band-name {
+    order: 2;
+  }
 
-    .band-name {
-        order: 2;
-    }
+  .hamburger-menu {
+    display: block;
+    order: 3;
+    font-size: 24px;
+  }
 
-    .hamburger-menu {
-        display: block;
-        order: 3;
-        font-size: 24px;
-    }
+  .band-name img {
+    max-height: calc(45px * 1.25);
+    min-height: calc(45px * 1.25);
+  }
 
-    .band-name img {
-        max-height: calc(45px * 1.25);
-        min-height: calc(45px * 1.25);
-    }
+  /* Hero768 */
+  .hero-section {
+    margin-top: -120px;
+    padding: 15px 10px 0;
+  }
 
-    /* Hero768 */
-    .hero-section {
-        margin-top: -120px;
-        padding: 15px 10px 0;
-    }
+  .logo-container img {
+    max-width: 90%;
+  }
 
-    .logo-container img {
-        max-width: 90%;
-    }
-
-.logo-container {
-
+  .logo-container {
     width: 135%;
-    MARGIN-LEFT: 60PX;
-}
+    margin-left: 60px;
+  }
 
-    .main-title {
-        font-size: 60px;
-    }
+  .main-title {
+    font-size: 60px;
+  }
 
-    .sub-title-1, .sub-title-2 {
-        font-size: 36px;
-    }
+  .sub-title-1,
+  .sub-title-2 {
+    font-size: 36px;
+  }
 
-    .sub-title-3 {
-        font-size: 28px;
-    }
+  .sub-title-3 {
+    font-size: 28px;
+  }
 
-    .additional-title {
-        font-size: 48px;
-        margin-bottom: 40px;
-    }
+  .additional-title {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
 
-    .button-slideshow {
-        margin: 20vh auto 2vh; /* Increased top margin */
-        width: 250px;
-    }
+  .button-slideshow {
+    margin: 20vh auto 2vh; /* Increased top margin */
+    width: 250px;
+  }
 
-    .slide-button {
-        font-size: 22px;
-        width: 160px;
-        height: 160px;
-        padding: 12px;
-    }
+  .slide-button {
+    font-size: 22px;
+    width: 160px;
+    height: 160px;
+    padding: 12px;
+  }
 
-    .arrow {
-        width: 35px;
-        height: 35px;
-    }
+  .arrow {
+    width: 35px;
+    height: 35px;
+  }
 
-    .arrow.left {
-        left: -45px;
-    }
+  .arrow.left {
+    left: -45px;
+  }
 
-    .arrow.right {
-        right: -45px;
-    }
+  .arrow.right {
+    right: -45px;
+  }
 
-/* info768 media */ 
+  /* info768 media */
 
+  .video-container {
+    height: 50vh;
+    margin-bottom: 200px; /* Further increased space for controls below */
+  }
 
-.video-container {
-        height: 50vh;
-        margin-bottom: 200px; /* Further increased space for controls below */
-    }
+  .video-controls {
+    flex-direction: column;
+    bottom: -225px; /* Moved even further down */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    height: 50%;
+  }
 
-    .video-controls {
-        flex-direction: column;
-        bottom: -225px; /* Moved even further down */
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 10px;
-        height: 50%;
-    }
+  #playPauseButton,
+  #changeVideoButton,
+  #progressBar,
+  .volume-container,
+  .speed-container {
+    height: 60%;
+    width: 70%; /* Further scaled down */
+    margin-bottom: 6px;
+  }
 
-    #playPauseButton,
-    #changeVideoButton,
-    #progressBar,
-    .volume-container,
-    .speed-container {
-        height: 60%;
-        width: 70%; /* Further scaled down */
-        margin-bottom: 6px;
-    }
+  #playPauseButton,
+  #changeVideoButton {
+    font-size: 0.5em; /* Smaller font */
+    padding: 6px 8px; /* Smaller padding */
+    font-weight: thins;
+  }
 
-    #playPauseButton,
-    #changeVideoButton {
-        font-size: 0.5em; /* Smaller font */
-        padding: 6px 8px; /* Smaller padding */
-        font-weight: thins;
-    }
+  .info-columns {
+    margin-top: 75px;
+    flex-direction: column;
+    height: auto;
+    gap: 30px; /* Reduced gap */
+    margin-bottom: 50px; /* Further reduced margin beneath the middle container */
+  }
 
-    .info-columns {
-        margin-top: 75px;
-        flex-direction: column;
-        height: auto;
-        gap: 30px; /* Reduced gap */
-        margin-bottom: 50px; /* Further reduced margin beneath the middle container */
-    }
+  .info-left-column {
+    display: none;
+  }
 
-    .info-left-column {
-        display: none;
-    }
+  .info-right-column {
+    width: 100%;
+  }
 
-    .info-right-column {
-        width: 100%;
-    }
+  .info-right-image {
+    width: 120%; /* Increase the image size by 20% */
+    height: auto;
+    max-width: none;
+    transform: translateX(-10%); /* Center the enlarged image */
+  }
 
-    .info-right-image {
-        width: 120%; /* Increase the image size by 20% */
-        height: auto;
-        max-width: none;
-        transform: translateX(-10%); /* Center the enlarged image */
-    }
+  .info-center-column {
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+    position: static;
+    transform: none;
+  }
 
-    .info-center-column {
-        height: auto;
-        width: 100%;
-        max-width: 300px;
-        position: static;
-        transform: none;
-    }
+  .info-top-image,
+  .info-bottom-image,
+  .middle-image-container {
+    position: static;
+    transform: none;
+    width: 150px;
+    max-height: 150px;
+    margin: 12px 0; /* Slightly reduced margin */
+  }
 
-    .info-top-image,
-    .info-bottom-image,
-    .middle-image-container {
-        position: static;
-        transform: none;
-        width: 150px;
-        max-height: 150px;
-        margin: 12px 0; /* Slightly reduced margin */
-    }
+  .info-download-icon {
+    position: relative;
+    left: 50px;
+    top: -60px; /* Moved up by 30px */
+    width: 70px;
+    margin-top: 20px;
+  }
 
-    .info-download-icon {
-        position: relative;
-        left: 50px;
-        top: -60px; /* Moved up by 30px */
-        width: 70px;
-        margin-top: 20px;
-    }
+  /* members768 */
 
-/* members768 */
-
-/* Members section */
+  /* Members section */
   #members-section {
     margin-top: -20px;
   }
@@ -2827,633 +2855,640 @@ cursor: pointer;
     border: 2px solid black;
   }
 
-/* friends768 */ 
+  /* friends768 */
 
-.friends-pistols-title {
-        font-size: 3.5rem;
-    }
+  .friends-pistols-title {
+    font-size: 3.5rem;
+  }
 
+  /* gigs768 */
 
-/* gigs768 */
+  #gigs {
+    padding: 60px 3% 30px;
+  }
 
-#gigs {
-        padding: 60px 3% 30px;
-    }
+  .gigs-main-title {
+    font-size: 1.6em;
+  }
 
-    .gigs-main-title {
-        font-size: 1.6em;
-    }
+  .safety-pin {
+    width: 80px;
+  }
 
-    .safety-pin {
-        width: 80px;
-    }
+  .left-pin {
+    left: calc(50% - 260px);
+  }
 
-    .left-pin {
-        left: calc(50% - 260px);
-    }
+  .right-pin {
+    right: calc(50% - 260px);
+  }
 
-    .right-pin {
-        right: calc(50% - 260px);
-    }
+  .bandsintown-widget {
+    max-width: 90%;
+    border-width: 15px;
+  }
 
-    .bandsintown-widget {
-        max-width: 90%;
-        border-width: 15px;
-    }
+  .bit-widget-initializer {
+    font-size: 24px !important;
+  }
 
-    .bit-widget-initializer {
-        font-size: 24px !important;
-    }
+  .gigs-poster-column,
+  .gigs-right-column {
+    width: 100%;
+  }
 
-    .gigs-poster-column,
-    .gigs-right-column {
-        width: 100%;
-    }
+  .gigs-social-column {
+    margin-top: 20px;
+  }
 
-    .gigs-social-column {
-        margin-top: 20px;
-    }
+  .more-gigs-image {
+    right: calc(10px + 150px);
+  }
 
-    .more-gigs-image {
-        right: calc(10px + 150px);
-    }
+  /* videos768 */
 
-/* videos768 */ 
+  .videos-section {
+    min-height: 100vh;
+  }
 
-.videos-section {
-        min-height: 100vh;
-    }
+  .videos-title {
+    font-size: 1.5em;
+  }
 
-    .videos-title {
-        font-size: 1.5em;
-    }
-    
-    .video-player-container {
-        height: auto;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .main-video {
-        width: 100%;
-        height: 0;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        position: relative;
-    }
-    
-    .main-video iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-        border: none;
-    }
-    
-    #changeVideo {
-        order: 1;
-        margin: 10px 0;
-    }
-    
-    .video-description {
-        order: 2;
-        position: static;
-        font-size: 0.7em;
-        width: 90%;
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 10px;
-        margin: 10px auto;
-        transform: none;
-    }
-    
-    .video-list-column {
-        grid-template-columns: repeat(2, 1fr);
-        margin-top: 20px;
-    }
+  .video-player-container {
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
 
- .main-video iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 5px solid yellow; /* Ensuring the yellow border is present */
-        border-radius: 125px; /* Maintaining the border radius from the original style */
-    }
+  .main-video {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+  }
 
+  .main-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
 
-/* gallery768 */ 
+  #changeVideo {
+    order: 1;
+    margin: 10px 0;
+  }
 
-.gallery-purple-divider {
-        height: 100px;
-    }
+  .video-description {
+    order: 2;
+    position: static;
+    font-size: 0.7em;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    margin: 10px auto;
+    transform: none;
+  }
 
-    .gallery-burgundy-divider {
-        height: 400px;
-    }
+  .video-list-column {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
+  }
 
-    .gallery-main-title {
-        font-size: 1.6em;
-    }
+  .main-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid yellow; /* Ensuring the yellow border is present */
+    border-radius: 125px; /* Maintaining the border radius from the original style */
+  }
 
-    .large-preview {
-        height: 40vh;
-    }
+  /* gallery768 */
 
-    .carousel-image {
-        width: 100px;
-        height: 100px;
-    }
+  .gallery-purple-divider {
+    height: 100px;
+  }
 
-    .carousel-button {
-        top: 85%;
-    }
+  .gallery-burgundy-divider {
+    height: 400px;
+  }
 
-    .right-column-wall {
-        height: 35vh;
-    }
+  .gallery-main-title {
+    font-size: 1.6em;
+  }
 
-    .preview-image {
-        height: 15vh;
-    }
+  .large-preview {
+    height: 40vh;
+  }
 
+  .carousel-image {
+    width: 100px;
+    height: 100px;
+  }
 
+  .carousel-button {
+    top: 85%;
+  }
 
+  .right-column-wall {
+    height: 35vh;
+  }
 
-/* contact768 */ 
+  .preview-image {
+    height: 15vh;
+  }
 
- #contact {
-        min-height: auto;
-        padding: 50px 0;
-    }
-    
-    .contact-information {
-        width: 90%;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-.contact-left-column,
+  /* contact768 */
+
+  #contact {
+    min-height: auto;
+    padding: 50px 0;
+  }
+
+  .contact-information {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-left-column,
   .contact-middle-column,
   .contact-right-column {
     width: 30%; /* Slightly reduce width to ensure they fit */
   }
-    
-    .queen-image,
-    .passport-image {
-        width: 90vw;
-        max-width: 400px;
-    }
-    
 
-    .contact-section-details {
-        width: 90%;
-        padding: 30px 20px;
-    }
-    
-    .additional-section-content {
-        flex-direction: column;
-    }
-    
-    .half-image {
-        width: 100%;
-        height: auto;
-    }
-    
-    .facebook-embed {
-        position: static;
-        transform: none;
-        margin-top: 30px;
-    }
+  .queen-image,
+  .passport-image {
+    width: 90vw;
+    max-width: 400px;
+  }
 
-/* contact768 form, logo and footer */ 
+  .contact-section-details {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .additional-section-content {
+    flex-direction: column;
+  }
+
+  .half-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .facebook-embed {
+    position: static;
+    transform: none;
+    margin-top: 30px;
+  }
+
+  /* contact768 form, logo and footer */
 
   /* ContactForm768 */
 
+  /* YELLOWlogo768 */
 
+.yellow-punk-pistol-logo-container {
+    height: 30vh;
+  }
 
+  .punk-pistol-logo {
+    max-height: 50%;
+  }
 
-/* logo768 */ 
+  /* footer768 */
 
+  /* Footer */
+  .punk-footer {
+    margin-bottom: -60vh;
+    flex-direction: column;
+    padding: 2rem;
+  }
 
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    flex: none;
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
 
+  .footer-middle ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
+  .footer-middle li {
+    width: 48%; /* Adjust as needed for two columns */
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+  }
 
-/* footer768 */ 
+  .social-links {
+    justify-content: center;
+  }
 
-    /* Footer */
-    .punk-footer {
-        margin-bottom: -60vh;
-        flex-direction: column;
-        padding: 2rem;
-    }
-
-    .footer-left, .footer-middle, .footer-right {
-        flex: none;
-        width: 100%;
-        margin: 0 0 2rem 0;
-    }
-
-    .footer-middle ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .footer-middle li {
-        width: 48%; /* Adjust as needed for two columns */
-        margin-bottom: 0.5rem;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .creator-info {
-        text-align: center;
-    }
-
-}
-
-
+  .creator-info {
+    text-align: center;
+  }
 }
 
 /* Max-width: 480px */
-
-
 @media (max-width: 480px) {
-    /* Navbar styles */
-    nav {
-        padding: 8px 12px;
-    }
+  /* Navbar styles */
+  nav {
+    padding: 8px 12px;
+  }
 
-    .facebook-button img {
-        height: 24px;
-    }
+  .facebook-button img {
+    height: 24px;
+  }
 
-    .band-name img {
-        max-height: calc(45px * 1.15);
-        min-height: calc(45px * 1.15);
-    }
+  .band-name img {
+    max-height: calc(45px * 1.15);
+    min-height: calc(45px * 1.15);
+  }
 
-    /* Hero480 */
-    .hero-section {
-        margin-top: -100px;
-        padding: 10px 5px 0;
-    }
+  /* Hero480 */
+  .hero-section {
+    margin-top: -100px;
+    padding: 10px 5px 0;
+  }
 
-    .logo-container img {
-        max-width: 95%;
-    }
+  .logo-container img {
+    max-width: 95%;
+  }
 
-.logo-container {
-
+  .logo-container {
     width: 160%;
-    MARGIN-LEFT: -0PX;
-}
+    margin-left: 0px;
+  }
 
-    .main-title {
-        font-size: 50px;
-    }
+  .main-title {
+    font-size: 50px;
+  }
 
-    .sub-title-1, .sub-title-2 {
-        font-size: 30px;
-    }
+  .sub-title-1,
+  .sub-title-2 {
+    font-size: 30px;
+  }
 
-    .sub-title-3 {
-        font-size: 24px;
-    }
+  .sub-title-3 {
+    font-size: 24px;
+  }
 
-    .additional-title {
-        font-size: 28px;
-        margin-bottom: 30px;
-    }
+  .additional-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
 
-    .button-slideshow {
-        margin: 15vh auto 2vh; /* Increased top margin */
-        width: 200px;
-    }
+  .button-slideshow {
+    margin: 15vh auto 2vh; /* Increased top margin */
+    width: 200px;
+  }
 
-    .slide-button {
-        font-size: 20px;
-        width: 140px;
-        height: 140px;
-        padding: 10px;
-    }
+  .slide-button {
+    font-size: 20px;
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+  }
 
-    .arrow {
-        width: 30px;
-        height: 30px;
-    }
+  .arrow {
+    width: 30px;
+    height: 30px;
+  }
 
-    .arrow.left {
-        left: -35px;
-    }
+  .arrow.left {
+    left: -35px;
+  }
 
-    .arrow.right {
-        right: -35px;
-    }
+  .arrow.right {
+    right: -35px;
+  }
 
-/* info480 media */ 
+  /* info480 media */
 
-.info-container {
-        width: 95%;
-    }
+  .info-container {
+    width: 95%;
+  }
 
-    .video-container {
-        height: 40vh;
-    }
+  .video-container {
+    height: 40vh;
+  }
 
-    .info-title {
-        font-size: 1.2em;
-    }
+  .info-title {
+    font-size: 1.2em;
+  }
 
-    .info-center-column {
-        height: 300px;
-    }
+  .info-center-column {
+    height: 300px;
+  }
 
-    .info-top-image,
-    .info-bottom-image,
-    .middle-image-container {
-        width: 120px;
-        max-height: 120px;
-    }
+  .info-top-image,
+  .info-bottom-image,
+  .middle-image-container {
+    width: 120px;
+    max-height: 120px;
+  }
 
-    .info-download-icon {
-        width: 60px;
-        right: 20px;
-    }
+  .info-download-icon {
+    width: 60px;
+    right: 20px;
+  }
 
-    .button-slideshow {
-        margin: 15vh auto 2vh; /* Increased top margin */
-    }
+  .button-slideshow {
+    margin: 15vh auto 2vh; /* Increased top margin */
+  }
 
-    .logo-container img {
-        max-width: 105%;
-    }
+  .logo-container img {
+    max-width: 105%;
+  }
 
-    .additional-title {
-        font-size: 32px;
-        margin-bottom: -400px; /* Reduced bottom margin */
-    }
+  .additional-title {
+    font-size: 32px;
+    margin-bottom: -400px; /* Reduced bottom margin */
+  }
 
-
-/* Members section */
- .members-title {
-      .members-title {
-        margin-top: -10vh; /* Move up by 10vh */
-        font-size: 4em; /* Slightly bigger, adjust as needed */
-    }
+  /* Members section */
+  .members-title {
+    margin-top: 0;
+    margin-top: -10vh; /* Move up by 10vh */
+    font-size: 4em; /* Slightly bigger, adjust as needed */
+  }
 
   .members-heading {
-        font-size: 4em; /* Slightly bigger */
-        margin-top: -10vh; /* Move up by 10vh */
-    }
+    font-size: 4em; /* Slightly bigger */
+    margin-top: -10vh; /* Move up by 10vh */
+  }
 
-    .members-content {
-        width: 90%;
-        border: 3px solid black;
-    }
+  .members-content {
+    width: 90%;
+    border: 3px solid black;
+  }
 
-h2.members-title {
-  font-size: 2em; /* Made smaller */
-        top: -30vh !improtant;
+  h2.members-title {
+    font-size: 2em; /* Made smaller */
+    top: -30vh;
+  }
+
+  .quote-slider {
+    font-size: 0.8em;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .quote-container {
+    animation: slideInPauseOut 15s linear infinite;
+  }
+
+  .members-grid {
+    gap: 10px;
+  }
+
+  .members-grid img {
+    max-width: 110%;
+    max-height: 85%;
+  }
+
+  .grid-title {
+    font-size: 6.5vw;
+    word-wrap: break-word;
+  }
+
+  .grid-subtitle {
+    font-size: 4.5vw;
+  }
+
+  /* friends480 */
+
+  .friends-pistols-title {
+    font-size: 3rem;
+  }
+
+  /* gigs 480 */
+
+  #gigs {
+    padding: 40px 2% 20px;
+  }
+
+  .gigs-main-title {
+    font-size: 1.4em;
+  }
+
+  .safety-pin {
+    width: 60px;
+  }
+
+  .left-pin {
+    left: calc(50% - 200px);
+  }
+
+  .right-pin {
+    right: calc(50% - 200px);
+  }
+
+  .bandsintown-widget {
+    max-width: 95%;
+    border-width: 10px;
+  }
+
+  .bit-widget-initializer {
+    font-size: 20px !important;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .more-gigs-image {
+    right: calc(10px + 100px);
+    width: 50px;
+    height: 50px;
+  }
+
+  .gig-history {
+    font-size: 14px;
+  }
+
+  .gig-history h3 {
+    font-size: 24px;
+  }
+
+  /* videos480*/
+
+  .videos-title {
+    font-size: 1.2em;
+  }
+
+  .video-list-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-video {
+    width: 95%;
+  }
+
+  .main-video iframe {
+    border-radius: 30px;
+  }
+
+  .video-description {
+    margin-top: 40vh;
+    width: 95%;
+    font-size: 0.6em;
+  }
+
+  .youtube-title {
+    font-size: 1.2em;
+  }
+
+  /* gallery480 */
+
+  .gallery-purple-divider {
+    height: 80px;
+  }
+
+  .gallery-burgundy-divider {
+    height: 300px;
+  }
+
+  .gallery-main-title {
+    font-size: 1.4em;
+    padding: 10px 0;
+  }
+
+  .large-preview {
+    width: 95%;
+    height: 35vh;
+    margin: 3% auto;
+  }
+
+  .carousel-container {
+    width: 100%;
+  }
+
+  .carousel-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .carousel-button {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .right-column-wall {
+    width: 95%;
+    height: 30vh;
+  }
+
+  .right-column-previews {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .preview-container {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .preview-image {
+    height: 20vh;
+  }
+
+  .preview-button {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  /* contact480 */
+
+  .contact-info-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-info-item img {
+    margin-bottom: 10px;
+  }
+
+  .contact-info-item span {
+    font-size: 1rem;
+  }
+
+  .facebook-embed,
+  .facebook-embed iframe {
+    width: 90vw;
+  }
+
+  /* YELLOWLOGO480 */
+
+  .yellow-punk-pistol-logo-container {
+    height: 25vh;
+  }
+
+  .punk-pistol-logo {
+    max-height: 45%;
+  }
+
+  /* Footer */
+  .punk-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .punk-contact-form-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .punk-rock-form-container,
+  .ents-widget {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
-    .quote-slider {
-        font-size: 0.8em;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        z-index: 1000;
-    }
-
-.quote-container {
-        animation: slideInPauseOut 15s linear infinite;
-    }
-    .members-grid {
-        gap: 10px; 
-       
-            
-    }
-
-    .members-grid img {
-        max-width: 110%;
-        max-height: 85%;
-    }
-
-    .grid-title {
-        font-size: 6.5vw;
-    }
-
-    .grid-subtitle {
-        font-size: 4.5vw;
-    }
-
-/* friends480 */ 
-
-.friends-pistols-title {
-        font-size: 3rem;
-    }
-
-/* gigs 480 */ 
-
-#gigs {
-        padding: 40px 2% 20px;
-    }
-
-    .gigs-main-title {
-        font-size: 1.4em;
-    }
-
-    .safety-pin {
-        width: 60px;
-    }
-
-    .left-pin {
-        left: calc(50% - 200px);
-    }
-
-    .right-pin {
-        right: calc(50% - 200px);
-    }
-
-    .bandsintown-widget {
-        max-width: 95%;
-        border-width: 10px;
-    }
-
-    .bit-widget-initializer {
-        font-size: 20px !important;
-    }
-
-    .social-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .social-icon img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .more-gigs-image {
-        right: calc(10px + 100px);
-        width: 50px;
-        height: 50px;
-    }
-
-    .gig-history {
-        font-size: 14px;
-    }
-
-    .gig-history h3 {
-        font-size: 24px;
-    }
-
-/* videos480*/ 
-
-   .videos-title {
-        font-size: 1.2em;
-    }
-    
-    .video-list-column {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .main-video {
-        width: 95%;
-    }
-
-    .main-video iframe {
-        border-radius: 30px;
-    }
-    
-    .video-description {
-        MARGIN-TOP: 40VH;
-        width: 95%;
-        font-size: 0.6em;
-    }
-
-    .youtube-title {
-        font-size: 1.2em;
-    }
-
-
-/* gallery480 */ 
-
-.gallery-purple-divider {
-        height: 80px;
-    }
-
-    .gallery-burgundy-divider {
-        height: 300px;
-    }
-
-    .gallery-main-title {
-        font-size: 1.4em;
-        padding: 10px 0;
-    }
-
-    .large-preview {
-        width: 95%;
-        height: 35vh;
-        margin: 3% auto;
-    }
-
-    .carousel-container {
-        width: 100%;
-    }
-
-    .carousel-image {
-        width: 80px;
-        height: 80px;
-    }
-
-    .carousel-button {
-        padding: 8px;
-        font-size: 16px;
-    }
-
-    .right-column-wall {
-        width: 95%;
-        height: 30vh;
-    }
-
-    .right-column-previews {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .preview-container {
-        width: 90%;
-        margin-bottom: 10px;
-    }
-
-    .preview-image {
-        height: 20vh;
-    }
-
-    .preview-button {
-        padding: 8px;
-        font-size: 16px;
-    }
-
-
-
-/* contact480 */
-
-.contact-info-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .contact-info-item img {
-        margin-bottom: 10px;
-    }
-    
-    .contact-info-item span {
-        font-size: 1rem;
-    }
-    
-    .facebook-embed,
-    .facebook-embed iframe {
-        width: 90vw;
-    } 
-
-/* contactform480, logo and footer */ 
-
-
-
-
-
-
-    /* Footer */
- .punk-footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1rem;
-    }
-
-    .footer-left, .footer-middle, .footer-right {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .punk-contact-form-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .punk-rock-form-container,
-    .ents-widget {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
+@keyframes slideInPauseOut {
+  0% {
+    transform: translateX(100%);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 
@@ -3462,316 +3497,314 @@ h2.members-title {
 
 
 @media screen and (max-width: 360px) {
-    /* Further adjustments for very small screens */
-    .punk-contact-title {
-        font-size: 1.5rem;
-    }
+  /* Further adjustments for very small screens */
+  .punk-contact-title {
+    font-size: 1.5rem;
+  }
 
-    #punk-contact-form input[type="submit"] {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
+  #punk-contact-form input[type='submit'] {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
 
-    section.logo-section.logo-section-responsive {
-        height: 12vh !important;
-        min-height: 12vh !important;
-        max-height: 12vh !important;
-    }
+  section.logo-section.logo-section-responsive {
+    height: 12vh !important;
+    min-height: 12vh !important;
+    max-height: 12vh !important;
+  }
 
-    section.logo-section.logo-section-responsive .large-logo {
-        width: 85% !important;
-        max-height: 12vh !important;
-    }
+  section.logo-section.logo-section-responsive .large-logo {
+    width: 85% !important;
+    max-height: 12vh !important;
+  }
 }
+
+
+
+
+
 
 
 /* Max-width: 320px */
 @media (max-width: 320px) {
-    /* Navbar styles */
-    .hamburger-menu {
-        font-size: 22px;
-    }
+  /* Navbar styles */
+  .hamburger-menu {
+    font-size: 22px;
+  }
 
-    .band-name {
-        margin-left: -27.5px;
-    }
+  .band-name {
+    margin-left: -27.5px;
+  }
 
-    .band-name img {
-        max-height: calc(45px * 2);
-    }
+  .band-name img {
+    max-height: calc(45px * 2);
+  }
 
-    /* Hero320 */
-    .hero-section {
-        margin-top: -80px;
-        padding: 5px 3px 0;
-    }
+  /* Hero320 */
+  .hero-section {
+    margin-top: -80px;
+    padding: 5px 3px 0;
+  }
 
-    .logo-container img {
-        max-width: 150%;
-    }
+  .logo-container img {
+    max-width: 150%;
+  }
 
-.logo-container {
-
+  .logo-container {
     width: 130%;
-    MARGIN-RIGHT: 50PX;
+    margin-right: 50px;
+  }
+
+  .main-title {
+    font-size: 40px;
+  }
+
+  .sub-title-1,
+  .sub-title-2 {
+    font-size: 24px;
+  }
+
+  .sub-title-3 {
+    font-size: 20px;
+  }
+
+  .additional-title {
+    font-size: 8px;
+    margin-bottom: -600px; /* Further reduced bottom margin */
+    z-index: 500;
+  }
+
+  .button-slideshow {
+    margin: 15vh auto 1vh; /* Increased top margin */
+    width: 180px;
+  }
+
+  .slide-button {
+    font-size: 18px;
+    width: 120px;
+    height: 120px;
+    padding: 8px;
+  }
+
+  .arrow {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .arrow.left {
+    left: -70px;
+  }
+
+  .arrow.right {
+    right: -70px;
+  }
+
+  .click-hint {
+    font-size: 14px;
+  }
+
+  /* info320 css */
+
+  #info-section {
+    margin-top: -200px;
+  }
+
+  .info-title {
+    font-size: 0.8em;
+  }
+
+  .video-container {
+    height: 25vh;
+    position: relative;
+  }
+
+  .video-controls {
+    position: absolute; /* Ensure absolute positioning */
+    bottom: 15px; /*
+    bottom: 15px; /* Slightly raised by reducing the bottom value */
+    left: 0;
+    right: 0;
+    display: flex; /* Ensure the controls are evenly spaced */
+    flex-direction: column; /* Stack the controls vertically */
+    align-items: center; /* Center the controls horizontally */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    padding: 5px; /* Ensure padding is maintained */
+    height: 120px; /* Ensure the controls take up enough height */
+    margin-bottom: -175px; /* Increased margin below video controls */
+  }
+
+  #playPauseButton,
+  #changeVideoButton,
+  #progressBar,
+  .volume-container,
+  .speed-container {
+    height: 50%; /* Adjust height as necessary */
+    width: 60%; /* Set a default width, adjust as necessary */
+    margin-bottom: 4px; /* Maintain consistent spacing */
+  }
+
+  #playPauseButton,
+  #changeVideoButton {
+    font-size: 0.4em; /* Maintain font size */
+    padding: 4px 6px; /* Maintain padding */
+    font-weight: thin;
+  }
+
+  .info-columns {
+    margin-top: 50px; /* Ensure elements do not overlap */
+    flex-direction: column; /* Force elements to stack vertically */
+    height: auto; /* Remove fixed height to ensure responsiveness */
+    gap: 20px; /* Provide consistent spacing between elements */
+    margin-bottom: 30px; /* Add margin for spacing */
+  }
+
+  .info-left-column {
+    display: none; /* Hide unnecessary content */
+  }
+
+  .info-right-column {
+    width: 100%; /* Take up the full width */
+    overflow: hidden; /* Ensure content is contained */
+  }
+
+  .info-right-image {
+    width: 110%; /* Slight enlargement */
+    height: auto; /* Maintain aspect ratio */
+    max-width: none; /* Ensure it scales correctly */
+    transform: translateX(-5%); /* Center content */
+  }
+
+  .info-center-column {
+    width: 100%; /* Full width */
+    max-width: 250px; /* Ensure the text remains contained */
+    height: auto; /* Ensure elements are responsive */
+  }
+
+  .info-top-image,
+  .info-bottom-image,
+  .middle-image-container {
+    position: static; /* Ensure elements stack */
+    width: 100px; /* Default width */
+    max-height: 100px; /* Set max height */
+  }
+
+  .info-download-icon {
+    position: relative; /* Adjust for better placement */
+    left: 30px; /* Fine-tune position */
+    top: -40px; /* Align icon properly */
+    width: 50px; /* Ensure correct width */
+  }
+
+  /* Members section */
+   .members-title {
+      margin-top: -10vh; /* Move up by 10vh */
+      font-size: 0.8em;
+   }
+
+   h2.members-title {
+     font-size: 2em; /* Made smaller */
+     top: -30vh;
+   }
+
+   .members-heading {
+     font-size: 2.5em; /* Made smaller */
+     margin-top: -10vh; /* Moved down by -10vh*/
+     margin-bottom:10px;
+   }
+
+   .members-content {
+     width:95%;
+     border:5px solid black;
+   }
+
+   .quote-slider {
+     font-size:.7em;
+     height :80px;
+     display:flex;
+     align-items:center;
+     z-index :1000;
+     overflow:hidden;
+   }
+
+   .quote-container {
+     animation : slideInPauseOut(20s linear infinite);/* Slowed down animation*/
+   }
+
+   .members-grid {
+     gap :1px ;/* Reduced gap*/
+     margin-top:-20px ;/* Moved up slightly*/
+     margin-bottom:-15vh ;
+   }
+
+   .members-grid img {
+     max-width :130%;/* Larger images*/
+     max-height :95%;
+   }
 }
 
-    .main-title {
-        font-size: 40px;
-    }
-
-    .sub-title-1, .sub-title-2 {
-        font-size: 24px;
-    }
-
-    .sub-title-3 {
-        font-size: 20px;
-    }
-
-    .additional-title {
-        font-size: 8px;
-        margin-bottom: -600px; /* Further reduced bottom margin */ 
-        z-index: 500;
-    }
-
-    .button-slideshow {
-        margin: 15vh auto 1vh; /* Increased top margin */
-        width: 180px;
-    }
-
-    .slide-button {
-        font-size: 18px;
-        width: 120px;
-        height: 120px;
-        padding: 8px;
-    }
-
-    .arrow {
-        width: 25px;
-        height: 25px;
-        font-size: 14px;
-    }
-
-    .arrow.left {
-        left: -70px;
-    }
-
-    .arrow.right {
-        right: -70px;
-    }
-
-    .click-hint {
-        font-size: 14px;
-    }
-
-
-   /* info320 css */
-
-#info-section {
-        margin-top: -200px;
-    }
-
-    .info-title {
-        font-size: 0.8em;
-    }
-
-    .video-container {
-        height: 25vh;
-        position: relative;
-    }
-
-    .video-controls {
-        position: absolute; /* Ensure absolute positioning */
-        bottom: 15px; /* Slightly raised by reducing the bottom value */
-        left: 0;
-        right: 0;
-        display: flex; /* Ensure the controls are evenly spaced */
-        flex-direction: column; /* Stack the controls vertically */
-        align-items: center; /* Center the controls horizontally */
-background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-        padding: 5px; /* Ensure padding is maintained */
-        height: 120px; /* Ensure the controls take up enough height */
-        margin-bottom: -175px; /* Increased margin below video controls */
-    }
-
-    #playPauseButton,
-    #changeVideoButton,
-    #progressBar,
-    .volume-container,
-    .speed-container {
-        height: 50%; /* Adjust height as necessary */
-        width: 60%; /* Set a default width, adjust as necessary */
-        margin-bottom: 4px; /* Maintain consistent spacing */
-    }
-
-    #playPauseButton,
-    #changeVideoButton {
-        font-size: 0.4em; /* Maintain font size */
-        padding: 4px 6px; /* Maintain padding */
-        font-weight: thin;
-    }
-
-    .info-columns {
-        margin-top: 50px; /* Ensure elements do not overlap */
-        flex-direction: column; /* Force elements to stack vertically */
-        height: auto; /* Remove fixed height to ensure responsiveness */
-        gap: 20px; /* Provide consistent spacing between elements */
-        margin-bottom: 30px; /* Add margin for spacing */
-    }
-
-    .info-left-column {
-        display: none; /* Hide unnecessary content */
-    }
-
-    .info-right-column {
-        width: 100%; /* Take up the full width */
-        overflow: hidden; /* Ensure content is contained */
-    }
-
-    .info-right-image {
-        width: 110%; /* Slight enlargement */
-        height: auto; /* Maintain aspect ratio */
-        max-width: none; /* Ensure it scales correctly */
-        transform: translateX(-5%); /* Center content */
-    }
-
-    .info-center-column {
-        width: 100%; /* Full width */
-        max-width: 250px; /* Ensure the text remains contained */
-        height: auto; /* Ensure elements are responsive */
-    }
-
-    .info-top-image,
-    .info-bottom-image,
-    .middle-image-container {
-        position: static; /* Ensure elements stack */
-        width: 100px; /* Default width */
-        max-height: 100px; /* Set max height */
-    }
-
-    .info-download-icon {
-        position: relative; /* Adjust for better placement */
-        left: 30px; /* Fine-tune position */
-        top: -40px; /* Align icon properly */
-        width: 50px; /* Ensure correct width */
-    }
-
-/* Members section */
- .members-title {
-        margin-top: 0;
-        font-size: 0.8em;
-    }
-
-h2.members-title {
-  font-size: 2em; /* Made smaller */
-        top: -30vh !improtant;
-}
-
-    .members-heading {
-        font-size: 2.5em; /* Made smaller */
-        margin-top: 10vh; /* Moved down by 10vh */
-        margin-bottom: 10px; /* Reduced space below */
-    }
-
-    .members-content {
-        width: 95%;
-        border: 5px solid black;
-    }
-
-    .quote-slider {
-        font-size: 0.7em;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        z-index: 1000;
-        overflow: hidden;
-    }
-
-    .quote-container {
-        animation: slideInPauseOut 20s linear infinite; /* Slowed down animation */
-    }
-
-    .members-grid {
-        gap: 1px; /* Reduced gap */
-        margin-top: -20px; /* Moved up slightly */
-        margin-bottom: -15vh;
-    }
-
-    .members-grid img {
-        max-width: 130%; /* Larger images */
-        max-height: 95%;
-    }
-
-    .grid-title {
-        font-size: 8vw; /* Larger font */
-        word-wrap: break-word;
-    }
-
-    .grid-subtitle {
-        font-size: 6vw; /* Larger font */
-    }
-
-    .grid-top-right .grid-title {
-        font-size: 7vw;
-    }
-
-    .grid-top-left, .grid-top-right {
-        margin-bottom: -35px; /* Reduced margin */
-    }
-
-    .grid-bottom-left, .grid-bottom-right {
-        margin-top: -35px; /* Reduced margin */
-    }
-}
+/* Keyframes for animations */
 
 @keyframes slideInPauseOut {
-    0% { transform: translateX(100%); }
-    20% { transform: translateX(0); }
-    80% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+   0% { transform :translateX(100%); }
+   20% { transform :translateX(0); }
+   80% { transform :translateX(0); }
+   100% { transform :translateX(-100%); }
 }
 
-
-
-/* friends320 */ 
+/* friends320 */
 
 .friends-pistols-title {
-        font-size: 2.5rem;
-    }
+   font-size :2.5rem;
+}
 
-/* gigs320 */ 
+/* gigs320 */
 
-
-
-
-
-/*videos320 */ 
-
-
-
+/* videos320 */
 
 /* gallery320 */
 
+/* contact320 */
 
-/* contact320 * /
-
- .queen-image,
-    .passport-image {
-        max-width: 80px; /* Further reduce image size for very small screens */
-    }
-    
-    .contact-info-item span {
-        font-size: 0.8rem;
-    }
-
-/* contact320 form, logo and footer */ 
-
-
-
-
-
+.queen-image,
+.passport-image {
+   max-width :80px ;/* Further reduce image size for very small screens*/
 }
 
+.contact-info-item span {
+   font-size :0.8rem ;
+}
+
+/* contactform320 */
+
+
+
+
+
+
+
+
+/* YELLOWLOGO320 */
+
+
+
+.yellow-punk-pistol-logo-container {
+    height: 20vh;
+  }
+
+  .punk-pistol-logo {
+    max-height: 40%;
+  }
+
+
+
+
+
+
+
+/* footer320 */
+
+}
 
 
 
