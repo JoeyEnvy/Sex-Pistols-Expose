@@ -239,7 +239,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120%;
+    width: 175%;
+    margin-left: 150px;
     padding: 2px 0; /
     position: relative;
     z-index: 2;
@@ -2341,7 +2342,7 @@ cursor: pointer;
   }
 
   .logo-container {
-    width: 140%;
+    width: 200%;
     margin-left: 50px;
   }
 
@@ -2819,7 +2820,7 @@ cursor: pointer;
   }
 
   .logo-container {
-    width: 135%;
+    width: 175%;
     margin-left: 60px;
   }
 
@@ -3655,9 +3656,41 @@ cursor: pointer;
     margin-bottom: 15px;
   }
 
+.punk-contact-background {
+
+
+
+
+/* background length changers */ 
+
+
+
+}
+
+.punk-contact-blue-overlay {
+
+
+
+
+/* background length changers */ 
+
+
+
+}
+
+.punk-contact-background-image {
+ 
+
+
+/* background length changers */ 
+
+
+}
+
+
 .punk-contact-form-wrapper {
     width: 95vw;
-    margin-top: -40vh;
+    margin-top: 0vh;
     margin-bottom: 0; /* Ensure no extra space at bottom */
     position: relative;
     display: flex;
@@ -3738,7 +3771,7 @@ cursor: pointer;
     max-height: calc(45px * 2);
   }
 
-  /* Hero section */
+  /* Hero320 */
   .hero-section {
     margin-top: -80px;
     padding: 5px 3px 0;
@@ -3748,8 +3781,8 @@ cursor: pointer;
   }
 
   .logo-container {
-    width: 130%;
-    margin-right: 50px;
+    width: 200%;
+    margin-right: -25px;
   }
 
   .logo-container img {
@@ -3773,7 +3806,7 @@ cursor: pointer;
   }
 
   .additional-title {
-    font-size: 8px;
+    font-size: 32px;
     margin-bottom: -600px;
     z-index: 500;
     text-align: center;
@@ -3798,11 +3831,14 @@ cursor: pointer;
   }
 
   .arrow.left {
-    left: -70px;
+    left: -15px;
+    bottom: -10px;
   }
 
   .arrow.right {
-    right: -70px;
+    right: -15px;
+bottom: -10px;
+
   }
 
   .click-hint {
@@ -3811,7 +3847,7 @@ cursor: pointer;
 
   /* Info section */
   #info-section {
-    margin-top: -200px;
+    margin-top: -175px;
   }
 
   .info-title {
@@ -3904,21 +3940,24 @@ cursor: pointer;
   .members-title,
   h2.members-title {
     margin-top: -10vh;
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   h2.members-title {
     top: -30vh;
+    margin-top: -15vh;
   }
 
   .members-heading {
-    font-size: 2.5em;
-    margin-top: -10vh;
+    font-size 1.25em;
+    margin-top: 5vh;
     margin-bottom: 10px;
   }
 
   .members-content {
+    margin-top: -5vh;
     width: 95%;
+  
     border: 5px solid black;
   }
 
@@ -3938,7 +3977,7 @@ cursor: pointer;
   .members-grid {
     gap: 1px;
     margin-top: -20px;
-    margin-bottom: -15vh;
+    margin-bottom: -5vh;
   }
 
   .members-grid img {
