@@ -2639,6 +2639,13 @@ cursor: pointer;
         transform: translate(-50%, -15%);
     }
 
+
+ .punk-form-group label {
+        margin-left: 100px; /* Add margin to the left of the label */
+       
+    }
+
+
     .punk-contact-title {
         font-size: 6rem;
         margin-bottom: 20px;
@@ -3145,6 +3152,76 @@ cursor: pointer;
 
   /* ContactForm768 */
 
+
+
+
+ /* Ensure the contact page itself has enough space */
+ #punk-contact-page {
+        padding: 100px 15px 60px;
+    }
+
+    .punk-contact-title {
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+
+    .punk-contact-form-wrapper {
+        width: 90vw;
+        margin: 10vh auto 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+ .punk-form-group label {
+        margin-left: 100px; /* Add margin to the left of the label */
+            }
+
+    .punk-form-group {
+        margin-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .punk-form-group input,
+    .punk-form-group textarea {
+        width: 100%;
+        max-width: 500px;
+        padding: 12px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        min-width: 250px;
+        margin-left: 0px;
+    }
+
+    .punk-submit-button {
+        width: 20vh;
+        height: 7.5vh;
+        font-size: 1.25rem;
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    .widget-column {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .ents-widget {
+        width: 90%;
+        height: 650px; 
+        margin-right: 50px;
+    }
+
+    .form-and-widget-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
   /* YELLOWlogo768 */
 
 .yellow-punk-pistol-logo-container {
@@ -3580,6 +3657,54 @@ cursor: pointer;
   100% {
     transform: translateX(-100%);
   }
+
+
+
+
+
+/* contactform480 */ 
+
+
+#punk-contact-page {
+        padding: 50px 10px 30px; /* Reduced padding for smaller screens */
+    }
+
+    .punk-contact-title {
+        font-size: 3rem; /* Smaller font size for the title */
+    }
+
+    .punk-contact-form-wrapper {
+        width: 95vw; /* Slightly wider form wrapper */
+    }
+
+    .punk-form-group input,
+    .punk-form-group textarea {
+        min-width: 200px; /* Reduced minimum width for inputs */
+    }
+
+    .punk-submit-button {
+        width: 15vh; /* Slightly smaller submit button */
+        height: 6vh;
+    }
+
+    .ents-widget {
+        display: none; /* Remove the ents widget */
+    }
+
+    .widget-column {
+        display: none; /* Hide the widget column */
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
