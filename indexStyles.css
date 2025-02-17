@@ -3279,7 +3279,18 @@ cursor: pointer;
   }
 }
 
-/* Max-width: 480px */
+
+
+
+
+
+
+
+
+/* media480px */
+
+
+
 @media (max-width: 480px) {
   /* Navbar styles */
   nav {
