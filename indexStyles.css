@@ -2694,12 +2694,19 @@ cursor: pointer;
         width: auto;
         max-width: calc(100% - 190px); /* Adjusted to account for label width and right margin */
         margin-right: 25vh;
+        min-width: 400px;
     }
 
     .widget-column {
         width: 100%;
         max-width: 400px;
     }
+
+.punk-form-group label {
+        margin-left: 0px; /* Add margin to the left of the label */
+        
+    }
+
 
     .ents-widget {
         width: 100%;
@@ -3158,6 +3165,7 @@ cursor: pointer;
  /* Ensure the contact page itself has enough space */
  #punk-contact-page {
         padding: 100px 15px 60px;
+       
     }
 
     .punk-contact-title {
@@ -3167,7 +3175,7 @@ cursor: pointer;
 
     .punk-contact-form-wrapper {
         width: 90vw;
-        margin: 10vh auto 0;
+        margin-top: -30vh;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -3193,7 +3201,7 @@ cursor: pointer;
         padding: 12px;
         font-size: 1rem;
         box-sizing: border-box;
-        min-width: 250px;
+        min-width: 325px;
         margin-left: 0px;
     }
 
@@ -3214,6 +3222,7 @@ cursor: pointer;
         width: 90%;
         height: 650px; 
         margin-right: 50px;
+        margin-top: 150px;
     }
 
     .form-and-widget-container {
@@ -3665,7 +3674,7 @@ cursor: pointer;
 /* contactform480 */ 
 
 
-#punk-contact-page {
+ #punk-contact-page {
         padding: 50px 10px 30px; /* Reduced padding for smaller screens */
     }
 
@@ -3675,27 +3684,34 @@ cursor: pointer;
 
     .punk-contact-form-wrapper {
         width: 95vw; /* Slightly wider form wrapper */
+        margin: 5vh auto 0; /* Reduced top margin */
+    }
+
+    .punk-form-group label {
+        margin-left: 20px; /* Reduced left margin for labels */
     }
 
     .punk-form-group input,
     .punk-form-group textarea {
-        min-width: 200px; /* Reduced minimum width for inputs */
+        min-width: 200px; /* Slightly narrower inputs */
     }
 
     .punk-submit-button {
-        width: 15vh; /* Slightly smaller submit button */
+        width: 18vh; /* Slightly smaller submit button */
         height: 6vh;
-    }
-
-    .ents-widget {
-        display: none; /* Remove the ents widget */
     }
 
     .widget-column {
         display: none; /* Hide the widget column */
     }
 
+    .ents-widget {
+        display: none; /* Hide the ents widget */
+    }
 
+    .form-and-widget-container {
+        padding-bottom: 15vh; /* Extend background 15vh below submit button */
+    }
 
 
 
@@ -3712,28 +3728,7 @@ cursor: pointer;
 
 
 
-@media screen and (max-width: 360px) {
-  /* Further adjustments for very small screens */
-  .punk-contact-title {
-    font-size: 1.5rem;
-  }
 
-  #punk-contact-form input[type='submit'] {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-
-  section.logo-section.logo-section-responsive {
-    height: 12vh !important;
-    min-height: 12vh !important;
-    max-height: 12vh !important;
-  }
-
-  section.logo-section.logo-section-responsive .large-logo {
-    width: 85% !important;
-    max-height: 12vh !important;
-  }
-}
 
 
 
