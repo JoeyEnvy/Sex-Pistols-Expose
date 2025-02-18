@@ -3647,63 +3647,93 @@ cursor: pointer;
   /* contactform480 */
 
 
- #punk-contact-page {
-    padding: 0px 10px 0px;
-  }
-
-  .punk-contact-title {
-    font-size: 3rem;
-    margin-bottom: 15px;
-  }
-
-.punk-contact-background {
-
-
-
-
-/* background length changers */ 
-
-
-
-}
-
-.punk-contact-blue-overlay {
-
-
-
-
-/* background length changers */ 
-
-
-
-}
-
-.punk-contact-background-image {
- 
-
-
-/* background length changers */ 
-
-
-}
-
-
-.punk-contact-form-wrapper {
-    width: 95vw;
-    margin-top: 0vh;
-    margin-bottom: 0; /* Ensure no extra space at bottom */
+/* Overall contact page container */
+  #punk-contact-page {
+    padding: 0px 5px;
+    height: 60vh; /*background important */
+    max-height: 60vh; /*background important */
+    min-height: 60vh; /*background important */
     position: relative;
+    overflow: hidden; /* Prevent scrollbar */
+  }
+
+  /* Background image */
+  .punk-contact-background-image {
+    content: url('images/god-save-the-queen-blue-red-flag.jpg');
+    width: 100%;
+    height: 60vh; /*background important */
+    max-height: 60vh; /*background important */
+    min-height: 60vh; /*background important */
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0; /* Ensure image is at the bottom layer */
+  }
+
+  /* Background container */
+  .punk-contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;  /*background important */
+    max-height: 60vh; /*background important */
+    min-height: 60vh; /*background important */
+    overflow: hidden;
+  }
+
+  /* Form wrapper */
+  .punk-contact-form-wrapper {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Align content to top */
-    height: auto; /* Let height adjust to content */
+    justify-content: flex-start;
+    height: 60vh; /*background important */
+    max-height: 60vh; /*background important */
+    min-height: 60vh; /*background important */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    z-index: 2; /* Above overlay, below title */
   }
 
+  /* Contact page title */
+  .punk-contact-title {
+    font-size: 2.5rem;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 3; /* Ensure title is above overlay */
+  }
+
+
+
+  /* Blue overlay */
+  .punk-contact-blue-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.7); /* 70% opacity blue */
+    z-index: 1; /* Above image, below content */
+  }
+
+
+
+
+  /* Form group label */
   .punk-form-group label {
-    margin-left: 135px;
+    margin-left: 160px;
+    font-size: 0.9rem;
   }
 
+  /* Form group container */
   .punk-form-group {
     margin-bottom: 15px;
     width: 100%;
@@ -3711,38 +3741,42 @@ cursor: pointer;
     justify-content: center;
   }
 
+  /* Form inputs and textareas */
   .punk-form-group input,
   .punk-form-group textarea {
     width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    font-size: 0.9rem;
+    max-width: 250px;
+    padding: 8px;
+    font-size: 0.8rem;
     box-sizing: border-box;
     min-width: 200px;
     margin-left: 0px;
   }
 
+  /* Submit button */
   .punk-submit-button {
-    width: 18vh;
-    height: 6vh;
-    font-size: 1rem;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    width: 15vh;
+    height: 5vh;
+    font-size: 0.9rem;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     align-self: center;
   }
 
+  /* Hide widget */
   .widget-column,
   .ents-widget {
-    display: none;
+    display: none !important;
   }
 
+  /* Form and widget container */
   .form-and-widget-container {
     flex-direction: column;
     gap: 15px;
     align-items: center;
-    padding-bottom: 0; /* Removed extra padding */
+    padding-bottom: 0;
   }
-
 }
 
 

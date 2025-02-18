@@ -1,0 +1,34 @@
+480 Contact Form Background and Image Changer Parts 
+
+
+.punk-contact-background {
+
+
+
+
+/* background length changers */ 
+
+
+
+}
+
+.punk-contact-blue-overlay {
+
+
+
+
+/* background length changers */ 
+
+
+
+}
+
+.punk-contact-background-image {
+ 
+
+
+/* background length changers */ 
+
+
+}
+
