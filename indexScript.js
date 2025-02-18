@@ -239,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //quote sllider between members and information 
 
+// Quote slider
 const quoteContainer = document.querySelector('.quote-container');
 const quotes = document.querySelectorAll('.quote');
 let currentIndex = 0;
@@ -248,36 +249,179 @@ function slideQuotes() {
     quoteContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-setInterval(slideQuotes, 4500); // Changed from 3000 to 4000
+let quoteInterval = setInterval(slideQuotes, 4500);
 
-
-//badge slider before fammous people 
-
+// Badge slider
 document.addEventListener('DOMContentLoaded', function() {
     const slideContainer = document.querySelector('.badge-slide-container');
     let currentSlide = 0;
+    let slidePercentage = 33.33;
 
     function nextSlide() {
         currentSlide++;
         if (currentSlide > 2) currentSlide = 0;
-        slideContainer.style.transform = `translateX(-${currentSlide * 33.33}%)`;
+        slideContainer.style.transform = `translateX(-${currentSlide * slidePercentage}%)`;
     }
 
-    setInterval(nextSlide, 3000);
+    let badgeInterval = setInterval(nextSlide, 3000);
+
+    // Function to update slide percentages based on screen width
+    function updateSlidePercentages() {
+        if (window.innerWidth <= 320) {
+            slidePercentage = 100;
+        } else if (window.innerWidth <= 480) {
+            slidePercentage = 50;
+        } else if (window.innerWidth <= 768) {
+            slidePercentage = 33.33;
+        } else {
+            slidePercentage = 33.33;
+        }
+
+        // Reset transform and current slide
+        currentSlide = 0;
+        slideContainer.style.transform = 'translateX(0)';
+    }
+
+    // Initial call to set correct percentages
+    updateSlidePercentages();
+
+    // Update on window resize
+    window.addEventListener('resize', updateSlidePercentages);
 });
 
+// Media query event listeners
+const mediaQueries = [
+    window.matchMedia("(max-width: 320px)"),
+    window.matchMedia("(max-width: 480px)"),
+    window.matchMedia("(max-width: 768px)"),
+    window.matchMedia("(max-width: 1024px)")
+];
+
+function handleMediaQueryChange(e) {
+    if (e.matches) {
+        // Clear existing intervals
+        clearInterval(quoteInterval);
+        clearInterval(badgeInterval);
+
+        // Reset and restart intervals with adjusted timings if needed
+        quoteInterval = setInterval(slideQuotes, 4500);
+        badgeInterval = setInterval(nextSlide, 3000);
+
+        // Adjustments for quote slider
+        quotes.forEach(quote => quote.style.width = '100%');
+        quoteContainer.style.width = `${quotes.length * 100}%`;
+
+        // Recalculate the slide function for quotes
+        slideQuotes = function() {
+            currentIndex = (currentIndex + 1) % quotes.length;
+            quoteContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // You can add more specific adjustments here for each breakpoint
+        if (e.media === "(max-width: 320px)") {
+            // Adjustments for 320px and below
+        } else if (e.media === "(max-width: 480px)") {
+            // Adjustments for 480px and below
+        } else if (e.media === "(max-width: 768px)") {
+            // Adjustments for 768px and below
+        } else if (e.media === "(max-width: 1024px)") {
+            // Adjustments for 1024px and below
+        }
+    }
+}
+
+mediaQueries.forEach(mq => mq.addListener(handleMediaQueryChange));
+
+// Initial check
+mediaQueries.forEach(mq => handleMediaQueryChange(mq));
+
+// Function to update layouts on resize
+function updateLayoutOnResize() {
+    // Recalculate quote slider layout
+    quotes.forEach(quote => quote.style.width = '100%');
+    quoteContainer.style.width = `${quotes.length * 100}%`;
+
+    // Reset quote slider position
+    currentIndex = 0;
+    quoteContainer.style.transform = 'translateX(0)';
+
+    // Update badge slider
+    updateSlidePercentages();
+}
+
+// Add resize event listener
+window.addEventListener('resize', updateLayoutOnResize);
+
+// Initial layout setup
+updateLayoutOnResize();
 
 
 //shop section 
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const bandcampPlayer = document.querySelector('.bandcamp-player');
-    
-    bandcampPlayer.addEventListener('load', function() {
-        this.classList.add('loaded');
+    const shopSection = document.getElementById('shop');
+    const bandcampContainer = shopSection.querySelector('.bandcamp-container');
+    const loaderContainer = shopSection.querySelector('.loader-container');
+    let iframeLoaded = false;
+    let intentionalNavigation = false;
+
+    // Function to load the Bandcamp iframe
+    function loadBandcampIframe() {
+        if (iframeLoaded) return;
+        
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://sexpistolsexpose.bandcamp.com';
+        iframe.style.border = '0';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.opacity = '0';
+        iframe.onload = function() {
+            loaderContainer.style.display = 'none';
+            iframe.style.opacity = '1';
+        };
+        bandcampContainer.appendChild(iframe);
+        iframeLoaded = true;
+    }
+
+    // Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && (intentionalNavigation || entry.intersectionRatio > 0.5)) {
+                loadBandcampIframe();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: [0.1, 0.5] });
+
+    observer.observe(shopSection);
+
+    // Event listener for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href').substring(1);
+            if (targetId === 'shop') {
+                intentionalNavigation = true;
+                setTimeout(() => { intentionalNavigation = false; }, 1000);
+            }
+        });
     });
+
+    // Scroll event listener
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        let st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastScrollTop) {
+            // Scrolling down
+            const shopRect = shopSection.getBoundingClientRect();
+            if (shopRect.top < window.innerHeight && shopRect.bottom > 0) {
+                loadBandcampIframe();
+            }
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
+    }, false);
 });
+
 
 
 // Videos section

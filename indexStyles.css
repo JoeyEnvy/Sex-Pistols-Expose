@@ -1280,7 +1280,6 @@ padding-bottom: 25px;
     z-index: 1;
 }
 
-
 .shop-title {
     font-family: 'Chinese Rocks', sans-serif;
     color: white;
@@ -2494,6 +2493,23 @@ cursor: pointer;
     margin-top: -10vh; /* Moved up by 10vh */
   }
 
+
+/* quotes1024 */ 
+
+
+.quote-slider {
+        margin-top: 40px;
+    }
+
+    .quote p {
+        font-size: 24px;
+    }
+
+    .quote .author {
+        font-size: 48px;
+    }
+
+
   /* friends1024 */
 
   .friends-pistols-title {
@@ -2960,6 +2976,24 @@ cursor: pointer;
     width: 70%; /* Increased width */
     border: 2px solid black;
   }
+
+
+/* quoteslider768 */ 
+
+ .quote-slider {
+        margin-top: 30px;
+    }
+
+    .quote p {
+        font-size: 22px;
+    }
+
+    .quote .author {
+        font-size: 42px;
+    }
+
+
+
 
   /* friends768 */
 
@@ -3449,17 +3483,28 @@ cursor: pointer;
     top: 0vh;
   }
 
-  .quote-slider {
-    font-size: 0.8em;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-  }
+/* quotes480 */ 
 
-  .quote-container {
-    animation: slideInPauseOut 15s linear infinite;
-  }
+
+  .quote-slider {
+        margin-top: 20px;
+        padding: 10px 0;
+    }
+
+    .quote {
+        padding: 10px;
+    }
+
+    .quote p {
+        font-size: 18px;
+    }
+
+    .quote .author {
+        font-size: 36px;
+    }
+
+/* membersgrid480 */
+
 
   .members-grid {
     gap: 10px;
@@ -4003,7 +4048,9 @@ bottom: -10px;
     width: 50px;
   }
 
-  /* Members section */
+  /* Members320  */
+
+
   .members-title,
   h2.members-title {
     margin-top: -10vh;
@@ -4028,18 +4075,21 @@ bottom: -10px;
     border: 5px solid black;
   }
 
-  .quote-slider {
-    font-size: 0.7em;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-    overflow: hidden;
-  }
+/* quotes320 */ 
 
-  .quote-container {
-    animation: slideInPauseOut 20s linear infinite;
-  }
+  .quote-slider {
+        margin-top: 15px;
+    }
+
+    .quote p {
+        font-size: 16px;
+    }
+
+    .quote .author {
+        font-size: 32px;
+    }
+
+/* membersgrid320 */
 
   .members-grid {
     gap: 1px;
@@ -4057,7 +4107,9 @@ bottom: -10px;
     font-size: 2.5rem;
   }
 
-  /* Gigs section - New addition */
+  /* Gigs320 */
+
+
   #gigs {
     padding: 50px 3% 30px;
   }
@@ -4241,13 +4293,6 @@ bottom: -10px;
 
 }
 
-/* Keyframes for animations */
-@keyframes slideInPauseOut {
-  0% { transform: translateX(100%); }
-  20% { transform: translateX(0); }
-  80% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
 
 
 
