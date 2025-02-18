@@ -3164,14 +3164,42 @@ cursor: pointer;
 
 
  /* Ensure the contact page itself has enough space */
- #punk-contact-page {
+    #punk-contact-page {
         padding: 100px 15px 60px;
-       
+        height: 150vh; /*background important */
+        max-height: 150vh; /*background important */
+        min-height: 150vh; /*background important */
+        position: relative;
+        overflow: hidden; /* Prevent scrollbar */
     }
 
     .punk-contact-title {
+        margin-top: 250px;
         font-size: 5rem;
         margin-bottom: 20px;
+        position: relative;
+        z-index: 3; /* Ensure title is above overlay */
+    }
+
+    .punk-contact-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 150vh;  /*background important */
+        max-height: 150vh; /*background important */
+        min-height: 150vh; /*background important */
+        overflow: hidden;
+    }
+
+    .punk-contact-background-image {
+        width: 100%;
+        height: 150vh; /*background important */
+        max-height: 150vh; /*background important */
+        min-height: 150vh; /*background important */
+        object-fit: cover;
+        object-position: center top;
+        z-index: 0; /* Ensure image is at the bottom layer */
     }
 
     .punk-contact-form-wrapper {
@@ -3182,11 +3210,16 @@ cursor: pointer;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        height: 150vh; /*background important */
+        max-height: 150vh; /*background important */
+        min-height: 150vh; /*background important */
+        overflow-y: auto; /* Allow vertical scrolling if content overflows */
+        z-index: 2; /* Above overlay, below title */
     }
 
- .punk-form-group label {
+    .punk-form-group label {
         margin-left: 100px; /* Add margin to the left of the label */
-            }
+    }
 
     .punk-form-group {
         margin-bottom: 20px;
@@ -3223,7 +3256,7 @@ cursor: pointer;
         width: 90%;
         height: 650px; 
         margin-right: 50px;
-        margin-top: 150px;
+        margin-top: 25px;
     }
 
     .form-and-widget-container {
@@ -4084,6 +4117,128 @@ bottom: -10px;
   .punk-pistol-logo {
     max-height: 40%;
   }
+
+
+/*contactform320 */ 
+
+
+/* Background-related queries */
+  #punk-contact-page {
+    height: 50vh; /* Change this value to adjust background length */
+    max-height: 50vh; /* Change this value to match height */
+    min-height: 50vh; /* Change this value to match height */
+    overflow: hidden;
+  }
+
+  .punk-contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 50vh; /* Change this value to adjust background length */
+    max-height: 50vh; /* Change this value to match height */
+    min-height: 50vh; /* Change this value to match height */
+    overflow: hidden;
+  }
+
+  .punk-contact-background-image {
+    content: url('images/god-save-the-queen-blue-red-flag.jpg');
+    width: 120%;
+    height: 50vh; /* Change this value to adjust background length */
+    max-height: 50vh; /* Change this value to match height */
+    min-height: 50vh; /* Change this value to match height */
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
+  }
+
+  .punk-contact-form-wrapper {
+    height: 50vh; /* Change this value to adjust form wrapper length */
+    max-height: 50vh; /* Change this value to match height */
+    min-height: 50vh; /* Change this value to match height */
+    /* Other properties remain the same */
+  }
+
+  /* Other queries remain the same */
+  #punk-contact-page {
+    padding: 0px 5px;
+    position: relative;
+  }
+
+  .punk-contact-form-wrapper {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    z-index: 2;
+  }
+
+  .punk-contact-title {
+    font-size: 2rem;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .punk-form-group label {
+    margin-left: 115px;
+    font-size: 0.8rem;
+  }
+
+  .punk-form-group {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .punk-form-group input,
+  .punk-form-group textarea {
+    width: 90%;
+    max-width: 200px;
+    padding: 6px;
+    font-size: 0.7rem;
+    box-sizing: border-box;
+    min-width: 150px;
+    margin-left: 0px;
+  }
+
+  .punk-submit-button {
+    width: 12vh;
+    height: 4vh;
+    font-size: 0.8rem;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: center;
+  }
+
+  .widget-column,
+  .ents-widget {
+    display: none !important;
+  }
+
+  .form-and-widget-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+
+
+
+
 }
 
 /* Keyframes for animations */
