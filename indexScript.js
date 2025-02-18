@@ -307,16 +307,6 @@ function handleMediaQueryChange(e) {
         quoteInterval = setInterval(slideQuotes, 4500);
         badgeInterval = setInterval(nextSlide, 3000);
 
-        // Adjustments for quote slider
-        quotes.forEach(quote => quote.style.width = '100%');
-        quoteContainer.style.width = `${quotes.length * 100}%`;
-
-        // Recalculate the slide function for quotes
-        slideQuotes = function() {
-            currentIndex = (currentIndex + 1) % quotes.length;
-            quoteContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
         // You can add more specific adjustments here for each breakpoint
         if (e.media === "(max-width: 320px)") {
             // Adjustments for 320px and below
@@ -335,25 +325,6 @@ mediaQueries.forEach(mq => mq.addListener(handleMediaQueryChange));
 // Initial check
 mediaQueries.forEach(mq => handleMediaQueryChange(mq));
 
-// Function to update layouts on resize
-function updateLayoutOnResize() {
-    // Recalculate quote slider layout
-    quotes.forEach(quote => quote.style.width = '100%');
-    quoteContainer.style.width = `${quotes.length * 100}%`;
-
-    // Reset quote slider position
-    currentIndex = 0;
-    quoteContainer.style.transform = 'translateX(0)';
-
-    // Update badge slider
-    updateSlidePercentages();
-}
-
-// Add resize event listener
-window.addEventListener('resize', updateLayoutOnResize);
-
-// Initial layout setup
-updateLayoutOnResize();
 
 
 //shop section 

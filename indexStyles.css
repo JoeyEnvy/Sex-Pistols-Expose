@@ -1346,22 +1346,8 @@ padding-bottom: 25px;
     font-size: 1rem;
 }
 
-/* New styles for error message */
-.error-message {
-    font-family: Arial, sans-serif;
-    color: red;
-    text-align: center;
-    font-weight: bold;
-    padding: 1rem;
-}
-
-/* Ensure iframe is visible when loaded */
-.bandcamp-container iframe[style*="opacity: 1"] {
-    display: block;
-}
-
 /* Hide loader when iframe is loaded */
-.bandcamp-container iframe[style*="opacity: 1"] ~ .loader-container {
+.bandcamp-container iframe:not([style*="display: none"]) ~ .loader-container {
     display: none;
 }
 
@@ -4121,9 +4107,8 @@ bottom: -10px;
     font-size: 2.5rem;
   }
 
+
   /* Gigs320 */
-
-
   #gigs {
     padding: 50px 3% 30px;
   }
