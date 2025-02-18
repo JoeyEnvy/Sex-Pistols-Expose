@@ -519,8 +519,8 @@ document.addEventListener('DOMContentLoaded', function() {
     rightColumn.appendChild(previews);
 
     const images = [];
-    for (let i = 2; i <= 133; i++) {
-        images.push(`images/gallery/${i}.jpeg`);
+    for (let i = 5; i <= 120; i++) {
+        images.push(`images/WEBP Images All/gallery/${i}.webp`);
     }
 
     function shuffleArray(array) {
@@ -626,7 +626,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(() => {
         wallImage.querySelector('img').src = images[Math.floor(Math.random() * images.length)];
     }, 5000);
-});
+})
 
 
 //logo part 
