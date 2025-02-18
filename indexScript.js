@@ -327,7 +327,7 @@ mediaQueries.forEach(mq => handleMediaQueryChange(mq));
 
 
 
-//shop section 
+//shop sections
 
 
 document.addEventListener('DOMContentLoaded', function() {
