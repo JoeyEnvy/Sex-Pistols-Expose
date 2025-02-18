@@ -360,66 +360,39 @@ updateLayoutOnResize();
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed');
     const shopSection = document.getElementById('shop');
+    console.log('Shop section:', shopSection);
     const bandcampContainer = shopSection.querySelector('.bandcamp-container');
+    console.log('Bandcamp container:', bandcampContainer);
     const loaderContainer = shopSection.querySelector('.loader-container');
-    let iframeLoaded = false;
-    let intentionalNavigation = false;
+    console.log('Loader container:', loaderContainer);
 
-    // Function to load the Bandcamp iframe
     function loadBandcampIframe() {
-        if (iframeLoaded) return;
-        
+        console.log('Attempting to load Bandcamp iframe');
         const iframe = document.createElement('iframe');
         iframe.src = 'https://sexpistolsexpose.bandcamp.com';
         iframe.style.border = '0';
         iframe.style.width = '100%';
         iframe.style.height = '100%';
-        iframe.style.opacity = '0';
+        
         iframe.onload = function() {
+            console.log('Iframe loaded successfully');
             loaderContainer.style.display = 'none';
             iframe.style.opacity = '1';
         };
+
+        iframe.onerror = function() {
+            console.error('Failed to load iframe');
+            loaderContainer.innerHTML = '<p class="error-message">Failed to load shop. Please try again later.</p>';
+        };
+
         bandcampContainer.appendChild(iframe);
-        iframeLoaded = true;
+        console.log('Iframe appended to container');
     }
 
-    // Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && (intentionalNavigation || entry.intersectionRatio > 0.5)) {
-                loadBandcampIframe();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: [0.1, 0.5] });
-
-    observer.observe(shopSection);
-
-    // Event listener for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href').substring(1);
-            if (targetId === 'shop') {
-                intentionalNavigation = true;
-                setTimeout(() => { intentionalNavigation = false; }, 1000);
-            }
-        });
-    });
-
-    // Scroll event listener
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-        let st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop) {
-            // Scrolling down
-            const shopRect = shopSection.getBoundingClientRect();
-            if (shopRect.top < window.innerHeight && shopRect.bottom > 0) {
-                loadBandcampIframe();
-            }
-        }
-        lastScrollTop = st <= 0 ? 0 : st;
-    }, false);
+    // Attempt to load immediately
+    loadBandcampIframe();
 });
 
 
