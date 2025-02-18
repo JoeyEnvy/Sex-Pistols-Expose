@@ -136,6 +136,7 @@ document.querySelector('.hamburger-menu').addEventListener('click', function() {
 //info section video 
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Videos section
     const videos = [
         'videos/1.mp4',
         'videos/3.mp4',
@@ -160,7 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
         videoPlayer.addEventListener('loadedmetadata', function() {
             const randomStartTime = Math.random() * videoPlayer.duration;
             videoPlayer.currentTime = randomStartTime;
-            videoPlayer.play();
+            videoPlayer.muted = true;
+            videoPlayer.play().catch(e => console.error('Auto-play was prevented:', e));
         }, { once: true });
     }
 
@@ -199,108 +201,41 @@ document.addEventListener('DOMContentLoaded', function() {
     videoPlayer.muted = true;
     volumeControl.value = 0;
     playRandomVideo();
-});
 
-//info lazy loading part 
-
-document.addEventListener("DOMContentLoaded", function() {
-        var lazyElements = [].slice.call(document.querySelectorAll(".lazy"));
-        var videoPlayer = document.getElementById('videoPlayer');
-        var videoSource = document.getElementById('videoSource');
-
-        if ("IntersectionObserver" in window) {
-            let lazyObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        let lazyElement = entry.target;
-                        if (lazyElement.tagName.toLowerCase() === 'img') {
-                            lazyElement.src = lazyElement.dataset.src;
-                        } else if (lazyElement === videoPlayer) {
-                            videoSource.src = videoSource.dataset.src;
-                            videoPlayer.load();
-                        }
-                        lazyElement.classList.remove("lazy");
-                        lazyObserver.unobserve(lazyElement);
-                    }
-                });
-            });
-
-            lazyElements.forEach(function(lazyElement) {
-                lazyObserver.observe(lazyElement);
-            });
-            lazyObserver.observe(videoPlayer);
-        }
-    });
-
-
-//shop section (in the wrong place)
-
-document.addEventListener('DOMContentLoaded', function() {
-    const shopSection = document.getElementById('shop');
-    const bandcampIframe = document.getElementById('bandcamp-iframe');
-    const loaderContainer = document.querySelector('.loader-container');
-    const allLinks = document.querySelectorAll('a[href^="#"]:not([href="#videoPlayer"])');
-    let isManualScroll = false;
-    let iframeLoaded = false;
-
-    function loadIframe() {
-        if (!iframeLoaded && bandcampIframe) {
-            bandcampIframe.src = bandcampIframe.dataset.src;
-            iframeLoaded = true;
-            loaderContainer.style.display = 'block';
-            bandcampIframe.style.display = 'none';
-            
-            bandcampIframe.onload = function() {
-                loaderContainer.style.display = 'none';
-                bandcampIframe.style.display = 'block';
-            };
-        }
-    }
-
-    function unloadIframe() {
-        if (iframeLoaded && bandcampIframe) {
-            bandcampIframe.src = '';
-            iframeLoaded = false;
-            loaderContainer.style.display = 'block';
-            bandcampIframe.style.display = 'none';
-        }
-    }
-
-    allLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                isManualScroll = true;
-                if (targetId === 'shop') {
-                    loadIframe();
-                } else {
-                    unloadIframe();
-                }
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-                setTimeout(() => {
-                    isManualScroll = false;
-                }, 1000);
+    // Ensure video plays automatically when it becomes visible
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                videoPlayer.play().catch(e => console.error('Auto-play was prevented:', e));
+            } else {
+                videoPlayer.pause();
             }
         });
-    });
+    }, { threshold: 0.5 });
 
-    if (shopSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !isManualScroll) {
-                    loadIframe();
-                } else if (!entry.isIntersecting && !isManualScroll) {
-                    unloadIframe();
+    videoObserver.observe(videoPlayer);
+
+    // Lazy loading functionality for images
+    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+                    lazyImageObserver.unobserve(lazyImage);
                 }
             });
-        }, { threshold: 0.1 });
+        });
 
-        observer.observe(shopSection);
+        lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
     }
 });
+
 
 //quote sllider between members and information 
 
@@ -313,7 +248,7 @@ function slideQuotes() {
     quoteContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-setInterval(slideQuotes, 3000);
+setInterval(slideQuotes, 4500); // Changed from 3000 to 4000
 
 
 //badge slider before fammous people 
@@ -329,6 +264,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     setInterval(nextSlide, 3000);
+});
+
+
+
+//shop section 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const bandcampPlayer = document.querySelector('.bandcamp-player');
+    
+    bandcampPlayer.addEventListener('load', function() {
+        this.classList.add('loaded');
+    });
 });
 
 
@@ -373,7 +321,7 @@ let currentVideoIndex = 0;
 function changeVideo(index) {
     currentVideoIndex = index;
     const mainPlayer = document.getElementById('mainPlayer');
-    mainPlayer.src = `https://www.youtube.com/embed/${videoUrls[currentVideoIndex]}?autoplay=1&mute=0`;
+    mainPlayer.src = `https://www.youtube.com/embed/${videoUrls[currentVideoIndex]}?autoplay=1&mute=1`;
 }
 
 document.getElementById('changeVideo').onclick = () => {
@@ -384,7 +332,12 @@ window.onload = () => {
     changeVideo(0);
 };
 
-// Intersection Observer to play video when in view
+// Add event listener to unmute video on click
+document.getElementById('mainPlayer').addEventListener('click', function() {
+    this.src = this.src.replace('mute=1', 'mute=0');
+});
+
+// Intersection Observer to load video when in view
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -397,7 +350,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 observer.observe(document.querySelector('.video-player-container'));
-
 
 //gallery section 
 
