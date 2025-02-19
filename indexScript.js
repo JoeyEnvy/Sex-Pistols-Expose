@@ -143,7 +143,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'videos/4.mp4',
         'videos/5.mp4',
         'videos/6.mp4',
-        'videos/7.mp4'
+        'videos/7.mp4',
+        'videos/8.mp4',
     ];
 
     const videoPlayer = document.getElementById('videoPlayer');
@@ -491,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const images = [];
     for (let i = 2; i <= 133; i++) {
-        images.push(`images/gallery/${i}.jpeg`);
+        images.push(`images/WEBP Images All/gallery/${i}.webp`);
     }
 
     function shuffleArray(array) {

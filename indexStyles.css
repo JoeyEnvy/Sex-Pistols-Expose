@@ -190,7 +190,7 @@ nav ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/Mark 2.jpg');
+    background-image: url('images/WEBP Images All/Mark 2_edited.webp');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -652,7 +652,7 @@ attachment-container {
     width: 100vw;
     min-height: 100vh;
     position: relative;
-    background-image: url('images/Info.jpg');
+    background-image: url('images/WEBP Images All/Info.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.8;
