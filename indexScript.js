@@ -270,6 +270,85 @@ document.addEventListener('DOMContentLoaded', function() {
 //shop sections
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const shopSection = document.getElementById('shop');
+    const loaderContainer = shopSection.querySelector('.loader-container');
+    const bandcampContainer = shopSection.querySelector('.bandcamp-container');
+    const iframe = bandcampContainer.querySelector('iframe');
+    
+    // Initially hide the iframe and show the loader
+    iframe.style.opacity = '0';
+    loaderContainer.style.display = 'flex';
+
+    // Store the original src and remove it to prevent auto-loading
+    const originalSrc = iframe.src;
+    iframe.removeAttribute('src');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                loadBandcampContent();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(shopSection);
+
+    function loadBandcampContent() {
+        // Show loader and position it over the iframe
+        loaderContainer.style.display = 'flex';
+        positionLoader();
+
+        // Set the src to start loading
+        iframe.src = originalSrc;
+        
+        iframe.onload = function() {
+            iframe.style.opacity = '1';
+            loaderContainer.style.display = 'none';
+            initCircularScroller();
+        };
+
+        // Fallback: If iframe doesn't load within 5 seconds, show it anyway
+        setTimeout(() => {
+            if (iframe.style.opacity === '0') {
+                iframe.style.opacity = '1';
+                loaderContainer.style.display = 'none';
+                initCircularScroller();
+            }
+        }, 5000);
+    }
+
+    function positionLoader() {
+        const rect = bandcampContainer.getBoundingClientRect();
+        loaderContainer.style.width = rect.width + 'px';
+        loaderContainer.style.height = rect.height + 'px';
+    }
+
+    function initCircularScroller() {
+        let scrollPosition = 0;
+        let scrollSpeed = 0.5;
+
+        function scroll() {
+            scrollPosition += scrollSpeed;
+            if (scrollPosition >= iframe.offsetHeight) {
+                scrollPosition = 0;
+            }
+            bandcampContainer.scrollTop = scrollPosition;
+            requestAnimationFrame(scroll);
+        }
+
+        scroll();
+
+        bandcampContainer.addEventListener('mouseenter', () => scrollSpeed = 0);
+        bandcampContainer.addEventListener('mouseleave', () => scrollSpeed = 0.5);
+    }
+
+    // Reposition loader on window resize
+    window.addEventListener('resize', positionLoader);
+});
+
+
 
 
 // Videos section
