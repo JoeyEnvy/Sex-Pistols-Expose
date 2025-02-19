@@ -240,158 +240,11 @@ document.addEventListener('DOMContentLoaded', function() {
 //quote sllider between members and information 
 
 // Quote slider
-const quoteContainer = document.querySelector('.quote-container');
-const quotes = document.querySelectorAll('.quote');
-let currentIndex = 0;
-
-function slideQuotes() {
-    currentIndex = (currentIndex + 1) % quotes.length;
-    quoteContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-let quoteInterval = setInterval(slideQuotes, 4500);
-
-// Badge slider
-document.addEventListener('DOMContentLoaded', function() {
-    const slideContainer = document.querySelector('.badge-slide-container');
-    let currentSlide = 0;
-    let slidePercentage = 33.33;
-
-    function nextSlide() {
-        currentSlide++;
-        if (currentSlide > 2) currentSlide = 0;
-        slideContainer.style.transform = `translateX(-${currentSlide * slidePercentage}%)`;
-    }
-
-    let badgeInterval = setInterval(nextSlide, 3000);
-
-    // Function to update slide percentages based on screen width
-    function updateSlidePercentages() {
-        if (window.innerWidth <= 320) {
-            slidePercentage = 100;
-        } else if (window.innerWidth <= 480) {
-            slidePercentage = 50;
-        } else if (window.innerWidth <= 768) {
-            slidePercentage = 33.33;
-        } else {
-            slidePercentage = 33.33;
-        }
-
-        // Reset transform and current slide
-        currentSlide = 0;
-        slideContainer.style.transform = 'translateX(0)';
-    }
-
-    // Initial call to set correct percentages
-    updateSlidePercentages();
-
-    // Update on window resize
-    window.addEventListener('resize', updateSlidePercentages);
-});
-
-// Media query event listeners
-const mediaQueries = [
-    window.matchMedia("(max-width: 320px)"),
-    window.matchMedia("(max-width: 480px)"),
-    window.matchMedia("(max-width: 768px)"),
-    window.matchMedia("(max-width: 1024px)")
-];
-
-function handleMediaQueryChange(e) {
-    if (e.matches) {
-        // Clear existing intervals
-        clearInterval(quoteInterval);
-        clearInterval(badgeInterval);
-
-        // Reset and restart intervals with adjusted timings if needed
-        quoteInterval = setInterval(slideQuotes, 4500);
-        badgeInterval = setInterval(nextSlide, 3000);
-
-        // You can add more specific adjustments here for each breakpoint
-        if (e.media === "(max-width: 320px)") {
-            // Adjustments for 320px and below
-        } else if (e.media === "(max-width: 480px)") {
-            // Adjustments for 480px and below
-        } else if (e.media === "(max-width: 768px)") {
-            // Adjustments for 768px and below
-        } else if (e.media === "(max-width: 1024px)") {
-            // Adjustments for 1024px and below
-        }
-    }
-}
-
-mediaQueries.forEach(mq => mq.addListener(handleMediaQueryChange));
-
-// Initial check
-mediaQueries.forEach(mq => handleMediaQueryChange(mq));
 
 
 
 //shop sections
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    const shopSection = document.getElementById('shop');
-    const bandcampContainer = shopSection.querySelector('.bandcamp-container');
-    const loaderContainer = shopSection.querySelector('.loader-container');
-    let iframeLoaded = false;
-    let intentionalNavigation = false;
-
-    // Function to load the Bandcamp iframe
-    function loadBandcampIframe() {
-        if (iframeLoaded) return;
-        
-        const iframe = document.createElement('iframe');
-        iframe.src = 'https://sexpistolsexpose.bandcamp.com';
-        iframe.style.border = '0';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.opacity = '0';
-        iframe.onload = function() {
-            loaderContainer.style.display = 'none';
-            iframe.style.opacity = '1';
-        };
-        bandcampContainer.appendChild(iframe);
-        iframeLoaded = true;
-    }
-
-    // Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && (intentionalNavigation || entry.intersectionRatio > 0.5)) {
-                loadBandcampIframe();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: [0.1, 0.5] });
-
-    observer.observe(shopSection);
-
-    // Event listener for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href').substring(1);
-            if (targetId === 'shop') {
-                intentionalNavigation = true;
-                setTimeout(() => { intentionalNavigation = false; }, 1000);
-            }
-        });
-    });
-
-    // Scroll event listener
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-        let st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop) {
-            // Scrolling down
-            const shopRect = shopSection.getBoundingClientRect();
-            if (shopRect.top < window.innerHeight && shopRect.bottom > 0) {
-                loadBandcampIframe();
-            }
-        }
-        lastScrollTop = st <= 0 ? 0 : st;
-    }, false);
-});
 
 
 
@@ -472,6 +325,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const leftColumn = document.querySelector('.gallery-left-column');
     const rightColumn = document.querySelector('.gallery-right-column');
 
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    console.log('Window width:', window.innerWidth);
+    console.log('Is mobile:', isMobile);
+
     // Left column setup
     const largePreview = document.createElement('div');
     largePreview.className = 'large-preview';
@@ -532,13 +390,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let currentIndex = 0;
 
-    function updateLargePreview() {
-        largePreview.querySelector('img').src = images[currentIndex];
+    function loadImage(src) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = reject;
+            img.src = src;
+        });
+    }
+
+    async function updateLargePreview() {
+        try {
+            const img = await loadImage(images[currentIndex]);
+            largePreview.querySelector('img').src = img.src;
+        } catch (error) {
+            console.error('Failed to load image:', error);
+            // Handle the error (e.g., display a placeholder image)
+            largePreview.querySelector('img').src = 'path/to/placeholder.jpg';
+        }
+    }
+
+    function getCarouselImagesCount() {
+        if (isMobile) {
+            if (window.innerWidth <= 320) return 2;
+            if (window.innerWidth <= 480) return 3;
+            if (window.innerWidth <= 768) return 4;
+            if (window.innerWidth <= 1024) return 4;
+        }
+        return 5;
     }
 
     function updateCarousel() {
         carousel.innerHTML = '';
-        for (let i = 0; i < 5; i++) {
+        const carouselImages = getCarouselImagesCount();
+        console.log('Carousel images count:', carouselImages);
+        for (let i = 0; i < carouselImages; i++) {
             const index = (currentIndex + i) % images.length;
             const img = document.createElement('img');
             img.src = images[index];
@@ -553,13 +439,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function addTouchSupport(element, callback) {
+        element.addEventListener('touchstart', function(e) {
+            callback();
+            e.preventDefault();
+        }, false);
+    }
+
     prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLargePreview();
+        updateCarousel();
+    });
+    addTouchSupport(prevButton, () => {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         updateLargePreview();
         updateCarousel();
     });
 
     nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLargePreview();
+        updateCarousel();
+    });
+    addTouchSupport(nextButton, () => {
         currentIndex = (currentIndex + 1) % images.length;
         updateLargePreview();
         updateCarousel();
@@ -578,13 +481,22 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.querySelector('.close-fullscreen').addEventListener('click', () => {
             document.body.removeChild(modal);
         });
+        addTouchSupport(modal.querySelector('.close-fullscreen'), () => {
+            document.body.removeChild(modal);
+        });
     }
 
     largePreview.addEventListener('click', () => {
         openFullscreen(images[currentIndex]);
     });
+    addTouchSupport(largePreview, () => {
+        openFullscreen(images[currentIndex]);
+    });
 
     wallImage.addEventListener('click', () => {
+        openFullscreen(wallImage.querySelector('img').src);
+    });
+    addTouchSupport(wallImage, () => {
         openFullscreen(wallImage.querySelector('img').src);
     });
 
@@ -604,8 +516,16 @@ document.addEventListener('DOMContentLoaded', function() {
             previewIndex = (previewIndex - 1 + images.length) % images.length;
             updatePreview();
         });
+        addTouchSupport(prevBtn, () => {
+            previewIndex = (previewIndex - 1 + images.length) % images.length;
+            updatePreview();
+        });
 
         nextBtn.addEventListener('click', () => {
+            previewIndex = (previewIndex + 1) % images.length;
+            updatePreview();
+        });
+        addTouchSupport(nextBtn, () => {
             previewIndex = (previewIndex + 1) % images.length;
             updatePreview();
         });
@@ -613,10 +533,22 @@ document.addEventListener('DOMContentLoaded', function() {
         img.addEventListener('click', () => {
             openFullscreen(img.src);
         });
+        addTouchSupport(img, () => {
+            openFullscreen(img.src);
+        });
 
         updatePreview();
     });
 
+    function adjustLayoutForMobile() {
+        if (isMobile) {
+            leftColumn.style.width = '100%';
+            rightColumn.style.width = '100%';
+            // Add any other mobile-specific adjustments
+        }
+    }
+
+    adjustLayoutForMobile();
     updateLargePreview();
     updateCarousel();
 
@@ -624,7 +556,28 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(() => {
         wallImage.querySelector('img').src = images[Math.floor(Math.random() * images.length)];
     }, 5000);
+
+    // Handle window resize
+    window.addEventListener('resize', debounce(function() {
+        console.log('Window resized. New width:', window.innerWidth);
+        adjustLayoutForMobile();
+        updateCarousel();
+    }, 250));
+
+    // Debounce function to limit the rate at which a function can fire
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
 });
+
 
 
 //logo part 
