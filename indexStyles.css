@@ -2097,27 +2097,29 @@ cursor: pointer;
 .punk-sex-pistols-label {
     color: white;
     font-family: "Chinese Rocks", sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem; /* Increased from 1rem to 1.25rem */
     margin-right: 15px;
     flex-shrink: 0;
-    width: 150px; /* Fixed label width */
+    width: 150px; /* Keep the original width */
     text-align: right;
 }
 
 .punk-form-group input,
 .punk-form-group textarea {
     flex-grow: 1;
-    width: calc(100% - 165px); /* Input width based on label width */
+    width: calc(100% - 165px); /* Adjusted based on label width */
     padding: 15px;
     background: rgba(255, 0, 0, 0.75);
     border: 2px solid white;
     color: white;
     border-radius: 5px;
-    font-family: "Chinese Rocks", sans-serif;
+    font-family: Arial, sans-serif; /* Changed to Arial */
+    font-size: 1.25rem; /* Increased from 1rem to 1.25rem */
+    font-weight: bold; /* Make the text bold */
 }
 
 .punk-form-group textarea {
-    height: 150px;
+    height: 150px; /* Keep the original height */
     resize: none;
 }
 
@@ -3518,7 +3520,7 @@ cursor: pointer;
 
   /* Hero480 */
   .hero-section {
-    margin-top: -100px;
+    margin-top: 0px;
     padding: 10px 5px 0;
   }
 
@@ -3976,7 +3978,7 @@ cursor: pointer;
     min-height: 75vh; /*background important */
     position: relative;
     overflow: hidden; /* Prevent scrollbar */
-    margin-top: -10vh;
+    margin-top: -5vh;
     z-index: 50;
 }
 

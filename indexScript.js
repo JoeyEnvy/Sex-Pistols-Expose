@@ -746,6 +746,7 @@ adjustLogoHeight(); // Call once on page load
     emailjs.init("i80sxC4oCU-8VMJFL");
 })();
 
+// Event listener for form submission
 document.getElementById('punk-rock-contact-form').addEventListener('submit', function(event) {
     event.preventDefault();  // Prevent default form submission
 
@@ -771,13 +772,16 @@ document.getElementById('punk-rock-contact-form').addEventListener('submit', fun
 
 // Lazy loading implementation
 document.addEventListener("DOMContentLoaded", function() {
+    // Select all elements with the 'lazy' class
     var lazyElements = [].slice.call(document.querySelectorAll(".lazy"));
 
     if ("IntersectionObserver" in window) {
+        // Create an Intersection Observer
         let lazyObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     let lazyElement = entry.target;
+                    // Load the source for iframes and images
                     if (lazyElement.tagName.toLowerCase() === 'iframe') {
                         lazyElement.src = lazyElement.dataset.src;
                     } else if (lazyElement.tagName.toLowerCase() === 'img') {
@@ -789,15 +793,20 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 
+        // Observe each lazy element
         lazyElements.forEach(function(lazyElement) {
             lazyObserver.observe(lazyElement);
         });
     }
+
+    // Ensure the contact form widget loads immediately
+    var contactWidget = document.querySelector('.ents-widget iframe');
+    if (contactWidget && !contactWidget.src) {
+        contactWidget.src = contactWidget.getAttribute('data-src');
+    }
 });
 
-
-//contactsubmitbuttonresponsitivity 
-
+// Contact submit button responsivity
 function adjustButtonFontSize() {
     if (window.innerWidth <= 480) {
         document.querySelector('.punk-submit-button').style.fontSize = '0.9rem';
@@ -806,5 +815,7 @@ function adjustButtonFontSize() {
     }
 }
 
+// Add event listener for window resize
 window.addEventListener('resize', adjustButtonFontSize);
 adjustButtonFontSize(); // Call once on page load
+
