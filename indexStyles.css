@@ -3552,7 +3552,7 @@ cursor: pointer;
   }
 
   .button-slideshow {
-    margin: 15vh auto 2vh; /* Increased top margin */
+    margin: 5vh auto 2vh; /* Increased top margin */
     width: 200px;
   }
 

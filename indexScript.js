@@ -1,3 +1,5 @@
+console.log("Contact form script loaded");
+
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.slide-button');
     const leftArrow = document.querySelector('.arrow.left');
@@ -725,63 +727,59 @@ adjustLogoHeight(); // Call once on page load
 
 
 
-    // Smooth scroll to top functionality
-    document.querySelectorAll('.back-to-top').forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    });
+   document.querySelectorAll('.back-to-top').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const scrollToTop = (duration) => {
+            const start = window.scrollY;
+            const target = 0;
+            const distance = target - start;
+            let startTime = null;
 
+            const animation = (currentTime) => {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
 
+                const easeInOutQuad = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
+                window.scrollTo(0, start + distance * easeInOutQuad(progress));
 
-//contact section form parts and lazy loading 
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            };
 
-// Initialize EmailJS with your public key
-(function() {
-    emailjs.init("i80sxC4oCU-8VMJFL");
-})();
+            requestAnimationFrame(animation);
+        };
 
-// Event listener for form submission
-document.getElementById('punk-rock-contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevent default form submission
-
-    // Collect form data
-    var templateParams = {
-        to_name: "Joe Mort",  // Name of the person receiving the email
-        from_name: document.getElementById("punk-first-name").value + " " + document.getElementById("punk-last-name").value,
-        from_email: document.getElementById("punk-email").value,
-        message: document.getElementById("punk-message").value,
-        reply_to: document.getElementById("punk-email").value
-    };
-
-    // Send email using EmailJS
-    emailjs.send("service_9lq4npt", "template_0drkhxd", templateParams)
-    .then(function(response) {
-        alert("Your message has been sent successfully!");
-        document.getElementById('punk-rock-contact-form').reset(); // Clear the form after successful submission
-    }, function(error) {
-        alert("Oops! Something went wrong. Please try again.");
-        console.error('EmailJS Error:', error);  // Log the error to the console for debugging
+        scrollToTop(800);
     });
 });
 
+
+
+
+
+/// Facebook widget initialization
+document.addEventListener("DOMContentLoaded", function () {
+    // Ensure the contact form widget (Facebook timeline) loads immediately
+    var contactWidget = document.querySelector('.ents-widget iframe');
+    if (contactWidget && !contactWidget.src) {
+        contactWidget.src = contactWidget.getAttribute('data-src') || "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=400&height=550&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId";
+    }
+});
+
 // Lazy loading implementation
-document.addEventListener("DOMContentLoaded", function() {
-    // Select all elements with the 'lazy' class
+document.addEventListener("DOMContentLoaded", function () {
     var lazyElements = [].slice.call(document.querySelectorAll(".lazy"));
 
     if ("IntersectionObserver" in window) {
-        // Create an Intersection Observer
-        let lazyObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
+        let lazyObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     let lazyElement = entry.target;
-                    // Load the source for iframes and images
                     if (lazyElement.tagName.toLowerCase() === 'iframe') {
                         lazyElement.src = lazyElement.dataset.src;
                     } else if (lazyElement.tagName.toLowerCase() === 'img') {
@@ -793,29 +791,81 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 
-        // Observe each lazy element
-        lazyElements.forEach(function(lazyElement) {
+        lazyElements.forEach(function (lazyElement) {
             lazyObserver.observe(lazyElement);
         });
-    }
-
-    // Ensure the contact form widget loads immediately
-    var contactWidget = document.querySelector('.ents-widget iframe');
-    if (contactWidget && !contactWidget.src) {
-        contactWidget.src = contactWidget.getAttribute('data-src');
     }
 });
 
 // Contact submit button responsivity
 function adjustButtonFontSize() {
-    if (window.innerWidth <= 480) {
-        document.querySelector('.punk-submit-button').style.fontSize = '0.9rem';
-    } else {
-        document.querySelector('.punk-submit-button').style.fontSize = ''; // Reset to default
+    var submitButton = document.querySelector('.punk-submit-button');
+    if (submitButton) {
+        if (window.innerWidth <= 480) {
+            submitButton.style.fontSize = '0.9rem';
+        } else {
+            submitButton.style.fontSize = ''; // Reset to default
+        }
     }
 }
 
 // Add event listener for window resize
 window.addEventListener('resize', adjustButtonFontSize);
-adjustButtonFontSize(); // Call once on page load
+// Call once on page load
+document.addEventListener("DOMContentLoaded", adjustButtonFontSize);
+
+
+
+// FORM FUNCTIONALITY 
+
+
+
+// Initialize EmailJS with your public key
+(function () {
+    emailjs.init("i80sxC4oCU-8VMJFL")
+        .then(function() {
+            console.log("EmailJS initialized successfully");
+        })
+        .catch(function(error) {
+            console.log("EmailJS initialization error:", error);
+        });
+})();
+
+// Event listener for form submission
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM fully loaded");
+    var form = document.getElementById('punk-rock-contact-form');
+    if (form) {
+        console.log("Form found");
+        form.addEventListener('submit', function (event) {
+            console.log("Form submitted");
+            event.preventDefault(); // Prevent default form submission
+            console.log("Default prevented");
+
+            // Collect form data
+            var templateParams = {
+                to_name: "Joe Mort", // Name of the person receiving the email
+                from_name: document.getElementById("punk-first-name").value + " " + document.getElementById("punk-last-name").value,
+                from_email: document.getElementById("punk-email").value,
+                message: document.getElementById("punk-message").value,
+                reply_to: document.getElementById("punk-email").value
+            };
+
+            console.log("Form data collected:", templateParams);
+
+            // Send email using EmailJS
+            emailjs.send("service_9lq4npt", "template_0drkhxd", templateParams)
+                .then(function (response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                    alert("Your message has been sent successfully!");
+                    form.reset(); // Clear the form after successful submission
+                }, function (error) {
+                    console.error('EmailJS Error:', error); // Log the error to the console for debugging
+                    alert("Oops! Something went wrong. Please try again.");
+                });
+        });
+    } else {
+        console.error("Contact form not found in the DOM");
+    }
+});
 
