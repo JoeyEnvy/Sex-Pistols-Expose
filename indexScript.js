@@ -240,6 +240,30 @@ document.addEventListener('DOMContentLoaded', function() {
 //quote sllider between members and information 
 
 // Quote slider
+const quoteContainer = document.querySelector('.quote-container');
+const quotes = document.querySelectorAll('.quote');
+let currentIndex = 0;
+
+function slideQuotes() {
+    currentIndex = (currentIndex + 1) % quotes.length;
+    quoteContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+let quoteInterval = setInterval(slideQuotes, 4500);
+
+// Badge slider
+document.addEventListener('DOMContentLoaded', function() {
+    const slideContainer = document.querySelector('.badge-slide-container');
+    let currentSlide = 0;
+    const slidePercentage = 33.33;
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % 3;
+        slideContainer.style.transform = `translateX(-${currentSlide * slidePercentage}%)`;
+    }
+
+    let badgeInterval = setInterval(nextSlide, 3000);
+});
 
 
 

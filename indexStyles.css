@@ -3734,7 +3734,9 @@ cursor: pointer;
     font-size: 1.2em;
   }
 
-  /* gallery480 */
+  /* gallerydivider480 */
+
+
   .gallery-purple-divider {
     height: 80px;
   }
@@ -3743,24 +3745,36 @@ cursor: pointer;
     height: 300px;
   }
 
+/* gallery480 */
+
+ .gallery-section {
+    padding: 0 20px;
+  }
+
   .gallery-main-title {
     font-size: 1.4em;
     padding: 10px 0;
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+    text-align: center;
   }
 
   .large-preview {
-    width: 95%;
+    width: 80%;
     height: 35vh;
     margin: 3% auto;
   }
 
   .carousel-container {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
 
   .carousel-image {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
   }
 
   .carousel-button {
@@ -3769,18 +3783,22 @@ cursor: pointer;
   }
 
   .right-column-wall {
-    width: 95%;
+    width: 80%;
     height: 30vh;
+    margin: 3% auto;
   }
 
   .right-column-previews {
     flex-direction: column;
     align-items: center;
+    width: 80%;
+    margin: 0 auto;
   }
 
   .preview-container {
-    width: 90%;
+    width: 100%;
     margin-bottom: 10px;
+    position: relative; /* Ensure relative positioning */
   }
 
   .preview-image {
@@ -3790,7 +3808,19 @@ cursor: pointer;
   .preview-button {
     padding: 8px;
     font-size: 16px;
+    position: absolute; /* Absolutely position the button */
+    top: 50%;
+    transform: translateY(-50%);
   }
+
+    .preview-button.next {
+        right: 200px; /* Adjust this value to pull the button closer */
+    }
+
+    .preview-button.prev {
+        left: -10px; /* Adjust this value to pull the button closer */
+    }
+
 
   /* contact480 */
 /* Reduce overall height of contact section */
@@ -4346,6 +4376,66 @@ bottom: -10px;
     padding: 10px 20px !important;
     font-size: 18px !important;
   }
+
+
+/* gallery320 */ 
+
+
+.gallery-section {
+    padding: 0 15px; /* Slightly reduced padding for very small screens */
+  }
+
+  .gallery-main-title {
+    font-size: 1.2em; /* Further reduced font size */
+    padding: 8px 0;
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+  }
+
+  .large-preview {
+    width: 90%; /* Increased slightly from 480px query for better visibility */
+    height: 30vh; /* Reduced height */
+  }
+
+  .carousel-container {
+    width: 90%;
+  }
+
+  .carousel-image {
+    width: 50px; /* Further reduced size */
+    height: 50px;
+    margin: 0 3px; /* Reduced spacing */
+  }
+
+  .carousel-button {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  .right-column-wall {
+    width: 90%;
+    height: 25vh; /* Reduced height */
+  }
+
+  .right-column-previews {
+    width: 90%;
+  }
+
+  .preview-container {
+    margin-bottom: 8px;
+  }
+
+  .preview-image {
+    height: 18vh; /* Slightly reduced height */
+  }
+
+  .preview-button {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+
 
   /* Contact320  */
   
