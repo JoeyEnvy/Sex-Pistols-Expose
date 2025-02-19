@@ -3303,7 +3303,7 @@ cursor: pointer;
 
     .additional-section {
         height: 50vh; /* Allow height to adjust based on content */
-        margint-top: -25vh;
+        margint-top: -15vh;
 
     }
 
@@ -3340,58 +3340,58 @@ cursor: pointer;
 
 
  /* Ensure the contact page itself has enough space */
-    #punk-contact-page {
-        padding: 100px 15px 60px;
-        height: 150vh; /*background important */
-        max-height: 150vh; /*background important */
-        min-height: 150vh; /*background important */
-        position: relative;
-        overflow: hidden; /* Prevent scrollbar */
-    }
+#punk-contact-page {
+    padding: 100px 15px 60px;
+    height: 165vh; /*background important */
+    max-height: 165vh; /*background important */
+    min-height: 165vh; /*background important */
+    position: relative;
+    overflow: hidden; /* Prevent scrollbar */
+}
 
-    .punk-contact-title {
-        margin-top: 250px;
-        font-size: 5rem;
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 3; /* Ensure title is above overlay */
-    }
+.punk-contact-title {
+    margin-top: 250px;
+    font-size: 5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 3; /* Ensure title is above overlay */
+}
 
-    .punk-contact-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 150vh;  /*background important */
-        max-height: 150vh; /*background important */
-        min-height: 150vh; /*background important */
-        overflow: hidden;
-    }
+.punk-contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 165vh;  /*background important */
+    max-height: 165vh; /*background important */
+    min-height: 165vh; /*background important */
+    overflow: hidden;
+}
 
-    .punk-contact-background-image {
-        width: 100%;
-        height: 150vh; /*background important */
-        max-height: 150vh; /*background important */
-        min-height: 150vh; /*background important */
-        object-fit: cover;
-        object-position: center top;
-        z-index: 0; /* Ensure image is at the bottom layer */
-    }
+.punk-contact-background-image {
+    width: 100%;
+    height: 165vh; /*background important */
+    max-height: 165vh; /*background important */
+    min-height: 165vh; /*background important */
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0; /* Ensure image is at the bottom layer */
+}
 
-    .punk-contact-form-wrapper {
-        width: 90vw;
-        margin-top: -30vh;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 150vh; /*background important */
-        max-height: 150vh; /*background important */
-        min-height: 150vh; /*background important */
-        overflow-y: auto; /* Allow vertical scrolling if content overflows */
-        z-index: 2; /* Above overlay, below title */
-    }
+.punk-contact-form-wrapper {
+    width: 90vw;
+    margin-top: -30vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 165vh; /*background important */
+    max-height: 165vh; /*background important */
+    min-height: 165vh; /*background important */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    z-index: 2; /* Above overlay, below title */
+}
 
     .punk-form-group label {
         margin-left: 100px; /* Add margin to the left of the label */

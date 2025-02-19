@@ -276,6 +276,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const bandcampContainer = shopSection.querySelector('.bandcamp-container');
     const iframe = bandcampContainer.querySelector('iframe');
     
+    let isLoaded = false;
+    let loadTimeout;
+
     // Initially hide the iframe and show the loader
     iframe.style.opacity = '0';
     loaderContainer.style.display = 'flex';
@@ -286,9 +289,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                loadBandcampContent();
-                observer.unobserve(entry.target);
+            if (entry.isIntersecting && !isLoaded) {
+                // Clear any existing timeout
+                clearTimeout(loadTimeout);
+                // Set a new timeout
+                loadTimeout = setTimeout(() => {
+                    loadBandcampContent();
+                    isLoaded = true;
+                    observer.unobserve(entry.target);
+                }, 500); // 500ms delay
+            } else if (!entry.isIntersecting) {
+                // Clear the timeout if the section is no longer visible
+                clearTimeout(loadTimeout);
             }
         });
     }, { threshold: 0.1 });
