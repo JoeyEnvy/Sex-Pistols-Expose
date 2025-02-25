@@ -2,800 +2,190 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<!-- Add the EmailJS library -->
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.11.0/email.min.js"></script>
-
-
-
-    <title>Sex Pistols Expose - Ultimate Punk Tribute Band</title>
-  
-    <link rel="icon" href="images/Favicon's/1.svg" type="image/svg+xml">
-    <link rel="alternate icon" href="images/Favicon's/2.svg" type="image/svg+xml">
-
-    <link rel="preload" href="indexStyles.css" as="style">
-    <link rel="stylesheet" href="indexStyles.css">
-
-    <meta name="description" content="Sex Pistols Expose - The ultimate tribute band to the Sex Pistols. Experience iconic punk songs like 'Anarchy in the UK' and 'God Save The Queen' live.">
-    <meta name="keywords" content="Sex Pistols, Sid Vicious, Johnny Rotten, punk tribute band, Anarchy in the UK, punk rock, 70s punk, Sex Pistols Experience, Nancy Spungen, punk music">
-    <meta name="author" content="Sex Pistols Expose">
-    <meta property="og:title" content="Sex Pistols Expose - Ultimate Punk Tribute Band">
-    <meta property="og:description" content="The world's number 1 professional tribute band to the Sex Pistols. Relive the anarchy of '77 with iconic punk songs.">
-    <meta property="og:image" content="https://sexpistolsexpose.com/images/Favicon's/1.svg">
-    <meta property="og:url" content="https://sexpistolsexpose.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://sexpistolsexpose.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo Heat Source | Expert Woodburning Stove & Fireplace Services</title>
+    <meta name="description" content="Apollo Heat Source offers professional woodburning stove and fireplace services in Doncaster and Mexborough. HETAS registered for quality installations and maintenance.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div id="home"></div>
-
-    <nav>
-        <a href="https://www.facebook.com/sexpistolsexpose" class="facebook-button" rel="noopener">
-            <img src="images/facebook.png" alt="Facebook" width="20" height="20" loading="lazy">
-            <span>Find us on Facebook</span>
-        </a>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#info-section">Info</a></li>
-            <li><a href="#members-section">Members</a></li>
-            <li><a href="#gigs">Gigs</a></li>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#punk-contact-page">Contact Us</a></li>
-        </ul>
-        <div class="hamburger-menu" aria-label="Menu">☰</div>
-        <a href="https://sexpistolsexpose.com" class="band-name">
-            <img src="images/WEBP Images All/Sex Pistols Expose Text Logo.webp" alt="Sex Pistols Expose" width="200" height="100" loading="lazy">
-        </a>
-    </nav>
-
-    <div class="scroll-progress"></div>
-    <div class="parallax-bg"></div>
-
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="apollo-logo.png" alt="Apollo Heat Source Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#services"><i class="fas fa-tools"></i> Services</a></li>
+                    <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="#reviews"><i class="fas fa-star"></i> Reviews</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
     <main>
-        <section id="home">
-            <div class="hero-section">
-                <div class="button-slideshow">
-                    <button class="arrow left" id="prev-arrow" aria-label="Previous">&lt;</button>
-                    <button class="slide-button active" data-target="#gigs">Gigs</button>
-                    <button class="slide-button" data-target="#videos">Videos</button>
-                    <button class="slide-button" data-target="#punk-contact-page">Book Us</button>
-                    <button class="arrow right" id="next-arrow" aria-label="Next">&gt;</button>
-                    <p class="click-hint">Click to explore</p>
-                </div>
-
-                <h1 class="sub-title-1">Never Mind</h1>
-                <h2 class="sub-title-2">the bollocks</h2>
-                <h2 class="sub-title-3">here's the</h2>
-
-                <div class="logo-container">
-                                   <img src="images/WEBP Images All/Logo Number 1.webp" alt="Sex Pistols Expose Logo" width="60%" height="auto" loading="lazy">
-            </div>
-
-                <h2 class="additional-title">Formerly the Sex Pistols Experience</h2>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Apollo Heat Source</h1>
+                <p>Your trusted experts in woodburning stoves and fireplaces in Doncaster and Mexborough.</p>
+                <a href="#contact" class="cta-button">Get a Free Quote</a>
             </div>
         </section>
 
-        <section id="info-section">
-            <div class="info-container">
-                <h2 class="info-title">Watch Here</h2>
-                <div class="video-container">
-                    <video id="videoPlayer" muted preload="none">
-                        <source id="videoSource" data-src="videos/1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-controls">
-                        <button id="playPauseButton">Play</button>
-                        <input type="range" id="progressBar" value="0" step="0.1" min="0" max="100">
-                        <div class="volume-container">
-                            <label for="volumeControl">Volume:</label>
-                            <input type="range" id="volumeControl" value="1" step="0.1" min="0" max="1">
-                        </div>
-                        <label for="playbackSpeed">Speed:</label>
-                        <input type="range" id="playbackSpeed" value="1" step="0.1" min="0.5" max="1.5">
-                        <button id="changeVideoButton">Change Video</button>
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>At Apollo Heat Source, we specialize in professional installation and maintenance of heating solutions tailored to your needs. Whether you're looking for a wood-burning stove, a multi-fuel cooker, or a complete chimney system, our expert team ensures safe, efficient, and regulation-compliant installations.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-fire"></i>
+                        <h3>Flue Liner Installation</h3>
+                        <ul>
+                            <li>Flexible Metal Flue Liner</li>
+                            <li>Non-Metallic Block or Sectional Liner</li>
+                            <li>Rigid Sectional Metal Liner</li>
+                        </ul>
                     </div>
-                </div>
-
-                <div class="info-columns">
-                    <div class="info-left-column">
-                        <img data-src="images/WEBP Images All/Section 2 Passport.webp" alt="Passport" class="info-left-image lazy" width="200" height="300" loading="lazy">
+                    <div class="service-card">
+                        <i class="fas fa-home"></i>
+                        <h3>Stove and Heater Installation</h3>
+                        <ul>
+                            <li>Pellet Dry Stove</li>
+                            <li>Solid Fuel or Multifuel Dry Room Heater</li>
+                            <li>Wood-Only Dry Room Heater</li>
+                        </ul>
                     </div>
-                    <div class="info-center-column">
-                        <div class="center-images">
-                            <img data-src="images/WEBP Images All/god save queen badge .webp" alt="God Save The Queen Badge" class="info-top-image lazy" width="100" height="100" loading="lazy">
-                            <div class="middle-image-container">
-                                <a href="#punk-contact-page" class="mess-image-link">
-                                    <img data-src="images/WEBP Images All/Am a Mess .webp" alt="Am a Mess" class="info-middle-image punk-navigation-trigger lazy" width="150" height="150" loading="lazy">
-                                </a>
-                                <img data-src="images/WEBP Images All/Click-Download-PNG_red.webp" alt="Download Icon" class="info-download-icon lazy" width="50" height="50" loading="lazy">
-                            </div>
-                            <img data-src="images/WEBP Images All/never mind badge .webp" alt="Never Mind Badge" class="info-bottom-image lazy" width="100" height="100" loading="lazy">
-                        </div>
+                    <div class="service-card">
+                        <i class="fas fa-chimney"></i>
+                        <h3>Chimney Systems</h3>
+                        <ul>
+                            <li>External Factory-Made Chimney</li>
+                            <li>Internal Factory-Made Chimney</li>
+                            <li>Open Fire Installation</li>
+                        </ul>
                     </div>
-                    <div class="info-right-column">
-                        <img data-src="images/WEBP Images All/Section 2 Passport.webp" class="info-right-image lazy" width="200" height="300" loading="lazy">
+                    <div class="service-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Service and Maintenance</h3>
+                        <p>Regular servicing for optimal performance and safety of your heating system.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <section id="members-section">
-            <div class="members-background">
-                <h2 class="members-title">Information</h2>
-                <div class="members-content">
-                    <p>Experience the raw energy of punk with Sex Pistols Expose. Our talented musicians deliver an electrifying journey, from snarling vocals to frenetic riffs. Our ultimate tribute to the band that revolutionized music and culture is a high-octane celebration that will leave you breathless.</p>
-                    <hr>
-                    <p>Approved by all members of the Sex Pistols, the 'Sex Pistols Exposé' are the world's number 1 and only professional tribute, bringing back the anarchic spirit of '77. With Johnny Rotten's snarling persona and Sid Vicious's iconic persona, we bring the sex, the chaos, and the attitude of the original Pistols.</p>
-                    <hr>
-                    <p>With over 2000 shows between the band members and over 15 years of experience, we've played everywhere from the USA to Japan and across Europe, including legendary venues like the 100 Club. Expect the iconic sound of 'Anarchy in the UK', 'God Save The Queen', and 'Pretty Vacant'.</p>
-                    <hr>
-                    <p>Occasionally featured in TV and film, the Sex Pistols Expose brings the anarchy of punk wherever we go, creating a raucous celebration of the iconic '77 sound, capturing the legacy of Sid Vicious, Nancy Spungen, and Johnny Rotten.</p>
-                    <hr>
-                    <p>Our high-energy performances and witty stage banter make Sex Pistols Expose the ultimate punk experience that leaves the crowd shouting for more!</p>
-                    <hr>
-                    <p>Don't just take our word for it - check out what our fans say in our testimonials...</p>
-                </div>
-
-                <div class="quote-slider">
-                    <div class="quote-container">
-                        <div class="quote">
-                            <p>"Good f**king luck with it"</p>
-                            <span class="author">- John Lydon</span>
-                        </div>
-                        <div class="quote">
-                            <p>"They Really are Sex Pistols, splendid"</p>
-                            <span class="author">- Steve Jones</span>
-                        </div>
-                        <div class="quote">
-                            <p>"Pure theatre at it's very finest"</p>
-                            <span class="author">- Ed Tudor-Pole</span>
-                        </div>
-                        <div class="quote">
-                            <p>"Very weird seeing my old friend Sid up there"</p>
-                            <span class="author">- Soo Catwoman (London 100 Club)</span>
-                        </div>
-                        <div class="quote">
-                            <p>"A crashing guitar sound, Steve Jones should be proud of it"</p>
-                            <span class="author">- Steve Diggle (Buzzcocks)</span>
-                        </div>
-                        <div class="quote">
-                            <p>"You were great! Took me back a long time!"</p>
-                            <span class="author">- Mick Jones (Clash)</span>
-                        </div>
-                        <div class="quote">
-                            <p>"Been looking forward to seeing you lot for quite while!"</p>
-                            <span class="author">- Dave Vanian (Damned)</span>
-                        </div>
-                        <div class="quote">
-                            <p>"You do it better than they did!"</p>
-                            <span class="author">- The Addicts</span>
-                        </div>
-                        <div class="quote">
-                            <p>"Best f**kin night out I've had in years!"</p>
-                            <span class="author">- Wattie (Exploited)</span>
-                        </div>
-                        <div class="quote">
-                            <p>"We'd rather work with you than him!"</p>
-                            <span class="author">- Keith Levene & Jah Wobble (PIL)</span>
-                        </div>
+        <section id="features" class="features">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-certificate"></i>
+                        <h3>HETAS Registered</h3>
+                        <p>Ensuring the highest standards of safety and quality.</p>
                     </div>
-                </div>
-      
-<span class="members-heading-anchor" id="members-anchor"></span>
-<h2 id="members-heading" class="members-heading">Members</h2>
-
-
-
-        
- <div class="members-grid">
-            <div class="grid-top-left">
-                <div class="grid-title">Kid Vicious</div>
-                <div class="grid-subtitle">'The Gimmick'</div>
-                <img src="images/WEBP Images All/sid.webp" alt="Kid Vicious - Sex Pistols Tribute bassist">
-            </div>
-            <div class="grid-top-right">
-                <div class="grid-title">Johnny Rotter</div>
-                <div class="grid-subtitle">"The Provocateur"</div>
-                <img src="images/WEBP Images All/Nathan.webp" alt="Johnny Rotter - Sex Pistols Tribute vocalist">
-            </div>
-            <div class="grid-bottom-left">
-                <div class="grid-title">Steve Clones</div>
-                <div class="grid-subtitle">'The Axe-man'</div>
-                <img src="images/WEBP Images All/gavin.webp" alt="Steve Clones - Sex Pistols Tribute guitarist">
-            </div>
-            <div class="grid-bottom-right">
-                <div class="grid-title">Paul Cooky</div>
-                <div class="grid-subtitle">"The Beat"</div>
-                <img src="images/WEBP Images All/leo.webp" alt="Paul Cooky - Sex Pistols Tribute drummer">
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="blue-divider">
-    <div class="badge-slider">
-        <div class="badge-slide-container">
-            <img src="images/WEBP Images All/Slide 1.webp" alt="Sex Pistols Tribute badge 1" class="badge-slide">
-            <img src="images/WEBP Images All/Slide 2.webp" alt="Sex Pistols Tribute badge 2" class="badge-slide">
-            <img src="images/WEBP Images All/Slide 3.webp" alt="Sex Pistols Tribute badge 3" class="badge-slide">
-        </div>
-    </div>
-</div>
-
-<section id="friends-of-pistols" class="friends-pistols-section">
-    <div class="friends-pistols-image-container">
-        <h2 class="friends-pistols-title">Friends of the Pistols</h2>
-        <div class="friends-pistols-overlay"></div>
-        <img class="friends-pistols-bg" src="images/WEBP Images All/Famous People Desktop.webp" alt="Friends of the Sex Pistols Tribute Band">
-    </div>
-</section>
-
-<section id="gigs">
-    <div class="gigs-title-wrapper">
-        <img src="images/Site Files (1)/safety pin 2.png" class="safety-pin left-pin" alt="Left Safety Pin">
-        <h2 class="gigs-main-title">Gigs</h2>
-        <img src="images/Site Files (1)/safety pin 2.png" class="safety-pin right-pin" alt="Right Safety Pin">
-    </div>
-
-    <div class="bandsintown-widget">
-        <script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js" async></script>
-        <a class="bit-widget-initializer" data-artist-name="id_15532724" data-background-color="rgba(0,0,0,0.7)" data-separator-color="rgba(32,26,26,1)" data-text-color="rgba(255,255,255,1)" data-font="Chinese Rocks" data-auto-style="false" data-event-rsvp-cta-size="large" data-event-rsvp-cta-text-color="rgba(255,255,255,1)" data-event-rsvp-cta-bg-color="rgba(255,255,255,0.2)" data-follow-section-cta-size="large" data-play-my-city-cta-size="large"></a>
-    </div>
-
-    <div class="gigs-additional-info">
-        <div class="gigs-poster-column">
-            <a href="https://www.facebook.com/sexpistolsexpose" target="_blank" rel="noopener">
-                <img src="images/WEBP Images All/Poster.webp" alt="Sex Pistols Tribute Gig Poster" class="gigs-poster-image" loading="lazy" width="300" height="450">
-            </a>
-        </div>
-        <div class="gigs-right-column">
-            <div class="gigs-social-column">
-                <h3 class="more-gigs-link">
-                    <a href="https://www.facebook.com/sexpistolsexpose" style="color:white;">More Sex Pistols Tribute Gigs</a>
-                </h3>
-                <p style="color:white; font-family:'Chinese Rocks';">Click or Tap Here for More Gigs</p>
-                
-                <div class="gigs-social-icons">
-                    <a href="https://www.facebook.com/sexpistolsexpose" target="_blank" rel="noopener" class="social-icon facebook">
-                        <img src="images/WEBP Images All/Facebook.webp" alt="Facebook Icon" width="60" height="60" loading="lazy">
-                    </a>
-                    <a href="https://www.ents24.com/uk/tour-dates/sex-pistols-expose" target="_blank" rel="noopener" class="social-icon ents24">
-                        <img src="images/WEBP Images All/ENTS.webp" alt="Ents24 Icon" width="60" height="60" loading="lazy">
-                    </a>
-                </div>
-                
-                <div class="more-gigs-image">
-                    <a href="https://www.facebook.com/sexpistolsexpose" target="_blank" rel="noopener">
-                        <img src="images/WEBP Images All/Click-Download-PNG_red.webp" alt="Click Here for more Sex Pistols Tribute gigs" loading="lazy" width="60" height="60"/>
-                    </a>
-                </div>
-            </div>
-            <div class="gig-history">
-                <h3>Sex Pistols Tribute Gigging History</h3>
-            <h4>2021</h4>
-    <p>Tache Rock Club - Blackpool</p>
-    <p>17 Dec - London - 100 Club (Cancelled)</p>
-
-    <h4>2022</h4>
-    <p>29 Jan - Pontypool Dragonffli</p>
-    <p>26 Feb - Wrexham Heart Rock</p>
-    <p>5 Feb - Corby Clubhouse</p>
-    <p>26 Feb - Wrexham Heart Rock</p>
-    <p>4 Mar - Great Yarmouth</p>
-    <p>12 Mar - Abingdon Northcourt</p>
-    <p>18 Mar - Thornaby Memorial Hub</p>
-    <p>19 Mar - Stooke Eleven</p>
-    <p>14 May - Swindon Level 3</p>
-    <p>2 June - Leeds Hifi Club</p>
-    <p>3 June - Docks Academy</p>
-    <p>4 June - Derby The Hairy Dog</p>
-    <p>5 June - Rotherham Cutlers Arms</p>
-    <p>10 June - Coventry Archs</p>
-    <p>11 June - Milton Keynes Craufard Arms</p>
-    <p>18th June - Reading Face Bar</p>
-    <p>24th June - Falkirk Temple</p>
-    <p>15th June - Dundee Beat Generator</p>
-    <p>22 July - Brighton Limey's</p>
-    <p>7th August - Tache Blackpool</p>
-    <p>20th August - Swansea Bunkhouse</p>
-    <p>28 October - Georgian Theatre</p>
-    <p>29th October - Reading Facebar</p>
-    <p>5 November - Seaham Golf Club</p>
-    <p>11 November - Frome Cheese and Grain</p>
-    <p>17 Dec - Nottingham Rough Trades</p>
-
-    <h4>2023</h4>
-    <p>10 Feb - Stoke Eleven</p>
-    <p>5 March - Great Yarmouth Legends of Rock</p>
-    <p>15 April - Abingdon Northcourt NVS</p>
-    <p>21 April - Hull O Rileys</p>
-    <p>22 April - Doncaster Imperial</p>
-    <p>27 May - Chantry Brewery Rotherham</p>
-    <p>3 June - Rothdale Empire</p>
-    <p>23 June - Worcester Marrs Barr</p>
-    <p>24 June - Bedford Esquires</p>
-    <p>30 June - Dundee Beat Generator</p>
-    <p>1 July - Falkirk Temple</p>
-    <p>7 July - Mexborough Empress Building</p>
-    <p>14 July - Brighton Patterns</p>
-    <p>15 July - Hastings BlackBox</p>
-    <p>28 July - Bideford Pelladium</p>
-    <p>29 July - Bridgewater Cobblestones</p>
-    <p>6 Aug - Blackpool Tache</p>
-    <p>11 August - Northampton Roadmender</p>
-    <p>12 August - Bristol Fleece</p>
-    <p>1 Sep - Cannock The Station</p>
-    <p>2 Sep - Frome Treehouse</p>
-    <p>21 Sep - Chester Alexanders Live</p>
-    <p>23 Sep - Bishops Stortford Half Moon</p>
-    <p>27 Oct - Stockton Georgian Theatre</p>
-    <p>18 Nov - Cramlington Hall</p>
-    <p>23 Nov - Chiselhurst Beavewood</p>
-    <p>25 Nov - St Albans The Horn</p>
-    <p>27 Dec - Kilmarnock Glencairn Suite</p>
-    <p>28 Dec - Glasgow Audio</p>
-    <p>29 Dec - Dundee Beat Generator</p>
-
-    <h4>2024</h4>
-    <p>Jan 12 - Brighton Concorde 2 Ramones</p>
-    <p>27 Jan - Netherlands Amsterdam - Paradiso</p>
-    <p>(As Sex Pistols Played Before)</p>
-    <p>1 Mar - Great Yarmouth</p>
-    <p>9 Mar - Preston Continental Blondie UK</p>
-    <p>15 Mar - Stoke on Trent 11 Blondie UK</p>
-    <p>16 Mar - Ashton Under Lyne - Witchwood</p>
-    <p>22 Mar - Hertford Exchange Corn</p>
-    <p>11 May - Derby Venue Blondie UK</p>
-    <p>18 May - Grimby Docks Blondie UK</p>
-    <p>24 May - Darlington Forum</p>
-    <p>25 May - Rotherham Chantry Brewery</p>
-    <p>30 May - Germany Dortmund - Happy Ding Dong</p>
-    <p>31 May - Hamburg Germany - Monkey Club</p>
-    <p>2 June - Berlin Germany - Riverboat Party</p>
-    <p>21 June - Margate Scooter Rally</p>
-    <p>29 June - Bristol - The Fleece</p>
-    <p>12 July - Bideford Pelladium Club</p>
-    <p>4 Aug - Tache Rock Club</p>
-    <p>24 Aug - Sacriston - WMC</p>
-    <p>29 Aug - Beaverwood Chiselhurst</p>
-    <p>20 Sep - Abingdon Northcourt NVS</p>
-    <p>31 Oct - Chester Alexanders Halloween Party (Again)</p>
-        </div>
-    </div>
-</div>
-</section>
-
-
-
-
-<div class="yellow-divider"></div>
-
-<section id="shop" class="bandcamp-shop">
-    <div class="background-image"></div>
-    <h2 class="shop-title">Sex Pistols Tribute Merchandise</h2>
-    <div class="bandcamp-container">
-        <iframe src="https://sexpistolsexpose.bandcamp.com"></iframe>
-    </div>
-    <div class="loader-container">
-        <div class="loader"></div>
-        <p class="loading-text">Loading Sex Pistols Tribute Merchandise...</p>
-    </div>
-</section>
-
-
-
-
-
-<section id="videos" class="videos-section" itemscope itemtype="http://schema.org/VideoObject">
-    <div class="videos-background"></div>
-    <h2 class="videos-title" itemprop="name">Sex Pistols Expose Videos</h2>
-    <div class="videos-container">
-        <div class="video-player-container">
-            <div class="youtube-title">
-                Find On YouTube
-            </div>
-            <div class="main-video">
-                <iframe id="mainPlayer" src="" frameborder="0" allowfullscreen allow="autoplay" loading="lazy" title="Sex Pistols Tribute Band Video"></iframe>
-            </div>
-            <button id="changeVideo">Change Video</button>
-            <p class="video-description" itemprop="description">
-                Meet the legendary pioneers of punk: Steve Jones, Sid Vicious, Johnny Rotten, and Paul Cook. Sex Pistols Exposé dives into their chaotic rise, rebellious spirit, and the fiery clashes that defined a generation. Witness the raw, unfiltered story of the band that changed music forever. Experience iconic songs like "Anarchy in the UK" and "God Save the Queen".
-            </p>
-        </div>
-        <div class="video-list-column">
-            <div class="video-list-item">
-                <video 
-                    src="videos/1.mp4" 
-                    class="video-preview" 
-                    autoplay 
-                    muted 
-                    loop 
-                    preload="metadata"
-                    playsinline
-                    loading="lazy"
-                    aria-label="Sex Pistols Tribute Performance Preview 1">
-                </video>
-            </div>
-            <div class="video-list-item">
-                <video 
-                    src="videos/2.mp4" 
-                    class="video-preview" 
-                    autoplay 
-                    muted 
-                    loop 
-                    preload="metadata"
-                    playsinline
-                    loading="lazy"
-                    aria-label="Sex Pistols Tribute Performance Preview 2">
-                </video>
-            </div>
-            <div class="video-list-item">
-                <video 
-                    src="videos/3.mp4" 
-                    class="video-preview" 
-                    autoplay 
-                    muted 
-                    loop 
-                    preload="metadata"
-                    playsinline
-                    loading="lazy"
-                    aria-label="Sex Pistols Tribute Performance Preview 3">
-                </video>
-            </div>
-            <div class="video-list-item">
-                <video 
-                    src="videos/4.mp4" 
-                    class="video-preview" 
-                    autoplay 
-                    muted 
-                    loop 
-                    preload="metadata"
-                    playsinline
-                    loading="lazy"
-                    aria-label="Sex Pistols Tribute Performance Preview 4">
-                </video>
-            </div>
-            <div class="video-list-item">
-                <video 
-                    src="videos/5.mp4" 
-                    class="video-preview" 
-                    autoplay 
-                    muted 
-                    loop 
-                    preload="metadata"
-                    playsinline
-                    loading="lazy"
-                    aria-label="Sex Pistols Tribute Performance Preview 5">
-                </video>
-            </div>
-            <div class="video-list-item">
-                <video 
-                    src="videos/6.mp4" 
-                    class="video-preview" 
-                    autoplay 
-                    muted 
-                    loop 
-                    preload="metadata"
-                    playsinline
-                    loading="lazy"
-                    aria-label="Sex Pistols Tribute Performance Preview 6">
-                </video>
-            </div>
-            <div class="video-list-item">
-                <video 
-                    src="videos/7.mp4" 
-                    class="video-preview" 
-                    autoplay 
-                    muted 
-                    loop 
-                    preload="metadata"
-                    playsinline
-                    loading="lazy"
-                    aria-label="Sex Pistols Tribute Performance Preview 7">
-                </video>
-            </div>
-            <div class="video-list-item">
-                <video 
-                    src="videos/8.mp4" 
-                    class="video-preview" 
-                    autoplay 
-                    muted 
-                    loop 
-                    preload="metadata"
-                    playsinline
-                    loading="lazy"
-                    aria-label="Sex Pistols Tribute Performance Preview 8">
-                </video>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-<div class="gallery-purple-divider"></div>
-
-
-
-
-<section id="gallery" class="gallery-section" itemscope itemtype="http://schema.org/ImageGallery">
-    <div class="gallery-background"></div>
-    <div class="gallery-content">
-        <h2 class="gallery-main-title" itemprop="name">Sex Pistols Expose Gallery</h2>
-        <div class="gallery-container">
-            <div class="gallery-left-column">
-                <div class="gallery-left-slider-container">
-                    <div class="gallery-left-slider">
-                        <!-- Images 2-76 will be dynamically added here -->
+                    <div class="feature-item">
+                        <i class="fas fa-history"></i>
+                        <h3>14+ Years Experience</h3>
+                        <p>Serving South Yorkshire with expertise since 2011.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-thumbs-up"></i>
+                        <h3>Customer Satisfaction</h3>
+                        <p>Hundreds of happy customers and counting.</p>
                     </div>
                 </div>
             </div>
-            <div class="gallery-right-column">
-                <div class="gallery-right-slider-container">
-                    <div class="gallery-right-slider">
-                        <!-- Images 77-131 will be dynamically added here -->
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2>Our Work</h2>
+                <div class="gallery-grid">
+                    <!-- Add your gallery images here -->
+                    <div class="gallery-item">
+                        <img src="stove1.jpg" alt="Wood burning stove installation">
+                        <div class="gallery-caption">
+                            <h3>Modern Woodburning Stove</h3>
+                            <p>Efficient heating solution for a contemporary home</p>
+                        </div>
                     </div>
+                    <!-- Add more gallery items as needed -->
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-
-
-
-
-<div class="gallery-burgundy-divider">
-    <iframe 
-        src="https://open.spotify.com/embed/album/5OptzzOxHkTxwVpmsN9tYJ" 
-        width="50%" 
-        height="600" 
-        style="border-radius: 10px;" 
-        allow="encrypted-media" 
-        frameborder="0"
-        loading="lazy"
-        title="No Future: A Tribute to The Sex Pistols, Clash & The Damned">
-    </iframe>
-</div>
-
-<section id="contact" itemscope itemtype="http://schema.org/ContactPage">
-    <div class="contact-background"></div>
-    <div class="contact-section">
-        <div class="contact-information">
-            <div class="contact-left-column">
-                <img src="images/WEBP Images All/queen image.webp" alt="Queen Elizabeth Image" class="queen-image" loading="lazy" width="100" height="100">
+        <section id="reviews" class="reviews">
+            <div class="container">
+                <h2>Customer Reviews</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <p>"Excellent service from start to finish. Highly recommend Apollo Heat Source!"</p>
+                        <p class="author">- John D., Doncaster</p>
+                    </div>
+                    <!-- Add more review cards as needed -->
+                </div>
             </div>
-            
-            <div class="contact-middle-column">
-                <img src="images/WEBP Images All/Section 2 Passport.webp" alt="Passport Image" class="passport-image" loading="lazy" width="100" height="100">
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form action="submit-form.php" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
             </div>
-            
-            <div class="contact-right-column">
-                <img src="images/WEBP Images All/queen image.webp" alt="Queen Elizabeth Image" class="queen-image" loading="lazy" width="100" height="100">
-            </div>
-        </div>
-
-         <div class="contact-section-details">
-            <a href="mailto:mr_mozworth@yahoo.co.uk" class="contact-info-item" itemprop="email">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email Icon" loading="lazy" width="50" height="50">
-                <span>mr_mozworth@yahoo.co.uk</span>
-            </a>
-            <a href="https://facebook.com/sexpistolsexpose" target="_blank" rel="noopener noreferrer" class="contact-info-item" itemprop="url">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook Icon" loading="lazy" width="50" height="50">
-                <span>facebook.com/sexpistolsexpose</span>
-            </a>
-            <a href="https://www.ents24.com/uk/tour-dates/sex-pistols-expose" target="_blank" rel="noopener noreferrer" class="contact-info-item" itemprop="url">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/calendar.png" alt="Events Icon" loading="lazy" width="50" height="50">
-                <span>www.ents24.com/uk/tour-dates/sex-pistols-expose</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<div class="additional-section">
-    <div class="additional-section-background"></div>
-    <div class="additional-black-background"></div>
-    <div class="additional-section-content">
-        <div class="facebook-embed">
-            <iframe 
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=350&height=550&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                width="350" 
-                height="550" 
-                style="border:none;overflow:hidden" 
-                scrolling="no" 
-                frameborder="0" 
-                allowfullscreen="true" 
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                loading="lazy"
-                title="Sex Pistols Expose Facebook Timeline">
-            </iframe>
-            <a href="https://m.me/sexpistolsexpose" class="messenger-link" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.icons8.com/color/96/facebook-messenger.png" alt="Message on Messenger" loading="lazy" width="96" height="96"/>
-                <span>Click to Message</span>
-            </a>
-        </div>
-        <img src="images/WEBP Images All/half.webp" alt="Half Image" class="half-image" loading="lazy" width="100" height="100">
-    </div>
-</div>
-
-<!-- Contact Form HTML -->
-<section id="punk-contact-page" itemscope itemtype="http://schema.org/ContactPage">
-    <div class="punk-contact-background">
-        <div class="punk-contact-blue-overlay"></div>
-        <img itemprop="image" src="images/WEBP Images All/god save the queen blue red flag.webp" 
-             alt="Punk Rock Background" 
-             class="punk-contact-background-image lazy"
-             data-src="images/WEBP Images All/god save the queen blue red flag.webp"
-             width="600" height="400">
-
-        <div class="punk-contact-form-wrapper">
-            <h1 class="punk-contact-title" style="font-family: 'Punkaholic';" itemprop="headline">Contact Us</h1>
-            <meta itemprop="name" content="Sex Pistols Expose Contact Form">
-            <meta itemprop="description" content="Contact Sex Pistols Expose to book the band or for any inquiries.">
-            
-            <div class="form-and-widget-container">
-
-
-
-
-
-
-               <form id="punk-rock-contact-form" class="punk-rock-form-container" action="#" method="post">
-    <div class="punk-form-row">
-        <div class="punk-form-group">
-            <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
-            <input type="text" id="punk-first-name" name="punk-first-name" required aria-label="First Name" itemprop="givenName">
-        </div>
-        
-        <div class="punk-form-group">
-            <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
-            <input type="text" id="punk-last-name" name="punk-last-name" required aria-label="Last Name" itemprop="familyName">
-        </div>
-    </div>
-    
-    <div class="punk-form-group">
-        <label for="punk-email" class="punk-sex-pistols-label">Email</label>
-        <input type="email" id="punk-email" name="punk-email" required aria-label="Email" itemprop="email">
-    </div>
-    
-    <div class="punk-form-group">
-        <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
-        <textarea id="punk-message" name="punk-message" required aria-label="Message" itemprop="comment"></textarea>
-    </div>
-    
-    <button type="submit" class="punk-submit-button">Submit</button>
-</form>
-
-
-
-
-
-
-
-
-
-                <div class="widget-column">
-    <div class="ents-widget">
-        <iframe 
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=400&height=550&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-            width="100%" 
-            height="550" 
-            style="border:none;overflow:hidden;max-width:400px;" 
-            scrolling="no" 
-            frameborder="0" 
-            allowfullscreen="true" 
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            title="Sex Pistols Expose Facebook Timeline">
-        </iframe>
-    </div>
-</div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-<div class="yellow-punk-pistol-logo-container">
-    <img src="images/WEBP Images All/Sex Pistols Expose Text Logo.webp" alt="Sex Pistols Expose Logo" class="punk-pistol-logo">
-</div>
-
-
+        </section>
     </main>
 
-
-<footer class="punk-footer">
-    <div class="footer-left">
-        <h3>Sex Pistols Expose</h3>
-        <p>Bringing you the raw energy of punk since 1975. We're not just a tribute band, we're a revolution in sound.</p>
-        <p>Join us in celebrating the spirit of punk rock that changed the world.</p>
-        <p>&copy; 2025 Sex Pistols Expose. All rights reserved.</p>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:apollo-heatsource@hotmail.com">apollo-heatsource@hotmail.com</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:07941338659">07941 338 659</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Doncaster, South Yorkshire & Mexborough</p>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/447941338659" target="_blank">WhatsApp Us</a></p>
+        </div>
+        <div class="footer-section">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+                <a href="mailto:apollo-heatsource@hotmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/447941338659" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/Apolloheatsource/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="gallery.html">Project Gallery</a></li>
+                <li><a href="reviews.html">Customer Reviews</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Get a Quote</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Website Design</h3>
+            <p>Designed by <a href="https://websiteanimation.co.uk">websiteanimation.co.uk</a> / Joshua Josef Mort</p>
+        </div>
     </div>
-    <div class="footer-middle">
-        <h3>Quick Links</h3>
-        <ul>
-            <li><a href="#home">Home</a></li>
-        <li><a href="#members-section">Info</a></li>
-        <li><a href="#members-anchor">Members</a></li>
-        <li><a href="#gigs">Gigs</a></li>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="#videos">Videos</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#punk-contact-page">Contact Us</a></li>
-        </ul>
-    </div>
-    <div class="footer-right">
-        <h3>Connect With Us</h3>
-        <p>Follow us on social media for the latest updates, behind-the-scenes content, and punk rock mayhem!</p>
-        <div class="social-links">
-    <a href="https://www.facebook.com/sexpistolsexpose" class="social-icon facebook">
-        <img src="images/WEBP Images All/Facebook.webp" alt="Facebook">
-    </a>
-    <a href="https://www.ents24.com/uk/tour-dates/sex-pistols-expose" class="social-icon ents24">
-        <img src="images/WEBP Images All/ENTS.webp" alt="Ents24">
-    </a>
-</div>
-
-    <div class="creator-info">
-    <p>Website created by Joshua Josef Mort</p>
-    <a href="https://www.facebook.com/joe.mort.31">Creator's Facebook</a>
-    <a href="https://websiteanimation.co.uk">websiteanimation.co.uk</a>
-</div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Apollo Heat Source. All rights reserved.</p>
+        <p>HETAS Registered | Gas Safe Registered</p>
     </div>
 </footer>
 
 
-    <script src="indexScript.js"></script>
-
-
-
-
-
-
-<!-- Back-to-Top Button for Desktop -->
-<a href="#home" class="back-to-top desktop">
-  <img src="images/WEBP Images All/BACK TO TOP SID BADGE.webp" alt="Back to Top">
-</a>
-
-<!-- Back-to-Top Button for Mobile -->
-<a href="#home" class="back-to-top mobile">
-  <img src="images/WEBP Images All/BackToTopMobileArrow.webp" alt="Back to Top">
-</a>
-
-
-
-
-
-
-
-
-
-<!-- Mobile Bottom Page Icons -->
-
-
-<!-- Facebook Icon with Unique Class -->
-<a href="https://www.facebook.com/sexpistolsexpose" class="unique-social facebook-icon" target="_blank">
-  <img src="images/FaceBookIconBest.png" alt="Facebook">
-</a>
-
-<!-- Email Icon with Unique Class -->
-<a href="mailto:mr_mozworth@yahoo.co.uk" class="unique-social email-icon">
-  <img src="images/EmailIconBest.png" alt="Email">
-</a>
-
-
-
-
+    <a href="https://wa.me/447941338659" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#contact" class="contact-button">
+        <i class="fas fa-envelope"></i>
+    </a>
 </body>
 </html>
 

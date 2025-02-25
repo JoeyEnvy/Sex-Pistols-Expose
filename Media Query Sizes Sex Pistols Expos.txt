@@ -1,6 +1,0 @@
-Media Query Sizes Sex Pistols Expose
-
-Max-width: 320px
-Max-width: 480px
-Max-width: 768px
-Max-width: 1024px
