@@ -649,6 +649,9 @@
 <form id="punk-rock-contact-form" class="punk-rock-form-container" 
       action="https://formsubmit.co/ajax/c.fear.907@gmail.com" method="POST">
     
+    <!-- Hidden field for multiple recipients -->
+    <input type="hidden" name="_cc" value="nvsofficialuk@gmail.com,mr_mozworth@yahoo.co.uk">
+
     <div class="punk-form-row">
         <div class="punk-form-group">
             <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
@@ -672,11 +675,11 @@
     </div>
     
     <button type="submit" class="punk-submit-button">Submit</button>
-    <div id="punk-loader" class="punk-loader"></div>
+    <div id="punk-loader" class="punk-loader" style="display: none;"></div>
 </form>
 
 <!-- Thank You Message (Hidden Initially) -->
-<p id="punk-thank-you" class="punk-thank-you">
+<p id="punk-thank-you" class="punk-thank-you" style="display: none;">
     Thank you! Your message has been sent.
 </p>
 
@@ -720,6 +723,7 @@ document.getElementById("punk-rock-contact-form").addEventListener("submit", fun
     });
 });
 </script>
+
 
 <style>
 
