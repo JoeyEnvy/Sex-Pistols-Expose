@@ -646,67 +646,120 @@
 
 
 
-<form id="punk-contact-form" class="punk-rock-form-container" onsubmit="handleSubmit(event)">
-    <div class="punk-form-group">
-        <label for="name" class="punk-sex-pistols-label">Name:</label>
-        <input type="text" id="name" name="name" required>
+<form id="punk-rock-contact-form" class="punk-rock-form-container" 
+      action="https://formsubmit.co/ajax/c.fear.907@gmail.com" method="POST">
+    
+    <div class="punk-form-row">
+        <div class="punk-form-group">
+            <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
+            <input type="text" id="punk-first-name" name="first-name" required aria-label="First Name" itemprop="givenName">
+        </div>
+        
+        <div class="punk-form-group">
+            <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
+            <input type="text" id="punk-last-name" name="last-name" required aria-label="Last Name" itemprop="familyName">
+        </div>
     </div>
     
     <div class="punk-form-group">
-        <label for="email" class="punk-sex-pistols-label">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="punk-email" class="punk-sex-pistols-label">Email</label>
+        <input type="email" id="punk-email" name="email" required aria-label="Email" itemprop="email">
     </div>
     
     <div class="punk-form-group">
-        <label for="message" class="punk-sex-pistols-label">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+        <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
+        <textarea id="punk-message" name="message" required aria-label="Message" itemprop="comment"></textarea>
     </div>
     
     <button type="submit" class="punk-submit-button">Submit</button>
-    
-    <div id="form-status" class="form-status"></div>
+    <div id="punk-loader" class="punk-loader"></div>
 </form>
 
-<style>
-    .form-status {
-        margin-top: 20px;
-        text-align: center;
-        font-size: 1.5rem;
-        color: white;
-    }
-
-    .loader {
-        width: 50px;
-        height: 50px;
-        border: 5px solid white;
-        border-top: 5px solid transparent;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 20px auto;
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-</style>
+<!-- Thank You Message (Hidden Initially) -->
+<p id="punk-thank-you" class="punk-thank-you">
+    Thank you! Your message has been sent.
+</p>
 
 <script>
-    function handleSubmit(event) {
-        event.preventDefault();
-        
-        let form = document.getElementById("punk-contact-form");
-        let statusDiv = document.getElementById("form-status");
-        
-        // Show loader
-        statusDiv.innerHTML = '<div class="loader"></div>';
+document.getElementById("punk-rock-contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Stop default form submission
+    
+    let formData = new FormData(this);
+    let loader = document.getElementById("punk-loader");
+    let submitButton = document.querySelector(".punk-submit-button");
+    let thankYouMessage = document.getElementById("punk-thank-you");
 
-        // Simulate form submission delay
-        setTimeout(() => {
-            statusDiv.innerHTML = "Thank you, your submission was successful.";
-        }, 2000);
-    }
+    // Show loader and disable submit button
+    loader.style.display = "block";
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+
+    fetch(this.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+    })
+    .then(response => response.json())
+    .then(data => {
+        loader.style.display = "none"; // Hide loader
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit"; // Reset button text
+
+        if (data.success) {
+            document.getElementById("punk-rock-contact-form").style.display = "none"; // Hide form
+            thankYouMessage.style.display = "block"; // Show thank-you message
+        } else {
+            alert("Oops! Something went wrong.");
+        }
+    })
+    .catch(error => {
+        loader.style.display = "none"; // Hide loader
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit"; // Reset button text
+        alert("Error: " + error);
+    });
+});
 </script>
+
+<style>
+
+
+        .punk-submit-button:hover {
+            background-color: white;
+            color: red;
+        }
+
+        .punk-submit-button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+
+        /* Loader */
+        .punk-loader {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 5px solid white;
+            border-top: 5px solid red;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Thank You Message */
+        .punk-thank-you {
+            font-size: 1.5rem;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+    </style
 
 
 
