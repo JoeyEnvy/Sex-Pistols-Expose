@@ -1,0 +1,59 @@
+<section id="info-section">
+<div class="info-container">
+<h2 class="info-title">
+<div class="video-container">
+<video id="videoPlayer">
+<source id="videoSource">
+<div class="video-controls">
+<button id="playPauseButton">
+<input id="progressBar">
+<div class="volume-container">
+<label for="volumeControl">
+<input id="volumeControl">
+<label for="playbackSpeed">
+<input id="playbackSpeed">
+<button id="changeVideoButton">
+<div class="info-columns">
+<div class="info-left-column">
+<img class="info-left-image">
+<div class="info-center-column">
+<div class="center-images">
+<img class="info-top-image">
+<div class="middle-image-container">
+<a class="mess-image-link">
+<img class="info-middle-image punk-navigation-trigger">
+<img class="info-download-icon">
+<img class="info-bottom-image">
+<div class="info-right-column">
+<img class="info-right-image">
+
+
+
+#info-section
+.info-container
+.info-title
+.video-container
+#videoPlayer
+#videoSource
+.video-controls
+#playPauseButton
+#progressBar
+.volume-container
+(No direct CSS correspondent for label)
+#volumeControl
+(No direct CSS correspondent for label)
+#playbackSpeed
+#changeVideoButton
+.info-columns
+.info-left-column
+.info-left-image
+.info-center-column
+.center-images
+.info-top-image
+.middle-image-container
+.mess-image-link
+.info-middle-image.punk-navigation-trigger
+.info-download-icon
+.info-bottom-image
+.info-right-column
+.info-right-image

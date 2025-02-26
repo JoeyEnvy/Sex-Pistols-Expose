@@ -1,0 +1,65 @@
+hero section top before video css respondants 
+
+#home {
+    /* Styles for the entire section */
+}
+
+.hero-section {
+    /* Styles for the main container of the hero section */
+}
+
+.button-slideshow {
+    /* Styles for the button slideshow container */
+}
+
+.arrow {
+    /* Shared styles for both left and right arrows */
+}
+
+.arrow.left {
+    /* Specific styles for the left arrow */
+}
+
+.arrow.right {
+    /* Specific styles for the right arrow */
+}
+
+.slide-button {
+    /* Styles for all slide buttons */
+}
+
+.slide-button.active {
+    /* Styles for the active slide button */
+}
+
+.click-hint {
+    /* Styles for the "Click to explore" text */
+}
+
+.sub-title-1, .sub-title-2, .sub-title-3 {
+    /* Shared styles for all subtitle elements */
+}
+
+.sub-title-1 {
+    /* Specific styles for "Never Mind" */
+}
+
+.sub-title-2 {
+    /* Specific styles for "the bollocks" */
+}
+
+.sub-title-3 {
+    /* Specific styles for "here's the" */
+}
+
+.logo-container {
+    /* Styles for the logo container */
+}
+
+.logo-container img {
+    /* Styles for the logo image */
+}
+
+.additional-title {
+    /* Styles for the "Formerly the Sex Pistols Experience" text */
+}
