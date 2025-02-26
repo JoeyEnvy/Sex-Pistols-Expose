@@ -646,17 +646,17 @@
 
 
 
-               <form id="punk-rock-contact-form" class="punk-rock-form-container" 
-      action="https://formsubmit.co/c.fear.907@gmail.com" method="POST">
+              <form id="punk-rock-contact-form" class="punk-rock-form-container" 
+      action="https://formsubmit.co/ajax/c.fear.907@gmail.com" method="POST">
     <div class="punk-form-row">
         <div class="punk-form-group">
             <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
-            <input type="text" id="punk-first-name" name="punk-first-name" required aria-label="First Name" itemprop="givenName">
+            <input type="text" id="punk-first-name" name="first-name" required aria-label="First Name" itemprop="givenName">
         </div>
         
         <div class="punk-form-group">
             <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
-            <input type="text" id="punk-last-name" name="punk-last-name" required aria-label="Last Name" itemprop="familyName">
+            <input type="text" id="punk-last-name" name="last-name" required aria-label="Last Name" itemprop="familyName">
         </div>
     </div>
     
@@ -672,6 +672,29 @@
     
     <button type="submit" class="punk-submit-button">Submit</button>
 </form>
+
+<script>
+document.getElementById("punk-rock-contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Stop default form submission
+    let formData = new FormData(this);
+
+    fetch(this.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById("punk-rock-contact-form").innerHTML = "<p>Thank you! Your message has been sent.</p>";
+        } else {
+            alert("Oops! Something went wrong.");
+        }
+    })
+    .catch(error => alert("Error: " + error));
+});
+</script>
+
 
 
 
