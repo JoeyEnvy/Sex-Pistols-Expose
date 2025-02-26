@@ -646,80 +646,64 @@
 
 
 
-<form id="punk-rock-contact-form" class="punk-rock-form-container" 
-      action="https://formsubmit.co/c.fear.907@gmail.com" method="POST">
-    
-    <div class="punk-form-row">
+   <form id="punk-rock-contact-form" class="punk-rock-form-container" 
+          action="https://formsubmit.co/ajax/c.fear.907@gmail.com" method="POST">
+        
         <div class="punk-form-group">
             <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
-            <input type="text" id="punk-first-name" name="punk-first-name" required>
+            <input type="text" id="punk-first-name" name="first-name" required aria-label="First Name" itemprop="givenName">
         </div>
         
         <div class="punk-form-group">
             <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
-            <input type="text" id="punk-last-name" name="punk-last-name" required>
+            <input type="text" id="punk-last-name" name="last-name" required aria-label="Last Name" itemprop="familyName">
         </div>
-    </div>
-    
-    <div class="punk-form-group">
-        <label for="punk-email" class="punk-sex-pistols-label">Email</label>
-        <input type="email" id="punk-email" name="email" required>
-    </div>
-    
-    <div class="punk-form-group">
-        <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
-        <textarea id="punk-message" name="message" required></textarea>
-    </div>
-    
-    <!-- Loader (Hidden by Default) -->
-    <div id="punk-loader" class="punk-loader"></div>
-    
-    <button type="submit" class="punk-submit-button">Submit</button>
-    
-    <!-- Success Message (Hidden by Default) -->
-    <div id="success-message" class="punk-success-message">Thank you! Your message has been sent.</div>
-</form>
+        
+        <div class="punk-form-group">
+            <label for="punk-email" class="punk-sex-pistols-label">Email</label>
+            <input type="email" id="punk-email" name="email" required aria-label="Email" itemprop="email">
+        </div>
+        
+        <div class="punk-form-group">
+            <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
+            <textarea id="punk-message" name="message" required aria-label="Message" itemprop="comment"></textarea>
+        </div>
 
+        <!-- Submit Button & Loader -->
+        <button type="submit" class="punk-submit-button" id="punk-submit-btn">Submit</button>
+        <div id="punk-loader"></div>
 
-<script> 
+    </form>
 
-document.addEventListener("DOMContentLoaded", function () {
-    var form = document.getElementById("punk-rock-contact-form");
-    var loader = document.getElementById("punk-loader");
-    var successMessage = document.getElementById("success-message");
-
-    if (form) {
-        form.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent full page reload
+    <script>
+        document.getElementById("punk-rock-contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Stop default form submission
             
-            // Show loader
-            loader.style.display = "block";
+            let formData = new FormData(this);
 
-            // Submit form via AJAX
-            fetch(form.action, {
+            // Show Loader & Hide Submit Button
+            document.getElementById("punk-submit-btn").style.display = "none";
+            document.getElementById("punk-loader").style.display = "block";
+
+            fetch(this.action, {
                 method: "POST",
-                body: new FormData(form)
-            }).then(response => {
-                if (response.ok) {
-                    // Hide loader
-                    loader.style.display = "none";
-                    
-                    // Show success message
-                    successMessage.style.display = "block";
-                    
-                    // Reset form
-                    form.reset();
+                body: formData,
+                headers: { "Accept": "application/json" }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById("punk-rock-contact-form").innerHTML = 
+                        "<p style='color: red; font-size: 1.2rem; font-weight: bold;'>Thank you! Your message has been sent.</p>";
+                } else {
+                    alert("Oops! Something went wrong.");
                 }
-            }).catch(error => {
-                loader.style.display = "none";
-                alert("Oops! Something went wrong.");
-            });
+            })
+            .catch(error => alert("Error: " + error));
         });
-    }
-});
+    </script>
 
 
-</script>
 
 
 
