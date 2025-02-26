@@ -737,13 +737,14 @@ document.getElementById("punk-rock-contact-form").addEventListener("submit", fun
         /* Loader */
         .punk-loader {
             display: none;
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             border: 5px solid white;
             border-top: 5px solid red;
             border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin-top: 20px;
+            margin-top: 30px;
+            margin-left: 350px;
         }
 
         @keyframes spin {
@@ -753,12 +754,80 @@ document.getElementById("punk-rock-contact-form").addEventListener("submit", fun
 
         /* Thank You Message */
         .punk-thank-you {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: white;
             text-align: center;
             margin-top: 20px;
+            margin-right: 100px;
             display: none;
         }
+
+@media screen and (max-width: 1024px) {
+    .punk-loader {
+        width: 60px;
+        height: 60px;
+        margin-right: -75px;
+        margin-top: 75px;
+        border-width: 4px;
+        margin-bottom: 75px;
+    }
+    
+    .punk-thank-you {
+        font-size: 3rem;
+        margin-right: -50px;
+        margin-bottom: 75px;
+    }
+}
+
+/* 768px - Adjust loader size and message */
+@media screen and (max-width: 768px) {
+    .punk-loader {
+        width: 50px;
+        height: 50px;
+        border-width: 5px;
+margin-left: -350px;
+        margin-bottom: -50px;
+    }
+    
+    .punk-thank-you {
+        font-size: 2rem;
+    }
+}
+
+/* 480px - Center everything properly for small screens */
+@media screen and (max-width: 480px) {
+    .punk-loader {
+        width: 50px;
+        height: 50px;
+        border-width: 3px;
+        margin-left: 100px;
+        margin-top: 50px;
+    }
+    
+    .punk-thank-you {
+        font-size: 1.75rem;
+        padding: 0 10px;
+         margin-left: 200px;
+    }
+}
+
+/* 320px - Optimize for very small screens */
+@media screen and (max-width: 320px) {
+    .punk-loader {
+        width: 30px;
+        height: 30px;
+        border-width: 3px;
+        margin-left: 60px;
+        margin-top: -5px;
+    }
+    
+    .punk-thank-you {
+        font-size: 1.1rem;
+        padding: 0 5px;
+    }
+}
+
+
     </style
 
 
