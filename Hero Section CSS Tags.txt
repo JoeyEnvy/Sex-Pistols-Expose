@@ -1,4 +1,4 @@
-hero section top before video css respondants 
+hero section top before video css respondants  regergrg
 
 #home {
     /* Styles for the entire section */
