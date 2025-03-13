@@ -224,7 +224,7 @@ main {
 
 /* Hero Section */
 .hero-section {
-    margin-top: -175px;
+    margin-top: -125px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -3611,7 +3611,7 @@ cursor: pointer;
 
   .additional-title {
     font-size: 42px;
-    margin-bottom: -400px; /* Reduced bottom margin */
+    margin-bottom: -300px; /* Reduced bottom margin */
   }
 
   .button-slideshow {
@@ -3641,7 +3641,7 @@ cursor: pointer;
 
   /* info480 media */
   .info-container {
-    margin-top: -20vh;
+    margin-top: 0vh;
     width: 95%;
   }
 
