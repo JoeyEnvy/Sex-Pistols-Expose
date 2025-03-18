@@ -4270,7 +4270,7 @@ bottom: -10px;
 
   /* Info section */
   #info-section {
-    margin-top: 0px;
+    margin-top: -50px;
   }
 
   .info-title {
@@ -4319,7 +4319,7 @@ bottom: -10px;
     flex-direction: column;
     height: auto;
     gap: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
   }
 
   .info-left-column {
@@ -4380,7 +4380,7 @@ bottom: -10px;
   }
 
   .members-content {
-    margin-top: 0vh;
+    margin-top: -5vh;
     width: 95%;
   
     border: 5px solid black;
