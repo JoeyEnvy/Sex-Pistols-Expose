@@ -4421,46 +4421,169 @@ bottom: -10px;
 
   /* Gigs320 */
   #gigs {
-    padding: 50px 3% 30px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 0 20px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .gigs-title-wrapper {
-    margin-bottom: 30px;
-  }
-
-  .gigs-main-title {
-    font-size: 1.6em;
+    width: 98% !important;
+    margin-left: 1%;
+    margin-bottom: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
   }
 
+  .gigs-main-title {
+    font-size: 1.2em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100% !important;
+    border-top: 3px dashed #ff0000;
+    border-bottom: 3px dashed #ff0000;
+    box-shadow: 
+        0 0 5px rgba(255, 0, 0, 0.8), 
+        0 0 10px rgba(0, 0, 255, 0.5);
+  }
+
   .safety-pin {
-    width: 80px;
+    width: 60px;
   }
 
   .left-pin {
-    left: calc(50% - 180px);
+    left: 0;
   }
 
   .right-pin {
-    right: calc(50% - 180px);
+    right: 0;
   }
 
   .bandsintown-widget {
-    max-width: 95%;
-    border: 15px solid white;
+    max-width: 98%;
+    border: 10px solid white;
+    margin-left: 1%;
   }
 
   .bit-widget-initializer {
-    font-size: 24px !important;
+    font-size: 18px !important;
+  }
+
+  .bit-event-list .bit-event:nth-child(odd) .bit-event-title,
+  .bit-event-list .bit-event:nth-child(even) .bit-event-title {
+    font-size: 14px !important;
   }
 
   .bit-event-ticket-cta,
   .bit-play-my-city-cta {
-    padding: 10px 20px !important;
-    font-size: 18px !important;
+    padding: 8px 15px !important;
+    font-size: 14px !important;
+    display: inline-block !important;
+    margin: 10px 0 !important;
   }
 
+  .bit-event-rsvp-cta {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    display: inline-block !important;
+    margin: 10px 0 !important;
+  }
+
+  .gigs-additional-info {
+    padding: 10px 0;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 98%;
+    margin-left: 1%;
+  }
+
+  .gigs-poster-column,
+  .gigs-right-column {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .gigs-poster-image {
+    border: 3px solid white;
+    display: block;
+    margin-left: 0;
+  }
+
+  .gigs-social-column {
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .gigs-social-column h3 {
+    font-size: 1.2em;
+  }
+
+  .gigs-social-column p {
+    font-size: 0.9em;
+  }
+
+  .gigs-social-icons {
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+  }
+
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icon.ents24 {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6);
+  }
+
+  .more-gigs-link {
+    font-size: 1.2em;
+    display: block;
+  }
+
+  .more-gigs-image {
+    width: 40px;
+    height: 40px;
+    right: 5px;
+    bottom: 20px;
+  }
+
+  .gig-history {
+    padding: 15px 0;
+    font-size: 14px;
+    max-height: 400px;
+    width: 98%;
+    margin-left: 1%;
+  }
+
+  .gig-history h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .gig-history h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .gig-history p {
+    margin: 3px 0;
+  }
+
+  .gig-history::-webkit-scrollbar {
+    width: 6px;
+  }
 
 /* gallery320 */ 
 
