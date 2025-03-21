@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+
+Sitemap: https://sexpistolsexpose.com/sitemap.xml
