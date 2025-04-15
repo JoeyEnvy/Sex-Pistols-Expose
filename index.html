@@ -89,6 +89,18 @@
 }
 </script>
 
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <style>
+        .punk-rock-form-container {
+            /* Your existing CSS styles */
+        }
+        .g-recaptcha {
+            margin: 15px 0; /* Adds spacing around CAPTCHA */
+        }
+    </style>
+
 </head>
 <body>
     <div id="home"></div>
@@ -717,45 +729,40 @@
 <form id="punk-rock-contact-form" class="punk-rock-form-container" 
       action="https://formsubmit.co/c.fear.907@gmail.com" method="POST">
     
-    <!-- Hidden fields for customization -->
+    <!-- Hidden Fields -->
     <input type="hidden" name="_cc" value="nvsofficialuk@gmail.com,mr_mozworth@yahoo.co.uk">
     <input type="hidden" name="_subject" value="New Message from Sex Pistols Expose">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_next" value="https://sexpistolsexpose.com/thanks.html">
     
+    <!-- Form Fields -->
     <div class="punk-form-row">
         <div class="punk-form-group">
             <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
-            <input type="text" id="punk-first-name" name="first-name" required aria-label="First Name">
+            <input type="text" id="punk-first-name" name="first-name" required>
         </div>
         
         <div class="punk-form-group">
             <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
-            <input type="text" id="punk-last-name" name="last-name" required aria-label="Last Name">
+            <input type="text" id="punk-last-name" name="last-name" required>
         </div>
     </div>
     
     <div class="punk-form-group">
         <label for="punk-email" class="punk-sex-pistols-label">Email</label>
-        <input type="email" id="punk-email" name="email" required aria-label="Email">
+        <input type="email" id="punk-email" name="email" required>
     </div>
     
     <div class="punk-form-group">
-        <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
-        <textarea id="punk-message" name="message" required aria-label="Message"></textarea>
+        <label for="punk-message" class="punk-sex-pistols-label">Message</label>
+        <textarea id="punk-message" name="message" required></textarea>
     </div>
     
-
+    <!-- reCAPTCHA v2 Widget -->
+    <div class="g-recaptcha" data-sitekey="6Leg1RkrAAAAANbtGjOezw_26hmeBpfiE8SS3CAx"></div>
+    
     <button type="submit" class="punk-submit-button">Submit</button>
 </form>
-<!-- Loader and Thank You message are not needed with standard POST, handled by _next redirect -->
-
-
-<!-- Thank You Message (Hidden Initially) -->
-<p id="punk-thank-you" class="punk-thank-you" style="display: none;">
-    Thank you! Your message has been sent.
-</p>
-
 
 
 <style>
@@ -988,30 +995,6 @@ margin-left: -350px;
   <img src="images/EmailIconBest.png" alt="Email">
 </a>
 
-
-<!-- Google reCAPTCHA script -->
-<script src="https://www.google.com/recaptcha/api.js?render=6LfCyhkrAAAAAJj-bJVzjPrxHwYsI8x1NM75DaAh"></script>
-
-
-<script>
-document.getElementById('punk-rock-contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  grecaptcha.ready(function() {
-    grecaptcha.execute('6LfCyhkrAAAAAJj-bJVzjPrxHwYsI8x1NM75DaAh', {action: 'submit'}).then(function(token) {
-      // Add token to form
-      var input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = 'g-recaptcha-response';
-      input.value = token;
-      e.target.appendChild(input);
-      
-      // Submit form normally
-      e.target.submit();
-    });
-  });
-});
-</script>
 
 
 
