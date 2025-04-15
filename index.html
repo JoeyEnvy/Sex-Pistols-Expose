@@ -715,39 +715,44 @@
 
 
 <form id="punk-rock-contact-form" class="punk-rock-form-container" 
-      action="https://formsubmit.co/ajax/c.fear.907@gmail.com" method="POST">
+      action="https://formsubmit.co/c.fear.907@gmail.com" method="POST">
     
     <!-- Hidden fields for customization -->
     <input type="hidden" name="_cc" value="nvsofficialuk@gmail.com,mr_mozworth@yahoo.co.uk">
     <input type="hidden" name="_subject" value="New Message from Sex Pistols Expose">
     <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_from" value="Sex Pistols Expose">
-
+    <input type="hidden" name="_next" value="https://sexpistolsexpose.com/thanks.html">
+    
     <div class="punk-form-row">
         <div class="punk-form-group">
             <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
-            <input type="text" id="punk-first-name" name="first-name" required aria-label="First Name" itemprop="givenName">
+            <input type="text" id="punk-first-name" name="first-name" required aria-label="First Name">
         </div>
         
         <div class="punk-form-group">
             <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
-            <input type="text" id="punk-last-name" name="last-name" required aria-label="Last Name" itemprop="familyName">
+            <input type="text" id="punk-last-name" name="last-name" required aria-label="Last Name">
         </div>
     </div>
     
     <div class="punk-form-group">
         <label for="punk-email" class="punk-sex-pistols-label">Email</label>
-        <input type="email" id="punk-email" name="email" required aria-label="Email" itemprop="email">
+        <input type="email" id="punk-email" name="email" required aria-label="Email">
     </div>
     
     <div class="punk-form-group">
         <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
-        <textarea id="punk-message" name="message" required aria-label="Message" itemprop="comment"></textarea>
+        <textarea id="punk-message" name="message" required aria-label="Message"></textarea>
     </div>
     
+    <!-- Google reCAPTCHA v2 Widget -->
+    <div class="g-recaptcha" data-sitekey="6LfCyhkrAAAAAJj-bJVzjPrxHwYsI8x1NM75DaAh"></div>
+    
     <button type="submit" class="punk-submit-button">Submit</button>
-    <div id="punk-loader" class="punk-loader" style="display: none;"></div>
 </form>
+
+<!-- Loader and Thank You message are not needed with standard POST, handled by _next redirect -->
+
 
 <!-- Thank You Message (Hidden Initially) -->
 <p id="punk-thank-you" class="punk-thank-you" style="display: none;">
@@ -1028,7 +1033,8 @@ margin-left: -350px;
 </a>
 
 
-
+<!-- Google reCAPTCHA script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 </html>
