@@ -745,9 +745,7 @@
         <textarea id="punk-message" name="message" required aria-label="Message"></textarea>
     </div>
     
-    <!-- Google reCAPTCHA v2 Widget -->
-    <div class="g-recaptcha" data-sitekey="6LfCyhkrAAAAAJj-bJVzjPrxHwYsI8x1NM75DaAh"></div>
-    
+
     <button type="submit" class="punk-submit-button">Submit</button>
 </form>
 <!-- Loader and Thank You message are not needed with standard POST, handled by _next redirect -->
@@ -992,7 +990,31 @@ margin-left: -350px;
 
 
 <!-- Google reCAPTCHA script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfCyhkrAAAAAJj-bJVzjPrxHwYsI8x1NM75DaAh"></script>
+
+
+<script>
+document.getElementById('punk-rock-contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LfCyhkrAAAAAJj-bJVzjPrxHwYsI8x1NM75DaAh', {action: 'submit'}).then(function(token) {
+      // Add token to form
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'g-recaptcha-response';
+      input.value = token;
+      e.target.appendChild(input);
+      
+      // Submit form normally
+      e.target.submit();
+    });
+  });
+});
+</script>
+
+
+
 
 </body>
 </html>
