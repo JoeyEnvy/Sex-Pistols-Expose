@@ -760,47 +760,6 @@
 </p>
 
 
-<script>
-document.getElementById("punk-rock-contact-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Stop default form submission
-    
-    let formData = new FormData(this);
-    let loader = document.getElementById("punk-loader");
-    let submitButton = document.querySelector(".punk-submit-button");
-    let thankYouMessage = document.getElementById("punk-thank-you");
-
-    // Show loader and disable submit button
-    loader.style.display = "block";
-    submitButton.disabled = true;
-    submitButton.textContent = "Submitting...";
-
-    fetch(this.action, {
-        method: "POST",
-        body: formData,
-        headers: { "Accept": "application/json" }
-    })
-    .then(response => response.json())
-    .then(data => {
-        loader.style.display = "none"; // Hide loader
-        submitButton.disabled = false;
-        submitButton.textContent = "Submit"; // Reset button text
-
-        if (data.success) {
-            document.getElementById("punk-rock-contact-form").style.display = "none"; // Hide form
-            thankYouMessage.style.display = "block"; // Show thank-you message
-        } else {
-            alert("Oops! Something went wrong.");
-        }
-    })
-    .catch(error => {
-        loader.style.display = "none"; // Hide loader
-        submitButton.disabled = false;
-        submitButton.textContent = "Submit"; // Reset button text
-        alert("Error: " + error);
-    });
-});
-</script>
-
 
 <style>
 
