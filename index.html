@@ -101,11 +101,6 @@
     </style>
 
 
-        <!-- reCAPTCHA v3 script -->
-        <script src="https://www.google.com/recaptcha/api.js?render=6LfCyhkrAAAAAJj-bJVzjPrxHwYsI8x1NM75DaAh"></script>
-
-
-
 </head>
 <body>
     <div id="home"></div>
@@ -744,6 +739,12 @@
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_redirect" value="https://sexpistolsexpose.com/" />
 
+          <!-- Honeypot Field -->
+          <div style="display:none;" aria-hidden="true">
+            <label for="hp-field">Leave this field empty:</label>
+            <input type="text" name="hp-field" id="hp-field" tabindex="-1" autocomplete="off">
+          </div>
+
           <!-- Form Fields -->
           <div class="punk-form-row">
             <div class="punk-form-group">
@@ -767,8 +768,11 @@
             <textarea id="punk-message" name="message" required></textarea>
           </div>
 
-          <!-- reCAPTCHA v3 Token -->
-          <input type="hidden" name="recaptcha_token" id="recaptcha-token" />
+          <!-- Dynamic Math Question -->
+          <div class="punk-form-group">
+            <label id="math-question-label" for="math-answer" style="color: white; font-family: Arial, sans-serif;"></label>
+            <input type="text" id="math-answer" name="math-answer" required />
+          </div>
 
           <button type="submit" class="punk-submit-button">Submit</button>
 
@@ -784,38 +788,51 @@
         <!-- Hidden iframe for silent submission -->
         <iframe name="hidden-iframe" style="display: none;"></iframe>
 
-
         <script>
           const form = document.getElementById('punk-rock-contact-form');
           const loader = document.getElementById('punk-loader');
           const thankYou = document.getElementById('punk-thank-you');
           const submitBtn = form.querySelector('.punk-submit-button');
 
-          form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default submit
+          // Generate dynamic math question
+          let num1, num2, correctAnswer;
+          function generateMathQuestion() {
+            num1 = Math.floor(Math.random() * 10);
+            num2 = Math.floor(Math.random() * 10);
+            correctAnswer = num1 + num2;
+            document.getElementById('math-question-label').textContent = `What is ${num1} + ${num2}?`;
+          }
+          generateMathQuestion(); // Generate the question on page load
 
+          form.addEventListener('submit', function(e) {
+            // Honeypot check
+            const honeypotInput = form.querySelector('input[name="hp-field"]');
+            if (honeypotInput && honeypotInput.value !== "") {
+              console.log("Honeypot triggered! This is likely a bot.");
+              e.preventDefault();
+              return false;
+            }
+
+            // Math question check
+            const userAnswer = parseInt(document.getElementById('math-answer').value.trim(), 10);
+            if (userAnswer !== correctAnswer) {
+              e.preventDefault();
+              alert("Please answer the question correctly.");
+              return false;
+            }
+
+            // Show loader
             loader.style.display = 'block';
             submitBtn.disabled = true;
 
-            grecaptcha.ready(function() {
-              grecaptcha
-                .execute('6LfCyhkrAAAAAJj-bJVzjPrxHwYsI8x1NM75DaAh', { action: 'submit' })
-                .then(function(token) {
-                  // Set the token in the hidden input
-                  document.getElementById('recaptcha-token').value = token;
-
-                  // Now submit the form (to your formsubmit.co endpoint)
-                  form.submit();
-
-                  // Optionally show thank you message after submission
-                  setTimeout(() => {
-                    loader.style.display = 'none';
-                    thankYou.style.display = 'block';
-                    form.reset();
-                    submitBtn.disabled = false; // Re-enable submit for new submissions
-                  }, 2000);
-                });
-            });
+            // Simulate delay, then show thank you
+            setTimeout(() => {
+              loader.style.display = 'none';
+              thankYou.style.display = 'block';
+              form.reset();
+              generateMathQuestion(); // Generate a new question for the next submission
+              submitBtn.disabled = false;
+            }, 2000);
           });
         </script>
 
@@ -926,21 +943,61 @@
               padding: 0 5px;
             }
           }
+
+          /* Style for the math question label */
+          #math-question-label {
+            color: white;
+            font-family: Arial, sans-serif;
+          }
+
+          @media only screen and (max-width: 768px) {
+
+       #math-question-label {
+            color: white;
+            font-family: Arial, sans-serif;
+            margin-left: 200px;
+          }
+
+
+@media only screen and (max-width: 480px) {
+
+  #math-question-label {
+    font-size: 1.5rem; /* Increase font size */
+    margin-left: 125; /* Reset margin-left or adjust as needed */
+  }
+}
+
+
+
+          }
+
+          @media only screen and (max-width: 340px) {
+
+            #math-question-label {
+            color: white;
+            font-family: Arial, sans-serif;
+            margin-left: 200px;
+          }
+
+          }
         </style>
 
-        <div class="widget-column">
-          <div class="ents-widget">
-            <iframe
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=400&height=550&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-              width="100%"
-              height="550"
-              style="border: none; overflow: hidden; max-width: 400px;"
-              scrolling="no"
-              frameborder="0"
-              allowfullscreen="true"
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              title="Sex Pistols Expose Facebook Timeline"
-            ></iframe>
+        <!-- Facebook iframe is NOW wrapped with the specific class-->
+        <div class="shift-right-facebook-box">
+          <div class="widget-column">
+            <div class="ents-widget">
+              <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=400&height=550&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                width="100%"
+                height="550"
+                style="border: none; overflow: hidden; max-width: 400px;"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                title="Sex Pistols Expose Facebook Timeline"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

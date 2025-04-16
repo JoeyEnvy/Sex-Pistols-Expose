@@ -4753,43 +4753,47 @@ bottom: -10px;
 
 
 /* Background-related queries */
-  #punk-contact-page {
-    height: 50vh; /* Change this value to adjust background length */
-    max-height: 50vh; /* Change this value to match height */
-    min-height: 50vh; /* Change this value to match height */
-    overflow: hidden;
-    margin-top: -20vh;
-    z-index: 500;
-  }
+#punk-contact-page {
+  height: 75vh; /* Change this value to adjust background length */
+  max-height: 75vh; /* Change this value to match height */
+  min-height: 75vh; /* Change this value to match height */
+  overflow: hidden;
+  margin-top: 100px; /* Changed from 20vh to 100px */
+  z-index: 500;
+}
 
-  .punk-contact-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 120%;
-    height: 50vh; /* Change this value to adjust background length */
-    max-height: 50vh; /* Change this value to match height */
-    min-height: 50vh; /* Change this value to match height */
-    overflow: hidden;
-  }
+.punk-contact-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 75vh; /* Change this value to adjust background length */
+  max-height: 75vh; /* Change this value to match height */
+  min-height: 75vh; /* Change this value to match height */
+  overflow: hidden;
 
-  .punk-contact-background-image {
-    content: url('images/god-save-the-queen-blue-red-flag.jpg');
-    width: 120%;
-    height: 50vh; /* Change this value to adjust background length */
-    max-height: 50vh; /* Change this value to match height */
-    min-height: 50vh; /* Change this value to match height */
-    object-fit: cover;
-    object-position: center top;
-    z-index: 0;
-  }
+}
 
-  .punk-contact-form-wrapper {
-    height: 50vh; /* Change this value to adjust form wrapper length */
-    max-height: 50vh; /* Change this value to match height */
-    min-height: 50vh; /* Change this value to match height */
-    /* Other properties remain the same */
-  }
+.punk-contact-background-image {
+  content: url('images/god-save-the-queen-blue-red-flag.jpg');
+  width: 120%;
+  height: 75vh; /* Change this value to adjust background length */
+  max-height: 75vh; /* Change this value to match height */
+  min-height: 75vh; /* Change this value to match height */
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+
+}
+
+.punk-contact-form-wrapper {
+  height: 75vh; /* Change this value to adjust form wrapper length */
+  max-height: 75vh; /* Change this value to match height */
+  min-height: 75vh; /* Change this value to match height */
+  margin-top: 100px; /* Changed from 20vh to 100px */
+  /* Other properties remain the same */
+}
+
 
   /* Other queries remain the same */
   #punk-contact-page {
@@ -4800,7 +4804,7 @@ bottom: -10px;
   .punk-contact-form-wrapper {
     width: 100%;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: -250px;
     position: absolute;
     top: 0;
     left: 50%;
@@ -4817,7 +4821,7 @@ bottom: -10px;
     font-size: 2rem;
     margin-left: 50px;
     margin-bottom: 10px;
-    margin-top: 30px;
+    margin-top: 100px;
     position: relative;
     z-index: 3;
   }
