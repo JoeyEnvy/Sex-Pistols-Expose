@@ -719,9 +719,8 @@
         <form
           id="punk-rock-contact-form"
           class="punk-rock-form-container"
-          action="https://formsubmit.co/carinamort100@gmail.com"
+          action="https://formsubmit.co/nvsofficialuk@gmail.com"
           method="POST"
-          target="hidden-iframe"
         >
           <!-- Hidden Fields -->
           <input type="hidden" name="_subject" value="New Message from Sex Pistols Expose" />
@@ -758,81 +757,11 @@
             <textarea id="punk-message" name="message" required></textarea>
           </div>
 
-          <!-- Dynamic Math Question -->
-          <div class="punk-form-group">
-            <label id="math-question-label" for="math-answer" style="color: white; font-family: Arial, sans-serif;"></label>
-            <input type="text" id="math-answer" name="math-answer" required />
-          </div>
-
           <button type="submit" class="punk-submit-button">Submit</button>
-
-          <!-- Loader -->
-          <div id="punk-loader" class="punk-loader" style="display: none;"></div>
-
-          <!-- Thank You Message -->
-          <p id="punk-thank-you" class="punk-thank-you" style="display: none;">
-            Thank you! Your message has been sent.
-          </p>
         </form>
 
-        <!-- Hidden iframe for silent submission -->
-        <iframe name="hidden-iframe" style="display: none;"></iframe>
-
-        <script>
-          const form = document.getElementById('punk-rock-contact-form');
-          const loader = document.getElementById('punk-loader');
-          const thankYou = document.getElementById('punk-thank-you');
-          const submitBtn = form.querySelector('.punk-submit-button');
-
-          // Generate dynamic math question
-          let num1, num2, correctAnswer;
-          function generateMathQuestion() {
-            num1 = Math.floor(Math.random() * 10);
-            num2 = Math.floor(Math.random() * 10);
-            correctAnswer = num1 + num2;
-            document.getElementById('math-question-label').textContent = `What is ${num1} + ${num2}?`;
-          }
-          generateMathQuestion(); // Generate the question on page load
-
-          form.addEventListener('submit', function(e) {
-            // Honeypot check
-            const honeypotInput = form.querySelector('input[name="hp-field"]');
-            if (honeypotInput && honeypotInput.value !== "") {
-              console.log("Honeypot triggered! This is likely a bot.");
-              e.preventDefault();
-              return false;
-            }
-
-            // Math question check
-            const userAnswer = parseInt(document.getElementById('math-answer').value.trim(), 10);
-            if (userAnswer !== correctAnswer) {
-              e.preventDefault();
-              alert("Please answer the question correctly.");
-              return false;
-            }
-
-            // Show loader
-            loader.style.display = 'block';
-            submitBtn.disabled = true;
-
-            // Simulate delay, then show thank you
-            setTimeout(() => {
-              loader.style.display = 'none';
-              thankYou.style.display = 'block';
-              form.reset();
-              generateMathQuestion(); // Generate a new question for the next submission
-              submitBtn.disabled = false;
-            }, 2000);
-          });
-        </script>
 
 
-<form action="https://formsubmit.co/carinamort100@gmail.com" method="POST">
-  <input type="text" name="name" required />
-  <input type="email" name="email" required />
-  <textarea name="message" required></textarea>
-  <button type="submit">Send</button>
-</form>
 
 
 
