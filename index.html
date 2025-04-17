@@ -716,6 +716,7 @@
       <meta itemprop="description" content="Contact Sex Pistols Expose to book the band or for any inquiries." />
 
       <div class="form-and-widget-container">
+        <!-- Form -->
         <form
           id="punk-rock-contact-form"
           class="punk-rock-form-container"
@@ -729,7 +730,7 @@
           <!-- Honeypot Field -->
           <div style="display:none;" aria-hidden="true">
             <label for="hp-field">Leave this field empty:</label>
-            <input type="text" name="hp-field" id="hp-field" tabindex="-1" autocomplete="off">
+            <input type="text" name="hp-field" id="hp-field" tabindex="-1" autocomplete="off" />
           </div>
 
           <!-- Form Fields -->
@@ -761,12 +762,10 @@
           <div id="punk-loader" class="punk-loader"></div>
 
           <!-- Thank You Message -->
-          <p id="punk-thank-you" class="punk-thank-you">
-            Thank you! Your message has been sent.
-          </p>
+          <p id="punk-thank-you" class="punk-thank-you">Thank you! Your message has been sent.</p>
         </form>
 
-        <!-- Facebook Embed: sits to the right if your container uses flex or grid -->
+        <!-- Facebook Embed -->
         <div class="shift-right-facebook-box">
           <div class="widget-column">
             <div class="ents-widget">
@@ -799,7 +798,7 @@ document.getElementById('punk-rock-contact-form').addEventListener('submit', asy
   const formData = new FormData(form);
 
   // Honeypot check (client-side)
-  if(formData.get('hp-field')) {
+  if (formData.get('hp-field')) {
     return false;
   }
 
@@ -808,23 +807,30 @@ document.getElementById('punk-rock-contact-form').addEventListener('submit', asy
   submitBtn.disabled = true;
 
   // Send AJAX POST to FormSubmit
-  const response = await fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  });
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' }
+    });
 
-  loader.style.display = 'none';
+    loader.style.display = 'none';
 
-  if (response.ok) {
-    form.style.display = 'none';
-    thankYou.style.display = 'block';
-  } else {
+    if (response.ok) {
+      form.style.display = 'none';
+      thankYou.style.display = 'block';
+    } else {
+      alert('There was an error sending your message. Please try again.');
+      submitBtn.disabled = false;
+    }
+  } catch (error) {
+    loader.style.display = 'none';
     alert('There was an error sending your message. Please try again.');
     submitBtn.disabled = false;
   }
 });
 </script>
+
 
 
         <style>
@@ -935,43 +941,7 @@ document.getElementById('punk-rock-contact-form').addEventListener('submit', asy
             }
           }
 
-          /* Style for the math question label */
-          #math-question-label {
-            color: white;
-            font-family: Arial, sans-serif;
-          }
-
-          @media only screen and (max-width: 768px) {
-
-       #math-question-label {
-            color: white;
-            font-family: Arial, sans-serif;
-            margin-left: 200px;
-          }
-
-
-@media only screen and (max-width: 480px) {
-
-  #math-question-label {
-    font-size: 1.5rem; /* Increase font size */
-    margin-left: 125; /* Reset margin-left or adjust as needed */
-  }
-}
-
-
-
-          }
-
-          @media only screen and (max-width: 340px) {
-
-            #math-question-label {
-            color: white;
-            font-family: Arial, sans-serif;
-            margin-left: 200px;
-          }
-
-          }
-        </style>
+           </style>
 
 
 
