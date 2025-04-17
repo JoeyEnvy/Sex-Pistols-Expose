@@ -1195,66 +1195,68 @@ z-index: 1100; /* Increase if needed to appear above other elements */
 
   /* YELLOWlogo768 */
 
-/* Default styling for the specific logo container and image */
-div.yellow-punk-pistol-logo-container {
+.yellow-punk-pistol-logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 32px 0;
+    margin: 0 auto;
+    padding: 24px 0;
 }
 
-div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
+.punk-pistol-logo {
     width: 100%;
-    max-width: 360px;
+    max-width: 480px; /* Adjust as needed for your design */
     height: auto;
     display: block;
 }
 
-/* 1450px and below */
+/* 1450px and below: slightly larger max-width */
 @media (max-width: 1450px) {
-    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
-        max-width: 300px;
+    .punk-pistol-logo {
+        max-width: 420px;
     }
 }
 
-/* 1024px and below */
+/* 1024px and below: medium logo */
 @media (max-width: 1024px) {
-    div.yellow-punk-pistol-logo-container {
-        padding: 20px 0;
+    .yellow-punk-pistol-logo-container {
+        padding: 18px 0;
     }
-    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
-        max-width: 220px;
+    .punk-pistol-logo {
+        max-width: 340px;
     }
 }
 
-/* 768px and below */
+/* 768px and below: smaller but still prominent */
 @media (max-width: 768px) {
-    div.yellow-punk-pistol-logo-container {
-        padding: 12px 0;
+    .yellow-punk-pistol-logo-container {
+        padding: 14px 0;
     }
-    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
-        max-width: 130px;
+    .punk-pistol-logo {
+        max-width: 260px;
     }
 }
 
-/* 480px and below: much smaller image */
+/* 480px and below: larger for mobile impact */
 @media (max-width: 480px) {
-    div.yellow-punk-pistol-logo-container {
+    .yellow-punk-pistol-logo-container {
+        padding: 10px 0;
+    }
+    .punk-pistol-logo {
+        max-width: 90vw;
+        min-width: 180px;
+    }
+}
+
+/* 340px and below: fill available space, never overflow */
+@media (max-width: 340px) {
+    .yellow-punk-pistol-logo-container {
         padding: 6px 0;
     }
-    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
-        max-width: 80px;
-    }
-}
-
-/* 340px and below: smallest image */
-@media (max-width: 340px) {
-    div.yellow-punk-pistol-logo-container {
-        padding: 2px 0;
-    }
-    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
-        max-width: 52px;
+    .punk-pistol-logo {
+        max-width: 98vw;
+        min-width: 120px;
     }
 }
 
