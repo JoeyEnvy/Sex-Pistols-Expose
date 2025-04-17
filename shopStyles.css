@@ -2,25 +2,20 @@
     font-family: 'Punkaholic';
     src: url('Fonts/Punkaholic D.otf') format('opentype');
 }
-
 @font-face {
     font-family: 'Sex Pistols';
     src: url('Fonts/Sex_Pistols.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'Mailart Rubberstamp';
     src: url('Fonts/MailartRubberstamp-Regular.otf') format('opentype');
 }
-
 @font-face {
     font-family: 'Chinese Rocks';
     src: url('Fonts/chinese rocks rg.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
-
 
 * {
     margin: 0;
@@ -32,63 +27,28 @@ html, body {
     height: 100%;
     font-family: 'Chinese Rocks', sans-serif;
     overflow-x: hidden;
-   scroll-behavior: auto !important;
-
+    scroll-behavior: auto !important;
 }
 
 
-
-nav ul {
-    display: none;
-}
-
-nav ul.show {
-    display: block;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #ffef1d;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 24px;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    color: #ed5e94;
-}
-
-/* Scroll Progress Bar */
-.scroll-progress {
+.parallax-bg {
     position: fixed;
-    top: 70px;
+    top: 0;
     left: 0;
-    width: 0;
-    height: 4px;
-    background-color: #ffef1d;
-    z-index: 1001;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #ffef1d;
-}
-
-/* Global Styles */
-html, body {
+    width: 100%;
     height: 100%;
-    font-family: 'Chinese Rocks', sans-serif;
-    overflow-x: hidden;
+    background-image: url('images/1650 background 1000 22.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
 }
 
-/* Navigation Bar */
+
+
+
+/* NAVBAR */
 nav {
     position: fixed;
     top: 0;
@@ -102,46 +62,68 @@ nav {
     padding: 0 20px;
     z-index: 1000;
 }
-
 nav ul {
     display: flex;
     list-style-type: none;
 }
-
 nav ul li {
     margin-right: 20px;
 }
-
 nav ul li a {
     color: #ffef1d;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 24px;
+    font-size: 1.5em; /* Smaller text */
+    font-family: 'Chinese Rocks', sans-serif;
+    letter-spacing: 2px;
 }
-
 nav ul li a:hover,
 nav ul li a.active {
     color: #ed5e94;
 }
 
-/* Scroll Progress Bar */
-.scroll-progress {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 0;
-    height: 4px;
-    background-color: #ffef1d;
-    z-index: 1001;
-}
-
 /* Hamburger Menu */
 .hamburger-menu {
     display: none;
-    font-size: 24px;
+    font-size: 1.5em;
     cursor: pointer;
     color: #ffef1d;
+z-index: 1100; /* Increase if needed to appear above other elements */
 }
+
+.exposelinknav {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    text-decoration: none;
+    margin-left: 20px;   /* Adjust as needed for spacing from nav links */
+    margin-right: 0;
+    /* Optional: add a little horizontal space if needed */
+}
+
+.exposelinknav img {
+    max-height: 60px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    margin-left: 10px;   /* Space between image and nav links, adjust as needed */
+    border: 3px dashed #ffef1d; /* Punky yellow border */
+    border-radius: 5px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.15);
+    transition: 
+        box-shadow 0.2s,
+        border-color 0.2s,
+        filter 0.2s;
+}
+
+.exposelinknav img:hover,
+.exposelinknav:focus img {
+    border-color: #ed5e94; /* Hot pink on hover/focus */
+    box-shadow: 0 4px 24px rgba(237,94,148,0.6);
+    filter: brightness(1.15) contrast(1.1);
+}
+
 
 /* Facebook Button */
 .facebook-button {
@@ -152,15 +134,13 @@ nav ul li a.active {
     border-radius: 5px;
     text-decoration: none;
     color: #3B5998;
-    margin: 0 25px 0 5px; /* Increased right margin */
+    margin: 0 25px 0 5px;
     overflow: hidden;
 }
-
 .facebook-button img {
-    height: 22px; /* Slightly smaller */
+    height: 22px;
     margin-right: 5px;
 }
-
 .facebook-button span {
     font-size: 14px;
 }
@@ -174,53 +154,272 @@ nav ul li a.active {
     height: 70px;
     padding: 0 10px;
 }
-
 .band-name img {
-    max-height: 70px; /* Slightly smaller */
+    max-height: 70px;
+    padding-bottom: 10vh;
     max-width: 100%;
     width: auto;
     object-fit: contain;
     margin: 0 5px;
 }
 
-/* Parallax background */
-.parallax-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/WEBP Images All/Mark 2_edited.webp');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}
-
-/* Main content */
-main {
+/* HERO SECTION */
+.hero-section {
     position: relative;
-    z-index: 1;
-    padding-top: 0;
+    padding-top: 15vh;
+    height: 85vh;
+    min-height: 350px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    overflow: hidden;
 }
 
-/* Custom Text Styles */
-.sex-pistols {
-    font-family: 'Sex Pistols', sans-serif;
-    color: #ffef1d;
-    font-size: 28px;
-    background-color: #ff0000;
-    padding: 5px;
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); /* 50% opacity */
+    z-index: 2;
+    pointer-events: none;
 }
 
-.expose {
-    font-family: 'Sex Pistols', sans-serif;
-    color: #3a6ff9;
-    font-size: 32px;
-    background-color: white;
-    padding: 5px;
+.hero-section > *:not(.hero-overlay) {
+    position: relative;
+    z-index: 3;
 }
+
+/* Center and stylize hero text, bring text and logo closer */
+/* Center and stylize hero text, bring text and logo closer */
+.main-title, .sub-title-1, .sub-title-2, .sub-title-3 {
+    font-family: 'Punkaholic', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0 0 8px 0;
+    width: 100%;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+.main-title {
+    font-size: 3.5em; /* Was 2.5em — now much bolder */
+}
+
+.sub-title-1, .sub-title-2 {
+    font-size: 2em; /* Was 1.3em — larger for better visibility */
+}
+
+.sub-title-2 {
+    font-family: 'Mailart Rubberstamp', sans-serif;
+    margin-bottom: -5vh;
+}
+
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0 0 0;
+    position: relative;
+    z-index: 3;
+}
+.logo-container img {
+    max-width: 60vw;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- Base CSS remains unchanged above this point --- */
+
+/* 1450px and below: Large desktops, increase subtitle margin */
+@media (max-width: 1450px) {
+    .sub-title-2 {
+        margin-bottom: 7vh;
+    }
+}
+
+/* 1024px and below: Hamburger menu, center navbar logo, adjust subtitle margin */
+@media (max-width: 1024px) {
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        z-index: 1100;
+        background: none;
+        border: none;
+    }
+    .hamburger-menu span {
+        display: block;
+        width: 28px;
+        height: 4px;
+        margin: 5px 0;
+        background: #ffef1d;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+    nav ul.nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.7);
+        padding: 20px 0;
+        z-index: 1050;
+    }
+    nav ul.nav-list.open {
+        display: flex;
+    }
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    .exposelinknav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .facebook-button {
+        margin: 0 10px 0 0;
+    }
+    .sub-title-2 {
+        margin-bottom: 5vh;
+    }
+}
+
+/* 768px and below: Tighter hero, smaller text, more subtitle margin */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 10vh;
+        height: 70vh;
+        min-height: 220px;
+    }
+    .main-title {
+        font-size: 2em;
+    }
+    .sub-title-1, .sub-title-2 {
+        font-size: 1.2em;
+    }
+    .sub-title-2 {
+        margin-bottom: 6vh;
+    }
+    .logo-container img {
+        max-width: 85vw;
+    }
+    nav {
+        height: 60px;
+        padding: 0 10px;
+    }
+    .band-name {
+        height: 60px;
+    }
+    .band-name img {
+        max-height: 60px;
+    }
+    .exposelinknav img {
+        max-height: 45px;
+    }
+}
+
+/* 480px and below: Stack hero, nav, shrink everything, subtitle margin increases */
+/* 480px and below: Larger band image and subtitles */
+@media (max-width: 480px) {
+    .hero-section {
+        padding-top: 7vh;
+        height: 55vh;
+        min-height: 150px;
+    }
+    .main-title {
+        font-size: 2em;          /* Larger than before */
+    }
+    .sub-title-1, .sub-title-2 {
+        font-size: 1.3em;        /* Larger than before */
+    }
+    .sub-title-2 {
+        margin-bottom: 10vh;     /* Generous margin */
+    }
+    .logo-container img {
+        max-width: 100vw;        /* Fill screen width */
+        max-height: 160px;       /* Prevents excessive vertical size */
+    }
+    nav {
+        height: 50px;
+        padding: 0 5px;
+    }
+    .facebook-button span {
+        display: none;
+    }
+    .facebook-button img {
+        margin: 0;
+    }
+    .band-name {
+        height: 50px;
+        padding: 0 5px;
+    }
+    .band-name img,
+    .exposelinknav img {
+        max-height: 40px;
+    }
+    .exposelinknav {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* 340px and below: Even larger band image and subtitles */
+@media (max-width: 340px) {
+    .hero-section {
+        padding-top: 4vh;
+        height: 45vh;
+        min-height: 80px;
+    }
+    .main-title {
+        font-size: 1.4em;         /* Larger than previous 1em */
+    }
+    .sub-title-1, .sub-title-2 {
+        font-size: 1em;           /* Larger than previous 0.8em */
+    }
+    .sub-title-2 {
+        margin-bottom: 12vh;      /* Extra margin for separation */
+    }
+    .logo-container img {
+        max-width: 100vw;
+        max-height: 120px;
+    }
+    nav {
+        height: 40px;
+        padding: 0 2px;
+    }
+    .band-name {
+        height: 40px;
+        padding: 0 2px;
+    }
+    .band-name img,
+    .exposelinknav img {
+        max-height: 28px;
+    }
+    .exposelinknav {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+/* Parallax fallback for mobile/tablet */
+@media only screen and (max-device-width: 1024px) {
+    .hero-section {
+        background-attachment: scroll;
+    }
+}
+
 
 
 /* blue divider underneath member to famous section */
@@ -232,7 +431,7 @@ main {
     background-color: rgba(0, 0, 255, 0.5);
     position: relative;
     left: 0;
-    z-index: 5000;
+    z-index: 10;
 }
 
 .badge-slider {
@@ -580,49 +779,6 @@ main {
 
 
 
-/* Logo Section */
-.yellow-punk-pistol-logo-container {
-  position: relative;
-  height: 50vh; /* Adjust this value as needed */
-  text-align: center;
-  overflow: hidden;
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
-
-.yellow-punk-pistol-logo-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: yellow;
-  opacity: 0.2;
-  z-index: 1;
-}
-
-.punk-pistol-logo {
-  position: relative;
-  z-index: 2;
-  max-height: 85%;
-  width: auto;
-  max-width: 100%; /* Make sure it doesn't exceed container width */
-  /* Remove these, as flexbox is handling centering: */
-  /* margin: 0 auto; */
-  /* display: inline-block; */
-  /* vertical-align: middle; */
-}
-
-/* The pseudo-element is no longer needed with Flexbox: */
-/* Helper to vertically center the logo */
-/* .yellow-punk-pistol-logo-container::after {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-} */
 
 /* Footer */
 .punk-footer {
@@ -720,60 +876,10 @@ main {
 
 
 
-/* media queries different devices, mobile tablet, phone etc */
-
-/* Base styles here (for mobile devices) */
-
-/* Media Queries for Responsive Design */
-
-/* Base styles here (for mobile devices) */
-
-/* Media Queries for Responsive Design */
-
-
-/* Navbar styles for screens up to 1024px */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Max-width: 1024px */
 @media (max-width: 1024px) {
-  /* Navbar styles */
-  nav ul li a {
-    font-size: 18px;
-  }
-
-  .facebook-button span {
-    display: none;
-  }
-
-  .facebook-button img {
-    height: 28px;
-  }
-
-  .band-name img {
-    max-height: calc(45px - (1024px - 100vw) * 0.005);
-  }
-
-  /* Hero1024 */
-    /* contactform1024 */
-
-
-
 
 
 
@@ -901,72 +1007,6 @@ main {
 
 /* Max-width: 768px */
 @media (max-width: 768px) {
-  .parallax-bg {
-    background-image: url('images/Mobile/1.jpg');
-    background-attachment: scroll; /* Optional: change to scroll for better mobile performance */
-  }
-
-  /* Navbar styles */
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-  }
-
-  nav ul {
-    display: none;
-  }
-
-  nav ul.show {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: auto;
-    max-height: 75vh;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    overflow-y: auto;
-    padding: 20px 0;
-    z-index: 1000;
-  }
-
-  nav ul.show li {
-    margin: 10px 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  nav ul.show li a {
-    font-size: 24px;
-    color: #ffef1d;
-    display: block;
-    padding: 10px 0;
-  }
-
-  .facebook-button {
-    order: 1;
-  }
-
-  .band-name {
-    order: 2;
-  }
-
-  .hamburger-menu {
-    display: block;
-    order: 3;
-    font-size: 24px;
-  }
-
-  .band-name img {
-    max-height: calc(45px * 1.25);
-    min-height: calc(45px * 1.25);
-  }
-
  
   /* contact768 */
 
@@ -1155,13 +1195,68 @@ main {
 
   /* YELLOWlogo768 */
 
-.yellow-punk-pistol-logo-container {
-    height: 30vh;
-  }
+/* Default styling for the specific logo container and image */
+div.yellow-punk-pistol-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 32px 0;
+}
 
-  .punk-pistol-logo {
-    max-height: 50%;
-  }
+div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    display: block;
+}
+
+/* 1450px and below */
+@media (max-width: 1450px) {
+    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
+        max-width: 300px;
+    }
+}
+
+/* 1024px and below */
+@media (max-width: 1024px) {
+    div.yellow-punk-pistol-logo-container {
+        padding: 20px 0;
+    }
+    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
+        max-width: 220px;
+    }
+}
+
+/* 768px and below */
+@media (max-width: 768px) {
+    div.yellow-punk-pistol-logo-container {
+        padding: 12px 0;
+    }
+    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
+        max-width: 130px;
+    }
+}
+
+/* 480px and below: much smaller image */
+@media (max-width: 480px) {
+    div.yellow-punk-pistol-logo-container {
+        padding: 6px 0;
+    }
+    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
+        max-width: 80px;
+    }
+}
+
+/* 340px and below: smallest image */
+@media (max-width: 340px) {
+    div.yellow-punk-pistol-logo-container {
+        padding: 2px 0;
+    }
+    div.yellow-punk-pistol-logo-container img.punk-pistol-logo {
+        max-width: 52px;
+    }
+}
 
   /* footer768 */
 
@@ -1214,21 +1309,7 @@ main {
 
 
 @media (max-width: 480px) {
-  /* Navbar styles */
-  nav {
-    padding: 8px 12px;
-  }
-
-  .facebook-button img {
-    height: 24px;
-  }
-
-  .band-name img {
-    max-height: calc(45px * 1.15);
-    min-height: calc(45px * 1.15);
-  }
-
- 
+   
   /* contact480 */
 /* Reduce overall height of contact section */
    /* YELLOWLOGO480 */
@@ -1417,21 +1498,7 @@ main {
 
 
 @media (max-width: 320px) {
-  /* Navbar styles */
-  .hamburger-menu {
-    font-size: 22px;
-  }
-
-  .band-name {
-    margin-left: -27.5px;
-  }
-
-  .band-name img {
-    max-height: calc(45px * 2);
-  }
-
   
-
   /* Yellow logo section */
   .yellow-punk-pistol-logo-container {
     height: 20vh;
