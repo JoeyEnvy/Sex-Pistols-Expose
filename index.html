@@ -725,7 +725,6 @@
           <!-- Hidden Fields -->
           <input type="hidden" name="_subject" value="New Message from Sex Pistols Expose" />
           <input type="hidden" name="_template" value="table" />
-          <!-- No _next field, so no redirect! -->
 
           <!-- Honeypot Field -->
           <div style="display:none;" aria-hidden="true">
@@ -757,25 +756,56 @@
           </div>
 
           <button type="submit" class="punk-submit-button">Submit</button>
+
+          <!-- Loader -->
+          <div id="punk-loader" class="punk-loader"></div>
+
+          <!-- Thank You Message -->
+          <p id="punk-thank-you" class="punk-thank-you">
+            Thank you! Your message has been sent.
+          </p>
         </form>
-        <!-- Thank You Message -->
-        <p id="punk-thank-you" class="punk-thank-you" style="display: none;">
-          Thank you! Your message has been sent.
-        </p>
+
+        <!-- Facebook Embed: sits to the right if your container uses flex or grid -->
+        <div class="shift-right-facebook-box">
+          <div class="widget-column">
+            <div class="ents-widget">
+              <iframe
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=400&height=550&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                width="400"
+                height="550"
+                style="border: none; overflow: hidden;"
+                scrolling="no"
+                frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                title="Sex Pistols Expose Facebook Timeline"
+              ></iframe>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
 
 <script>
 document.getElementById('punk-rock-contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const form = e.target;
   const thankYou = document.getElementById('punk-thank-you');
+  const loader = document.getElementById('punk-loader');
+  const submitBtn = form.querySelector('.punk-submit-button');
   const formData = new FormData(form);
 
-  // Honeypot check (client-side, for extra safety)
+  // Honeypot check (client-side)
   if(formData.get('hp-field')) {
-    // Optionally log or handle bot submission
     return false;
   }
+
+  // Show loader and disable button
+  loader.style.display = 'block';
+  submitBtn.disabled = true;
 
   // Send AJAX POST to FormSubmit
   const response = await fetch(form.action, {
@@ -784,16 +814,17 @@ document.getElementById('punk-rock-contact-form').addEventListener('submit', asy
     headers: { 'Accept': 'application/json' }
   });
 
+  loader.style.display = 'none';
+
   if (response.ok) {
     form.style.display = 'none';
     thankYou.style.display = 'block';
   } else {
     alert('There was an error sending your message. Please try again.');
+    submitBtn.disabled = false;
   }
 });
 </script>
-
-
 
 
         <style>
@@ -941,31 +972,6 @@ document.getElementById('punk-rock-contact-form').addEventListener('submit', asy
 
           }
         </style>
-
-        <!-- Facebook iframe is NOW wrapped with the specific class-->
-        <div class="shift-right-facebook-box">
-          <div class="widget-column">
-            <div class="ents-widget">
-              <iframe
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=400&height=550&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                width="100%"
-                height="550"
-                style="border: none; overflow: hidden; max-width: 400px;"
-                scrolling="no"
-                frameborder="0"
-                allowfullscreen="true"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                title="Sex Pistols Expose Facebook Timeline"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 
 
 
