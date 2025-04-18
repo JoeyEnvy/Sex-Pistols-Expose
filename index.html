@@ -682,7 +682,6 @@
 </div>
 
 <!-- Contact Form HTML working again -->
-<!-- Contact Form HTML -->
 <section id="punk-contact-page" itemscope itemtype="http://schema.org/ContactPage">
   <div class="punk-contact-background">
     <div class="punk-contact-blue-overlay"></div>
@@ -716,10 +715,10 @@
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_cc" value="mr_mozworth@yahoo.co.uk,c.fear.907@gmail.com" />
 
-          <!-- Honeypot Field -->
+          <!-- Improved Honeypot Field (Hidden) -->
           <div style="display:none;" aria-hidden="true">
-            <label for="hp-field">Leave this field empty:</label>
-            <input type="text" name="hp-field" id="hp-field" tabindex="-1" autocomplete="off" />
+            <label for="random-hp-field">Leave this field empty:</label>
+            <input type="text" name="random-hp-field" id="random-hp-field" tabindex="-1" autocomplete="off" />
           </div>
 
           <!-- Form Fields -->
@@ -728,25 +727,30 @@
               <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
               <input type="text" id="punk-first-name" name="first-name" required />
             </div>
-
             <div class="punk-form-group">
               <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
               <input type="text" id="punk-last-name" name="last-name" required />
             </div>
           </div>
-
           <div class="punk-form-group">
             <label for="punk-email" class="punk-sex-pistols-label">Email</label>
             <input type="email" id="punk-email" name="email" required />
           </div>
-
           <div class="punk-form-group">
             <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
             <textarea id="punk-message" name="message" required></textarea>
           </div>
 
-          <button type="submit" class="punk-submit-button">Submit</button>
+          <!-- Randomized Math Question -->
+          <div class="punk-form-group">
+            <label id="math-question-label" for="math-question-input" class="punk-sex-pistols-label">
+              <!-- The question will be inserted here by JS -->
+            </label>
+            <input type="text" id="math-question-input" name="math-question-input" required autocomplete="off" />
+            <input type="hidden" id="math-question-answer" name="math-question-answer" />
+          </div>
 
+          <button type="submit" class="punk-submit-button">Submit</button>
           <!-- Loader -->
           <div id="punk-loader" class="punk-loader"></div>
         </form>
@@ -776,47 +780,94 @@
     </div>
   </div>
 </section>
+</main>
+
+</body>
 
 <script>
-document.getElementById('punk-rock-contact-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const form = e.target;
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('punk-rock-contact-form');
   const thankYou = document.getElementById('punk-thank-you');
   const loader = document.getElementById('punk-loader');
   const submitBtn = form.querySelector('.punk-submit-button');
-  const formData = new FormData(form);
 
-  // Honeypot check (client-side)
-  if (formData.get('hp-field')) {
+  // --- Randomized Math Question ---
+  const mathLabel = document.getElementById('math-question-label');
+  const mathInput = document.getElementById('math-question-input');
+  const mathAnswerField = document.getElementById('math-question-answer');
+  // Generate two random numbers between 1 and 10
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 10) + 1;
+  const mathAnswer = num1 + num2;
+  mathLabel.textContent = `What is ${num1} plus ${num2}?`;
+  mathAnswerField.value = mathAnswer;
+
+  // Function to block submission
+  function blockSubmission(message) {
+    alert(message);
+    loader.style.display = 'none';
+    submitBtn.disabled = false;
     return false;
   }
 
-  // Show loader and disable button
-  loader.style.display = 'block';
-  submitBtn.disabled = true;
+  // --- Add Form Load Time ---
+  const formLoadTime = Date.now(); // Capture time when form is loaded
 
-  // Send AJAX POST to FormSubmit
-  try {
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: { Accept: 'application/json' }
-    });
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
 
-    loader.style.display = 'none';
-
-    if (response.ok) {
-      form.style.display = 'none';
-      thankYou.style.display = 'block';
-    } else {
-      alert('There was an error sending your message. Please try again.');
-      submitBtn.disabled = false;
+    // --- Improved Honeypot Check ---
+    const honeypotField = document.querySelector('input[name="random-hp-field"]'); // Target honeypot
+    if (honeypotField && honeypotField.value !== '') {
+      return blockSubmission('Honeypot triggered.');
     }
-  } catch (error) {
-    loader.style.display = 'none';
-    alert('There was an error sending your message. Please try again.');
-    submitBtn.disabled = false;
-  }
+
+    // --- Time-Based Submission Check ---
+    const submissionTime = Date.now();
+    const timeToFill = submissionTime - formLoadTime;
+
+    if (timeToFill < 2000) { // If form filled in less than 2 seconds
+      return blockSubmission('Please take a moment to fill out the form.');
+    }
+
+    // --- Link Blocking ---
+    const message = formData.get('message');
+    if (/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g.test(message)) {
+      return blockSubmission('Links are not allowed in the message.');
+    }
+
+    // --- Math Question Check ---
+    const userMathAnswer = (formData.get('math-question-input') || '').trim();
+    const correctMathAnswer = mathAnswerField.value; // Get correct answer from hidden field
+    if (userMathAnswer !== correctMathAnswer.toString()) {
+      return blockSubmission('Please answer the math question correctly.');
+    }
+
+    // Show loader and disable button
+    loader.style.display = 'block';
+    submitBtn.disabled = true;
+
+    // --- Send AJAX POST to FormSubmit ---
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      });
+
+      loader.style.display = 'none';
+
+      if (response.ok) {
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+      } else {
+        blockSubmission('There was an error sending your message. Please try again.');
+      }
+    } catch (error) {
+      blockSubmission('There was an error sending your message. Please try again.');
+    }
+  });
 });
 </script>
 
