@@ -716,15 +716,12 @@ attachment-container {
   transition: padding 0.4s, height 0.4s;
 }
 
-
 .exposeslidersec-video:fullscreen {
   width: 100vw !important;
   height: 100vh !important;
   object-fit: contain;
   background: #000;
 }
-
-
 
 .exposeslidersec-fullscreen-btn {
   position: absolute;
@@ -755,7 +752,6 @@ attachment-container {
   }
 }
 
-
 .exposeslidersec-inner {
   width: 98vw;
   height: 96%;
@@ -783,6 +779,34 @@ attachment-container {
   pointer-events: auto;
   will-change: transform;
 }
+
+/* --- Responsive animation speed --- */
+@media (max-width: 1024px) {
+  .exposeslidersec-grid {
+    animation-duration: 7.5s !important; /* 3.75s * 2 */
+  }
+}
+@media (max-width: 768px) {
+  .exposeslidersec-grid {
+    animation-duration: 4s !important;  /* 2s * 2 */
+  }
+}
+@media (max-width: 480px) {
+  .exposeslidersec-grid {
+    animation-duration: 2.5s !important;  /* 1.25s * 2 */
+  }
+}
+@media (max-width: 340px) {
+  .exposeslidersec-grid {
+    animation-duration: 2s !important;  /* 0.75s * 2 */
+  }
+}
+@media (max-width: 320px) {
+  .exposeslidersec-grid {
+    animation-duration: 1.75s !important;  /* 0.5s * 2 */
+  }
+}
+/* --- End responsive animation speed --- */
 
 @keyframes slide-left {
   0% {
@@ -913,7 +937,6 @@ attachment-container {
     min-height: 80px;
     }
 
-
   .exposeslidersec-inner {
     width: 100vw;
   }
@@ -939,10 +962,9 @@ attachment-container {
   .exposeslidersec {
     height: 80vw; /* make section longer */
     height: 50vh;
-    margin-top: -175px;
+    margin-top: -75px;
     padding-top: 0px;    /* more black padding */
     padding-bottom: 48px; /* more black padding */
-    margin-top: 0;
     margin-bottom: 0;
   }
   .exposeslidersec-inner {
@@ -980,7 +1002,7 @@ attachment-container {
   .exposeslidersec {
     height: 50vh; /* even longer for tiny screens */
     min-height: 220px;
-    margin-top: -135px;
+    margin-top: -100px;
     z-index: 500;
   }
 }
@@ -993,7 +1015,6 @@ attachment-container {
     z-index: 500;
   }
 }
-
 
 
 
