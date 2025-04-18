@@ -816,3 +816,38 @@ document.addEventListener("DOMContentLoaded", adjustButtonFontSize);
 
 
 
+
+
+
+
+
+
+
+
+//expose slider section between info and members for visuals
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const videoGrid = document.getElementById('exposeslidersec-grid');
+  const videoFolder = 'videos/Pistols Web Sliding Vid Section Addition/';
+  const videoCount = 19;
+
+  for (let i = 1; i <= videoCount; i++) {
+    const videoWrap = document.createElement('div');
+    videoWrap.classList.add('exposeslidersec-video-wrap');
+    videoWrap.dataset.video = i;
+
+    const video = document.createElement('video');
+    video.classList.add('exposeslidersec-video');
+    video.src = `${videoFolder}${i}.mp4`;
+    video.setAttribute('controls', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('tabindex', '0');
+    video.setAttribute('title', `Pistols Expose Video ${i}`);
+
+    videoWrap.appendChild(video);
+    videoGrid.appendChild(videoWrap);
+  }
+  console.log('Loaded exposeslidersec videos');
+});
+
