@@ -163,7 +163,7 @@
 
 
     <!-- Contact Section -->
-    <section id="punk-contact-page" itemscope itemtype="http://schema.org/ContactPage">
+<section id="punk-contact-page" itemscope itemtype="http://schema.org/ContactPage">
       <div class="punk-contact-background">
         <div class="punk-contact-blue-overlay"></div>
         <img
@@ -196,10 +196,10 @@
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_cc" value="mr_mozworth@yahoo.co.uk,c.fear.907@gmail.com" />
 
-              <!-- Honeypot Field -->
+              <!-- Improved Honeypot Field (Hidden) -->
               <div style="display:none;" aria-hidden="true">
-                <label for="hp-field">Leave this field empty:</label>
-                <input type="text" name="hp-field" id="hp-field" tabindex="-1" autocomplete="off" />
+                <label for="random-hp-field">Leave this field empty:</label>
+                <input type="text" name="random-hp-field" id="random-hp-field" tabindex="-1" autocomplete="off" />
               </div>
 
               <!-- Form Fields -->
@@ -258,45 +258,71 @@
 
 
 <script>
-document.getElementById('punk-rock-contact-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const form = e.target;
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('punk-rock-contact-form');
   const thankYou = document.getElementById('punk-thank-you');
   const loader = document.getElementById('punk-loader');
   const submitBtn = form.querySelector('.punk-submit-button');
-  const formData = new FormData(form);
 
-  // Honeypot check (client-side)
-  if (formData.get('hp-field')) {
+  // Function to block submission
+  function blockSubmission(message) {
+    alert(message);
+    loader.style.display = 'none';
+    submitBtn.disabled = false;
     return false;
   }
 
-  // Show loader and disable button
-  loader.style.display = 'block';
-  submitBtn.disabled = true;
+  // --- Add Form Load Time ---
+  const formLoadTime = Date.now(); // Capture time when form is loaded
 
-  // Send AJAX POST to FormSubmit
-  try {
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: { Accept: 'application/json' }
-    });
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
 
-    loader.style.display = 'none';
-
-    if (response.ok) {
-      form.style.display = 'none';
-      thankYou.style.display = 'block';
-    } else {
-      alert('There was an error sending your message. Please try again.');
-      submitBtn.disabled = false;
+    // --- Improved Honeypot Check ---
+    const honeypotField = document.querySelector('input[name="random-hp-field"]'); // Target honeypot
+    if (honeypotField && honeypotField.value !== '') {
+      return blockSubmission('Honeypot triggered.');
     }
-  } catch (error) {
-    loader.style.display = 'none';
-    alert('There was an error sending your message. Please try again.');
-    submitBtn.disabled = false;
-  }
+
+    // --- Time-Based Submission Check ---
+    const submissionTime = Date.now();
+    const timeToFill = submissionTime - formLoadTime;
+
+    if (timeToFill < 2000) { // If form filled in less than 2 seconds
+      return blockSubmission('Please take a moment to fill out the form.');
+    }
+
+    // --- Link Blocking ---
+    const message = formData.get('message');
+    if (/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g.test(message)) {
+      return blockSubmission('Links are not allowed in the message.');
+    }
+
+    // Show loader and disable button
+    loader.style.display = 'block';
+    submitBtn.disabled = true;
+
+    // --- Send AJAX POST to FormSubmit ---
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      });
+
+      loader.style.display = 'none';
+
+      if (response.ok) {
+        form.style.display = 'none';
+        thankYou.style.display = 'block';
+      } else {
+        blockSubmission('There was an error sending your message. Please try again.');
+      }
+    } catch (error) {
+      blockSubmission('There was an error sending your message. Please try again.');
+    }
+  });
 });
 </script>
 
