@@ -816,100 +816,47 @@ document.addEventListener("DOMContentLoaded", adjustButtonFontSize);
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('exposeslidersec-grid');
+  if (!grid) return;
 
-
-
-
-
-
-
-
-//expose slider section between info and members for visuals
-
-document.addEventListener('DOMContentLoaded', function() {
-  const videoThumbs = document.querySelectorAll('.exposeslidersec-video-wrap');
-
-  // Ensure all grid videos autoplay muted and loop
-  document.querySelectorAll('.exposeslidersec-video').forEach(video => {
-    video.muted = true;
-    video.autoplay = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.play().catch(() => {});
+  // Clone all children and append to create seamless loop
+  const children = Array.from(grid.children);
+  children.forEach(child => {
+    const clone = child.cloneNode(true);
+    grid.appendChild(clone);
   });
 
-  // User gesture workaround for sound on hover
-  let soundAllowed = false;
-  function allowSoundOnce() {
-    soundAllowed = true;
-    document.body.removeEventListener('click', allowSoundOnce);
-    document.body.removeEventListener('touchstart', allowSoundOnce);
+  let scrollSpeed = 0.5; // pixels per frame - adjust for speed
+
+  function step() {
+    grid.scrollLeft += scrollSpeed;
+
+    // Reset scrollLeft to start when scrolled past original content width
+    if (grid.scrollLeft >= grid.scrollWidth / 2) {
+      grid.scrollLeft = 0;
+    }
+
+    requestAnimationFrame(step);
   }
-  document.body.addEventListener('click', allowSoundOnce);
-  document.body.addEventListener('touchstart', allowSoundOnce);
 
-  // Play audio on hover, mute on mouseleave
-  videoThumbs.forEach(thumb => {
-    const vid = thumb.querySelector('.exposeslidersec-video');
-    thumb.addEventListener('mouseenter', function() {
-      if (soundAllowed) {
-        vid.muted = false;
-        vid.play().catch(() => {});
-      }
-    });
-    thumb.addEventListener('mouseleave', function() {
-      vid.muted = true;
-      vid.play().catch(() => {});
-    });
-    thumb.addEventListener('touchstart', function() {
-      if (soundAllowed) {
-        vid.muted = false;
-        vid.play().catch(() => {});
-      }
-    });
-    thumb.addEventListener('touchend', function() {
-      vid.muted = true;
-      vid.play().catch(() => {});
-    });
+  // Initialize scrollLeft to 0
+  grid.scrollLeft = 0;
+  requestAnimationFrame(step);
 
-    // Click to fullscreen THIS video
-    thumb.addEventListener('click', function(e) {
-      e.preventDefault();
-      vid.muted = false;
-      vid.play().catch(() => {});
-      if (vid.requestFullscreen) {
-        vid.requestFullscreen();
-      } else if (vid.webkitRequestFullscreen) {
-        vid.webkitRequestFullscreen();
-      } else if (vid.msRequestFullscreen) {
-        vid.msRequestFullscreen();
-      }
-    });
-  });
-
-  // When exiting fullscreen, mute all videos again
-  function muteAllVideos() {
-    document.querySelectorAll('.exposeslidersec-video').forEach(function(vid) {
-      vid.muted = true;
-    });
-  }
-  document.addEventListener('fullscreenchange', function() {
-    if (!document.fullscreenElement) {
-      muteAllVideos();
-    }
-  });
-  document.addEventListener('webkitfullscreenchange', function() {
-    if (!document.webkitFullscreenElement) {
-      muteAllVideos();
-    }
-  });
-  document.addEventListener('msfullscreenchange', function() {
-    if (!document.msFullscreenElement) {
-      muteAllVideos();
-    }
+  // Optional: Adjust scroll speed based on viewport width or user preference
+  window.addEventListener('resize', () => {
+    // You can update scrollSpeed here if needed for responsiveness
   });
 });
 
 
+
+
+
+
+//EXPOSE SLIDER FIXES 
+
+// Put this at the end of your HTML, after the slider markup
 
 
