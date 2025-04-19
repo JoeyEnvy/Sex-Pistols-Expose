@@ -1326,12 +1326,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const setScrollSpeed = () => {
       const width = window.innerWidth;
 
-      // Slightly faster as screens get smaller
-      if (width <= 340) scrollSpeed = 1.7;
-      else if (width <= 480) scrollSpeed = 1.5;
-      else if (width <= 768) scrollSpeed = 1.2;
+      // Now slower as screens get smaller
+      if (width <= 340) scrollSpeed = 0.3;
+      else if (width <= 480) scrollSpeed = 0.5;
+      else if (width <= 768) scrollSpeed = 0.7;
       else if (width <= 1024) scrollSpeed = 1.0;
-      else scrollSpeed = 0.7; // desktop: slowest
+      else scrollSpeed = 1.3; // larger screens move a bit faster
     };
 
     setScrollSpeed();
@@ -1352,6 +1352,7 @@ document.addEventListener('DOMContentLoaded', function() {
     requestAnimationFrame(smoothScroll);
   });
 </script>
+
 
 
 
