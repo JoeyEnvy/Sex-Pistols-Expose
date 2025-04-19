@@ -4097,7 +4097,7 @@ cursor: pointer;
 
 #members-section {
 
-    margin-top: -20vh;
+    margin-top: 0vh;
     z-index: 100000;
 
 }
@@ -4798,7 +4798,7 @@ bottom: -10px;
 
 #members-section {
 
-    margin-top: -10vh;
+    margin-top: 0vh;
     z-index: 100000;
 
 }
