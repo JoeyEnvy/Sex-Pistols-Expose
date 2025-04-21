@@ -4064,6 +4064,17 @@ cursor: pointer;
   }
 
   /* info480 media */
+
+ h2.info-title {
+    display: none !important;
+  }
+
+  h2.additional-title {
+    display: block !important;
+    z-index: 100000 !important;
+    position: relative !important;
+  }
+
   .info-container {
     margin-top: 0vh;
     width: 95%;
@@ -4703,14 +4714,25 @@ bottom: -10px;
     font-size: 14px;
   }
 
-  /* Info section */
-  #info-section {
-    margin-top: 0px;
+  /* Info320  section */
+
+
+
+
+h2.info-title {
+    display: none !important;
+    font-size: 0.8em;
+    text-align: center;s
   }
 
-  .info-title {
-    font-size: 0.8em;
-    text-align: center;
+  h2.additional-title {
+    display: block !important;
+    z-index: 100000 !important;
+    position: relative !important;
+  }
+
+  #info-section {
+    margin-top: 0px;
   }
 
   .video-container {
