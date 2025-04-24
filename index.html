@@ -930,165 +930,145 @@
       height="400"
     />
 
-    <div class="punk-contact-form-wrapper">
-      <h1 class="punk-contact-title" style="font-family: 'Punkaholic';" itemprop="headline">
-        Contact Us
-      </h1>
-      <meta itemprop="name" content="Sex Pistols Expose Contact Form" />
-      <meta itemprop="description" content="Contact Sex Pistols Expose to book the band or for any inquiries." />
+   <div class="punk-contact-form-wrapper">
+  <h1 class="punk-contact-title" style="font-family: 'Punkaholic';" itemprop="headline">
+    Contact Us
+  </h1>
+  <meta itemprop="name" content="Sex Pistols Expose Contact Form" />
+  <meta itemprop="description" content="Contact Sex Pistols Expose to book the band or for any inquiries." />
 
-      <div class="form-and-widget-container">
-        <!-- Form -->
-        <form
-          id="punk-rock-contact-form"
-          class="punk-rock-form-container"
-          action="https://formsubmit.co/ajax/nvsofficialuk@gmail.com"
-          method="POST"
-        >
-          <!-- Hidden Fields -->
-          <input type="hidden" name="_subject" value="New Message from Sex Pistols Expose" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_cc" value="mr_mozworth@yahoo.co.uk,c.fear.907@gmail.com" />
+  <div class="form-and-widget-container">
+    <!-- Form -->
+    <form
+      id="punk-rock-contact-form"
+      class="punk-rock-form-container"
+      action="https://script.google.com/macros/s/AKfycbwPYaOTxfed8K1rtUK_XNuzeBHFfNUfUzRZNcbV9P_RYp1Dp5dYigUxN7HYO6S6HhvkVA/exec"
+      method="POST"
+    >
+      <!-- Honeypot Field -->
+      <div style="display:none;" aria-hidden="true">
+        <label for="random-hp-field">Leave this field empty:</label>
+        <input type="text" name="random-hp-field" id="random-hp-field" tabindex="-1" autocomplete="off" />
+      </div>
 
-          <!-- Improved Honeypot Field (Hidden) -->
-          <div style="display:none;" aria-hidden="true">
-            <label for="random-hp-field">Leave this field empty:</label>
-            <input type="text" name="random-hp-field" id="random-hp-field" tabindex="-1" autocomplete="off" />
-          </div>
+      <!-- Form Fields -->
+      <div class="punk-form-row">
+        <div class="punk-form-group">
+          <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
+          <input type="text" id="punk-first-name" name="first-name" required />
+        </div>
+        <div class="punk-form-group">
+          <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
+          <input type="text" id="punk-last-name" name="last-name" required />
+        </div>
+      </div>
+      <div class="punk-form-group">
+        <label for="punk-email" class="punk-sex-pistols-label">Email</label>
+        <input type="email" id="punk-email" name="email" required />
+      </div>
+      <div class="punk-form-group">
+        <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
+        <textarea id="punk-message" name="message" required></textarea>
+      </div>
 
-          <!-- Form Fields -->
-          <div class="punk-form-row">
-            <div class="punk-form-group">
-              <label for="punk-first-name" class="punk-sex-pistols-label">First Name</label>
-              <input type="text" id="punk-first-name" name="first-name" required />
-            </div>
-            <div class="punk-form-group">
-              <label for="punk-last-name" class="punk-sex-pistols-label">Last Name</label>
-              <input type="text" id="punk-last-name" name="last-name" required />
-            </div>
-          </div>
-          <div class="punk-form-group">
-            <label for="punk-email" class="punk-sex-pistols-label">Email</label>
-            <input type="email" id="punk-email" name="email" required />
-          </div>
-          <div class="punk-form-group">
-            <label for="punk-message" class="punk-sex-pistols-label">Write a Message</label>
-            <textarea id="punk-message" name="message" required></textarea>
-          </div>
+      <!-- Math Question -->
+      <div class="punk-form-group">
+        <label id="math-question-label" for="math-question-input" class="punk-sex-pistols-label"></label>
+        <input type="text" id="math-question-input" name="math-question-input" required autocomplete="off" />
+        <input type="hidden" id="math-question-answer" name="math-question-answer" />
+      </div>
 
-          <!-- Randomized Math Question -->
-          <div class="punk-form-group">
-            <label id="math-question-label" for="math-question-input" class="punk-sex-pistols-label">
-              <!-- The question will be inserted here by JS -->
-            </label>
-            <input type="text" id="math-question-input" name="math-question-input" required autocomplete="off" />
-            <input type="hidden" id="math-question-answer" name="math-question-answer" />
-          </div>
+      <!-- Google reCAPTCHA v3 -->
+      <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
 
-          <button type="submit" class="punk-submit-button">Submit</button>
-          <!-- Loader -->
-          <div id="punk-loader" class="punk-loader"></div>
-        </form>
+      <!-- Submit Button -->
+      <button type="submit" class="punk-submit-button">Submit</button>
+      <div id="punk-loader" class="punk-loader"></div>
+    </form>
 
-        <!-- Thank You Message -->
-        <p id="punk-thank-you" class="punk-thank-you">Thank you! Your message has been sent.</p>
+    <!-- Thank You Message -->
+    <p id="punk-thank-you" class="punk-thank-you">Thank you! Your message has been sent.</p>
 
-        <!-- Facebook Embed -->
-        <div class="shift-right-facebook-box">
-          <div class="widget-column">
-            <div class="ents-widget">
-              <iframe
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=400&height=550&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                width="400"
-                height="550"
-                style="border: none; overflow: hidden;"
-                scrolling="no"
-                frameborder="0"
-                allowfullscreen="true"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                title="Sex Pistols Expose Facebook Timeline"
-              ></iframe>
-            </div>
-          </div>
+    <!-- Facebook Embed -->
+    <div class="shift-right-facebook-box">
+      <div class="widget-column">
+        <div class="ents-widget">
+          <iframe
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsexpistolsexpose&tabs=timeline&width=400&height=550"
+            width="400"
+            height="550"
+            style="border: none; overflow: hidden;"
+            scrolling="no"
+            frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            title="Sex Pistols Expose Facebook Timeline"
+          ></iframe>
         </div>
       </div>
     </div>
   </div>
-</section>
-</main>
+</div>
 
-</body>
-
+<!-- reCAPTCHA Script -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LfYdSMrAAAAAB-fffKplhN34A6dORIMlItcaquI"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+  grecaptcha.ready(function () {
+    grecaptcha.execute('6LfYdSMrAAAAAB-fffKplhN34A6dORIMlItcaquI', { action: 'submit' }).then(function (token) {
+      document.getElementById('g-recaptcha-response').value = token;
+    });
+  });
+</script>
+
+<!-- Form Handler -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('punk-rock-contact-form');
   const thankYou = document.getElementById('punk-thank-you');
   const loader = document.getElementById('punk-loader');
   const submitBtn = form.querySelector('.punk-submit-button');
 
-  // --- Randomized Math Question ---
+  // Math Question
   const mathLabel = document.getElementById('math-question-label');
-  const mathInput = document.getElementById('math-question-input');
   const mathAnswerField = document.getElementById('math-question-answer');
-  // Generate two random numbers between 1 and 10
   const num1 = Math.floor(Math.random() * 10) + 1;
   const num2 = Math.floor(Math.random() * 10) + 1;
-  const mathAnswer = num1 + num2;
   mathLabel.textContent = `What is ${num1} plus ${num2}?`;
-  mathAnswerField.value = mathAnswer;
+  mathAnswerField.value = num1 + num2;
 
-  // Function to block submission
-  function blockSubmission(message) {
-    alert(message);
-    loader.style.display = 'none';
-    submitBtn.disabled = false;
-    return false;
-  }
+  const formLoadTime = Date.now();
 
-  // --- Add Form Load Time ---
-  const formLoadTime = Date.now(); // Capture time when form is loaded
-
-  form.addEventListener('submit', async function(e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
     const formData = new FormData(form);
 
-    // --- Improved Honeypot Check ---
-    const honeypotField = document.querySelector('input[name="random-hp-field"]'); // Target honeypot
-    if (honeypotField && honeypotField.value !== '') {
-      return blockSubmission('Honeypot triggered.');
+    // Honeypot
+    if (formData.get('random-hp-field')) {
+      return alert('Bot detected.');
     }
 
-    // --- Time-Based Submission Check ---
-    const submissionTime = Date.now();
-    const timeToFill = submissionTime - formLoadTime;
-
-    if (timeToFill < 2000) { // If form filled in less than 2 seconds
-      return blockSubmission('Please take a moment to fill out the form.');
+    // Time check
+    if (Date.now() - formLoadTime < 2000) {
+      return alert('Please take a moment to fill out the form.');
     }
 
-    // --- Link Blocking ---
-    const message = formData.get('message');
-    if (/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g.test(message)) {
-      return blockSubmission('Links are not allowed in the message.');
+    // Message content check
+    if (/(http(s)?:\/\/)/i.test(formData.get('message'))) {
+      return alert('Links are not allowed in the message.');
     }
 
-    // --- Math Question Check ---
-    const userMathAnswer = (formData.get('math-question-input') || '').trim();
-    const correctMathAnswer = mathAnswerField.value; // Get correct answer from hidden field
-    if (userMathAnswer !== correctMathAnswer.toString()) {
-      return blockSubmission('Please answer the math question correctly.');
+    // Math validation
+    if (formData.get('math-question-input') !== formData.get('math-question-answer')) {
+      return alert('Please answer the math question correctly.');
     }
 
-    // Show loader and disable button
     loader.style.display = 'block';
     submitBtn.disabled = true;
 
-    // --- Send AJAX POST to FormSubmit ---
     try {
       const response = await fetch(form.action, {
         method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' }
+        body: formData
       });
 
       loader.style.display = 'none';
@@ -1097,14 +1077,18 @@ document.addEventListener('DOMContentLoaded', function() {
         form.style.display = 'none';
         thankYou.style.display = 'block';
       } else {
-        blockSubmission('There was an error sending your message. Please try again.');
+        alert('There was an error sending your message. Please try again.');
+        submitBtn.disabled = false;
       }
-    } catch (error) {
-      blockSubmission('There was an error sending your message. Please try again.');
+    } catch (err) {
+      alert('There was an error sending your message. Please try again.');
+      loader.style.display = 'none';
+      submitBtn.disabled = false;
     }
   });
 });
 </script>
+
 
 
 
