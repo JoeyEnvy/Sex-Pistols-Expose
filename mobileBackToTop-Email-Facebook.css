@@ -1,0 +1,157 @@
+/* BACKTOTOP */ 
+
+
+
+/* Global Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------------------------
+   Common Back-to-Top Button Styles
+-------------------------------------------- */
+a.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000; /* Ensure the button is above other elements */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* --------------------------------------------
+   Desktop Back-to-Top Button
+   (Uses the image at a larger size)
+-------------------------------------------- */
+a.back-to-top.desktop {
+  display: none; /* Hidden by default; shown via media query */
+}
+
+a.back-to-top.desktop > img {
+  width: 240px; /* Larger image for desktop */
+  height: auto;
+}
+
+/* --------------------------------------------
+   Mobile Back-to-Top Button
+   (Uses the same image but smaller)
+-------------------------------------------- */
+a.back-to-top.mobile {
+  display: none; /* Hidden by default; shown via media query */
+}
+
+a.back-to-top.mobile > img {
+  
+  width: 75px; /* Smaller image for mobile */
+  height: auto;
+}
+
+/* --------------------------------------------
+   Media Queries
+-------------------------------------------- */
+
+/* Show desktop button on screens 768px and wider */
+@media (min-width: 768px) {
+  a.back-to-top.desktop {
+    display: block;
+  }
+  a.back-to-top.mobile {
+    display: none;
+  }
+}
+
+/* Show mobile button on screens 767px and below */
+@media (max-width: 767px) {
+  a.back-to-top.desktop {
+    display: none;
+  }
+  a.back-to-top.mobile {
+    display: block;
+  }
+}
+
+
+
+
+
+/* mobile bottom page icons facebook and email */ 
+
+
+
+/* Common styles for social icons */
+.unique-social {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Facebook Icon */
+.facebook-icon {
+  position: fixed;
+  bottom: 20px; /* Space from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the icon exactly */
+  width: 120px; /* Increased size (2x) */
+  height: 120px; /* Increased size (2x) */
+  margin-right: 0; /* No margin between icons */
+}
+
+/* Email Icon */
+.email-icon {
+  position: fixed;
+  bottom: 20px; /* Space from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the icon exactly */
+  width: 120px; /* Increased size (2x) */
+  height: 120px; /* Increased size (2x) */
+}
+
+/* Facebook & Email Icon Images */
+.unique-social img {
+  width: 100%; /* Fill the container with image */
+  height: 100%; /* Fill the container with image */
+  border-radius: 50%; /* Circular image */
+}
+
+/* Mobile View Styling */
+@media (max-width: 767px) {
+  /* Show the icons only on mobile */
+  .facebook-icon, .email-icon {
+    display: inline-block; /* Display both side by side */
+  }
+
+  .facebook-icon {
+    margin-right: 0; /* Ensure no margin between the icons */
+  }
+
+  .email-icon {
+    margin-left: 0; /* Ensure no margin between the icons */
+  }
+
+  /* Adjust icon size and positioning on mobile */
+  .facebook-icon, .email-icon {
+    width: 60px;  /* Larger size on mobile */
+    height: 60px; /* Larger size on mobile */
+  }
+
+  /* Ensure icons are touching */
+  .facebook-icon {
+    margin-left: 25px; /* Small negative margin to make them touch */
+  }
+
+  .email-icon {
+    margin-left: -20px; /* Small negative margin to make them touch */
+  }
+}
+
+/* Desktop Styling: Hide the icons */
+@media (min-width: 768px) {
+  .facebook-icon, .email-icon {
+    display: none; /* Hide icons on desktop */
+  }
+}
+

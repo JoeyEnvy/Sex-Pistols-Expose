@@ -1,0 +1,530 @@
+/* Max-width: 1024px */
+@media (max-width: 1024px) {
+  /* Navbar styles */
+  nav ul li a {
+    font-size: 18px;
+  }
+
+  .facebook-button span {
+    display: none;
+  }
+
+  .facebook-button img {
+    height: 28px;
+  }
+
+  .band-name img {
+    max-height: calc(45px - (1024px - 100vw) * 0.005);
+  }
+
+  /* Hero1024 */
+  .hero-section {
+    margin-top: -150px;
+    padding: 20px 15px 0;
+  }
+
+  .logo-container {
+    width: 200%;
+    margin-left: 50px;
+  }
+
+  .logo-container img {
+    max-width: 70%;
+  }
+
+  .main-title {
+    font-size: 70px;
+  }
+
+  .sub-title-1,
+  .sub-title-2 {
+    font-size: 42px;
+  }
+
+  .sub-title-3 {
+    font-size: 32px;
+  }
+
+  .additional-title {
+    font-size: 64px;
+    margin-bottom: 80px;
+  }
+
+  .button-slideshow {
+    margin: 25vh auto 3vh; /* Increased top margin */
+  }
+
+  .slide-button {
+    font-size: 24px;
+    width: 180px;
+    height: 180px;
+  }
+
+  /*info1024 media queries */
+
+  #info-section {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: relative;
+    overflow: visible;
+  }
+
+  .info-container {
+    width: 90%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .video-container {
+    height: 60vh;
+    overflow: visible;
+  }
+
+  .video-controls {
+    flex-direction: column;
+    bottom: -220px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 1000;
+    overflow: visible;
+  }
+
+  #playPauseButton,
+  #changeVideoButton,
+  #progressBar,
+  .volume-container,
+  .speed-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .info-columns {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 240px;
+    margin-bottom: 100px;
+    position: relative;
+  }
+
+  .info-columns::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/Section 2 Passport.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .info-left-column,
+  .info-right-column {
+    display: none;
+  }
+
+  .info-center-column {
+    flex-basis: 100%;
+    height: auto;
+    max-height: none;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .info-top-image,
+  .info-bottom-image,
+  .middle-image-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 180px;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .info-middle-image.punk-navigation-trigger {
+    width: 95%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  .info-download-icon {
+    position: static;
+    width: 60px;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  /*members1024 */
+
+#members-section {
+
+    margin-top: -15vh;
+    z-index: 100000;
+
+}
+
+  .members-grid {
+  }
+
+  .members-content {
+    width: 80%; /* Increased from default width */
+  }
+
+  .members-title {
+    font-size: 3em; /* Increased size */
+    margin-top: -10vh; /* Moved up by 10vh */
+  }
+
+
+/* quotes1024 */ 
+
+
+.quote-slider {
+        margin-top: 40px;
+    }
+
+    .quote p {
+        font-size: 24px;
+    }
+
+    .quote .author {
+        font-size: 48px;
+    }
+
+
+  /* friends1024 */
+
+  .friends-pistols-title {
+    font-size: 4rem;
+  }
+
+  /* gigs2024 */
+
+  #gigs {
+    padding: 80px 4% 40px;
+  }
+
+  .gigs-main-title {
+    font-size: 1.8em;
+  }
+
+  .safety-pin {
+    width: 100px;
+  }
+
+  .left-pin {
+    left: calc(50% - 320px);
+  }
+
+  .right-pin {
+    right: calc(50% - 320px);
+  }
+
+  .bandsintown-widget {
+    max-width: 85%;
+  }
+
+  .bit-widget-initializer {
+    font-size: 28px !important;
+  }
+
+  /* videos1024 */
+
+  .videos-container {
+    flex-direction: column;
+  }
+
+  .video-player-container,
+  .video-list-column {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .video-list-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+
+  .video-list-item {
+    width: 48%;
+    margin-bottom: 1rem;
+  }
+
+  /*gallery1024 */
+
+  .gallery-section {
+        min-height: 100vh;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .gallery-left-column,
+    .gallery-right-column {
+        width: 100%;
+        height: auto;
+    }
+
+    .gallery-main-title {
+        font-size: 1.8em;
+        padding: 12px 0;
+    }
+
+    .large-preview {
+        width: 90%;
+        height: 50vh;
+        margin: 3% auto;
+    }
+
+    .carousel-container {
+        width: 95%;
+    }
+
+    .carousel {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 10px 0;
+    }
+
+    .carousel-image {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+    }
+
+    .carousel-button {
+        top: 85%;
+    }
+
+    .carousel-button.prev {
+        left: 2%;
+    }
+
+    .carousel-button.next {
+        right: 2%;
+    }
+
+    .right-column-wall {
+        width: 95%;
+        height: 40vh;
+    }
+
+    .right-column-previews {
+        width: 95%;
+    }
+
+    .preview-container {
+        width: 48%;
+    }
+
+    .preview-image {
+        height: 18vh;
+    }
+
+    .preview-button {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .fullscreen-image {
+        max-width: 95%;
+        max-height: 95%;
+    }
+
+  /* contact1024 section part 1 and social */
+
+#contact {
+        min-height: 100vh;
+    }
+
+    .contact-information {
+        width: 90%;
+    }
+
+    .contact-left-column,
+    .contact-right-column,
+    .contact-middle-column {
+        width: 30%;
+    }
+
+    .queen-image {
+        width: 80%;
+        max-width: 80%;
+    }
+
+    .passport-image {
+        width: 160%;
+        max-width: 160%;
+    }
+
+    .contact-section-details {
+        width: 80%;
+        padding: 30px 40px;
+    }
+
+    .contact-info-item span {
+        font-size: 1.1rem;
+    }
+
+    .additional-section {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .half-image {
+        height: 80vh;
+        width: 100%;
+    }
+
+    .facebook-embed {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .facebook-embed iframe {
+        width: 100%;
+        height: 500px;
+    }
+
+    .messenger-link img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .messenger-link span {
+        font-size: 0.9rem;
+    }
+
+  /* contactform1024 */
+
+
+
+
+
+
+  #punk-contact-page {
+        min-height: 180vh;
+        padding-top: 50px;
+        padding-bottom: 130px;
+        background-size: cover;
+        background-position: center top;
+    }
+
+    .punk-contact-background {
+        min-height: 180vh;
+    }
+
+    .punk-contact-form-wrapper {
+        width: 90vw;
+        margin-right: 0;
+        margin-top: 10vh;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -15%);
+    }
+
+
+ .punk-form-group label {
+        margin-left: 100px; /* Add margin to the left of the label */
+       
+    }
+
+
+    .punk-contact-title {
+        font-size: 6rem;
+        margin-bottom: 20px;
+    }
+
+    .form-and-widget-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .punk-rock-form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 800px;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .punk-form-row {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .punk-form-group {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .punk-sex-pistols-label {
+        flex: 0 0 150px;
+        margin-right: 15px;
+    }
+
+    .punk-form-group input,
+    .punk-form-group textarea {
+        flex: 1 1 auto;
+        width: auto;
+        max-width: calc(100% - 190px); /* Adjusted to account for label width and right margin */
+        margin-right: 25vh;
+        min-width: 400px;
+    }
+
+    .widget-column {
+        width: 100%;
+        max-width: 400px;
+    }
+
+.punk-form-group label {
+        margin-left: 0px; /* Add margin to the left of the label */
+        
+    }
+
+
+    .ents-widget {
+        width: 100%;
+    }
+
+    .punk-submit-button {
+        width: 20vw;
+        font-size: 1rem;
+    }
+
+
+  /*YELLOWLOGO1024 */
+
+  .yellow-punk-pistol-logo-container {
+    height: 40vh;
+  }
+
+  .punk-pistol-logo {
+    max-height: 55%;
+  }
+
+
+}
+
+

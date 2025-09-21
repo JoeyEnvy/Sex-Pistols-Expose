@@ -1,0 +1,624 @@
+/* Max-width: 768px */
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-image: url('images/Mobile/1.jpg');
+    background-attachment: scroll; /* Optional: change to scroll for better mobile performance */
+  }
+
+  /* Navbar styles */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.show {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  nav ul.show li {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul.show li a {
+    font-size: 24px;
+    color: #ffef1d;
+    display: block;
+    padding: 10px 0;
+  }
+
+  .facebook-button {
+    order: 1;
+  }
+
+  .band-name {
+    order: 2;
+  }
+
+  .hamburger-menu {
+    display: block;
+    order: 3;
+    font-size: 24px;
+  }
+
+  .band-name img {
+    max-height: calc(45px * 1.25);
+    min-height: calc(45px * 1.25);
+  }
+
+  /* Hero768 */
+  .hero-section {
+    margin-top: -120px;
+    padding: 15px 10px 0;
+  }
+
+  .logo-container img {
+    max-width: 90%;
+  }
+
+  .logo-container {
+    width: 175%;
+    margin-left: 60px;
+  }
+
+  .main-title {
+    font-size: 60px;
+  }
+
+  .sub-title-1,
+  .sub-title-2 {
+    font-size: 36px;
+  }
+
+  .sub-title-3 {
+    font-size: 28px;
+  }
+
+  .additional-title {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .button-slideshow {
+    margin: 20vh auto 2vh; /* Increased top margin */
+    width: 250px;
+  }
+
+  .slide-button {
+    font-size: 22px;
+    width: 160px;
+    height: 160px;
+    padding: 12px;
+  }
+
+  .arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .arrow.left {
+    left: -45px;
+  }
+
+  .arrow.right {
+    right: -45px;
+  }
+
+  /* info768 media */
+
+  .video-container {
+    height: 50vh;
+    margin-bottom: 200px; /* Further increased space for controls below */
+  }
+
+  .video-controls {
+    flex-direction: column;
+    bottom: -225px; /* Moved even further down */
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    height: 50%;
+  }
+
+  #playPauseButton,
+  #changeVideoButton,
+  #progressBar,
+  .volume-container,
+  .speed-container {
+    height: 60%;
+    width: 70%; /* Further scaled down */
+    margin-bottom: 6px;
+  }
+
+  #playPauseButton,
+  #changeVideoButton {
+    font-size: 0.5em; /* Smaller font */
+    padding: 6px 8px; /* Smaller padding */
+    font-weight: thins;
+  }
+
+  .info-columns {
+    margin-top: 75px;
+    flex-direction: column;
+    height: auto;
+    gap: 30px; /* Reduced gap */
+    margin-bottom: 50px; /* Further reduced margin beneath the middle container */
+  }
+
+  .info-left-column {
+    display: none;
+  }
+
+  .info-right-column {
+    width: 100%;
+  }
+
+  .info-right-image {
+    width: 120%; /* Increase the image size by 20% */
+    height: auto;
+    max-width: none;
+    transform: translateX(-10%); /* Center the enlarged image */
+  }
+
+  .info-center-column {
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+    position: static;
+    transform: none;
+  }
+
+  .info-top-image,
+  .info-bottom-image,
+  .middle-image-container {
+    position: static;
+    transform: none;
+    width: 150px;
+    max-height: 150px;
+    margin: 12px 0; /* Slightly reduced margin */
+  }
+
+  .info-download-icon {
+    position: relative;
+    left: 50px;
+    top: -60px; /* Moved up by 30px */
+    width: 70px;
+    margin-top: 20px;
+  }
+
+  /* members768 */
+
+  /* Members section */
+  #members-section {
+    margin-top: -17.5vh;
+  }
+
+  /* Information paragraphs */
+  .members-content {
+    width: 70%; /* Increased width */
+    border: 2px solid black;
+  }
+  .members-title {
+    font-size: 2em !important; /* Increased size */
+  }
+   
+
+
+/* quoteslider768 */ 
+
+ .quote-slider {
+        margin-top: 30px;
+    }
+
+    .quote p {
+        font-size: 22px;
+    }
+
+    .quote .author {
+        font-size: 42px;
+    }
+
+
+
+
+  /* friends768 */
+
+  .friends-pistols-title {
+    font-size: 3.5rem;
+  }
+
+  /* gigs768 */
+
+  #gigs {
+    padding: 60px 3% 30px;
+  }
+
+  .gigs-main-title {
+    font-size: 1.6em;
+  }
+
+  .safety-pin {
+    width: 80px;
+  }
+
+  .left-pin {
+    left: calc(50% - 260px);
+  }
+
+  .right-pin {
+    right: calc(50% - 260px);
+  }
+
+  .bandsintown-widget {
+    max-width: 90%;
+    border-width: 15px;
+  }
+
+  .bit-widget-initializer {
+    font-size: 24px !important;
+  }
+
+  .gigs-poster-column,
+  .gigs-right-column {
+    width: 100%;
+  }
+
+  .gigs-social-column {
+    margin-top: 20px;
+  }
+
+  .more-gigs-image {
+    right: calc(10px + 150px);
+  }
+
+  /* videos768 */
+
+  .videos-section {
+    min-height: 100vh;
+  }
+
+  .videos-title {
+    font-size: 1.5em;
+  }
+
+  .video-player-container {
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-video {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+  }
+
+  .main-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+  }
+
+  #changeVideo {
+    order: 1;
+    margin: 10px 0;
+  }
+
+  .video-description {
+    order: 2;
+    position: static;
+    font-size: 0.7em;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    margin: 10px auto;
+    transform: none;
+  }
+
+  .video-list-column {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
+  }
+
+  .main-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid yellow; /* Ensuring the yellow border is present */
+    border-radius: 125px; /* Maintaining the border radius from the original style */
+  }
+
+  /* gallery768 */
+
+  .gallery-purple-divider {
+    height: 100px;
+  }
+
+  .gallery-burgundy-divider {
+    height: 400px;
+  }
+
+  .gallery-main-title {
+    font-size: 1.6em;
+  }
+
+  .large-preview {
+    height: 40vh;
+  }
+
+  .carousel-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .carousel-button {
+    top: 85%;
+  }
+
+  .right-column-wall {
+    height: 35vh;
+  }
+
+  .preview-image {
+    height: 15vh;
+  }
+
+  /* contact768 */
+
+    #contact {
+        min-height: 50vh; /* Adjust as needed */ 
+        z-index: 50;
+     
+    }
+
+    .contact-information {
+        margin-top: 2.5vh;
+        width: 90%; /* Increase width to use more screen space */
+    }
+
+    .contact-left-column,
+    .contact-right-column {
+        width: 25%; /* Slightly reduce side column widths */
+    }
+
+    .contact-middle-column {
+        width: 40%; /* Keep middle column slightly larger */
+    }
+
+    .queen-image {
+        width: 80%; /* Reduce queen image size */
+        max-width: 80%;
+    }
+
+    .passport-image {
+        width: 160%; /* Keep passport image larger, but slightly reduced */
+        max-width: none;
+    }
+
+    .contact-section-details {
+        width: 80%; /* Increase width for better readability */
+        padding: 30px 25px; /* Reduce padding */
+    }
+
+    .contact-info-item {
+        max-width: 100%; /* Allow full width */
+    }
+
+    .contact-info-item span {
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    .additional-section {
+        height: 50vh; /* Allow height to adjust based on content */
+        margint-top: -15vh;
+
+    }
+
+    .half-image {
+        height: 60vh; /* Reduce height */
+        width: 100%; /* Full width */
+        opacity: 0.5;
+    }
+
+    .facebook-embed {
+        top: 50%; /* Center vertically */
+        width: 300px; /* Slightly reduce width */
+    }
+
+    .facebook-embed iframe {
+        width: 300px; /* Match the container width */
+        height: 500px; /* Slightly reduce height */
+    }
+
+    .messenger-link img {
+        width: 80px; /* Reduce size */
+        height: 80px;
+    }
+
+    .messenger-link span {
+        font-size: 0.9rem; /* Slightly reduce font size */
+    }
+
+  /* contact768 form, logo and footer */
+
+  /* ContactForm768 */
+
+
+
+
+ /* Ensure the contact page itself has enough space */
+#punk-contact-page {
+    padding: 100px 15px 60px;
+    height: 165vh; /*background important */
+    max-height: 165vh; /*background important */
+    min-height: 165vh; /*background important */
+    position: relative;
+    overflow: hidden; /* Prevent scrollbar */
+}
+
+.punk-contact-title {
+    margin-top: 250px;
+    font-size: 5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 3; /* Ensure title is above overlay */
+}
+
+.punk-contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 165vh;  /*background important */
+    max-height: 165vh; /*background important */
+    min-height: 165vh; /*background important */
+    overflow: hidden;
+}
+
+.punk-contact-background-image {
+    width: 100%;
+    height: 165vh; /*background important */
+    max-height: 165vh; /*background important */
+    min-height: 165vh; /*background important */
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0; /* Ensure image is at the bottom layer */
+}
+
+.punk-contact-form-wrapper {
+    width: 90vw;
+    margin-top: -30vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 165vh; /*background important */
+    max-height: 165vh; /*background important */
+    min-height: 165vh; /*background important */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    z-index: 2; /* Above overlay, below title */
+}
+
+    .punk-form-group label {
+        margin-left: 100px; /* Add margin to the left of the label */
+    }
+
+    .punk-form-group {
+        margin-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .punk-form-group input,
+    .punk-form-group textarea {
+        width: 100%;
+        max-width: 500px;
+        padding: 12px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        min-width: 325px;
+        margin-left: 0px;
+    }
+
+    .punk-submit-button {
+        width: 20vh;
+        height: 7.5vh;
+        font-size: 1.25rem;
+        margin-top: 20px;
+        align-self: center;
+    }
+
+    .widget-column {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .ents-widget {
+        width: 90%;
+        height: 650px; 
+        margin-right: 50px;
+        margin-top: 25px;
+    }
+
+    .form-and-widget-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+  /* YELLOWlogo768 */
+
+.yellow-punk-pistol-logo-container {
+    height: 30vh;
+  }
+
+  .punk-pistol-logo {
+    max-height: 50%;
+  }
+
+  /* footer768 */
+
+  /* Footer */
+  .punk-footer {
+    margin-bottom: -60vh;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    flex: none;
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+
+  .footer-middle ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .footer-middle li {
+    width: 48%; /* Adjust as needed for two columns */
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .creator-info {
+    text-align: center;
+  }
+}

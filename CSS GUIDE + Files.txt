@@ -1,0 +1,30 @@
+Sex Pistols CSS for Index.html >>>>>>>>>> C:\Users\User\Desktop\Sex Pistols Expose - Website\Sex-Pistols-Expose\css
+
+---------------- Desktop + Some Mobile Queries Css
+
+navbar-hero-info.css
+videoslidertop-andmobile.css
+members-info-blue-divider.css
+famousfriends-gigs&mobile.css
+yellow-videos-gallery.css
+contactPart1.css
+contactForm.css
+logoDivider+Footer.css
+
+---------------- Purely Mobile Queries CSS >>>>>>>>>>>> C:\Users\User\Desktop\Sex Pistols Expose - Website\Sex-Pistols-Expose\css\purelyMobile
+
+mobile1024.css
+mobile768full.css
+mobile480full.css
+mobile320full.css
+mobileBackToTop-Email-Facebook.css
+
+
+
+
+
+FOR BOTH Shop.html + Index.html
+
+shopDropDown-Index+Shop.css
+
+

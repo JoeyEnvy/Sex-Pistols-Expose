@@ -1,0 +1,695 @@
+@font-face {
+    font-family: 'Punkaholic';
+    src: url('Fonts/Punkaholic D.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sex Pistols';
+    src: url('Fonts/Sex_Pistols.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mailart Rubberstamp';
+    src: url('Fonts/MailartRubberstamp-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('Fonts/chinese rocks rg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Chinese Rocks', sans-serif;
+    overflow-x: hidden;
+   scroll-behavior: auto !important;
+
+}
+
+
+
+nav ul {
+    display: none;
+}
+
+nav ul.show {
+    display: block;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffef1d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 24px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ed5e94;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: #ffef1d;
+    z-index: 1001;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffef1d;
+}
+
+/* Global Styles */
+html, body {
+    height: 100%;
+    font-family: 'Chinese Rocks', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffef1d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 24px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ed5e94;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: #ffef1d;
+    z-index: 1001;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffef1d;
+}
+
+/* Facebook Button */
+.facebook-button {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #3B5998;
+    margin: 0 25px 0 5px; /* Increased right margin */
+    overflow: hidden;
+}
+
+.facebook-button img {
+    height: 22px; /* Slightly smaller */
+    margin-right: 5px;
+}
+
+.facebook-button span {
+    font-size: 14px;
+}
+
+/* Band Name */
+.band-name {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 70px;
+    padding: 0 10px;
+}
+
+.band-name img {
+    max-height: 70px; /* Slightly smaller */
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    margin: 0 5px;
+}
+
+/* Parallax background */
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/WEBP Images All/Mark 2_edited.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* Main content */
+main {
+    position: relative;
+    z-index: 1;
+    padding-top: 0;
+}
+
+/* Custom Text Styles */
+.sex-pistols {
+    font-family: 'Sex Pistols', sans-serif;
+    color: #ffef1d;
+    font-size: 28px;
+    background-color: #ff0000;
+    padding: 5px;
+}
+
+.expose {
+    font-family: 'Sex Pistols', sans-serif;
+    color: #3a6ff9;
+    font-size: 32px;
+    background-color: white;
+    padding: 5px;
+}
+
+/* Hero Section */
+.hero-section {
+    margin-top: -125px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 20px 0;
+    position: relative;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 175%;
+    margin-left: 150px;
+    padding: 2px 0; /
+    position: relative;
+    z-index: 2;
+}
+
+.logo-container img {
+    max-width: 60%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Title Styles */
+.main-title, .sub-title-1, .sub-title-2, .sub-title-3 {
+    font-family: 'Punkaholic', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 5px 0;
+    width: 100%;
+}
+
+.main-title {
+    font-size: 80px;
+}
+
+.title {
+    font-family: 'Punkaholic', sans-serif;
+    color: white;
+    font-size: 56px;
+    text-align: center;
+    line-height: 1.3;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    max-width: 400px;
+    margin: 20px auto 80px auto;
+    word-wrap: break-word;
+}
+
+/* Media Queries */
+
+/* For screens 1024px and smaller (tablets in landscape) */
+@media screen and (max-width: 1024px) {
+    .title {
+        font-size: 48px;
+        line-height: 1.4;
+        margin-bottom: 70px;
+    }
+}
+
+/* For screens 768px and smaller (tablets in portrait) */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 40px;
+        line-height: 1.4;
+        margin-bottom: 60px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* For screens 480px and smaller (large smartphones) */
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 32px;
+        line-height: 1.5;
+        margin-bottom: 50px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+/* For screens 320px and smaller (small smartphones) */
+@media screen and (max-width: 320px) {
+    .title {
+        font-size: 24px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+
+
+.sub-title-1, .sub-title-2 {
+    font-size: 48px;
+}
+
+.sub-title-3 {
+    font-size: 36px;
+}
+
+.sub-title-2 {
+    font-family: 'Mailart Rubberstamp', sans-serif;
+}
+
+/* Additional Title (Slider Quote) */
+.additional-title {
+    font-family: 'Punkaholic', sans-serif;
+    color: white;
+    white-space: pre-line;
+    text-align: center;
+    position: relative;
+    margin-top: 2vh;
+    margin-bottom: 0;
+    font-size: 72px;
+    line-height: 1.2;
+    opacity: 1;
+    margin-bottom: 100px;
+    transition: opacity 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Button Slideshow */
+.button-slideshow {
+    position: relative;
+    overflow: visible;
+    width: 300px;
+    margin: 25vh auto 4vh; /* Drastically increased top margin for screens above 768px */
+    text-align: center;
+}
+
+.slide-button {
+    font-family: 'Sex Pistols', sans-serif;
+    font-size: 28px;
+    padding: 15px;
+    background-color: #ffef1d;
+    color: #c32500;
+    border: 3px solid #3a6ff9;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    width: 200px;
+    height: 200px;
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.slide-button.active {
+    display: inline-block;
+}
+
+.slide-button:hover {
+    background-color: #3a6ff9;
+    color: #ffef1d;
+    transform: scale(1.1);
+    transition: none;
+}
+
+/* Specific button styles */
+.slide-button[data-target="#gigs"] {
+    color: #ed5e94;
+}
+
+.slide-button[data-target="#videos"] {
+    background-color: #ff6b6b;
+    color: #ffef1d;
+}
+
+.slide-button[data-target="#contact"] {
+    color: #ff0000;
+}
+
+/* Arrow Styles */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #ffef1d;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffef1d;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.arrow.left {
+    left: -60px;
+}
+
+.arrow.right {
+    right: -60px;
+}
+
+.arrow.left::after {
+    content: '<';
+    margin-right: 2px;
+}
+
+.arrow.right::after {
+    content: '>';
+    margin-left: 2px;
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animation */
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.sliding {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Click Hint */
+.click-hint {
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Section Styles */
+section {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffef1d;
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    padding: 70px 0 0;
+}
+
+section:nth-child(odd) {
+    background-color: rgba(0,0,0,.6);
+}
+
+section:nth-child(even) {
+    background-color: rgba(0,0,0,.4);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: #ffef1d;
+    z-index: 1001;
+}
+
+/*attachment for section container, similar to flexbox */
+
+attachment-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 200vh; /* Ensures at least two full viewport heights */
+    width: 100%;
+}
+
+
+/* info section */
+
+#info-section {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 1;
+}
+
+.info-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-title {
+    font-family: 'Chinese Rocks', sans-serif;
+    color: #ffef1d;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+.video-container {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+#playPauseButton,
+#changeVideoButton {
+    background-color: #ffef1d;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#playPauseButton:hover,
+#changeVideoButton:hover {
+    background-color: #e6d800;
+    transform: scale(1.05);
+}
+
+#progressBar,
+#playbackSpeed,
+#volumeControl {
+    width: 30%;
+}
+
+.video-controls label {
+    color: white;
+    margin-left: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.volume-container,
+.speed-container {
+    display: flex;
+    align-items: center;
+}
+
+.info-columns {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    gap: 20px;
+    padding: 20px 0;
+    align-items: center; /* This will help align the columns vertically */
+}
+
+.info-left-column,
+.info-right-column,
+.info-center-column {
+    flex-basis: calc(33.33% - 20px); /* Equal widths for all columns */
+}
+
+.info-left-image,
+.info-right-image {
+    display: block;
+    width: 420px; /* Fixed width, adjust as needed */
+    height: 560px; /* Fixed height, adjust as needed */
+    object-fit: contain;
+    transition: all 0.3s ease;
+}.info-left-image:hover,
+.info-right-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.info-center-column {
+    position: relative;
+    height: 600px; /* Fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-top-image,
+.info-bottom-image,
+.middle-image-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+.info-top-image {
+    top: 0;
+}
+
+.info-bottom-image {
+    bottom: 0;
+}
+
+.middle-image-container {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+}
+
+.info-middle-image.punk-navigation-trigger {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.info-download-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 35px;
+    width: 80px;
+    height: auto;
+}
+
+.mess-image-link {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.info-middle-image:hover {
+    transform: scale(1.1);
+}

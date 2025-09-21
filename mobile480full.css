@@ -1,0 +1,627 @@
+/* media480px */
+
+
+
+@media (max-width: 480px) {
+  /* Navbar styles */
+  nav {
+    padding: 8px 12px;
+  }
+
+  .facebook-button img {
+    height: 24px;
+  }
+
+  .band-name img {
+    max-height: calc(45px * 1.15);
+    min-height: calc(45px * 1.15);
+  }
+
+  /* Hero480 */
+  .hero-section {
+    margin-top: 0px;
+    padding: 10px 5px 0;
+  }
+
+  .logo-container img {
+    max-width: 105%;
+  }
+
+  .logo-container {
+    width: 160%;
+    margin-left: 0px;
+  }
+
+  .main-title {
+    font-size: 50px;
+  }
+
+  .sub-title-1,
+  .sub-title-2 {
+    font-size: 30px;
+  }
+
+  .sub-title-3 {
+    font-size: 24px;
+  }
+
+  .additional-title {
+    font-size: 42px;
+    margin-bottom: -300px; /* Reduced bottom margin */
+  }
+
+  .button-slideshow {
+    margin: 5vh auto 2vh; /* Increased top margin */
+    width: 200px;
+  }
+
+  .slide-button {
+    font-size: 20px;
+    width: 140px;
+    height: 140px;
+    padding: 10px;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .arrow.left {
+    left: -35px;
+  }
+
+  .arrow.right {
+    right: -35px;
+  }
+
+  /* info480 media */
+
+ h2.info-title {
+    display: none !important;
+  }
+
+  h2.additional-title {
+    display: block !important;
+    z-index: 100000 !important;
+    position: relative !important;
+  }
+
+  .info-container {
+    margin-top: 0vh;
+    width: 95%;
+  }
+
+  .video-container {
+    height: 40vh;
+  }
+
+  .info-title {
+    font-size: 1.2em;
+  }
+
+  .info-center-column {
+    height: 300px;
+  }
+
+  .info-top-image,
+  .info-bottom-image,
+  .middle-image-container {
+    width: 120px;
+    max-height: 120px;
+  }
+
+  .info-download-icon {
+    width: 60px;
+    right: 20px;
+  }
+
+  /* Members480 */
+
+#members-section {
+
+    margin-top: 0vh;
+    z-index: 100000;
+
+}
+
+
+  .members-title {
+    margin-top: -10vh; /* Move up by 10vh */
+    font-size: 4em; /* Slightly bigger, adjust as needed */
+  }
+
+  .members-heading {
+    font-size: 2em; /* Slightly bigger */
+    margin-top: 5vh; /* Move up by 10vh */
+  }
+
+  .members-content {
+    width: 90%;
+    border: 3px solid black;
+  }
+
+  h2.members-title {
+    font-size: 2em; /* Made smaller */
+    top: 0vh;
+  }
+
+/* quotes480 */ 
+
+
+  .quote-slider {
+        margin-top: 20px;
+        padding: 10px 0;
+    }
+
+    .quote {
+        padding: 10px;
+    }
+
+    .quote p {
+        font-size: 18px;
+    }
+
+    .quote .author {
+        font-size: 36px;
+    }
+
+/* membersgrid480 */
+
+
+  .members-grid {
+    gap: 10px;
+  }
+
+  .members-grid img {
+    max-width: 110%;
+    max-height: 85%;
+  }
+
+  .grid-title {
+    font-size: 7.5vw;
+    word-wrap: break-word;
+  }
+
+  .grid-subtitle {
+    font-size: 4.5vw;
+  }
+
+  /* friends480 */
+  .friends-pistols-title {
+    font-size: 3rem;
+  }
+
+  /* gigs 480 */
+  #gigs {
+    padding: 40px 2% 20px;
+  }
+
+  .gigs-main-title {
+    font-size: 1.4em;
+  }
+
+  .safety-pin {
+    width: 60px;
+  }
+
+  .left-pin {
+    left: calc(50% - 200px);
+  }
+
+  .right-pin {
+    right: calc(50% - 200px);
+  }
+
+  .bandsintown-widget {
+    max-width: 95%;
+    border-width: 10px;
+  }
+
+  .bit-widget-initializer {
+    font-size: 20px !important;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .more-gigs-image {
+    right: calc(10px + 100px);
+    width: 50px;
+    height: 50px;
+  }
+
+  .gig-history {
+    font-size: 14px;
+  }
+
+  .gig-history h3 {
+    font-size: 24px;
+  }
+
+  /* videos480*/
+  .videos-title {
+    font-size: 1.2em;
+  }
+
+  .video-list-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-video {
+    width: 95%;
+  }
+
+  .main-video iframe {
+    border-radius: 30px;
+  }
+
+  .video-description {
+    margin-top: 5vh;
+    width: 95%;
+    font-size: 0.6em;
+  }
+
+  .youtube-title {
+    font-size: 1.2em;
+  }
+
+  /* gallerydivider480 */
+
+
+  .gallery-purple-divider {
+    height: 80px;
+  }
+
+  .gallery-burgundy-divider {
+    height: 300px;
+  }
+
+/* gallery480 */
+
+ .gallery-section {
+    padding: 0 20px;
+  }
+
+  .gallery-main-title {
+    font-size: 1.4em;
+    padding: 10px 0;
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+    text-align: center;
+  }
+
+  .large-preview {
+    width: 80%;
+    height: 35vh;
+    margin: 3% auto;
+  }
+
+  .carousel-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .carousel-image {
+    width: 60px;
+    height: 60px;
+    margin: 0 5px;
+  }
+
+  .carousel-button {
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .right-column-wall {
+    width: 80%;
+    height: 30vh;
+    margin: 3% auto;
+  }
+
+  .right-column-previews {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .preview-container {
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative; /* Ensure relative positioning */
+  }
+
+  .preview-image {
+    height: 20vh;
+  }
+
+  .preview-button {
+    padding: 8px;
+    font-size: 16px;
+    position: absolute; /* Absolutely position the button */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+    .preview-button.next {
+        right: 200px; /* Adjust this value to pull the button closer */
+    }
+
+    .preview-button.prev {
+        left: -10px; /* Adjust this value to pull the button closer */
+    }
+
+
+  /* contact480 */
+/* Reduce overall height of contact section */
+ #contact {
+        min-height: 50vh;
+        z-index: 10vh;
+    }
+
+    .contact-information {
+        margin-top: 2.5vh;
+        width: 90%;
+    }
+
+    .contact-left-column,
+    .contact-right-column {
+        width: 25%;
+    }
+
+    .contact-middle-column {
+        width: 40%;
+    }
+
+    .queen-image {
+        width: 80%;
+        max-width: 80%;
+    }
+
+    .passport-image {
+        width: 160%;
+        max-width: none;
+    }
+
+    .contact-section-details {
+        width: 80%;
+        padding: 30px 25px;
+    }
+
+    .contact-info-item {
+        max-width: 100%;
+    }
+
+    .contact-info-item span {
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+    }
+
+    .additional-section {
+        height: 50vh;
+        position: relative;
+        overflow: hidden;
+        margin-top: -5vh;
+        z-index: 5;
+    }
+
+    .half-image {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        opacity: 0.5;
+    }
+
+    .additional-section-content {
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .facebook-embed {
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .facebook-embed iframe {
+        width: 100%;
+        height: 500px;
+    }
+
+    .messenger-link img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .messenger-link span {
+        font-size: 0.9rem;
+    }
+  /* YELLOWLOGO480 */
+  .yellow-punk-pistol-logo-container {
+    height: 25vh;
+  }
+
+  .punk-pistol-logo {
+    max-height: 45%;
+  }
+
+  /* Footer */
+  .punk-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .punk-contact-form-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .punk-rock-form-container,
+  .ents-widget {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* contactform480 */
+
+
+/* Overall contact page container */
+
+
+#punk-contact-page {
+    padding: 0px 5px;
+    height: 75vh; /*background important */
+    max-height: 75vh; /*background important */
+    min-height: 75vh; /*background important */
+    position: relative;
+    overflow: hidden; /* Prevent scrollbar */
+    margin-top: -5vh;
+    z-index: 50;
+}
+
+/* Background image */
+.punk-contact-background-image {
+    content: url('images/god-save-the-queen-blue-red-flag.jpg');
+    width: 100%;
+    height: 75vh; /*background important */
+    max-height: 75vh; /*background important */
+    min-height: 75vh; /*background important */
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0; /* Ensure image is at the bottom layer */
+}
+
+/* Background container */
+.punk-contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75vh;  /*background important */
+    max-height: 75vh; /*background important */
+    min-height: 75vh; /*background important */
+    overflow: hidden;
+}
+
+/* Form wrapper */
+.punk-contact-form-wrapper {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 75vh; /*background important */
+    max-height: 75vh; /*background important */
+    min-height: 75vh; /*background important */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    z-index: 2; /* Above overlay, below title */
+}
+
+
+  /* Contact page title */
+  .punk-contact-title {
+    font-size: 2.5rem;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    margin-top: 100px;
+    position: relative;
+    z-index: 3; /* Ensure title is above overlay */
+  }
+
+
+
+  /* Blue overlay */
+  .punk-contact-blue-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.7); /* 70% opacity blue */
+    z-index: 1; /* Above image, below content */
+  }
+
+
+
+
+  /* Form group label */
+  .punk-form-group label {
+    margin-left: 160px;
+    font-size: 0.9rem;
+  }
+
+  /* Form group container */
+  .punk-form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Form inputs and textareas */
+  .punk-form-group input,
+  .punk-form-group textarea {
+    width: 100%;
+    max-width: 250px;
+    padding: 8px;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    min-width: 200px;
+    margin-left: 0px;
+  }
+
+  /* Submit button */
+  .punk-submit-button {
+    width: 15vh;
+    height: 5vh;
+    font-size: 0.9rem;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: center;
+  }
+
+  /* Hide widget */
+  .widget-column,
+  .ents-widget {
+    display: none !important;
+  }
+
+  /* Form and widget container */
+  .form-and-widget-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding-bottom: 0;
+  }
+}

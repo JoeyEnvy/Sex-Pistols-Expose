@@ -1,0 +1,219 @@
+/* members section and info */ 
+
+@font-face {
+    font-family: 'Sex Pistols';
+    src: url('Fonts/Sex_Pistols.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Punkaholic';
+    src: url('Fonts/Punkaholic\ D.otf') format('truetype');
+}
+
+#members-section {
+    width: 100vw; 
+    margin-top: -17.5vh;
+    min-height: 100vh;
+    position: relative;
+    background-image: url('images/WEBP Images All/Info.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    z-index: 100;
+}
+
+.members-background {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.members-title {
+    color: white;
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 3em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+   opacity: 10;
+}
+
+.members-content {
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+z-index: 50px;
+   z-index: 550;
+ opacity: 10;
+}
+
+.members-content p {
+    margin-bottom: 15px;
+    opacity: 1;
+}
+
+.members-content hr {
+    border: none;
+    border-top: 1px solid #555;
+    margin: 20px 0;
+opacity: 1;
+}
+
+/* quote slider and title for members */
+
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('fonts/ChineseRocks.woff2') format('woff2');
+}
+
+.quote-slider {
+    width: 100%;
+    overflow: hidden;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 50px;
+}
+
+.quote-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.quote {
+    flex: 0 0 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    font-family: 'Chinese Rocks', sans-serif;
+    text-align: center;
+    border: 1px solid black;
+    color: white;
+}
+
+.quote p {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.quote .author {
+    font-style: italic;
+    font-size: 54px;
+}
+
+.members-heading {
+    font-family: 'Chinese Rocks', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 81px;
+    color: white;
+}
+
+/* members grid section actual members */
+
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('Fonts/chinese rocks rg.otf') format('opentype');
+}
+
+.members-section {
+    position: relative;
+    height: 200vh;
+    width: 100vw;
+}
+
+
+
+.members-heading {
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 6vw;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    position: relative;
+    z-index: 5000;
+}
+
+.members-grid {
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    z-index: 5000;
+}
+
+.members-grid > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 5000;
+}
+
+.grid-title {
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 5vw;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.grid-subtitle {
+    font-size: 3vw;
+    margin-bottom: 25px;
+}
+
+.members-grid img {
+    max-width: 90%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.grid-top-left .grid-title { color: #ffef1d; background-color: #ed5e94; }
+.grid-top-right .grid-title { color: #c32500; background-color: #3a6ff9; }
+.grid-bottom-left .grid-title { color: #c32500; background-color: #3a6ff9; }
+.grid-bottom-right .grid-title { color: #ff2c2c; background-color: #ffef1d; }
+
+
+
+/* blue divider underneath member to famous section */
+
+.blue-divider {
+    margin-bottom: 0px;
+    width: 100vw;
+    height: 125px;
+    background-color: rgba(0, 0, 255, 0.5);
+    position: relative;
+    left: 0;
+    z-index: 5000;
+}
+
+.badge-slider {
+    margin-top: 0px;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.badge-slide-container {
+    display: flex;
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.badge-slide {
+    width: calc(100% / 3);
+    height: 60%;
+    object-fit: contain;
+}

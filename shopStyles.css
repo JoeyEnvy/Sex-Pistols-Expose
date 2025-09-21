@@ -471,10 +471,269 @@ z-index: 1100; /* Increase if needed to appear above other elements */
 }
 
 
+/* Section wrapper */
+.sponsor-section {
+  background: linear-gradient(135deg, #111 20%, #222 80%);
+  color: #fff;
+  padding: 5rem 2rem;
+  text-align: center;
+  border-top: 5px solid #ffef1d;
+  border-bottom: 5px solid #ed5e94;
+}
 
+/* Title */
+.sponsor-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffef1d;
+  text-shadow: 2px 2px #ed5e94;
+  font-family: 'Punkaholic', sans-serif;
+}
 
+/* Logos */
+.bawbags-logos {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
 
-/* dividers and gig section */
+.bawbags-logos img {
+  max-height: 100px;
+  width: auto;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.6));
+}
+
+/* Descriptions */
+.sponsor-desc {
+  max-width: 1000px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Layout */
+.bawbags-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 4rem auto;
+  align-items: start;
+  max-width: 1200px;
+}
+
+/* Promo text */
+/* Promo text */
+.bawbags-promo {
+  text-align: left;
+  background: rgba(255,255,255,0.05);
+  border: 3px solid #ffef1d;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(255, 239, 29, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.bawbags-promo:hover {
+  transform: scale(1.02);
+}
+
+/* Headline */
+.bawbags-promo h3 {
+  color: #ffef1d;
+  font-size: 2.5rem;   /* MUCH larger */
+  font-family: 'Punkaholic', sans-serif;
+  text-shadow: 2px 2px #ed5e94;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Bullet list */
+.bawbags-promo ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.bawbags-promo ul li {
+  font-size: 1.5rem;   /* bigger text */
+  margin: 1rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+.bawbags-promo ul li::before {
+  content: "🎸";
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  color: #ed5e94;
+}
+
+/* Button */
+.bawbags-promo .sponsor-btn {
+  font-size: 1.5rem;   /* bigger button */
+  padding: 1.2rem 3rem;
+  border: 3px solid #000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Gallery container with white background + red border */
+.bawbags-gallery {
+  background: #fff;
+  border: 4px solid #ff0000;
+  border-radius: 10px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.bawbags-gallery img {
+  width: 100%;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: subtle-pulse 6s infinite ease-in-out;
+}
+
+.bawbags-gallery img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 20px rgba(237, 94, 148, 0.7);
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Reviews */
+.bawbags-reviews {
+  margin-top: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bawbags-reviews h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ffef1d;
+}
+
+.review-count {
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: #aaa;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.review-card {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid #ed5e94;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffef1d;
+}
+
+.review-card .stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-card span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Buttons */
+.sponsor-btn {
+  display: inline-block;
+  background: #ffef1d;
+  color: #000;
+  padding: 0.8rem 2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.sponsor-btn:hover {
+  background: #ed5e94;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Footer note */
+.sponsor-footer {
+  margin-top: 3rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #ccc;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ✅ Responsive Queries */
+@media screen and (max-width: 768px) {
+  .bawbags-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bawbags-promo {
+    text-align: center;
+  }
+  .bawbags-gallery {
+    grid-template-columns: 1fr;
+  }
+  .bawbags-logos img {
+    max-height: 70px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sponsor-section h2 {
+    font-size: 2rem;
+  }
+  .sponsor-desc {
+    font-size: 1rem;
+  }
+  .bawbags-reviews h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .sponsor-section {
+    padding: 2rem 1rem;
+  }
+  .sponsor-section h2 {
+    font-size: 1.4rem;
+  }
+  .sponsor-desc {
+    font-size: 0.9rem;
+  }
+  .review-card {
+    padding: 0.8rem;
+  }
+}
 
 
 /* shop main css */

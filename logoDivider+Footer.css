@@ -1,0 +1,133 @@
+/* Logo Section */
+.yellow-punk-pistol-logo-container {
+  position: relative;
+  height: 50vh; /* Adjust this value as needed */
+  text-align: center;
+  overflow: hidden;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.yellow-punk-pistol-logo-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.punk-pistol-logo {
+  position: relative;
+  z-index: 2;
+  max-height: 85%;
+  width: auto;
+  max-width: 100%; /* Make sure it doesn't exceed container width */
+  /* Remove these, as flexbox is handling centering: */
+  /* margin: 0 auto; */
+  /* display: inline-block; */
+  /* vertical-align: middle; */
+}
+
+/* The pseudo-element is no longer needed with Flexbox: */
+/* Helper to vertically center the logo */
+/* .yellow-punk-pistol-logo-container::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+} */
+
+/* Footer */
+.punk-footer {
+    font-family: 'Chinese Rocks', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.punk-footer h3 {
+    color: #ed5e94;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-left p {
+    font-family: Arial, sans-serif;
+}
+
+.punk-footer p {
+    margin-bottom: 1rem;
+}
+
+.footer-middle ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-middle li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-middle a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-middle a:hover {
+    color: #ff2c2c;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon img {
+    width: 64px;
+    height: 64px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+}
+
+.footer-right a {
+    color: #3a6ff9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.footer-right a:hover {
+    color: #ff2c2c;
+}
+
+.creator-info {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}

@@ -1,0 +1,424 @@
+.yellow-divider {
+    width: 100vw;
+    height: 125px;
+    background-color: rgba(255, 255, 0, 0.8);
+    position: relative;
+    z-index: 50;
+}
+
+
+
+/* videos sections */ 
+
+
+.videos-background {
+    position: absolute;
+
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: -8.5vh;
+    background-image: url('images/WEBP Images All/MeNathVideosBackground.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    z-index: -1;
+}
+.videos-section {
+    position: relative;
+    width: 100vw;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.videos-title {
+    width: 100vw;
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    font-family: 'Chinese Rocks', sans-serif;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 5px dashed #d8bfd8;
+    border-bottom: 5px dashed #ffffe0;
+    box-shadow: 
+        0 0 10px rgba(216, 191, 216, 0.8), 
+        0 0 20px rgba(255, 255, 224, 0.5);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.videos-container {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 6rem);
+    z-index: 2;
+    position: relative;
+}
+
+.video-player-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+}
+
+.youtube-title {
+        font-family: 'Chinese Rocks', sans-serif;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube-logo {
+    width: 40px;
+    height: auto;
+    margin-left: 10px;
+    content: url('https://www.svgrepo.com/show/13671/youtube.svg');
+}
+
+.main-video {
+    width: 90%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    margin-top: -1rem;
+}
+
+.main-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 125px;
+    border: 5px solid yellow;
+}
+
+#changeVideo {
+    margin-top: 0.5rem;
+    padding: 3px 6px;
+    background-color: yellow;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.5em;
+}
+
+.video-list-column {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+    padding-right: 4rem; /* Pushed right column videos slightly more to the right */
+}
+
+.video-description {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+    font-size: 0.8em;
+    margin-top: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 12px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-style: italic;
+}
+
+.video-list-item {
+    aspect-ratio: 16 / 9;
+    position: relative;
+    max-width: calc(100% / 1.5);
+}
+
+.video-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid rgba(216, 191, 216, 0.7);
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-preview:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* gallery section */
+
+.gallery-purple-divider {
+width: 100vw;
+height: 125px;
+background-color: rgba(128, 0, 128, 0.6);
+position: relative;
+z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+/* Spotify Embed Section */
+
+/* Base styles */
+.gallery-burgundy-divider {
+    background-color: #800020;
+    height: 16.5vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents potential overflow issues */
+    position: relative; /* Creates positioning context for iframe */
+}
+
+.gallery-burgundy-divider iframe {
+    position: absolute; /* Allows precise positioning */
+    top: 50%;          /* Vertically center the iframe */
+    left: 50%;         /* Horizontally center the iframe */
+    transform: translate(-50%, -50%); /* Corrects for iframe's own dimensions */
+    width: 75%;        /* Sets width to half of the container */
+    height: 125%;       /* Adjust height as needed; 80% provides some spacing */
+    border: none;       /* Removes the default border */
+    border-radius: 10px; /* Adds rounded corners */
+    margin-top: 2vh;
+
+}
+
+
+
+/* gallery */ 
+
+
+
+
+.gallery-section {
+    position: relative;
+    width: 100vw;
+    min-height: 125vh;
+    z-index: 5;
+}
+.gallery-background {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('images/WEBP Images All/Menu Background PC 1.webp');
+background-size: cover;
+background-position: center;
+opacity: 0.7;
+z-index: 1;
+}
+.gallery-content {
+position: relative;
+z-index: 2;
+width: 100%;
+height: 100%;
+}
+.gallery-main-title {
+width: 100vw;
+text-align: center;
+color: white;
+padding: 15px 0;
+font-family: 'Chinese Rocks', sans-serif;
+font-size: 2em;
+background-color: rgba(0, 0, 0, 0.7);
+border-top: 5px dashed #ff69b4;
+border-bottom: 5px dashed #ff69b4;
+box-shadow:
+0 0 10px rgba(255, 105, 180, 0.8),
+0 0 20px rgba(255, 105, 180, 0.5);
+margin-bottom: 2rem;
+position: relative;
+z-index: 2;
+}
+.gallery-container {
+display: flex;
+width: 100%;
+height: calc(125vh - 200px);
+}
+.gallery-left-column,
+.gallery-right-column {
+width: 50%;
+height: 100%;
+position: relative;
+overflow: visible;
+}
+.large-preview {
+width: 80%;
+height: 60%;
+margin: 5% auto;
+border: 5px solid white;
+box-shadow: 0 0 15px rgba(0,0,255,0.5);
+overflow: visible;
+border-radius: 10px;
+cursor: pointer;
+}
+.large-preview img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.3s ease;
+}
+.large-preview:hover img {
+transform: scale(1.2);
+}
+.carousel-container {
+position: relative;
+width: 90%;
+margin: 10px auto;
+z-index: 200;
+}
+.carousel {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+overflow: hidden;
+gap: 10px;
+}
+.carousel-image {
+width: 140px;
+height: 140px;
+object-fit: cover;
+border-radius: 5px;
+cursor: pointer;
+transition: transform 0.3s ease;
+z-index: 250;
+margin: 0 5px;
+}
+.carousel-image:hover {
+transform: scale(1.1);
+}
+.carousel-button {
+    position: absolute;
+    top: 80%; /* Moved from 65% to 80% */
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 300;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.carousel-button.prev {
+    left: 5%;
+}
+
+.carousel-button.next {
+    right: 5%;
+}
+
+.right-column-wall {
+width: 90%;
+height: 45vh;
+margin: 5% auto;
+overflow: visible;
+border-radius: 10px;
+border: 5px solid white;
+}
+.right-column-wall img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.3s ease;
+}
+.right-column-wall:hover img {
+transform: scale(1.2);
+}
+.right-column-previews {
+display: flex;
+justify-content: space-between;
+margin: 5% auto;
+width: 90%;
+}
+.preview-container {
+width: 45%;
+position: relative;
+overflow: visible;
+}
+.preview-image {
+width: 100%;
+height: 20vh;
+object-fit: cover;
+border: 3px solid white;
+border-radius: 10px;
+transition: transform 0.3s ease;
+cursor: pointer;
+}
+.preview-image:hover {
+transform: scale(1.2);
+}
+.preview-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0,0,0,0.5);
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+border-radius: 50%;
+z-index: 10;
+font-size: 18px;
+}
+.preview-button.prev {
+left: -20px;
+}
+.preview-button.next {
+right: -20px;
+}
+.fullscreen-modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.9);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+.fullscreen-image {
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+}
+.close-fullscreen {
+position: absolute;
+top: 20px;
+right: 20px;
+color: white;
+font-size: 30px;
+cursor: pointer;
+}
