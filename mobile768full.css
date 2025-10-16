@@ -1,7 +1,7 @@
 /* Max-width: 768px */
 @media (max-width: 768px) {
   .parallax-bg {
-    background-image: url('images/Mobile/1.jpg');
+    background-image: url("images/Mobile & Desktop MAIN Background (ITS THIS ONE) 16th October/Mobile Attempt 1.jpg");
     background-attachment: scroll; /* Optional: change to scroll for better mobile performance */
   }
 
