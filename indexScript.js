@@ -816,6 +816,18 @@ document.addEventListener("DOMContentLoaded", adjustButtonFontSize);
 
 
 
+
+
+
+//EXPOSE VIDEO SLIDER 
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('exposeslidersec-grid');
   if (!grid) return;
