@@ -693,3 +693,130 @@ attachment-container {
 .info-middle-image:hover {
     transform: scale(1.1);
 }
+
+
+
+
+/* ============================================= */
+  /* LYDON ENDORSEMENT - INSIDE HERO SECTION       */
+  /* ============================================= */
+
+  .lydon-endorsement {
+    width: 90%;
+    max-width: 1100px;
+    margin: 80px auto 40px;                    /* Desktop top margin */
+    padding: 30px 20px;
+    border: 10px solid #ffef1d;
+    border-radius: 12px;
+    box-shadow:
+      0 0 40px rgba(255, 239, 29, 0.7),
+      inset 0 0 25px rgba(255, 239, 29, 0.4);
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .lydon-title {
+    font-family: 'Punkaholic', 'Chinese Rocks', sans-serif;
+    color: #ffef1d;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin: 0 0 40px 0;
+    line-height: 1.2;
+    text-shadow: 4px 4px 0 #c32500, -3px -3px 0 #c32500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .lydon-video-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 0 50px 0;
+    background: #000;
+    border: 6px solid #ffef1d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  }
+
+  #lydon-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+  .lydon-video-wrapper:hover #lydon-video,
+  .lydon-video-wrapper.playing #lydon-video {
+    transform: scale(1.03);
+    filter: brightness(1.18) contrast(1.1);
+  }
+
+  .lydon-book-btn {
+    display: inline-block;
+    font-family: 'Sex Pistols', 'Chinese Rocks', sans-serif;
+    font-size: clamp(1.6rem, 5vw, 2.8rem);
+    padding: 18px 60px;
+    background: #ffef1d;
+    color: #c32500;
+    text-decoration: none;
+    border: 5px solid #ed5e94;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .lydon-book-btn:hover {
+    background: #ed5e94;
+    color: #ffef1d;
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(237, 94, 148, 0.8);
+  }
+
+  /* Responsive – extra top margin on very small screens */
+  @media (max-width: 1024px) {
+    .lydon-endorsement { margin: 60px auto 30px; padding: 25px 15px; border-width: 8px; }
+    .lydon-title { font-size: clamp(2.2rem, 5.5vw, 3.8rem); }
+  }
+
+  @media (max-width: 768px) {
+    .lydon-endorsement { width: 95%; margin: 50px auto 25px; padding: 20px 12px; border-width: 7px; }
+    .lydon-title { font-size: clamp(2rem, 7vw, 3.2rem); }
+  }
+
+  @media (max-width: 480px) {
+    .lydon-endorsement {
+      width: 96%;
+      margin: 40vh auto 20px !important;   /* ~40vh top margin on small screens (adjust if too much) */
+      padding: 18px 10px;
+      border-width: 6px;
+    }
+    .lydon-title { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+    .lydon-book-btn { padding: 14px 45px; font-size: clamp(1.4rem, 6vw, 2rem); }
+  }
+
+  @media (max-width: 400px) {
+    .lydon-endorsement {
+      margin: 45vh auto 15px !important;   /* Even more top margin for ~300–400px range */
+    }
+  }
+
+  @media (max-width: 340px) {
+    .lydon-endorsement {
+      margin: 50vh auto 10px !important;   /* Max top margin for tiny phones */
+      padding: 15px 8px;
+      border-width: 5px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .lydon-endorsement {
+      margin: 80vh auto 10px !important;   /* Max top margin for tiny phones */
+      padding: 15px 8px;
+      border-width: 5px;
+    }
+  }
